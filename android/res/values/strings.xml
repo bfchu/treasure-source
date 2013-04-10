@@ -25,5 +25,33 @@
     <string name="magic_level_low">Low</string>
     <string name="magic_level_medium">Medium</string>
     <string name="magic_level_high">High</string>
+    
+    <string name="residual_gold">Residual Gold Level</string>
+    
+    <string name="roll_for_mundane">Roll for Mundane Items?</string>
+    
+    <string name="roll_for_goods">Roll for Goods, Jewelry, Art?</string>
+    
+    <string name="discard_dupes">Throw out duplicate items?</string>
+    
+    <string name="limit_items_by_encounter_value">Limit items by value of encounter?</string>
+    
+    <string name="limit_by_item_type">Limit magic items by type?</string>
+    <string name="armor_and_shields">Armor and Shields</string>
+    <string name="weapons">Weapons</string>
+    <string name="potions">Potions</string>
+    <string name="rings">Rings</string>
+    <string name="rods">Rods</string>
+    <string name="scrolls">Scrolls</string>
+    <string name="staves">Staves</string>
+    <string name="wands">Wands</string>
+    <string name="wondrous_items">Wondrous Items</string>
+
+	<string name="display_settings">Display Options: </string>
+	<string name="display_gold">Display gold value of each item?</string>
+	<string name="display_chance">Display rolled d100 values?</string>
+	<string name="display_total">Display total value of items and gold?</string>
+    
+	<string name="button_roller">ROLL THE LOOT</string>
 
 </resources>
