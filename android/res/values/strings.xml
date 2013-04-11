@@ -36,7 +36,7 @@
     
     <string name="limit_items_by_encounter_value">Limit items by value of encounter?</string>
     
-    <string name="limit_by_item_type">Limit magic items by type?</string>
+    <string name="limit_by_item_type">Limit magic items by type? (check box to restrict)</string>
     <string name="armor_and_shields">Armor and Shields</string>
     <string name="weapons">Weapons</string>
     <string name="potions">Potions</string>
@@ -49,7 +49,7 @@
 
 	<string name="display_settings">Display Options: </string>
 	<string name="display_gold">Display gold value of each item?</string>
-	<string name="display_chance">Display rolled d100 values?</string>
+	<string name="display_chance">Display rolled d% values?</string>
 	<string name="display_total">Display total value of items and gold?</string>
     
 	<string name="button_roller">ROLL THE LOOT</string>
