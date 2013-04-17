@@ -1,28 +1,27 @@
+/**
+ * 
+ */
 package com.BFChuAndGAblett.TreasureSource;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
 
 /**
- * @author Brian F. Chu, Garrick S. Ablett
- * @version 0.1
+ * @author Brian
  * 
  */
-public class MainActivity extends Activity {
-
+public class LootDisplay extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.loot_display);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.loot, menu);
         return true;
     }
 
@@ -54,10 +53,5 @@ public class MainActivity extends Activity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-    }
-
-    public void onRollLootButton(View v) {
-        Intent g = new Intent(this, LootDisplay.class);
-        startActivity(g);
     }
 }

@@ -2,8 +2,11 @@
 <resources>
 
     <string name="app_name">Treasure Source</string>
+    <string name="loot_display">Results</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    
+
+    
     <string name="apl">Average Party Level: </string>
     <string name="encr">Encounter CR: </string>
     
@@ -37,7 +40,7 @@
     <string name="limit_items_by_encounter_value">Limit items by value of encounter?</string>
     
     <string name="limit_by_item_type">Limit magic items by type? (check box to restrict)</string>
-    <string name="armor_and_shields">Armor and Shields</string>
+    <string name="armor_and_shields">Armor</string>
     <string name="weapons">Weapons</string>
     <string name="potions">Potions</string>
     <string name="rings">Rings</string>
