@@ -56,5 +56,7 @@
 	<string name="display_total">Display total value of items and gold?</string>
     
 	<string name="button_roller">ROLL THE LOOT</string>
+	<string name="loot_reroller">ROLL AGAIN</string>
+	<string name="return_button">Back to Settings</string>
 
 </resources>

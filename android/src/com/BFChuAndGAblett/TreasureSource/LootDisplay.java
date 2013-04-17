@@ -6,6 +6,7 @@ package com.BFChuAndGAblett.TreasureSource;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 
 /**
  * @author Brian
@@ -53,5 +54,9 @@ public class LootDisplay extends Activity {
     @Override
     public void onDestroy() {
         super.onDestroy();
+    }
+
+    public void onReturnButton(View v) {
+        finish();
     }
 }
