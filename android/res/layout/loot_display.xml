@@ -1,37 +1,50 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" android:weightSum="1">
 
-    <ListView
-        android:id="@+id/listView1"
+    <LinearLayout
+        android:id="@+id/headerView1"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="0dp"
+        android:orientation="vertical" 
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        >
+        android:layout_above="@+id/footerView1"
+        android:layout_weight="1">
 
-    </ListView>
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </ListView>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/rerollButton"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_vertical|center_horizontal|fill_horizontal"
-        android:text="@string/loot_reroller" 
+    <LinearLayout
+        android:id="@+id/footerView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+		android:layout_alignParentBottom="true"
+        android:weightSum="2">
         
-        />
 
         <Button
-            android:id="@+id/newLootGenButton"
-            android:layout_width="wrap_content"
+            android:id="@+id/rerollButton"
+            android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/rerollButton"
             android:gravity="center_vertical|center_horizontal|fill_horizontal"
+            android:text="@string/loot_reroller" 
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/returnButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical|center_horizontal|fill_horizontal"
+            android:onClick="onReturnButton"
             android:text="@string/return_button" 
-            android:onClick="onReturnButton"/>
+            android:layout_weight="1"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
