@@ -15,6 +15,7 @@ public class LootCalc {
 
     private LootDice dice;
     private LootIO table;
+    private LootPrefs prefs;
 
     public LootCalc() {
         super();
@@ -24,10 +25,11 @@ public class LootCalc {
      * @param dice
      * @param table
      */
-    public LootCalc(LootDice dice, LootIO table) {
+    public LootCalc(LootDice dice, LootIO table, LootPrefs prefs) {
         super();
         this.dice = dice;
         this.table = table;
+        this.prefs = prefs;
     }
 
     /**
@@ -56,6 +58,20 @@ public class LootCalc {
      */
     public void setTable(LootIO table) {
         this.table = table;
+    }
+
+    /**
+     * @return the prefs
+     */
+    public LootPrefs getPrefs() {
+        return prefs;
+    }
+
+    /**
+     * @param prefs the prefs to set
+     */
+    public void setPrefs(LootPrefs prefs) {
+        this.prefs = prefs;
     }
 
 }
