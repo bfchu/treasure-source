@@ -4,7 +4,7 @@
 package com.BFChuAndGAblett.TreasureSource.Logic;
 
 /**
- * @author Brian
+ * @author Brian Chu and Garrick Ablett
  *
  */
 public class LootLogicDriver {
@@ -13,7 +13,16 @@ public class LootLogicDriver {
      * @param args
      */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+
+        // LootCalc tests
+
+        // LootDice tests
+        LootDice a = new LootDice(3, 20);
+        for (int ii = 0; ii < 20; ii++) {
+            System.out.println(a.roll());
+        }
+
+        // LootIO Tests
 
     }
 

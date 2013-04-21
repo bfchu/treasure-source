@@ -6,7 +6,10 @@ package com.BFChuAndGAblett.TreasureSource.Logic;
 import java.util.Arrays;
 
 /**
- * @author Brian
+ * @author Brian Chu and Garrick Ablett
+ * 
+ * Container class that holds all of the values the user inputs for loot
+ * generation.
  * 
  */
 public class LootPrefs {
