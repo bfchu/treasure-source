@@ -5,7 +5,10 @@ package com.BFChuAndGAblett.TreasureSource.Logic;
 
 /**
  * @author Brian Chu and Garrick Ablett
- *
+ * 
+ *         LootLogicDriver is a testing program to test the methods of the
+ *         LootRollerLogic project.
+ * 
  */
 public class LootLogicDriver {
 
@@ -13,6 +16,10 @@ public class LootLogicDriver {
      * @param args
      */
     public static void main(String[] args) {
+
+        //
+        LootBuilder gen = new LootBuilder();
+        gen.genMain(args);
 
         // LootCalc tests
 

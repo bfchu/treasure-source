@@ -10,10 +10,10 @@ import java.io.IOException;
 
 /**
  * @author Brian Chu and Garrick Ablett
- *
- *  Handles basic file IO, has no special functions related to
- *  recognizing item/loot information
- *
+ * 
+ *         Handles basic file IO, has no special functions related to
+ *         recognizing item/loot information
+ * 
  */
 public class LootIO {
 
@@ -30,7 +30,7 @@ public class LootIO {
      * @param fileName
      * @param in
      */
-    public LootIO(String fileName, BufferedReader in) {
+    public LootIO(String fileName, BufferedReader in) throws IOException {
         super();
         this.fileName = fileName;
         try {
@@ -64,7 +64,8 @@ public class LootIO {
     }
 
     /**
-     * @param fileName the fileName to set
+     * @param fileName
+     *            the fileName to set
      */
     public void setFileName(String fileName) {
         this.fileName = fileName;
@@ -78,7 +79,8 @@ public class LootIO {
     }
 
     /**
-     * @param in the in to set
+     * @param in
+     *            the in to set
      */
     public void setIn(BufferedReader in) {
         this.in = in;
