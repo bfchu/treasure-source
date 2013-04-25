@@ -54,13 +54,64 @@ public class LootCalc {
     public Double rollGoodsVal() {
         Double val = (double) dice.roll(1, 100);
         // needs input from table
+        // database reminder: there are approximately 60 base treasure values
+        // determined by level of party, cr, and game pace
         return val;
+    }
+
+    public Integer rollItemGroup() {
+        Integer group = dice.roll(1, 4);
+
+        // get string from table
+        return group;
+    }
+
+    public Integer getNumDice(Integer tableIndex) {
+        Integer numDice = 0;
+        // numDice = (method that pulls numDice from database at tableIndex);
+
+        return numDice;
+    }
+
+    public Integer getDieSize(Integer tableIndex) {
+        Integer dieSize = 0;
+        // dieSize = (method that pulls dieSize from database at tableIndex);
+
+        return dieSize;
     }
 
     public Integer rollNumItems(Integer numDice, Integer dieSize) {
         Integer numItems = dice.roll(numDice, dieSize);
         // needs input from table
         return numItems;
+    }
+
+    public Integer getRarity(Integer tableIndex) {
+        Integer rarity = dice.roll(1, 4);
+        // rarity = (method that pulls rarity from database at tableIndex);
+        return rarity;
+    }
+
+    public LootItem rollItem(Integer rarityLevel) {
+        // Roll to determine item type
+        // Roll qualities
+        // if special abilities: Roll on ability chart
+        switch (rarityLevel) {
+        case 1:
+            LootItemMundane item1 = null;
+            return item1;
+        case 2:
+            LootItemMagic item2 = null;
+            return item2;
+        case 3:
+            LootItemMagic item3 = null;
+            return item3;
+        case 4:
+            LootItemMagic item4 = null;
+            return item4;
+        }
+
+        return null;
     }
 
     public Integer rollPercent() {

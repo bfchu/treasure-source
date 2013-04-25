@@ -50,7 +50,7 @@ public class LootBuilder {
         rGoods = dM.rollGoodsType();
 
         // Roll quantity (how many times to roll on next chart)
-        // goods.setQuantity(dM.rollNumGoods(numDice, dieSize));
+        goods.setQuantity(dM.rollNumGoods(numDice, dieSize));
 
         // Roll value range
         Integer valRange;
@@ -69,17 +69,22 @@ public class LootBuilder {
 
     public void rollItems(LootCalc dM) {
         // Roll to determine what grouping of items to roll next
+        Integer itemGroup = dM.rollItemGroup();
         // Roll to find quantity (how many times to roll next) based on result
         // from previous chart
-        // Roll to determine item type
-        // Roll qualities
-        // if special abilities: Roll on ability chart
+        Integer numDice = dM.getNumDice(itemGroup);
+        Integer dieSize = dM.getDieSize(itemGroup);
+        Integer numItems = dM.getDice().roll(numDice, dieSize);
 
-        // if (dM.getPrefs().isNoRepeats() && dM.isValid(item)) {
-        // addToTrove(item);
-        // } else if (dM.isValid(item)) {
-        // addToHoard(item);
-        // }
+        for (int ii = 0; ii < numItems; ii++) {
+            LootItem item = dM.rollItem(itemGroup);
+            if (dM.getPrefs().isNoRepeats() && dM.isValid(item)) {
+                addToTrove(item);
+            } else if (dM.isValid(item)) {
+                addToHoard(item);
+            }
+        }
+
     }
 
     // Getters/Setters
