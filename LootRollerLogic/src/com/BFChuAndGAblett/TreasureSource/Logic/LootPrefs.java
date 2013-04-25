@@ -8,8 +8,8 @@ import java.util.Arrays;
 /**
  * @author Brian Chu and Garrick Ablett
  * 
- * Container class that holds all of the values the user inputs for loot
- * generation.
+ *         Container class that holds all of the values the user inputs for loot
+ *         generation.
  * 
  */
 public class LootPrefs {
@@ -32,7 +32,7 @@ public class LootPrefs {
 
     public LootPrefs() {
         super();
-        this.aPL = 1;
+        this.aPL = 1; // Default values
         this.eCR = 1;
         this.enDifficulty = 3;
         this.lootSize = 3;

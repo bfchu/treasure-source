@@ -9,7 +9,7 @@ package com.BFChuAndGAblett.TreasureSource.Logic;
  */
 public class LootItemGoods extends LootItem {
 
-    private Integer goodsType; // 1 for Art, 2 for Jewelry, 3 for...
+    private Integer goodsType; // 0 = nothing, 1 = Art, 2 = Jewelry, 3 =...
 
     public LootItemGoods() {
         super();

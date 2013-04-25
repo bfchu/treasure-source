@@ -8,9 +8,9 @@ import java.util.Random;
 /**
  * @author Brian Chu and Garrick Ablett
  * 
- * Handles the acquisition of random numbers based on dice size and number.  
- * Is not responsible for remembering the numbers it rolls
- *
+ *         Handles the acquisition of random numbers based on dice size and
+ *         number. Is not responsible for remembering the numbers it rolls
+ * 
  */
 public class LootDice {
     public static final Integer LOOT_TABLE_RANGE = 100;
@@ -47,6 +47,17 @@ public class LootDice {
         return numRolled;
     }
 
+    public Integer roll(Integer numDice, Integer dieSize) {
+        this.numDice = numDice;
+        this.dieSize = dieSize;
+
+        Integer numRolled = 0;
+        for (int ii = 0; ii < numDice; ii++) {
+            numRolled += ((Math.abs(unRand()) % dieSize) + 1);
+        }
+        return numRolled;
+    }
+
     public Integer unRand() {
         return unRander.nextInt();
     }
@@ -54,8 +65,8 @@ public class LootDice {
     // Getters Setters field
 
     /**
-     * Master setter; input integers in the format: XdY
-     * example: 2d6 is LootDice.set(2,6);
+     * Master setter; input integers in the format: XdY example: 2d6 is
+     * LootDice.set(2,6);
      * 
      * @param numDice
      * @param dieSize
@@ -73,7 +84,8 @@ public class LootDice {
     }
 
     /**
-     * @param numDice the numDice to set
+     * @param numDice
+     *            the numDice to set
      */
     public void setNumDice(Integer numDice) {
         this.numDice = numDice;
@@ -87,7 +99,8 @@ public class LootDice {
     }
 
     /**
-     * @param dieSize the dieSize to set
+     * @param dieSize
+     *            the dieSize to set
      */
     public void setDieSize(Integer dieSize) {
         this.dieSize = dieSize;
