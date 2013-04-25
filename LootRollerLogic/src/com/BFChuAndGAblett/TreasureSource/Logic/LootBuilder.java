@@ -34,8 +34,12 @@ public class LootBuilder {
     }
 
     public void rollCoins(LootCalc dM) {
-        //
-        addToHoard(dM.rollCoins());
+        if (dM.getPrefs().isNoRepeats()) {
+            addToTrove(dM.rollCoins());
+        } else {
+            addToHoard(dM.rollCoins());
+        }
+
     }
 
     public void rollGoods(LootCalc dM) {
@@ -46,14 +50,21 @@ public class LootBuilder {
         rGoods = dM.rollGoodsType();
 
         // Roll quantity (how many times to roll on next chart)
-        // goods.setQuantity(dM.rollNumItems(numDice, dieSize));
+        // goods.setQuantity(dM.rollNumGoods(numDice, dieSize));
 
         // Roll value range
         Integer valRange;
         valRange = dM.rollPercent();
 
         // Roll value per goods
-        // goods.setgValue()
+        goods.setgValue(dM.rollGoodsVal());
+
+        if (dM.getPrefs().isNoRepeats() && dM.isValid(goods)) {
+            addToTrove(goods);
+        } else if (dM.isValid(goods)) {
+            addToHoard(goods);
+        }
+
     }
 
     public void rollItems(LootCalc dM) {
@@ -63,6 +74,12 @@ public class LootBuilder {
         // Roll to determine item type
         // Roll qualities
         // if special abilities: Roll on ability chart
+
+        // if (dM.getPrefs().isNoRepeats() && dM.isValid(item)) {
+        // addToTrove(item);
+        // } else if (dM.isValid(item)) {
+        // addToHoard(item);
+        // }
     }
 
     // Getters/Setters

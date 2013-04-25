@@ -45,13 +45,31 @@ public class LootCalc {
         return type;
     }
 
+    public Integer rollNumGoods(Integer numDice, Integer dieSize) {
+        Integer numGoods = dice.roll(1, 100);
+        // needs input form table
+        return numGoods;
+    }
+
+    public Double rollGoodsVal() {
+        Double val = (double) dice.roll(1, 100);
+        // needs input from table
+        return val;
+    }
+
     public Integer rollNumItems(Integer numDice, Integer dieSize) {
         Integer numItems = dice.roll(numDice, dieSize);
+        // needs input from table
         return numItems;
     }
 
     public Integer rollPercent() {
         return dice.roll(1, 100);
+    }
+
+    public boolean isValid(LootItem item) {
+
+        return true;
     }
 
     // Getter/setters
