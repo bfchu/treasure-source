@@ -38,10 +38,20 @@ public class LootCalc {
         LootItemGold coins = new LootItemGold();
         // pass in a rollPercent() to a table look-up, get back numDice,
         // dieSize, and
+        String coinType = "gp";
+        Integer coinQuantity = rollCoinsQuanitity(1, 6, 1000);
+
         coins.setCoinType(coinType);
         // roll quantity
         coins.setQuantity(coinQuantity);
         return coins;
+    }
+
+    public Integer rollCoinsQuanitity(Integer numDice, Integer dieSize,
+            Integer coinQuantityCoefficient) {
+
+        Integer quantity = (dice.roll(numDice, dieSize) * coinQuantityCoefficient);
+        return quantity;
     }
 
     public Integer rollGoodsType() {
