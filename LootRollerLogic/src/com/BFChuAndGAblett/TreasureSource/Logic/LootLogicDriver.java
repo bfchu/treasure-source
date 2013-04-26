@@ -18,8 +18,10 @@ public class LootLogicDriver {
     public static void main(String[] args) {
 
         //
-        LootBuilder gen = new LootBuilder();
-        gen.genMain(args);
+        LootBuilder gen1 = new LootBuilder();
+        LootPrefs prefs1 = new LootPrefs(3, 63, 4, 4, 2, .54, true, true,
+                false, false, new boolean[9], new boolean[3]);
+        gen1.genMain(args, prefs1);
 
         // LootCalc tests
 
@@ -32,5 +34,4 @@ public class LootLogicDriver {
         // LootIO Tests
 
     }
-
 }

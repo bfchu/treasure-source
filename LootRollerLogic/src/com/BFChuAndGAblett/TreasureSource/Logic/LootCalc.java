@@ -54,9 +54,30 @@ public class LootCalc {
         return quantity;
     }
 
-    public Integer rollGoodsType() {
-        Integer type = dice.roll(1, 4);
-        return type;
+    public void rollGoodsType(Integer numDice, Integer dieSize, String goodsType) {
+
+        // rollPercent();
+        // lookup on table
+        // get back values for numDie, dieSize, goodsType.
+
+        // placeholders
+        numDice = dice.roll(1, 20); // getNumDice();
+        dieSize = dice.roll(1, 20); // getDieSize();
+
+        // placeholder for table calls
+        Integer roll = dice.roll(1, 3);
+        switch (roll) {
+        case 1:
+            goodsType = "";
+            break;
+        case 2:
+            goodsType = "gems";
+            break;
+        case 3:
+            goodsType = "art";
+            break;
+        }
+
     }
 
     public Integer rollNumGoods(Integer numDice, Integer dieSize) {
@@ -133,7 +154,7 @@ public class LootCalc {
     }
 
     public boolean isValid(LootItem item) {
-
+        // lol...
         return true;
     }
 

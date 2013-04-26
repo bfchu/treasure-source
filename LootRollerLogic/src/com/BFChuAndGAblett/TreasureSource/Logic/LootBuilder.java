@@ -34,8 +34,6 @@ public class LootBuilder {
 
     public void genMain(String[] args, LootPrefs prefs) {
         LootCalc dM = new LootCalc();
-        prefs = new LootPrefs(3, 63, 4, 4, 2, .54, true, true, false, false,
-                new boolean[9], new boolean[3]);
         dM.setPrefs(prefs);
 
         rollCoins(dM);
@@ -44,11 +42,7 @@ public class LootBuilder {
     }
 
     public void rollCoins(LootCalc dM) {
-        if (dM.getPrefs().isNoRepeats()) {
-            addToTrove(dM.rollCoins());
-        } else {
-            addToHoard(dM.rollCoins());
-        }
+        addItem(dM, dM.rollCoins());
 
     }
 
@@ -56,16 +50,13 @@ public class LootBuilder {
         LootItemGoods goods = new LootItemGoods();
 
         // Roll on goods chart to determine if and what kind of goods
-        Integer rGoods;
-        rGoods = dM.rollGoodsType();
+        Integer numDiceGoods = 1;
+        Integer dieSizeGoods = 6;
+        String goodsType = "gems";
+        dM.rollGoodsType(numDiceGoods, dieSizeGoods, goodsType);
 
-        // Needs some way to determine the tableIndex according to relevant
-        // rolls
-
-        // Roll quantity (how many times to roll on next chart)
-        Integer goodsNumDice = dM.getNumDice(tableIndex);
-        Integer goodsDieSize = dM.getDieSize(tableIndex);
-        goods.setQuantity(dM.rollNumGoods(numDice, dieSize));
+        goods.setGoodsType(goodsType);
+        goods.setQuantity(dM.rollNumGoods(numDiceGoods, dieSizeGoods));
 
         // Roll value range
         Integer valRange;
@@ -74,11 +65,7 @@ public class LootBuilder {
         // Roll value per goods
         goods.setgValue(dM.rollGoodsVal());
 
-        if (dM.getPrefs().isNoRepeats() && dM.isValid(goods)) {
-            addToTrove(goods);
-        } else if (dM.isValid(goods)) {
-            addToHoard(goods);
-        }
+        addItem(dM, goods);
 
     }
 
@@ -93,16 +80,22 @@ public class LootBuilder {
 
         for (int ii = 0; ii < numItems; ii++) {
             LootItem item = dM.rollItem(itemGroup);
-            if (dM.getPrefs().isNoRepeats() && dM.isValid(item)) {
-                addToTrove(item);
-            } else if (dM.isValid(item)) {
-                addToHoard(item);
-            }
+            addItem(dM, item);
         }
 
     }
 
     // Getters/Setters
+    public void addItem(LootCalc dM, LootItem item) {
+        if (dM.getPrefs().isNoRepeats() && dM.isValid(item)) {
+            addToTrove(item);
+        } else if (dM.isValid(item)) {
+            addToHoard(item);
+        } else {
+            // increment some throw-out counter
+        }
+    }
+
     public void addToHoard(LootItem item) {
         this.hoard.getLoot().put(this.hoard.getLoot().size(), item);
     }
