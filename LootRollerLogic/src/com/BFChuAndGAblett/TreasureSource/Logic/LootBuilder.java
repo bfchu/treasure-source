@@ -70,14 +70,13 @@ public class LootBuilder {
     }
 
     public void rollItems(LootCalc dM) {
-        // Roll to determine what grouping of items to roll next
-        Integer itemGroup = dM.rollItemGroup();
-        // Roll to find quantity (how many times to roll next) based on result
-        // from previous chart
-        Integer numDice = dM.getNumDice(itemGroup);
-        Integer dieSize = dM.getDieSize(itemGroup);
-        Integer numItems = dM.getDice().roll(numDice, dieSize);
 
+        String itemGroup = "mundane";
+        Integer numDiceItems = 1;
+        Integer dieSizeItems = 6;
+        dM.rollItemGrouping(numDiceItems, dieSizeItems, itemGroup);
+
+        Integer numItems = dM.getDice().roll(numDiceItems, dieSizeItems);
         for (int ii = 0; ii < numItems; ii++) {
             LootItem item = dM.rollItem(itemGroup);
             addItem(dM, item);

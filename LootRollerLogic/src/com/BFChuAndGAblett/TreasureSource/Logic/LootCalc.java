@@ -94,11 +94,32 @@ public class LootCalc {
         return val;
     }
 
-    public Integer rollItemGroup() {
-        Integer group = dice.roll(1, 4);
+    public void rollItemGrouping(Integer numDice, Integer dieSize,
+            String itemGroup) {
+        // rollPercent();
 
-        // get string from table
-        return group;
+        // place holders
+        numDice = dice.roll(1, 20); // getNumDice();
+        dieSize = dice.roll(1, 20); // getDieSize();
+
+        Integer roll = dice.roll(1, 5);
+        switch (roll) {
+        case 1:
+            itemGroup = "";
+            break;
+        case 2:
+            itemGroup = "mundane";
+            break;
+        case 3:
+            itemGroup = "minor";
+            break;
+        case 4:
+            itemGroup = "medium";
+            break;
+        case 5:
+            itemGroup = "major";
+            break;
+        }
     }
 
     public Integer getNumDice(Integer tableIndex) {
@@ -127,26 +148,114 @@ public class LootCalc {
         return rarity;
     }
 
-    public LootItem rollItem(Integer rarityLevel) {
+    public LootItem rollItem(String rarityLevel) {
         // Roll to determine item type
         // Roll qualities
         // if special abilities: Roll on ability chart
+
         switch (rarityLevel) {
-        case 1:
-            LootItemMundane item1 = null;
+        case "mundane":
+            LootItemMundane item1 = new LootItemMundane();
+            item1.setItemType(rollItemType(rarityLevel));
             return item1;
-        case 2:
-            LootItemMagic item2 = null;
+        case "minor":
+            LootItemMagic item2 = new LootItemMagic();
+            item2.setItemType(rollItemType(rarityLevel));
             return item2;
-        case 3:
-            LootItemMagic item3 = null;
+        case "medium":
+            LootItemMagic item3 = new LootItemMagic();
+            item3.setItemType(rollItemType(rarityLevel));
             return item3;
-        case 4:
-            LootItemMagic item4 = null;
+        case "major":
+            LootItemMagic item4 = new LootItemMagic();
+            item4.setItemType(rollItemType(rarityLevel));
             return item4;
         }
 
         return null;
+    }
+
+    public Integer rollItemType(String rarityLevel) {
+        switch (rarityLevel) {
+        case "mundane":
+            Integer type1 = 0;
+            return type1;
+        case "minor":
+            Integer type2 = rollMinorItemType();
+            return type2;
+        case "medium":
+            Integer type3 = rollMediumItemType();
+            return type3;
+        case "major":
+            Integer type4 = rollMajorItemType();
+            return type4;
+        }
+        return null;
+    }
+
+    public Integer rollMinorItemType() {
+        Integer roll = rollPercent();
+        if (roll < 5) {
+            return 3;
+        } else if (roll < 10) {
+            return 4;
+        } else if (roll < 45) {
+            return 5;
+        } else if (roll < 47) {
+            return 6;
+        } else if (roll < 82) {
+            return 8;
+        } else if (roll < 92) {
+            return 10;
+        } else {
+            return 11;
+        }
+    }
+
+    public Integer rollMediumItemType() {
+        Integer roll = rollPercent();
+        if (roll < 11) {
+            return 3;
+        } else if (roll < 21) {
+            return 4;
+        } else if (roll < 31) {
+            return 5;
+        } else if (roll < 41) {
+            return 6;
+        } else if (roll < 51) {
+            return 7;
+        } else if (roll < 66) {
+            return 8;
+        } else if (roll < 69) {
+            return 9;
+        } else if (roll < 84) {
+            return 10;
+        } else {
+            return 11;
+        }
+    }
+
+    public Integer rollMajorItemType() {
+        Integer roll = rollPercent();
+        if (roll < 11) {
+            return 3;
+        } else if (roll < 21) {
+            return 4;
+        } else if (roll < 26) {
+            return 5;
+        } else if (roll < 36) {
+            return 6;
+        } else if (roll < 46) {
+            return 7;
+        } else if (roll < 56) {
+            return 8;
+        } else if (roll < 76) {
+            return 9;
+        } else if (roll < 81) {
+            return 10;
+        } else {
+            return 11;
+        }
     }
 
     public Integer rollPercent() {

@@ -25,8 +25,20 @@ public class LootItem {
                                // most relevant chart.
     private Integer itemType;
 
-    /*
-     * 0 = null, 1 = gold, 2 = goods, 3 = Armor/Shields, 4 = Weapons, etc...
+    /**
+     * 0 = null,
+     * 1 = gold, 
+     * 2 = goods, 
+     * 3 = Armor/Shields, 
+     * 4 = Weapons,
+     * 5 = Potions,
+     * 6 = Rings,
+     * 7 = Rods
+     * 8 = Scrolls
+     * 9 = Staves
+     * 10 = Wands
+     * 11 = Wondrous
+     * 
      */
 
     public LootItem() {
