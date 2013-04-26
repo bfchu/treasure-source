@@ -36,7 +36,11 @@ public class LootCalc {
     // Paizo math
     public LootItem rollCoins() {
         LootItemGold coins = new LootItemGold();
-
+        // pass in a rollPercent() to a table look-up, get back numDice,
+        // dieSize, and
+        coins.setCoinType(coinType);
+        // roll quantity
+        coins.setQuantity(coinQuantity);
         return coins;
     }
 

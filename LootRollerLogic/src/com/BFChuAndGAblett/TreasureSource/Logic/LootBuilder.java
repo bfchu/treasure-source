@@ -22,10 +22,20 @@ public class LootBuilder {
         this.trove = new LootListNoDuplicates();
     }
 
-    public void genMain(String[] args) {
+    /**
+     * @param hoard
+     * @param trove
+     */
+    public LootBuilder(LootList hoard, LootListNoDuplicates trove) {
+        super();
+        this.hoard = hoard;
+        this.trove = trove;
+    }
+
+    public void genMain(String[] args, LootPrefs prefs) {
         LootCalc dM = new LootCalc();
-        LootPrefs prefs = new LootPrefs(3, 63, 4, 4, 2, .54, true, true, false,
-                false, new boolean[9], new boolean[3]);
+        prefs = new LootPrefs(3, 63, 4, 4, 2, .54, true, true, false, false,
+                new boolean[9], new boolean[3]);
         dM.setPrefs(prefs);
 
         rollCoins(dM);
@@ -49,7 +59,12 @@ public class LootBuilder {
         Integer rGoods;
         rGoods = dM.rollGoodsType();
 
+        // Needs some way to determine the tableIndex according to relevant
+        // rolls
+
         // Roll quantity (how many times to roll on next chart)
+        Integer goodsNumDice = dM.getNumDice(tableIndex);
+        Integer goodsDieSize = dM.getDieSize(tableIndex);
         goods.setQuantity(dM.rollNumGoods(numDice, dieSize));
 
         // Roll value range
