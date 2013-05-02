@@ -3,7 +3,9 @@
  */
 package com.BFChuAndGAblett.TreasureSource;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteException;
@@ -45,13 +47,96 @@ public class LootDB {
         db.close();
     }
 
-    public boolean saveEntry(/* needs parameters matching the table */) {
+    public boolean saveEntry(Integer id, String dLow, int dHigh, int itemName,
+            Double gValue) {
         boolean successfull = false;
-        // TODO: save entry code
+        if (id == null) {
+            Log.d(TAG, "creating a new entry: d%: " + dLow + " - " + dHigh
+                    + " item Name: " + itemName + " Value: " + gValue);
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("itemName", itemName);
+            newItem.put("value", gValue);
+
+            long newId = db.insert("lootTest", null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: d%: " + dLow + " - " + dHigh
+                    + " item Name: " + itemName + " Value: " + gValue);
+            // update
+
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("itemName", itemName);
+            newItem.put("value", gValue);
+
+            db.update("lootTest", newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
 
         return successfull;
     }
 
+    public LootItem getItem(Integer dRoll) {
+
+        Cursor cursor = this.findItemByDRoll(dRoll);
+
+        Integer sanitizedId = cursor.getInt(0);
+
+        String itemName = cursor.getString(3);
+        double value = cursor.getDouble(4);
+
+        LootItem item = new LootItem(dRoll, itemName, value);
+
+        return item;
+    }
+
+    public Cursor getAllEntries() {
+        return db
+                .query("lootTest", new String[] { "id", "dLow", "dHigh",
+                        "itemName", "value" }, "id = 0", null, null, null,
+                        "dLow", null);
+    }
+
+    public Cursor findItemByDRoll(Integer dRoll) {
+        Cursor cursor = db.query(true, "lootTest", new String[] { "id", "dLow",
+                "dHigh", "itemName", "value" }, "id = 0", null, null, null,
+                null, null);
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
+
+        return cursor;
+    }
+
+    /*
+     * query( boolean distinct - true or false - true if you want each row to be
+     * unique, false otherwise. String table - The table name to compile the
+     * query against. String[] columns - and array of column names to return
+     * String selection - the where clause String[] selectionArgs - arguments to
+     * the where clause - advanced topic, just use null - see
+     * findContactsByPhoneNumber below String groupBy - advanced topic, use null
+     * String having - advanced topic, use null String orderBy - sort the
+     * results - null for however the database feels like returning the data
+     * String limit - limit the number of row to return )
+     */
     /*
      * public Something get<something>(Integer id) { }
      */
@@ -63,7 +148,10 @@ public class LootDB {
      */
     private static class LootDatabaseOpenHelper extends SQLiteOpenHelper {
         private static final String TAG = "LootDatabaseOpenHelper";
-        private static final String CREATE_TABLE = "";
+        private static final String CREATE_TABLE = "CREATE TABLE lootTest "
+                + "(id INTEGER PRIMARY KEY AUTOINCREMENT, " + "dLow int, "
+                + "dHigh int, " + "itemName varchar(50), "
+                + "value varchar(50))";
         private static final String DROP_TABLE = "DROP TABLE IF EXISTS contact";
 
         public LootDatabaseOpenHelper(Context context) {

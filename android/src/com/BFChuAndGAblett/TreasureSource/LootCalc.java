@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.BFChuAndGAblett.TreasureSource.Logic;
+package com.BFChuAndGAblett.TreasureSource;
 
 /**
  * @author Brian Chu and Garrick Ablett
@@ -153,43 +153,43 @@ public class LootCalc {
         // Roll qualities
         // if special abilities: Roll on ability chart
 
-        switch (rarityLevel) {
-        case "mundane":
-            LootItemMundane item1 = new LootItemMundane();
-            item1.setItemType(rollItemType(rarityLevel));
-            return item1;
-        case "minor":
-            LootItemMagic item2 = new LootItemMagic();
-            item2.setItemType(rollItemType(rarityLevel));
-            return item2;
-        case "medium":
-            LootItemMagic item3 = new LootItemMagic();
-            item3.setItemType(rollItemType(rarityLevel));
-            return item3;
-        case "major":
-            LootItemMagic item4 = new LootItemMagic();
-            item4.setItemType(rollItemType(rarityLevel));
-            return item4;
-        }
+        // switch (rarityLevel) {
+        // case "mundane":
+        // LootItemMundane item1 = new LootItemMundane();
+        // item1.setItemType(rollItemType(rarityLevel));
+        // return item1;
+        // case "minor":
+        // LootItemMagic item2 = new LootItemMagic();
+        // item2.setItemType(rollItemType(rarityLevel));
+        // return item2;
+        // case "medium":
+        // LootItemMagic item3 = new LootItemMagic();
+        // item3.setItemType(rollItemType(rarityLevel));
+        // return item3;
+        // case "major":
+        // LootItemMagic item4 = new LootItemMagic();
+        // item4.setItemType(rollItemType(rarityLevel));
+        // return item4;
+        // }
 
         return null;
     }
 
     public Integer rollItemType(String rarityLevel) {
-        switch (rarityLevel) {
-        case "mundane":
-            Integer type1 = 0;
-            return type1;
-        case "minor":
-            Integer type2 = rollMinorItemType();
-            return type2;
-        case "medium":
-            Integer type3 = rollMediumItemType();
-            return type3;
-        case "major":
-            Integer type4 = rollMajorItemType();
-            return type4;
-        }
+        // switch (rarityLevel) {
+        // case "mundane":
+        // Integer type1 = 0;
+        // return type1;
+        // case "minor":
+        // Integer type2 = rollMinorItemType();
+        // return type2;
+        // case "medium":
+        // Integer type3 = rollMediumItemType();
+        // return type3;
+        // case "major":
+        // Integer type4 = rollMajorItemType();
+        // return type4;
+        // }
         return null;
     }
 

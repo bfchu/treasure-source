@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.BFChuAndGAblett.TreasureSource.Logic;
+package com.BFChuAndGAblett.TreasureSource;
 
 /**
  * @author Brian Chu and Garrick Ablett
@@ -41,20 +41,20 @@ public class LootItemGold extends LootItem {
      */
     public void setCoinType(String coinType) {
         this.coinType = coinType;
-        switch (coinType) {
-        case "cp":
-            this.setgValue(0.01);
-            break;
-        case "sp":
-            this.setgValue(0.1);
-            break;
-        case "gp":
-            this.setgValue(1.0);
-            break;
-        case "pp":
-            this.setgValue(10.0);
-            break;
-        }
+        // switch (coinType) {
+        // case "cp":
+        // this.setgValue(0.01);
+        // break;
+        // case "sp":
+        // this.setgValue(0.1);
+        // break;
+        // case "gp":
+        // this.setgValue(1.0);
+        // break;
+        // case "pp":
+        // this.setgValue(10.0);
+        // break;
+        // }
     }
 
 }
