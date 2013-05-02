@@ -3,7 +3,6 @@
  */
 package com.BFChuAndGAblett.TreasureSource.Logic;
 
-import android.database.Cursor;
 
 /**
  * @author Brian Chu and Garrick Ablett
@@ -26,12 +25,6 @@ public class LootLogicDriver {
         // gen1.genMain(args, prefs1);
         //
         // LootCalc tests
-
-        // LootDB Tests
-        LootDBOpenHelper db = new LootDBOpenHelper(null, "lootDatabase.db",
-                null, 1);
-        Cursor dbCursor = db.getCursor("lewt");
-        System.out.println(dbCursor.getColumnNames());
 
         // LootDice tests
         LootDice a = new LootDice(20, 20);
