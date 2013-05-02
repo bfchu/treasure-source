@@ -9,24 +9,24 @@ package com.BFChuAndGAblett.TreasureSource.Logic;
  */
 public class LootItemGoods extends LootItem {
 
-    private Integer goodsType; // 0 = nothing, 1 = Art, 2 = Jewelry, 3 =...
+    private String goodsType; // Expected values are "art", "gems", "jewelry"s
 
     public LootItemGoods() {
         super();
-        this.goodsType = 2;
+        this.goodsType = "gems";
     }
 
     public LootItemGoods(Integer quantity, Double gValue, Integer numRolled,
-            Integer goodsType) {
+            String goodsType) {
         super(quantity, gValue, 0, 0, numRolled, 2);
         this.goodsType = goodsType;
     }
 
-    public Integer getGoodsType() {
+    public String getGoodsType() {
         return goodsType;
     }
 
-    public void setGoodsType(Integer goodsType) {
+    public void setGoodsType(String goodsType) {
         this.goodsType = goodsType;
     }
 
