@@ -15,7 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 /**
- * @author Brian
+ * @author Brian Chu and Garrick Ablett
  * 
  */
 public class LootDisplay extends Activity {
@@ -32,10 +32,11 @@ public class LootDisplay extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loot_display);
 
-        lootListView = (ListView) findViewById(R.id.lootListView); // looks for
-                                                                   // XML id of
-                                                                   // Relevant
-                                                                   // list view
+        lootListView = (ListView) findViewById(R.id.lootListView); // looks
+        // for
+        // XML id of
+        // Relevant
+        // list view
         lootItemList = new ArrayList<LootListTestItem>();
 
         arrayAdapter = new ArrayAdapter<LootListTestItem>(this,
