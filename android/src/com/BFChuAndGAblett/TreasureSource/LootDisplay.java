@@ -32,7 +32,10 @@ public class LootDisplay extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loot_display);
 
-        lootListView = (ListView) findViewById(R.id.lootListView);
+        lootListView = (ListView) findViewById(R.id.lootListView); // looks for
+                                                                   // XML id of
+                                                                   // Relevant
+                                                                   // list view
         lootItemList = new ArrayList<LootListTestItem>();
 
         arrayAdapter = new ArrayAdapter<LootListTestItem>(this,
@@ -42,9 +45,23 @@ public class LootDisplay extends Activity {
 
         // Database code
         lootDB = new LootDB(this);
-
-        // create the database
         lootDB.open();
+
+        // add entries to database
+        lootDB.saveEntry("lootTest", 0, 1, 10, "Robe of Stars", 58000.00);
+        lootDB.saveEntry("lootTest", 1, 11, 15, "Robe of gates", 64000.00);
+        lootDB.saveEntry("lootTest", 2, 16, 20, "Otherworldly kimono", 67000.00);
+        lootDB.saveEntry("lootTest", 3, 21, 40,
+                "Bodywrap of mighty strikes +5", 75000.00);
+        lootDB.saveEntry("lootTest", 4, 41, 51,
+                "Resplendent robe of the thespian", 75000.00);
+        lootDB.saveEntry("lootTest", 5, 52, 67, "Robe of the archmagi",
+                75000.00);
+        lootDB.saveEntry("lootTest", 6, 68, 77,
+                "Bodywrap of of mighty strikes +6", 108000.00);
+        lootDB.saveEntry("lootTest", 7, 78, 97, "Robe of eyes", 120000.00);
+        lootDB.saveEntry("lootTest", 8, 98, 100,
+                "Bodywrap of mighty strikes +7", 147000.00);
 
         populateLootDB();
     }

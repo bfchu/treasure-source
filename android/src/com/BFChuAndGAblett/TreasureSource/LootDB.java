@@ -47,8 +47,8 @@ public class LootDB {
         db.close();
     }
 
-    public boolean saveEntry(Integer id, String dLow, int dHigh, int itemName,
-            Double gValue) {
+    public boolean saveEntry(String tableName, Integer id, int dLow, int dHigh,
+            String itemName, Double gValue) {
         boolean successfull = false;
         if (id == null) {
             Log.d(TAG, "creating a new entry: d%: " + dLow + " - " + dHigh
@@ -63,7 +63,7 @@ public class LootDB {
             newItem.put("itemName", itemName);
             newItem.put("value", gValue);
 
-            long newId = db.insert("lootTest", null, newItem);
+            long newId = db.insert(tableName, null, newItem);
             if (newId != -1) {
                 successfull = true;
             }
