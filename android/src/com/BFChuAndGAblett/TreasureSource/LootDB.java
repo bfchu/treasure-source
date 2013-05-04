@@ -174,6 +174,7 @@ public class LootDB {
                         + "dLow int, " + "dHigh int, " + "numDice int, "
                         + "dieSize int" + "quantity int, " + "coinType int)";
                 db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Coins");
             }
 
             // Goods by APL
@@ -183,6 +184,7 @@ public class LootDB {
                         + "dLow int, " + "dHigh int, " + "numDice int, "
                         + "dieSize int" + "goodsType int)";
                 db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Goods");
             }
 
             // Items by APL
@@ -192,7 +194,9 @@ public class LootDB {
                         + "dLow int, " + "dHigh int, " + "numDice int, "
                         + "dieSize int" + "itemRarityGroup int)";
                 db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Items");
             }
+
         }
 
         @Override
