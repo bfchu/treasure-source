@@ -32,11 +32,7 @@ public class LootDisplay extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loot_display);
 
-        lootListView = (ListView) findViewById(R.id.lootListView); // looks
-        // for
-        // XML id of
-        // Relevant
-        // list view
+        lootListView = (ListView) findViewById(R.id.lootListView); // XML lookup
         lootItemList = new ArrayList<LootListTestItem>();
 
         arrayAdapter = new ArrayAdapter<LootListTestItem>(this,
@@ -64,10 +60,10 @@ public class LootDisplay extends Activity {
         lootDB.saveEntry("lootTest", 8, 98, 100,
                 "Bodywrap of mighty strikes +7", 147000.00);
 
-        populateLootDB();
+        populateLootDisplay();
     }
 
-    private void populateLootDB() {
+    private void populateLootDisplay() {
         // get all the Entries
         lootCursor = lootDB.getAllEntries();
         startManagingCursor(lootCursor);
@@ -92,7 +88,9 @@ public class LootDisplay extends Activity {
                 String itemName = lootCursor.getString(3);
                 double value = lootCursor.getDouble(4);
 
-                Log.d(TAG, "");
+                Log.d(TAG, "\nid: " + id + "\ndLow: " + dLow + "\ndHigh"
+                        + dHigh + "\nitemName: " + itemName + "\nvalue: "
+                        + value);
 
                 LootListTestItem item = new LootListTestItem(id, dLow, dHigh,
                         itemName, value);

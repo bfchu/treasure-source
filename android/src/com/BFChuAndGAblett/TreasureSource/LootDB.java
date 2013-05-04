@@ -103,10 +103,8 @@ public class LootDB {
     }
 
     public Cursor getAllEntries() {
-        return db
-                .query("lootTest", new String[] { "id", "dLow", "dHigh",
-                        "itemName", "value" }, "id = 0", null, null, null,
-                        "dLow", null);
+        return db.query("lootTest", new String[] { "id", "dLow", "dHigh",
+                "itemName", "value" }, null, null, null, null, "dLow", null);
     }
 
     public Cursor findItemByDRoll(Integer dRoll) {
@@ -148,9 +146,11 @@ public class LootDB {
      */
     private static class LootDatabaseOpenHelper extends SQLiteOpenHelper {
         private static final String TAG = "LootDatabaseOpenHelper";
-        private static final String CREATE_TABLE = "CREATE TABLE lootTest "
-                + "(id INTEGER PRIMARY KEY AUTOINCREMENT, " + "dLow int, "
-                + "dHigh int, " + "itemName varchar(50), "
+        private static final String CREATE_TABLE_TEST = "CREATE TABLE lootTest "
+                + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "dLow int, "
+                + "dHigh int, "
+                + "itemName varchar(50), "
                 + "value varchar(50))";
         private static final String DROP_TABLE = "DROP TABLE IF EXISTS contact";
 
@@ -164,10 +164,14 @@ public class LootDB {
             // TODO Auto-generated constructor stub
         }
 
+        public void initTables(SQLiteDatabase db) {
+            db.execSQL(CREATE_TABLE_TEST);
+        }
+
         @Override
         public void onCreate(SQLiteDatabase db) {
             Log.d(TAG, "creating new database");
-            db.execSQL(CREATE_TABLE);
+            initTables(db);
 
         }
 
