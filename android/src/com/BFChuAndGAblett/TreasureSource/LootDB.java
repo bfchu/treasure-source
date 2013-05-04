@@ -166,6 +166,33 @@ public class LootDB {
 
         public void initTables(SQLiteDatabase db) {
             db.execSQL(CREATE_TABLE_TEST);
+
+            // Coins by APL
+            for (int ii = 0; ii < 20; ii++) {
+                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Coins "
+                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, " + "numDice int, "
+                        + "dieSize int" + "quantity int, " + "coinType int)";
+                db.execSQL(sqlcmd);
+            }
+
+            // Goods by APL
+            for (int ii = 0; ii < 20; ii++) {
+                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Goods "
+                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, " + "numDice int, "
+                        + "dieSize int" + "goodsType int)";
+                db.execSQL(sqlcmd);
+            }
+
+            // Items by APL
+            for (int ii = 0; ii < 20; ii++) {
+                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Items "
+                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, " + "numDice int, "
+                        + "dieSize int" + "itemRarityGroup int)";
+                db.execSQL(sqlcmd);
+            }
         }
 
         @Override

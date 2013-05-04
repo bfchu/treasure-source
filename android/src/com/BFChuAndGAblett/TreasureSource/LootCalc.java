@@ -38,7 +38,7 @@ public class LootCalc {
         LootItemGold coins = new LootItemGold();
         // pass in a rollPercent() to a table look-up, get back numDice,
         // dieSize, and
-        String coinType = "gp";
+        Integer coinType = 3;
         Integer coinQuantity = rollCoinsQuanitity(1, 6, 1000);
 
         coins.setCoinType(coinType);
@@ -54,7 +54,7 @@ public class LootCalc {
         return quantity;
     }
 
-    public void rollGoodsType(Integer numDice, Integer dieSize, String goodsType) {
+    public void rollGoodsType(Integer numDice, Integer dieSize, int goodsType) {
 
         // rollPercent();
         // lookup on table
@@ -68,13 +68,10 @@ public class LootCalc {
         Integer roll = dice.roll(1, 3);
         switch (roll) {
         case 1:
-            goodsType = "";
+            goodsType = 1;
             break;
         case 2:
-            goodsType = "gems";
-            break;
-        case 3:
-            goodsType = "art";
+            goodsType = 2;
             break;
         }
 

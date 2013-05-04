@@ -9,19 +9,31 @@ package com.BFChuAndGAblett.TreasureSource;
  */
 public class LootItemGold extends LootItem {
 
-    private String coinType;
+    private int coinType;
+
+    /**
+     * 1 = cp
+     * 2 = sp
+     * 3 = gp
+     * 4 = pp
+     *  */
 
     // changing coinType automatically changes the gVal to an appropriate level.
     // Use this.setQuantity() to set the amount of coins.
 
     public LootItemGold() {
         super();
-        this.coinType = "gp";
+        this.coinType = 3;
     }
 
-    public LootItemGold(Double gValue, Integer numRolled) {
-        super("gold", 1, gValue, 0, 0, numRolled, 1);
-        this.coinType = "gp";
+    public LootItemGold(Integer quantity, Integer numRolled) {
+        super("gold", quantity, 1.00, 0, 0, numRolled, 1);
+        this.coinType = 3;
+    }
+
+    public LootItemGold(Integer quantity, Integer numRolled, int coinType) {
+        super("gold", quantity, 1.00, 0, 0, numRolled, 1);
+        this.coinType = coinType;
     }
 
     @Override
@@ -32,29 +44,29 @@ public class LootItemGold extends LootItem {
     /**
      * @return the coinType
      */
-    public String getCoinType() {
+    public int getCoinType() {
         return coinType;
     }
 
     /**
      * @param coinType the coinType to set
      */
-    public void setCoinType(String coinType) {
+    public void setCoinType(int coinType) {
         this.coinType = coinType;
-        // switch (coinType) {
-        // case "cp":
-        // this.setgValue(0.01);
-        // break;
-        // case "sp":
-        // this.setgValue(0.1);
-        // break;
-        // case "gp":
-        // this.setgValue(1.0);
-        // break;
-        // case "pp":
-        // this.setgValue(10.0);
-        // break;
-        // }
+        switch (coinType) {
+        case 1:
+            this.setgValue(0.01);
+            break;
+        case 2:
+            this.setgValue(0.10);
+            break;
+        case 3:
+            this.setgValue(1.00);
+            break;
+        case 4:
+            this.setgValue(10.00);
+            break;
+        }
     }
 
 }

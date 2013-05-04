@@ -52,7 +52,7 @@ public class LootBuilder {
         // Roll on goods chart to determine if and what kind of goods
         Integer numDiceGoods = 1;
         Integer dieSizeGoods = 6;
-        String goodsType = "gems";
+        int goodsType = 1;
         dM.rollGoodsType(numDiceGoods, dieSizeGoods, goodsType);
 
         goods.setGoodsType(goodsType);
