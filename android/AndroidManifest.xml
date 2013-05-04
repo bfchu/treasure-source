@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".lootDisplay"
+            android:name=".LootDisplay"
             android:label="@string/loot_display" />
     </application>
 
