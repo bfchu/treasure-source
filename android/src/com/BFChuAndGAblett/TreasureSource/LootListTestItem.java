@@ -69,4 +69,14 @@ public class LootListTestItem extends LootItem {
         this.dHigh = dHigh;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return super.getName() + ", worth: " + super.getgValue() + "gp";
+    }
+
 }

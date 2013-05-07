@@ -45,19 +45,21 @@ public class LootDisplay extends Activity {
         lootDB.open();
 
         // add entries to database
-        lootDB.saveEntry("lootTest", 0, 1, 10, "Robe of Stars", 58000.00);
-        lootDB.saveEntry("lootTest", 1, 11, 15, "Robe of gates", 64000.00);
-        lootDB.saveEntry("lootTest", 2, 16, 20, "Otherworldly kimono", 67000.00);
-        lootDB.saveEntry("lootTest", 3, 21, 40,
+        lootDB.clear("lootTest");
+        lootDB.saveEntry("lootTest", null, 1, 10, "Robe of Stars", 58000.00);
+        lootDB.saveEntry("lootTest", null, 11, 15, "Robe of gates", 64000.00);
+        lootDB.saveEntry("lootTest", null, 16, 20, "Otherworldly kimono",
+                67000.00);
+        lootDB.saveEntry("lootTest", null, 21, 40,
                 "Bodywrap of mighty strikes +5", 75000.00);
-        lootDB.saveEntry("lootTest", 4, 41, 51,
+        lootDB.saveEntry("lootTest", null, 41, 51,
                 "Resplendent robe of the thespian", 75000.00);
-        lootDB.saveEntry("lootTest", 5, 52, 67, "Robe of the archmagi",
+        lootDB.saveEntry("lootTest", null, 52, 67, "Robe of the archmagi",
                 75000.00);
-        lootDB.saveEntry("lootTest", 6, 68, 77,
+        lootDB.saveEntry("lootTest", null, 68, 77,
                 "Bodywrap of mighty strikes +6", 108000.00);
-        lootDB.saveEntry("lootTest", 7, 78, 97, "Robe of eyes", 120000.00);
-        lootDB.saveEntry("lootTest", 8, 98, 100,
+        lootDB.saveEntry("lootTest", null, 78, 97, "Robe of eyes", 120000.00);
+        lootDB.saveEntry("lootTest", null, 98, 100,
                 "Bodywrap of mighty strikes +7", 147000.00);
 
         populateLootDisplay();

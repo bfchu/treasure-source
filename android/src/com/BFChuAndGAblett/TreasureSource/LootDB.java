@@ -88,6 +88,10 @@ public class LootDB {
         return successfull;
     }
 
+    public void clear(String tableName) {
+        db.delete(tableName, null, null);
+    }
+
     public LootItem getItem(Integer dRoll) {
 
         Cursor cursor = this.findItemByDRoll(dRoll);
