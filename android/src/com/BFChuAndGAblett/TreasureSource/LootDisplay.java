@@ -55,7 +55,7 @@ public class LootDisplay extends Activity {
         lootDB.saveEntry("lootTest", 5, 52, 67, "Robe of the archmagi",
                 75000.00);
         lootDB.saveEntry("lootTest", 6, 68, 77,
-                "Bodywrap of of mighty strikes +6", 108000.00);
+                "Bodywrap of mighty strikes +6", 108000.00);
         lootDB.saveEntry("lootTest", 7, 78, 97, "Robe of eyes", 120000.00);
         lootDB.saveEntry("lootTest", 8, 98, 100,
                 "Bodywrap of mighty strikes +7", 147000.00);
