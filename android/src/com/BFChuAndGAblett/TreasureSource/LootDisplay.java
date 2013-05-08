@@ -32,6 +32,42 @@ public class LootDisplay extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loot_display);
 
+        /*
+         * // load data from SharedPreferences
+         * 
+         * // get/create the preferences SharedPreferences mySharedPreferences =
+         * getSharedPreferences( "MY_PREFS", Activity.MODE_PRIVATE);
+         * 
+         * int Apl = mySharedPreferences.getString("Apl", 1); int
+         * EncounterDifficulty = mySharedPreferences.getInt(
+         * "EncounterDifficulty", 1); float TreasureSize =
+         * mySharedPreferences.getFloat("TreasureSize", 0.5f); int magicLevel =
+         * mySharedPreferences.getInt("magicLevel", 1); boolean rollMundane =
+         * mySharedPreferences.getBoolean("rollMundane", true); boolean
+         * rollGoods = mySharedPreferences.getBoolean("rollGoods", true);
+         * boolean throwAwayDuplicates = mySharedPreferences.getBoolean(
+         * "throwAwayDuplicates", false); boolean limitItemValue =
+         * mySharedPreferences.getBoolean( "limitItemValue", false); boolean
+         * restrictArmor = mySharedPreferences.getBoolean("restrictArmor",
+         * false); boolean restrictWeapons = mySharedPreferences.getBoolean(
+         * "restrictWeapons", false); boolean restrictPotions =
+         * mySharedPreferences.getBoolean( "restrictPotions", false); boolean
+         * restrictRings = mySharedPreferences.getBoolean("restrictRings",
+         * false); boolean restrictRods =
+         * mySharedPreferences.getBoolean("restrictRods", false); boolean
+         * restrictScrolls = mySharedPreferences.getBoolean( "restrictScrolls",
+         * false); boolean restrictStaves = mySharedPreferences.getBoolean(
+         * "restrictStaves", false); boolean restrictWands =
+         * mySharedPreferences.getBoolean("restrictWands", false); boolean
+         * restrictWondrous = mySharedPreferences.getBoolean(
+         * "restrictWondrous", false);
+         * 
+         * boolean displayValue = mySharedPreferences.getBoolean("displayValue",
+         * true); boolean displayLootRoll = mySharedPreferences.getBoolean(
+         * "displayLootRoll", false); boolean displayHoardValue =
+         * mySharedPreferences.getBoolean( "displayHoardValue", false);
+         */
+
         lootListView = (ListView) findViewById(R.id.lootListView); // XML lookup
         lootItemList = new ArrayList<LootOutListItem>();
 

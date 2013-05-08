@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 
 /**
  * @author Brian F. Chu, Garrick S. Ablett
@@ -35,7 +36,7 @@ public class MainActivity extends Activity {
         SharedPreferences.Editor editor = mySharedPreferences.edit();
 
         // store primitive values
-        editor.putInt("APL", 1);
+        editor.putInt("Apl", 1);
         editor.putInt("EncounterDifficulty", 1);
         editor.putFloat("TreasureSize", 0.5f);
         editor.putInt("magicLevel", 1);
@@ -120,49 +121,41 @@ public class MainActivity extends Activity {
 
     public void onRollLootButton(View v) {
 
-        // load data from SharedPreferences
+        EditText et_aPL = (EditText) findViewById(R.id.editText1);
+        int aPL = Integer.parseInt(et_aPL.getText().toString());
 
-        // get/create the preferences
+        EditText et_eD = (EditText) findViewById(R.id.editText2);
+        int eD = Integer.parseInt(et_eD.getText().toString());
+
+        /*
+         * Something about retrieving the radio button name and then uses a
+         * switch statement to search by buttonName or some recorded buttonValue
+         * for the desired float value to pass?(If Button Value exists, use?)
+         */
         SharedPreferences mySharedPreferences = getSharedPreferences(
                 "MY_PREFS", Activity.MODE_PRIVATE);
-
-        int APL = mySharedPreferences.getInt("APL", 1);
-        int EncounterDifficulty = mySharedPreferences.getInt(
-                "EncounterDifficulty", 1);
-        float TreasureSize = mySharedPreferences.getFloat("TreasureSize", 0.5f);
-        int magicLevel = mySharedPreferences.getInt("magicLevel", 1);
-        boolean rollMundane = mySharedPreferences.getBoolean("rollMundane",
-                true);
-        boolean rollGoods = mySharedPreferences.getBoolean("rollGoods", true);
-        boolean throwAwayDuplicates = mySharedPreferences.getBoolean(
-                "throwAwayDuplicates", false);
-        boolean limitItemValue = mySharedPreferences.getBoolean(
-                "limitItemValue", false);
-        boolean restrictArmor = mySharedPreferences.getBoolean("restrictArmor",
-                false);
-        boolean restrictWeapons = mySharedPreferences.getBoolean(
-                "restrictWeapons", false);
-        boolean restrictPotions = mySharedPreferences.getBoolean(
-                "restrictPotions", false);
-        boolean restrictRings = mySharedPreferences.getBoolean("restrictRings",
-                false);
-        boolean restrictRods = mySharedPreferences.getBoolean("restrictRods",
-                false);
-        boolean restrictScrolls = mySharedPreferences.getBoolean(
-                "restrictScrolls", false);
-        boolean restrictStaves = mySharedPreferences.getBoolean(
-                "restrictStaves", false);
-        boolean restrictWands = mySharedPreferences.getBoolean("restrictWands",
-                false);
-        boolean restrictWondrous = mySharedPreferences.getBoolean(
-                "restrictWondrous", false);
-
-        boolean displayValue = mySharedPreferences.getBoolean("displayValue",
-                true);
-        boolean displayLootRoll = mySharedPreferences.getBoolean(
-                "displayLootRoll", false);
-        boolean displayHoardValue = mySharedPreferences.getBoolean(
-                "displayHoardValue", false);
+        SharedPreferences.Editor editor = mySharedPreferences.edit();
+        editor.putInt("Apl", aPL);
+        editor.putInt("EncounterDifficulty", eD);
+        editor.putFloat("TreasureSize", 0.5f);
+        editor.putInt("magicLevel", 1);
+        editor.putBoolean("rollMundane", true);
+        editor.putBoolean("rollGoods", true);
+        editor.putBoolean("throwAwayDuplicates", false);
+        editor.putBoolean("limitItemValue", false);
+        editor.putBoolean("restrictArmor", false);
+        editor.putBoolean("restrictWeapons", false);
+        editor.putBoolean("restrictPotions", false);
+        editor.putBoolean("restrictRings", false);
+        editor.putBoolean("restrictRods", false);
+        editor.putBoolean("restrictScrolls", false);
+        editor.putBoolean("restrictStaves", false);
+        editor.putBoolean("restrictWands", false);
+        editor.putBoolean("restrictWondrous", false);
+        editor.putBoolean("displayValue", true);
+        editor.putBoolean("displayLootRoll", false);
+        editor.putBoolean("displayHoardValue", false);
+        editor.commit();
 
         Intent g = new Intent(this, LootDisplay.class);
         startActivity(g);
