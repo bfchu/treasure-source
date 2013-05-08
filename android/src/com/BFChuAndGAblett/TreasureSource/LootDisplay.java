@@ -22,8 +22,8 @@ public class LootDisplay extends Activity {
 
     private static final String TAG = "LootDisplay";
     private ListView lootListView;
-    private ArrayList<LootListTestItem> lootItemList;
-    private ArrayAdapter<LootListTestItem> arrayAdapter;
+    private ArrayList<LootOutListItem> lootItemList;
+    private ArrayAdapter<LootOutListItem> arrayAdapter;
     private LootDB lootDB;
     private Cursor lootCursor;
 
@@ -33,9 +33,9 @@ public class LootDisplay extends Activity {
         setContentView(R.layout.loot_display);
 
         lootListView = (ListView) findViewById(R.id.lootListView); // XML lookup
-        lootItemList = new ArrayList<LootListTestItem>();
+        lootItemList = new ArrayList<LootOutListItem>();
 
-        arrayAdapter = new ArrayAdapter<LootListTestItem>(this,
+        arrayAdapter = new ArrayAdapter<LootOutListItem>(this,
                 android.R.layout.simple_list_item_1, lootItemList);
         Log.d(TAG, "lootListView: " + lootListView);
         lootListView.setAdapter(arrayAdapter);
@@ -44,30 +44,35 @@ public class LootDisplay extends Activity {
         lootDB = new LootDB(this);
         lootDB.open();
 
-        // add entries to database
-        lootDB.clear("lootTest");
-        lootDB.saveEntry("lootTest", null, 1, 10, "Robe of Stars", 58000.00);
-        lootDB.saveEntry("lootTest", null, 11, 15, "Robe of gates", 64000.00);
-        lootDB.saveEntry("lootTest", null, 16, 20, "Otherworldly kimono",
-                67000.00);
-        lootDB.saveEntry("lootTest", null, 21, 40,
-                "Bodywrap of mighty strikes +5", 75000.00);
-        lootDB.saveEntry("lootTest", null, 41, 51,
-                "Resplendent robe of the thespian", 75000.00);
-        lootDB.saveEntry("lootTest", null, 52, 67, "Robe of the archmagi",
-                75000.00);
-        lootDB.saveEntry("lootTest", null, 68, 77,
-                "Bodywrap of mighty strikes +6", 108000.00);
-        lootDB.saveEntry("lootTest", null, 78, 97, "Robe of eyes", 120000.00);
-        lootDB.saveEntry("lootTest", null, 98, 100,
-                "Bodywrap of mighty strikes +7", 147000.00);
+        // add test entries to database
+        // replace this part with lootRoller logic (LootBuilder)
+        lootDB.clear("lootOut");
+        lootDB.saveEntry("lootOut", null, 1, 1, "Robe of Stars", 58000.00,
+                true, true);
+        lootDB.saveEntry("lootOut", null, 11, 1, "Robe of gates", 64000.00,
+                true, true);
+        lootDB.saveEntry("lootOut", null, 16, 1, "Otherworldly kimono",
+                67000.00, true, true);
+        lootDB.saveEntry("lootOut", null, 21, 1,
+                "Bodywrap of mighty strikes +5", 75000.00, true, true);
+        lootDB.saveEntry("lootOut", null, 41, 1,
+                "Resplendent robe of the thespian", 75000.00, true, true);
+        lootDB.saveEntry("lootOut", null, 52, 1, "Robe of the archmagi",
+                75000.00, true, true);
+        lootDB.saveEntry("lootOut", null, 68, 4, "Adamantine",
+                "Bodywrap of mighty strikes +6", 108000.00, true, true);
+        lootDB.saveEntry("lootOut", null, 78, 1, "Robe of eyes", 120000.00,
+                true, true);
+        lootDB.saveEntry("lootOut", null, 98, 1,
+                "Bodywrap of mighty strikes +7", 147000.00, true, true);
 
         populateLootDisplay();
     }
 
     private void populateLootDisplay() {
         // get all the Entries
-        lootCursor = lootDB.getAllEntries();
+
+        lootCursor = lootDB.getLootOut();
         startManagingCursor(lootCursor);
 
         updateLootDisplay();
@@ -85,17 +90,26 @@ public class LootDisplay extends Activity {
             do {
                 Integer id = lootCursor.getInt(0); // make sure you have the
                                                    // order correct
-                int dLow = lootCursor.getInt(1);
-                int dHigh = lootCursor.getInt(2);
-                String itemName = lootCursor.getString(3);
-                double value = lootCursor.getDouble(4);
+                int dRoll = lootCursor.getInt(1);
+                int quantity = lootCursor.getInt(2);
+                String specials = lootCursor.getString(3);
+                String itemName = lootCursor.getString(4);
+                double value = lootCursor.getDouble(5);
+                boolean dispGold = true;
+                boolean dispRoll = false;
+                if (lootCursor.getInt(6) != 1) {
+                    dispGold = false;
+                }
+                if (lootCursor.getInt(7) != 0) {
+                    dispRoll = true;
+                }
 
-                Log.d(TAG, "\nid: " + id + "\ndLow: " + dLow + "\ndHigh"
-                        + dHigh + "\nitemName: " + itemName + "\nvalue: "
-                        + value);
+                Log.d(TAG, "\nid: " + id + "\ndRoll: " + dRoll + "\nQuantity"
+                        + quantity + "\nSpecials: " + specials + "\nitemName: "
+                        + itemName + "\nvalue: " + value);
 
-                LootListTestItem item = new LootListTestItem(id, dLow, dHigh,
-                        itemName, value);
+                LootOutListItem item = new LootOutListItem(id, dRoll, quantity,
+                        specials, itemName, value, dispGold, dispRoll);
                 lootItemList.add(item);
             } while (lootCursor.moveToNext());
         }

@@ -14,8 +14,8 @@ import java.util.Arrays;
  */
 public class LootPrefs {
 
-    private static final Integer NUM_RESTRICTIONS = 9;
-    private static final Integer NUM_DISPLAY_OPTS = 3;
+    private static final Integer NUM_RESTRICTIONS = 9; // [1] = armor, ect...
+    private static final Integer NUM_DISPLAY_OPTS = 3;// [ ]
 
     private Integer aPL; // Average Party Level
     private Integer eCR; // Encounter Challenge Rating

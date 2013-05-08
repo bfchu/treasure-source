@@ -47,19 +47,20 @@ public class LootDB {
         db.close();
     }
 
-    public boolean saveEntry(String tableName, Integer id, int dLow, int dHigh,
-            String itemName, Double gValue) {
+    public boolean saveEntry(String tableName, Integer id, int dRoll,
+            int quantity, String itemName, Double gValue) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "creating a new entry: d%: " + dLow + " - " + dHigh
-                    + " item Name: " + itemName + " Value: " + gValue);
+            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
+                    + quantity + ", item Name: " + itemName + ", Value: "
+                    + gValue);
             // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
-            newItem.put("dLow", dLow);
-            newItem.put("dHigh", dHigh);
+            newItem.put("dRoll", dRoll);
+            newItem.put("quantity", quantity);
             newItem.put("itemName", itemName);
             newItem.put("value", gValue);
 
@@ -68,18 +69,136 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: d%: " + dLow + " - " + dHigh
-                    + " item Name: " + itemName + " Value: " + gValue);
+            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
+                    + quantity + ", item Name: " + itemName + ", Value: "
+                    + gValue);
             // update
 
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
-            newItem.put("dLow", dLow);
-            newItem.put("dHigh", dHigh);
+            newItem.put("dRoll", dRoll);
+            newItem.put("quantity", quantity);
             newItem.put("itemName", itemName);
             newItem.put("value", gValue);
 
-            db.update("lootTest", newItem, "id = " + id, null);
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
+    }
+
+    public boolean saveEntry(String tableName, Integer id, int dRoll,
+            int quantity, String itemName, Double gValue, Boolean dispGold,
+            Boolean dispRoll) {
+        boolean successfull = false;
+        int displayGold = 1;
+        int displayRoll = 0;
+
+        if (!dispGold) {
+            displayGold = 0;
+        }
+        if (dispRoll) {
+            displayRoll = 1;
+        }
+
+        if (id == null) {
+            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
+                    + quantity + ", item Name: " + itemName + ", Value: "
+                    + gValue);
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dRoll", dRoll);
+            newItem.put("quantity", quantity);
+            newItem.put("itemName", itemName);
+            newItem.put("value", gValue);
+            newItem.put("dispGold", displayGold);
+            newItem.put("dispRoll", displayRoll);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
+                    + quantity + ", item Name: " + itemName + ", Value: "
+                    + gValue);
+            // update
+
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dRoll", dRoll);
+            newItem.put("quantity", quantity);
+            newItem.put("itemName", itemName);
+            newItem.put("value", gValue);
+            newItem.put("dispGold", displayGold);
+            newItem.put("dispRoll", displayRoll);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
+    }
+
+    public boolean saveEntry(String tableName, Integer id, int dRoll,
+            int quantity, String specials, String itemName, Double gValue,
+            Boolean dispGold, Boolean dispRoll) {
+        boolean successfull = false;
+        int displayGold = 1;
+        int displayRoll = 0;
+
+        if (!dispGold) {
+            displayGold = 0;
+        }
+        if (dispRoll) {
+            displayRoll = 1;
+        }
+        if (id == null) {
+            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
+                    + quantity + ", item Name: " + itemName + ", Value: "
+                    + gValue);
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dRoll", dRoll);
+            newItem.put("quantity", quantity);
+            newItem.put("specials", specials);
+            newItem.put("itemName", itemName);
+            newItem.put("value", gValue);
+            newItem.put("dispGold", displayGold);
+            newItem.put("dispRoll", displayRoll);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
+                    + quantity + ", item Name: " + itemName + ", Value: "
+                    + gValue);
+            // update
+
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dRoll", dRoll);
+            newItem.put("quantity", quantity);
+            newItem.put("specials", specials);
+            newItem.put("itemName", itemName);
+            newItem.put("value", gValue);
+            newItem.put("dispGold", displayGold);
+            newItem.put("dispRoll", displayRoll);
+
+            db.update(tableName, newItem, "id = " + id, null);
 
             successfull = true;
 
@@ -92,12 +211,12 @@ public class LootDB {
         db.delete(tableName, null, null);
     }
 
-    public LootItem getItem(Integer dRoll) {
+    @Deprecated
+    public LootItem getTableItem(Integer dRoll, String tableName) {
 
-        Cursor cursor = this.findItemByDRoll(dRoll);
+        Cursor cursor = this.findItemByDRoll(dRoll, tableName);
 
-        Integer sanitizedId = cursor.getInt(0);
-
+        // Integer sanitizedId = cursor.getInt(0);
         String itemName = cursor.getString(3);
         double value = cursor.getDouble(4);
 
@@ -106,15 +225,11 @@ public class LootDB {
         return item;
     }
 
-    public Cursor getAllEntries() {
-        return db.query("lootTest", new String[] { "id", "dLow", "dHigh",
-                "itemName", "value" }, null, null, null, null, "dLow", null);
-    }
-
-    public Cursor findItemByDRoll(Integer dRoll) {
-        Cursor cursor = db.query(true, "lootTest", new String[] { "id", "dLow",
-                "dHigh", "itemName", "value" }, "id = 0", null, null, null,
-                null, null);
+    public Cursor findItemByDRoll(Integer dRoll, String tableName) {
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dRoll",
+                "quantity", "specials", "itemName", "value", "dispGold",
+                "dispRoll" }, null, null, null, null, null, null);
+        cursor.moveToFirst();
 
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
@@ -126,6 +241,12 @@ public class LootDB {
         }
 
         return cursor;
+    }
+
+    public Cursor getLootOut() {
+        return db.query("lootOut", new String[] { "id", "dRoll", "quantity",
+                "specials", "itemName", "value", "dispGold", "dispRoll" },
+                null, null, null, null, "id", null);
     }
 
     /*
@@ -150,12 +271,14 @@ public class LootDB {
      */
     private static class LootDatabaseOpenHelper extends SQLiteOpenHelper {
         private static final String TAG = "LootDatabaseOpenHelper";
-        private static final String CREATE_TABLE_TEST = "CREATE TABLE lootTest "
+        private static final String CREATE_TABLE_LootOut = "CREATE TABLE lootOut "
                 + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "dLow int, "
-                + "dHigh int, "
+                + "dRoll int, "
+                + "quantity int, "
+                + "specials varchar(50), "
                 + "itemName varchar(50), "
-                + "value varchar(50))";
+                + "value varchar(50), "
+                + "dispGold int, " + "dispRoll int)";
         private static final String DROP_TABLE = "DROP TABLE IF EXISTS contact";
 
         public LootDatabaseOpenHelper(Context context) {
@@ -169,7 +292,7 @@ public class LootDB {
         }
 
         public void initTables(SQLiteDatabase db) {
-            db.execSQL(CREATE_TABLE_TEST);
+            db.execSQL(CREATE_TABLE_LootOut);
 
             // Coins by APL
             for (int ii = 0; ii < 20; ii++) {
