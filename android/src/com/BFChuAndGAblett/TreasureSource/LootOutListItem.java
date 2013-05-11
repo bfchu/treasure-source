@@ -27,6 +27,55 @@ public class LootOutListItem extends LootItem {
         this.dispRoll = false;
     }
 
+    public LootOutListItem(LootItem item) {
+        super();
+        this.setNumRolled(item.getNumRolled());
+        this.specials = "";
+        super.setQuantity(item.getQuantity());
+        this.setName(item.getName());
+        this.setgValue(item.getgValue());
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
+    public LootOutListItem(LootItemGoods item) {
+        super();
+        this.setNumRolled(item.getNumRolled());
+        this.specials = "";
+        super.setQuantity(item.getQuantity());
+        this.setName(item.getName());
+        this.setgValue(item.getgValue());
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
+    public LootOutListItem(LootItemMundane item) {
+        super();
+
+        this.setNumRolled(item.getNumRolled());
+        this.specials = findSpecialMatByID(item.getSpecialMat());
+        super.setQuantity(item.getQuantity());
+        this.setName(item.getName());
+        this.setgValue(item.getgValue());
+        this.setmLevel(0);
+        this.setrPower(1);
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
+    public LootOutListItem(LootItemMagic item) {
+        super();
+        this.setNumRolled(item.getNumRolled());
+        this.specials = findSpecialMatByID(item.getSpecialMat());
+        super.setQuantity(item.getQuantity());
+        this.setName(item.getName());
+        this.setgValue(item.getgValue());
+        this.setmLevel(item.getmLevel());
+        this.setrPower(item.getrPower());
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
     public LootOutListItem(int id, int numRolled, int quantity,
             String specials, String name, double gValue) {
         super();
@@ -65,6 +114,22 @@ public class LootOutListItem extends LootItem {
         this.setgValue(gValue);
         this.dispGold = dispGold;
         this.dispRoll = dispRoll;
+    }
+
+    public String findSpecialMatByID(Integer id) {
+        switch (id) {
+        case 1:
+            return "Iron";
+        case 2:
+            return "Steel";
+        case 3:
+            return "Adamantine";
+        case 4:
+            return "Dragon hide";
+        case 5:
+            break;
+        }
+        return null;
     }
 
     /**

@@ -36,13 +36,13 @@ public class LootCalc {
     // Paizo math
     public LootItem rollCoins() {
         LootItemGold coins = new LootItemGold();
-        // pass in a rollPercent() to a table look-up, get back numDice,
+        // TODO: pass in a rollPercent() to a table look-up, get back numDice,
         // dieSize, and
         Integer coinType = 3;
         Integer coinQuantity = rollCoinsQuanitity(1, 6, 1000);
 
         coins.setCoinType(coinType);
-        // roll quantity
+        // TODO: roll quantity
         coins.setQuantity(coinQuantity);
         return coins;
     }
@@ -57,7 +57,7 @@ public class LootCalc {
     public void rollGoodsType(Integer numDice, Integer dieSize, int goodsType) {
 
         // rollPercent();
-        // lookup on table
+        // TODO: lookup on table
         // get back values for numDie, dieSize, goodsType.
 
         // placeholders
@@ -79,118 +79,69 @@ public class LootCalc {
 
     public Integer rollNumGoods(Integer numDice, Integer dieSize) {
         Integer numGoods = dice.roll(1, 100);
-        // needs input form table
+        // TODO: needs input form table
         return numGoods;
     }
 
     public Double rollGoodsVal() {
         Double val = (double) dice.roll(1, 100);
-        // needs input from table
+        // TODO: needs input from table
         // database reminder: there are approximately 60 base treasure values
         // determined by level of party, cr, and game pace
         return val;
     }
 
-    public void rollItemGrouping(Integer numDice, Integer dieSize,
-            String itemGroup) {
+    public void rollItemGrouping(Integer APL, Integer numDice, Integer dieSize,
+            Integer itemGroup) {
         // rollPercent();
+        // TODO: create database calls to return the proper item group and dice
 
-        // place holders
-        numDice = dice.roll(1, 20); // getNumDice();
-        dieSize = dice.roll(1, 20); // getDieSize();
-
-        Integer roll = dice.roll(1, 5);
-        switch (roll) {
-        case 1:
-            itemGroup = "";
-            break;
-        case 2:
-            itemGroup = "mundane";
-            break;
-        case 3:
-            itemGroup = "minor";
-            break;
-        case 4:
-            itemGroup = "medium";
-            break;
-        case 5:
-            itemGroup = "major";
-            break;
-        }
     }
 
     public Integer getNumDice(Integer tableIndex) {
         Integer numDice = 0;
-        // numDice = (method that pulls numDice from database at tableIndex);
+        // TODO: numDice = (method that pulls numDice from database at
+        // tableIndex);
 
         return numDice;
     }
 
     public Integer getDieSize(Integer tableIndex) {
         Integer dieSize = 0;
-        // dieSize = (method that pulls dieSize from database at tableIndex);
+        // TODO:dieSize = (method that pulls dieSize from database at
+        // tableIndex);
 
         return dieSize;
     }
 
     public Integer rollNumItems(Integer numDice, Integer dieSize) {
         Integer numItems = dice.roll(numDice, dieSize);
-        // needs input from table
+        // TODO:needs input from table
         return numItems;
     }
 
     public Integer getRarity(Integer tableIndex) {
         Integer rarity = dice.roll(1, 4);
-        // rarity = (method that pulls rarity from database at tableIndex);
+        // TODO: rarity = (method that pulls rarity from database at
+        // tableIndex);
         return rarity;
     }
 
-    public LootItem rollItem(String rarityLevel) {
-        // Roll to determine item type
+    public LootItem rollItem(Integer rarityLevel) {
+        // TODO:Roll to determine item type
         // Roll qualities
         // if special abilities: Roll on ability chart
-
-        // switch (rarityLevel) {
-        // case "mundane":
-        // LootItemMundane item1 = new LootItemMundane();
-        // item1.setItemType(rollItemType(rarityLevel));
-        // return item1;
-        // case "minor":
-        // LootItemMagic item2 = new LootItemMagic();
-        // item2.setItemType(rollItemType(rarityLevel));
-        // return item2;
-        // case "medium":
-        // LootItemMagic item3 = new LootItemMagic();
-        // item3.setItemType(rollItemType(rarityLevel));
-        // return item3;
-        // case "major":
-        // LootItemMagic item4 = new LootItemMagic();
-        // item4.setItemType(rollItemType(rarityLevel));
-        // return item4;
-        // }
 
         return null;
     }
 
     public Integer rollItemType(String rarityLevel) {
-        // switch (rarityLevel) {
-        // case "mundane":
-        // Integer type1 = 0;
-        // return type1;
-        // case "minor":
-        // Integer type2 = rollMinorItemType();
-        // return type2;
-        // case "medium":
-        // Integer type3 = rollMediumItemType();
-        // return type3;
-        // case "major":
-        // Integer type4 = rollMajorItemType();
-        // return type4;
-        // }
+        // TODO:
         return null;
     }
 
     public Integer rollMinorItemType() {
+        // TODO: replace with databse calls
         Integer roll = rollPercent();
         if (roll < 5) {
             return 3;
@@ -210,6 +161,7 @@ public class LootCalc {
     }
 
     public Integer rollMediumItemType() {
+        // TODO: replace with databse calls
         Integer roll = rollPercent();
         if (roll < 11) {
             return 3;
@@ -233,6 +185,7 @@ public class LootCalc {
     }
 
     public Integer rollMajorItemType() {
+        // TODO: replace with databse calls
         Integer roll = rollPercent();
         if (roll < 11) {
             return 3;
@@ -260,7 +213,10 @@ public class LootCalc {
     }
 
     public boolean isValid(LootItem item) {
+        // TODO: create validity tests based on APL, CR, encounter value,
+        // allowed item types, and other prefs
         // lol...
+
         return true;
     }
 

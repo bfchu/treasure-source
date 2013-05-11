@@ -26,6 +26,7 @@ public class LootDisplay extends Activity {
     private ArrayAdapter<LootOutListItem> arrayAdapter;
     private LootDB lootDB;
     private Cursor lootCursor;
+    private LootBuilder DM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,8 @@ public class LootDisplay extends Activity {
                 true, true);
         lootDB.saveEntry("lootOut", null, 98, 1,
                 "Bodywrap of mighty strikes +7", 147000.00, true, true);
+
+        // LootBuilder()
 
         populateLootDisplay();
     }

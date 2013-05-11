@@ -3,6 +3,8 @@
  */
 package com.BFChuAndGAblett.TreasureSource;
 
+import java.util.ArrayList;
+
 /**
  * @author Brian Chu and Garrick Ablett
  * 
@@ -13,20 +15,21 @@ package com.BFChuAndGAblett.TreasureSource;
  */
 public class LootBuilder {
 
-    private LootList hoard;
-    private LootListNoDuplicates trove;
+    private ArrayList<LootOutListItem> hoard;
+    private ArrayList<LootOutListItem> trove; // use for no duplicates
 
     public LootBuilder() {
         super();
-        this.hoard = new LootList();
-        this.trove = new LootListNoDuplicates();
+        this.hoard = new ArrayList<LootOutListItem>();
+        this.trove = new ArrayList<LootOutListItem>();
     }
 
     /**
      * @param hoard
      * @param trove
      */
-    public LootBuilder(LootList hoard, LootListNoDuplicates trove) {
+    public LootBuilder(ArrayList<LootOutListItem> hoard,
+            ArrayList<LootOutListItem> trove) {
         super();
         this.hoard = hoard;
         this.trove = trove;
@@ -42,7 +45,8 @@ public class LootBuilder {
     }
 
     public void rollCoins(LootCalc dM) {
-        addItem(dM, dM.rollCoins());
+        LootOutListItem coins = new LootOutListItem(dM.rollCoins());
+        addItem(dM, coins);
 
     }
 
@@ -65,27 +69,32 @@ public class LootBuilder {
         // Roll value per goods
         goods.setgValue(dM.rollGoodsVal());
 
-        addItem(dM, goods);
+        LootOutListItem outGoods = new LootOutListItem(goods);
+        addItem(dM, outGoods);
 
     }
 
     public void rollItems(LootCalc dM) {
 
-        String itemGroup = "mundane";
+        // initializing variables, values unimportant
+        Integer itemGroup = 1; // 1 = mundane, 2 = minor, 3 = medium, 4 = major
         Integer numDiceItems = 1;
         Integer dieSizeItems = 6;
-        dM.rollItemGrouping(numDiceItems, dieSizeItems, itemGroup);
+
+        // Database Call returns numDice, dieSize, and itemGroup
+        dM.rollItemGrouping(dM.getPrefs().getaPL(), numDiceItems, dieSizeItems,
+                itemGroup);
 
         Integer numItems = dM.getDice().roll(numDiceItems, dieSizeItems);
         for (int ii = 0; ii < numItems; ii++) {
-            LootItem item = dM.rollItem(itemGroup);
+            LootOutListItem item = new LootOutListItem(dM.rollItem(itemGroup));
             addItem(dM, item);
         }
 
     }
 
     // Getters/Setters
-    public void addItem(LootCalc dM, LootItem item) {
+    public void addItem(LootCalc dM, LootOutListItem item) {
         if (dM.getPrefs().isNoRepeats() && dM.isValid(item)) {
             addToTrove(item);
         } else if (dM.isValid(item)) {
@@ -95,27 +104,27 @@ public class LootBuilder {
         }
     }
 
-    public void addToHoard(LootItem item) {
-        this.hoard.getLoot().put(this.hoard.getLoot().size(), item);
+    public void addToHoard(LootOutListItem item) {
+        this.hoard.add(item);
     }
 
-    public void addToTrove(LootItem item) {
-        this.trove.getLoot().put(this.trove.getLoot().size(), item);
+    public void addToTrove(LootOutListItem item) {
+        this.trove.add(item);
     }
 
-    public LootList getHoard() {
+    public ArrayList<LootOutListItem> getHoard() {
         return hoard;
     }
 
-    public void setHoard(LootList hoard) {
+    public void setHoard(ArrayList<LootOutListItem> hoard) {
         this.hoard = hoard;
     }
 
-    public LootListNoDuplicates getTrove() {
+    public ArrayList<LootOutListItem> getTrove() {
         return trove;
     }
 
-    public void setTrove(LootListNoDuplicates trove) {
+    public void setTrove(ArrayList<LootOutListItem> trove) {
         this.trove = trove;
     }
 }
