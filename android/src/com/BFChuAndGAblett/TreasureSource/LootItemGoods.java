@@ -1,32 +1,32 @@
 /**
  * 
  */
-package com.BFChuAndGAblett.TreasureSource.Logic;
+package com.BFChuAndGAblett.TreasureSource;
 
 /**
  * @author Brian Chu and Garrick Ablett
  * 
  */
 public class LootItemGoods extends LootItem {
-
-    private String goodsType; // Expected values are "art", "gems", "jewelry"s
+    // 1 = gems, 2 = art
+    private int goodsType;
 
     public LootItemGoods() {
-        super();
-        this.goodsType = "gems";
+        super("goods", 1, 10.00, 0, 0, 0, 2);
+        this.goodsType = 1;
     }
 
     public LootItemGoods(Integer quantity, Double gValue, Integer numRolled,
-            String goodsType) {
-        super("", quantity, gValue, 0, 0, numRolled, 2);
+            int goodsType) {
+        super("goods", quantity, gValue, 0, 0, numRolled, 2);
         this.goodsType = goodsType;
     }
 
-    public String getGoodsType() {
+    public int getGoodsType() {
         return goodsType;
     }
 
-    public void setGoodsType(String goodsType) {
+    public void setGoodsType(int goodsType) {
         this.goodsType = goodsType;
     }
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.BFChuAndGAblett.TreasureSource.Logic;
+package com.BFChuAndGAblett.TreasureSource;
 
 /**
  * @author Brian Chu and Garrick Ablett
@@ -55,6 +55,7 @@ public class LootItem {
 
     public LootItem(Integer numRolled, String name, double value) {
         super();
+
         this.name = name;
         this.numRolled = numRolled;
         this.gValue = value;
