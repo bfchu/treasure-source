@@ -329,6 +329,26 @@ public class LootDB {
         return goodsType;
     }
 
+    public Integer getItemGroup(Integer dRoll, String tableName) {
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "numDice", "dieSize", "itemRarityGroup" }, null, null,
+                null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        int itemType = 1;
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            itemType = cursor.getInt(5);
+        }
+
+        return itemType;
+    }
+
     /*
      * query( boolean distinct - true or false - true if you want each row to be
      * unique, false otherwise. String table - The table name to compile the

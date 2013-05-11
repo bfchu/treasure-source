@@ -45,12 +45,12 @@ public class LootCalc {
         LootItemGold coins = new LootItemGold();
 
         String tableIndex = "APL" + prefs.getaPL() + "_Coins";
-        Integer rolled = rollPercent();
+        Integer dRoll = rollPercent();
 
-        Integer numDice = getNumDice(tableIndex, rolled);
-        Integer dieSize = getDieSize(tableIndex, rolled);
-        Integer coinType = getCoinType(tableIndex, rolled); // 1 = cp, 2 = sp, 3
-                                                            // // = gp, 4 = pp.
+        Integer numDice = getNumDice(tableIndex, dRoll);
+        Integer dieSize = getDieSize(tableIndex, dRoll);
+        Integer coinType = getCoinType(tableIndex, dRoll); // 1 = cp, 2 = sp, 3
+                                                           // // = gp, 4 = pp.
         Integer coinQuantity = rollCoinsQuanitity(numDice, dieSize);
 
         coins.setCoinType(coinType);
@@ -88,12 +88,12 @@ public class LootCalc {
         LootItemGoods goods = new LootItemGoods();
 
         String tableIndex = "APL" + prefs.getaPL() + "_Goods";
-        Integer rolled = rollPercent();
+        Integer dRoll = rollPercent();
 
         // Roll on goods chart to determine if and what kind of goods
-        Integer numDiceGoods = books.getNumDice(rolled, tableIndex);
-        Integer dieSizeGoods = books.getDieSize(rolled, tableIndex);
-        goods.setGoodsType(books.getGoodsType(rolled, tableIndex));
+        Integer numDiceGoods = books.getNumDice(dRoll, tableIndex);
+        Integer dieSizeGoods = books.getDieSize(dRoll, tableIndex);
+        goods.setGoodsType(books.getGoodsType(dRoll, tableIndex));
         // Roll number of goods
         goods.setQuantity(rollNumGoods(numDiceGoods, dieSizeGoods));
 
@@ -104,6 +104,10 @@ public class LootCalc {
     }
 
     public Integer rollNumGoods(Integer numDice, Integer dieSize) {
+        return dice.roll(numDice, dieSize);
+    }
+
+    public Integer rollNumItems(Integer numDice, Integer dieSize) {
         return dice.roll(numDice, dieSize);
     }
 
@@ -201,11 +205,15 @@ public class LootCalc {
         return false;
     }
 
-    public void rollItemGrouping(Integer APL, Integer numDice, Integer dieSize,
+    public void rollItemGrouping(Integer numDice, Integer dieSize,
             Integer itemGroup) {
-        // rollPercent();
-        // TODO: create database calls to return the proper item group and dice
+        String tableIndex = "APL" + prefs.getaPL() + "_Items";
+        Integer dRoll = rollPercent();
 
+        // Roll on goods chart to determine if and what kind of goods
+        numDice = books.getNumDice(dRoll, tableIndex);
+        dieSize = books.getDieSize(dRoll, tableIndex);
+        itemGroup = books.getItemGroup(dRoll, tableIndex);
     }
 
     public Integer getNumDice(String tableIndex, Integer numRolled) {
@@ -216,78 +224,86 @@ public class LootCalc {
         return books.getDieSize(numRolled, tableIndex);
     }
 
-    public Integer rollNumItems(Integer numDice, Integer dieSize) {
-        Integer numItems = dice.roll(numDice, dieSize);
-        // TODO:needs input from table
-        return numItems;
-    }
-
-    public Integer getRarity(Integer tableIndex) {
-        Integer rarity = dice.roll(1, 4);
-        // TODO: rarity = (method that pulls rarity from database at
-        // tableIndex);
-        return rarity;
-    }
-
     public LootItem rollItem(Integer rarityLevel) {
-        // TODO:Roll to determine item type
+
+        // catch mundane item calls first
+        if (rarityLevel == 1) {
+            LootItem mundane = rollMundaneItem();
+            return mundane;
+        }
+
+        LootItem item = new LootItem();
+        item.setrPower(rarityLevel);
+        // Roll to determine item type (ie. armor, weapon, scroll...)
+        if (rarityLevel == 2) {
+            item.setItemType(rollMinorItemType());
+        } else if (rarityLevel == 3) {
+            item.setItemType(rollMediumItemType());
+        } else if (rarityLevel == 4) {
+            item.setItemType(rollMajorItemType());
+        }
+
+        // TODO:
         // Roll qualities
+
         // if special abilities: Roll on ability chart
 
-        return null;
+        return item;
     }
 
-    public Integer rollItemType(String rarityLevel) {
-        // TODO:
-        return null;
+    public LootItem rollMundaneItem() {
+        LootItem item = new LootItem();
+        // TODO: make database table containing all possible mundane items, then
+        // make this function create a LootItem object from that table
+        return item;
     }
 
     public Integer rollMinorItemType() {
-        // TODO: replace with databse calls
+        // Hard-coded static table
         Integer roll = rollPercent();
         if (roll < 5) {
-            return 3;
+            return 3; // Armor and Shields
         } else if (roll < 10) {
-            return 4;
+            return 4; // Weapons
         } else if (roll < 45) {
-            return 5;
+            return 5; // Potions
         } else if (roll < 47) {
-            return 6;
+            return 6; // Rings
         } else if (roll < 82) {
-            return 8;
+            return 8; // Scrolls
         } else if (roll < 92) {
-            return 10;
+            return 10; // Wands
         } else {
-            return 11;
+            return 11; // Wondrous Items
         }
     }
 
     public Integer rollMediumItemType() {
-        // TODO: replace with databse calls
+        // Hard-coded static table
         Integer roll = rollPercent();
         if (roll < 11) {
-            return 3;
+            return 3; // Armor and Shields
         } else if (roll < 21) {
-            return 4;
+            return 4; // Weapons
         } else if (roll < 31) {
-            return 5;
+            return 5; // Potions
         } else if (roll < 41) {
-            return 6;
+            return 6; // Rings
         } else if (roll < 51) {
-            return 7;
+            return 7; // Rods
         } else if (roll < 66) {
-            return 8;
+            return 8; // Scrolls
         } else if (roll < 69) {
-            return 9;
+            return 9; // Staves
         } else if (roll < 84) {
-            return 10;
+            return 10; // Wands
         } else {
-            return 11;
+            return 11; // Wondrous Items
         }
     }
 
     public Integer rollMajorItemType() {
-        // TODO: replace with databse calls
+        // Hard-Coded static table
         Integer roll = rollPercent();
         if (roll < 11) {
             return 3;
