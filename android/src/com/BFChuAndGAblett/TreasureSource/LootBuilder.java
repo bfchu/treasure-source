@@ -17,6 +17,7 @@ public class LootBuilder {
 
     private ArrayList<LootOutListItem> hoard;
     private ArrayList<LootOutListItem> trove; // use for no duplicates
+    private LootCalc dM;
 
     public LootBuilder() {
         super();
@@ -35,43 +36,29 @@ public class LootBuilder {
         this.trove = trove;
     }
 
-    public void genMain(String[] args, LootPrefs prefs) {
-        LootCalc dM = new LootCalc();
-        dM.setPrefs(prefs);
+    public ArrayList<LootOutListItem> genLoot(String[] args, LootPrefs prefs,
+            LootDB books) {
+        this.dM = new LootCalc(books, prefs);
 
         rollCoins(dM);
-        // rollGoods(dM);
-        // rollItems(dM);
+        rollGoods(dM);
+        rollItems(dM);
+
+        if (dM.getPrefs().isNoRepeats()) {
+            return this.getTrove();
+        } else {
+            return this.getHoard();
+        }
     }
 
     public void rollCoins(LootCalc dM) {
         LootOutListItem coins = new LootOutListItem(dM.rollCoins());
         addItem(dM, coins);
-
     }
 
     public void rollGoods(LootCalc dM) {
-        LootItemGoods goods = new LootItemGoods();
-
-        // Roll on goods chart to determine if and what kind of goods
-        Integer numDiceGoods = 1;
-        Integer dieSizeGoods = 6;
-        int goodsType = 1;
-        dM.rollGoodsType(numDiceGoods, dieSizeGoods, goodsType);
-
-        goods.setGoodsType(goodsType);
-        goods.setQuantity(dM.rollNumGoods(numDiceGoods, dieSizeGoods));
-
-        // Roll value range
-        Integer valRange;
-        valRange = dM.rollPercent();
-
-        // Roll value per goods
-        goods.setgValue(dM.rollGoodsVal());
-
-        LootOutListItem outGoods = new LootOutListItem(goods);
+        LootOutListItem outGoods = new LootOutListItem(dM.rollGoods());
         addItem(dM, outGoods);
-
     }
 
     public void rollItems(LootCalc dM) {

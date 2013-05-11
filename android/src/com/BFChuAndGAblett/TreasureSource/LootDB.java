@@ -249,6 +249,86 @@ public class LootDB {
                 null, null, null, null, "id", null);
     }
 
+    public Integer getNumDice(Integer dRoll, String tableName) {
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
+                null, null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        int numDice = 1;
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            numDice = cursor.getInt(3);
+        }
+
+        return numDice;
+    }
+
+    public Integer getDieSize(Integer dRoll, String tableName) {
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
+                null, null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        int dieSize = 1;
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            dieSize = cursor.getInt(4);
+        }
+
+        return dieSize;
+    }
+
+    public Integer getCoinType(Integer dRoll, String tableName) {
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
+                null, null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        int coinType = 3;
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            coinType = cursor.getInt(6);
+        }
+
+        return coinType;
+    }
+
+    public Integer getGoodsType(Integer dRoll, String tableName) {
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "numDice", "dieSize", "goodsType" }, null, null, null,
+                null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        int goodsType = 1;
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            goodsType = cursor.getInt(5);
+        }
+
+        return goodsType;
+    }
+
     /*
      * query( boolean distinct - true or false - true if you want each row to be
      * unique, false otherwise. String table - The table name to compile the
@@ -299,7 +379,7 @@ public class LootDB {
                 String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Coins "
                         + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
                         + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int" + "quantity int, " + "coinType int)";
+                        + "dieSize int, " + "quantity int, " + "coinType int)";
                 db.execSQL(sqlcmd);
                 Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Coins");
             }
@@ -309,7 +389,7 @@ public class LootDB {
                 String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Goods "
                         + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
                         + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int" + "goodsType int)";
+                        + "dieSize int, " + "goodsType int)";
                 db.execSQL(sqlcmd);
                 Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Goods");
             }
@@ -319,7 +399,7 @@ public class LootDB {
                 String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Items "
                         + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
                         + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int" + "itemRarityGroup int)";
+                        + "dieSize int, " + "itemRarityGroup int)";
                 db.execSQL(sqlcmd);
                 Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Items");
             }

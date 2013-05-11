@@ -33,62 +33,172 @@ public class LootCalc {
         this.prefs = prefs;
     }
 
+    public LootCalc(LootDB books, LootPrefs prefs) {
+        super();
+        this.dice = new LootDice();
+        this.books = books;
+        this.prefs = prefs;
+    }
+
     // Paizo math
     public LootItem rollCoins() {
         LootItemGold coins = new LootItemGold();
-        // TODO: pass in a rollPercent() to a table look-up, get back numDice,
-        // dieSize, and
-        Integer coinType = 3;
-        Integer coinQuantity = rollCoinsQuanitity(1, 6, 1000);
+
+        String tableIndex = "APL" + prefs.getaPL() + "_Coins";
+        Integer rolled = rollPercent();
+
+        Integer numDice = getNumDice(tableIndex, rolled);
+        Integer dieSize = getDieSize(tableIndex, rolled);
+        Integer coinType = getCoinType(tableIndex, rolled); // 1 = cp, 2 = sp, 3
+                                                            // // = gp, 4 = pp.
+        Integer coinQuantity = rollCoinsQuanitity(numDice, dieSize);
 
         coins.setCoinType(coinType);
-        // TODO: roll quantity
         coins.setQuantity(coinQuantity);
         return coins;
     }
 
-    public Integer rollCoinsQuanitity(Integer numDice, Integer dieSize,
-            Integer coinQuantityCoefficient) {
-
-        Integer quantity = (dice.roll(numDice, dieSize) * coinQuantityCoefficient);
-        return quantity;
+    public Integer getCoinType(String tableIndex, Integer numRolled) {
+        return books.getCoinType(numRolled, tableIndex);
     }
 
-    public void rollGoodsType(Integer numDice, Integer dieSize, int goodsType) {
+    public Integer rollCoinsQuanitity(Integer numDice, Integer dieSize) {
+        double coinMultiplier = getTreasureMultiplier();
+        return (int) (dice.roll(numDice, dieSize) * coinMultiplier);
+    }
 
-        // rollPercent();
-        // TODO: lookup on table
-        // get back values for numDie, dieSize, goodsType.
-
-        // placeholders
-        numDice = dice.roll(1, 20); // getNumDice();
-        dieSize = dice.roll(1, 20); // getDieSize();
-
-        // placeholder for table calls
-        Integer roll = dice.roll(1, 3);
-        switch (roll) {
+    public double getTreasureMultiplier() {
+        // Detecting for size of treasure hoard.
+        switch (prefs.getLootSize()) {
         case 1:
-            goodsType = 1;
-            break;
+            return 0.25;
         case 2:
-            goodsType = 2;
-            break;
+            return 0.5;
+        case 3:
+            return 1.0;
+        case 4:
+            return 2.0;
+        case 5:
+            return 3.0;
         }
+        return 1.0;
+    }
 
+    public LootItemGoods rollGoods() {
+        LootItemGoods goods = new LootItemGoods();
+
+        String tableIndex = "APL" + prefs.getaPL() + "_Goods";
+        Integer rolled = rollPercent();
+
+        // Roll on goods chart to determine if and what kind of goods
+        Integer numDiceGoods = books.getNumDice(rolled, tableIndex);
+        Integer dieSizeGoods = books.getDieSize(rolled, tableIndex);
+        goods.setGoodsType(books.getGoodsType(rolled, tableIndex));
+        // Roll number of goods
+        goods.setQuantity(rollNumGoods(numDiceGoods, dieSizeGoods));
+
+        // Roll value per goods
+        goods.setgValue(rollGoodsVal(goods.getGoodsType()));
+
+        return goods;
     }
 
     public Integer rollNumGoods(Integer numDice, Integer dieSize) {
-        Integer numGoods = dice.roll(1, 100);
-        // TODO: needs input form table
-        return numGoods;
+        return dice.roll(numDice, dieSize);
     }
 
-    public Double rollGoodsVal() {
-        Double val = (double) dice.roll(1, 100);
-        // TODO: needs input from table
-        // database reminder: there are approximately 60 base treasure values
-        // determined by level of party, cr, and game pace
+    public Double rollGoodsVal(Integer goodsType) {
+        Double val = 1.0;
+        int numDice = 1;
+        int dieSize = 6;
+        int coinVal = 10;
+        int dRoll = rollPercent();
+
+        // Hard-coded table for Gems and Art value ranges
+        if (goodsType != 2) {
+            if (rollIsBetween(dRoll, 1, 25)) {
+                numDice = 4;
+                dieSize = 4;
+                coinVal = 1;
+            } else if (rollIsBetween(dRoll, 26, 50)) {
+                numDice = 2;
+                dieSize = 4;
+                coinVal = 10;
+            } else if (rollIsBetween(dRoll, 51, 70)) {
+                numDice = 4;
+                dieSize = 4;
+                coinVal = 10;
+            } else if (rollIsBetween(dRoll, 71, 90)) {
+                numDice = 2;
+                dieSize = 4;
+                coinVal = 100;
+            } else if (rollIsBetween(dRoll, 91, 99)) {
+                numDice = 4;
+                dieSize = 4;
+                coinVal = 100;
+            } else if (rollIsBetween(dRoll, 100, 100)) {
+                numDice = 2;
+                dieSize = 4;
+                coinVal = 1000;
+            }
+        } else {
+            if (rollIsBetween(dRoll, 1, 10)) {
+                numDice = 1;
+                dieSize = 10;
+                coinVal = 10;
+            } else if (rollIsBetween(dRoll, 11, 25)) {
+                numDice = 3;
+                dieSize = 6;
+                coinVal = 10;
+            } else if (rollIsBetween(dRoll, 26, 40)) {
+                numDice = 1;
+                dieSize = 6;
+                coinVal = 100;
+            } else if (rollIsBetween(dRoll, 41, 50)) {
+                numDice = 1;
+                dieSize = 10;
+                coinVal = 100;
+            } else if (rollIsBetween(dRoll, 51, 60)) {
+                numDice = 2;
+                dieSize = 6;
+                coinVal = 100;
+            } else if (rollIsBetween(dRoll, 61, 70)) {
+                numDice = 3;
+                dieSize = 6;
+                coinVal = 100;
+            } else if (rollIsBetween(dRoll, 71, 80)) {
+                numDice = 4;
+                dieSize = 6;
+                coinVal = 100;
+
+            } else if (rollIsBetween(dRoll, 81, 85)) {
+                numDice = 5;
+                dieSize = 6;
+                coinVal = 100;
+            } else if (rollIsBetween(dRoll, 86, 90)) {
+                numDice = 1;
+                dieSize = 4;
+                coinVal = 1000;
+            } else if (rollIsBetween(dRoll, 91, 99)) {
+                numDice = 1;
+                dieSize = 6;
+                coinVal = 1000;
+            } else if (rollIsBetween(dRoll, 100, 100)) {
+                numDice = 2;
+                dieSize = 6;
+                coinVal = 1000;
+            }
+        }
+
+        val = (double) (dice.roll(numDice, dieSize) * coinVal);
         return val;
+    }
+
+    public boolean rollIsBetween(int dRoll, int low, int high) {
+        if (!((dRoll < low) && (dRoll > high))) {
+            return true;
+        }
+        return false;
     }
 
     public void rollItemGrouping(Integer APL, Integer numDice, Integer dieSize,
@@ -98,20 +208,12 @@ public class LootCalc {
 
     }
 
-    public Integer getNumDice(Integer tableIndex) {
-        Integer numDice = 0;
-        // TODO: numDice = (method that pulls numDice from database at
-        // tableIndex);
-
-        return numDice;
+    public Integer getNumDice(String tableIndex, Integer numRolled) {
+        return books.getNumDice(numRolled, tableIndex);
     }
 
-    public Integer getDieSize(Integer tableIndex) {
-        Integer dieSize = 0;
-        // TODO:dieSize = (method that pulls dieSize from database at
-        // tableIndex);
-
-        return dieSize;
+    public Integer getDieSize(String tableIndex, Integer numRolled) {
+        return books.getDieSize(numRolled, tableIndex);
     }
 
     public Integer rollNumItems(Integer numDice, Integer dieSize) {
