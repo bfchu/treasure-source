@@ -265,7 +265,7 @@ public class LootCalc {
         } else if (item.getItemType() == 10) {
             // item = rollWand();
         } else if (item.getItemType() == 11) {
-            // item = rollWondrousItem(rarityLevel);
+            item = rollWondrousItem(rarityLevel);
         }
 
         return item;
@@ -313,11 +313,41 @@ public class LootCalc {
         return ring;
     }
 
+    /** WONDROUS ITEMS */
+    private LootItem rollWondrousItem(Integer rarityLevel) {
+        LootItem item = new LootItem();
+        boolean isGreaterItem = true;
+        if (dice.roll(1, 2) != 2) {
+            isGreaterItem = false;
+        }
+        String itemName = null;
+        double itemValue = 1.0;
+
+        String wondrousType = rollWondrousType();
+
+        Integer dRoll = rollPercent();
+        books.getSpecificItem(dRoll, wondrousType, isGreaterItem, rarityLevel,
+                itemName, itemValue);
+
+        item.setName(itemName);
+        item.setgValue(itemValue);
+
+        item.setItemType(11);
+        return item;
+    }
+
+    public String rollWondrousType() {
+        String type = "Wondrous_";
+        Integer dRoll = rollPercent();
+
+        type += books.getWondrousType(dRoll);
+
+        return type;
+    }
+
     /** MAGIC WEAPONS */
     private LootItem rollMagicWeapon(Integer rarityLevel) {
         LootItem item = new LootItem();
-        // TODO: clean up this method to match the tables for MAgic weapons
-        // instead of armor
 
         // Is it made of special stuff?
         if (rollPercent() > 95) {
@@ -327,7 +357,7 @@ public class LootCalc {
         // 1,2,3 = weapon. 4,5 = ranged weapon. 6 = ammo;
         Integer weaponRangedOrAmmo = dice.roll(1, 6);
 
-        // What kind of armor or shield?
+        // What kind of weapon?
         String weaponType = rollWeaponType(weaponRangedOrAmmo);
 
         Integer isSpecific = 0;

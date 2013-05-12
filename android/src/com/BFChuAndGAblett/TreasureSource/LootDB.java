@@ -506,6 +506,26 @@ public class LootDB {
         return ammoType;
     }
 
+    public String getWondrousType(Integer dRoll) {
+        Cursor cursor = db.query(true, "WondrousItemTypes", new String[] {
+                "id", "dLow", "dHigh", "itemType", "valueAdjust" }, null, null,
+                null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String itemType = "Belt";
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            itemType = cursor.getString(3);
+        }
+
+        return itemType;
+    }
+
     public void getArmorSpecs(Integer dRoll, boolean isGreaterItem,
             Integer rarityLevel, Integer enhancement, Integer numAbilities,
             Integer abilityLevel, Integer isSpecific) {
@@ -743,6 +763,7 @@ public class LootDB {
             initItemTypeTable(db, "Weapon");
             initItemTypeTable(db, "RangedWeapon");
             initItemTypeTable(db, "Ammo");
+            initItemTypeTable(db, "WondrousItem");
 
             // Armor Enhancement and Abilities numbers by rarity
             initEnhancementTable(db, "Armor");
