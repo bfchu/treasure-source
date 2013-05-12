@@ -552,7 +552,19 @@ public class LootDB {
                             + rarityLevel);
                 }
             }
-            // Sepcial Abilities for Armor and Shield
+            // Special Abilities for Armor and Shield
+            for (int ii = 0; ii < 5; ii++) {
+                String sqlcmd = "CREATE TABLE Abilities_Armor_plus" + (ii + 1)
+                        + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, "
+                        + "ability varchar(50), " + "priceAdjust int)";
+
+                db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table Abilities_Armor_" + "+" + (ii + 1));
+
+            }
+
+            // Specific Magic Armor and shields
             for (int ii = 0; ii < 3; ii++) {
                 for (int jj = 0; jj < 2; jj++) {
                     String lesserOrGreater = null;
@@ -574,18 +586,17 @@ public class LootDB {
                     case 2:
                         rarityLevel = "Major";
                     }
-                    String sqlcmd = "CREATE TABLE Abilities_Armor_"
+                    String sqlcmd = "CREATE TABLE Specific_Armor_"
                             + lesserOrGreater + "_" + rarityLevel
                             + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                             + "dLow int, " + "dHigh int, "
-                            + "ability varchar(50), " + "priceAdjust int)";
+                            + "itemName varchar(50), " + "price int)";
 
                     db.execSQL(sqlcmd);
-                    Log.d(TAG, "Creating Table Abilities_Armor_"
+                    Log.d(TAG, "Creating Table Specific_Armor_"
                             + lesserOrGreater + "_" + rarityLevel);
                 }
             }
-
         }
 
         @Override
