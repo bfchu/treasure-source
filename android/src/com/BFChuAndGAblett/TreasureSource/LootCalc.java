@@ -291,46 +291,11 @@ public class LootCalc {
         return item;
     }
 
-    @Deprecated
-    // use rollSpecificItem() instead
-    private LootItem rollRing(Integer rarityLevel) {
-        LootItem ring = new LootItem();
-        Integer dRoll = rollPercent();
-        boolean isGreaterItem = true;
-        if (dice.roll(1, 2) != 2) {
-            isGreaterItem = false;
-        }
-        String name = "Bellowing Dragoncrest Ring";
-        double gVal = 1.0;
-
-        books.getSpecificItem(dRoll, "Rings", isGreaterItem, rarityLevel, name,
-                gVal);
-
-        ring.setName(name);
-        ring.setgValue(gVal);
-        ring.setNumRolled(dRoll);
-
-        return ring;
-    }
-
     /** WONDROUS ITEMS */
     private LootItem rollWondrousItem(Integer rarityLevel) {
-        LootItem item = new LootItem();
-        boolean isGreaterItem = true;
-        if (dice.roll(1, 2) != 2) {
-            isGreaterItem = false;
-        }
-        String itemName = null;
-        double itemValue = 1.0;
-
         String wondrousType = rollWondrousType();
 
-        Integer dRoll = rollPercent();
-        books.getSpecificItem(dRoll, wondrousType, isGreaterItem, rarityLevel,
-                itemName, itemValue);
-
-        item.setName(itemName);
-        item.setgValue(itemValue);
+        LootItem item = rollSpecificItem(rarityLevel, wondrousType);
 
         item.setItemType(11);
         return item;
