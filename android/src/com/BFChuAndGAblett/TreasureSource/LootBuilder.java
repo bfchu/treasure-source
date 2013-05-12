@@ -4,6 +4,7 @@
 package com.BFChuAndGAblett.TreasureSource;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * @author Brian Chu and Garrick Ablett
@@ -37,55 +38,66 @@ public class LootBuilder {
         this.trove = trove;
     }
 
-    public ArrayList<LootOutListItem> genLoot(String[] args, LootPrefs prefs,
-            LootDB books) {
+    public void genLoot(String[] args, LootPrefs prefs, LootDB books) {
         this.dM = new LootCalc(books, prefs);
 
-        rollCoins(dM);
-        rollGoods(dM);
-        rollItems(dM);
+        rollCoins();
+        rollGoods();
+        rollItems();
 
-        if (dM.getPrefs().isNoRepeats()) {
-            return this.getTrove();
+        if (this.dM.getPrefs().isNoRepeats()) {
+            addToDB(this.getTrove());
+            // return this.getTrove();
         } else {
-            return this.getHoard();
+            addToDB(this.getHoard());
+            // return this.getHoard();
         }
     }
 
-    public void rollCoins(LootCalc dM) {
-        LootOutListItem coins = new LootOutListItem(dM.rollCoins());
-        addItem(dM, coins);
+    public void rollCoins() {
+        LootOutListItem coins = new LootOutListItem(this.dM.rollCoins());
+        addItem(coins);
     }
 
-    public void rollGoods(LootCalc dM) {
-        LootOutListItem outGoods = new LootOutListItem(dM.rollGoods());
-        addItem(dM, outGoods);
+    public void rollGoods() {
+        LootOutListItem outGoods = new LootOutListItem(this.dM.rollGoods());
+        addItem(outGoods);
     }
 
-    public void rollItems(LootCalc dM) {
+    public void rollItems() {
         // initializing variables, values unimportant
         // itemGroup: 1 = mundane, 2 = minor, 3 = medium, 4 = major
         Integer itemGroup = 1;
         Integer numDiceItems = 1;
         Integer dieSizeItems = 6;
         // Database Call returns numDice, dieSize, and itemGroup
-        dM.rollItemGrouping(numDiceItems, dieSizeItems, itemGroup);
+        this.dM.rollItemGrouping(numDiceItems, dieSizeItems, itemGroup);
 
         // roll number to items to generate
-        Integer numItems = dM.rollNumItems(numDiceItems, dieSizeItems);
+        Integer numItems = this.dM.rollNumItems(numDiceItems, dieSizeItems);
 
         // Roll each Item, then add to the ArrayList.
         for (int ii = 0; ii < numItems; ii++) {
-            LootOutListItem item = new LootOutListItem(dM.rollItem(itemGroup));
-            addItem(dM, item);
+            LootOutListItem item = new LootOutListItem(
+                    this.dM.rollItem(itemGroup));
+            addItem(item);
         }
     }
 
+    public void addToDB(ArrayList<LootOutListItem> lootList) {
+        Iterator<LootOutListItem> itr = lootList.iterator();
+        while (itr.hasNext()) {
+            LootOutListItem item = itr.next();
+            this.getdM().getBooks().saveEntry("lootOut", null, item);
+        }
+
+    }
+
     // Getters/Setters
-    public void addItem(LootCalc dM, LootOutListItem item) {
-        if (dM.getPrefs().isNoRepeats() && dM.isValid(item)) {
+    public void addItem(LootOutListItem item) {
+        if (this.dM.getPrefs().isNoRepeats() && this.dM.isValid(item)) {
             addToTrove(item);
-        } else if (dM.isValid(item)) {
+        } else if (this.dM.isValid(item)) {
             addToHoard(item);
         } else {
             // increment some throw-out counter
@@ -100,6 +112,7 @@ public class LootBuilder {
         this.trove.add(item);
     }
 
+    // eclipse Getters and setters
     public ArrayList<LootOutListItem> getHoard() {
         return hoard;
     }
@@ -114,5 +127,21 @@ public class LootBuilder {
 
     public void setTrove(ArrayList<LootOutListItem> trove) {
         this.trove = trove;
+    }
+
+    public ArrayList<LootOutListItem> getTrash() {
+        return trash;
+    }
+
+    public void setTrash(ArrayList<LootOutListItem> trash) {
+        this.trash = trash;
+    }
+
+    public LootCalc getdM() {
+        return dM;
+    }
+
+    public void setdM(LootCalc dM) {
+        this.dM = dM;
     }
 }

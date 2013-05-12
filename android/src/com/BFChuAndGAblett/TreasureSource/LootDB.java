@@ -47,6 +47,63 @@ public class LootDB {
         db.close();
     }
 
+    public boolean saveEntry(String tableName, Integer id, LootOutListItem item) {
+        boolean successfull = false;
+        int displayGold = 1;
+        int displayRoll = 0;
+
+        if (!item.isDispGold()) {
+            displayGold = 0;
+        }
+        if (item.isDispRoll()) {
+            displayRoll = 1;
+        }
+        if (id == null) {
+            Log.d(TAG, "Creating a new entry: d%: " + item.getNumRolled()
+                    + ", quantity: " + item.getQuantity() + ", item Name: "
+                    + item.getName() + ", Value: " + item.getgValue());
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dRoll", item.getNumRolled());
+            newItem.put("quantity", item.getQuantity());
+            newItem.put("specials", item.getSpecials());
+            newItem.put("itemName", item.getName());
+            newItem.put("value", item.getgValue());
+            newItem.put("dispGold", displayGold);
+            newItem.put("dispRoll", displayRoll);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating am entry: d%: " + item.getNumRolled()
+                    + ", quantity: " + item.getQuantity() + ", item Name: "
+                    + item.getName() + ", Value: " + item.getgValue());
+            // update
+
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dRoll", item.getNumRolled());
+            newItem.put("quantity", item.getQuantity());
+            newItem.put("specials", item.getSpecials());
+            newItem.put("itemName", item.getName());
+            newItem.put("value", item.getgValue());
+            newItem.put("dispGold", displayGold);
+            newItem.put("dispRoll", displayRoll);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
+    }
+
     public boolean saveEntry(String tableName, Integer id, int dRoll,
             int quantity, String itemName, Double gValue) {
         boolean successfull = false;
@@ -619,4 +676,5 @@ public class LootDB {
         }
 
     }
+
 }

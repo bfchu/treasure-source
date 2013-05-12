@@ -68,7 +68,7 @@ public class LootDisplay extends Activity {
                 "Bodywrap of mighty strikes +7", 147000.00, true, true);
 
         // DM = new LootBuilder();
-        // LootItemList = DM.genLoot(null, prefs, lootDB);
+        // DM.genLoot(null, prefs, lootDB);
 
         populateLootDisplay();
     }

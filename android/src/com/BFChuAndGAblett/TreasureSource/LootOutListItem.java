@@ -5,7 +5,7 @@ package com.BFChuAndGAblett.TreasureSource;
 
 /**
  * @author Brian
- *
+ * 
  */
 public class LootOutListItem extends LootItem {
     private int id;
@@ -140,7 +140,8 @@ public class LootOutListItem extends LootItem {
     }
 
     /**
-     * @param id the id to set
+     * @param id
+     *            the id to set
      */
     public void setId(int id) {
         this.id = id;
@@ -182,9 +183,26 @@ public class LootOutListItem extends LootItem {
     }
 
     /**
-     * @param specials the specials to set
+     * @param specials
+     *            the specials to set
      */
     public void setSpecials(String specials) {
         this.specials = specials;
+    }
+
+    public boolean isDispGold() {
+        return dispGold;
+    }
+
+    public void setDispGold(boolean dispGold) {
+        this.dispGold = dispGold;
+    }
+
+    public boolean isDispRoll() {
+        return dispRoll;
+    }
+
+    public void setDispRoll(boolean dispRoll) {
+        this.dispRoll = dispRoll;
     }
 }
