@@ -349,6 +349,84 @@ public class LootDB {
         return itemType;
     }
 
+    public String getArmorType(Integer dRoll) {
+        Cursor cursor = db.query(true, "ArmorTypes", new String[] { "id",
+                "dLow", "dHigh", "armorType", "valueAdjust" }, null, null,
+                null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String armorType = "full plate";
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            armorType = cursor.getString(3);
+        }
+
+        return armorType;
+    }
+
+    public String getShieldType(Integer dRoll) {
+        Cursor cursor = db.query(true, "ShieldTypes", new String[] { "id",
+                "dLow", "dHigh", "shieldType", "valueAdjust" }, null, null,
+                null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String shieldType = "full plate";
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            shieldType = cursor.getString(3);
+        }
+
+        return shieldType;
+    }
+
+    public void getArmorSpecs(Integer dRoll, boolean isGreaterItem,
+            Integer rarityLevel, Integer enhancement, Integer numAbilities,
+            Integer abilityLevel) {
+        // build table name
+        String tableName = "Armor_";
+        if (isGreaterItem) {
+            tableName += "Greater_";
+        } else {
+            tableName += "Lesser_";
+        }
+
+        if (rarityLevel == 2) {
+            tableName += "Minor";
+        } else if (rarityLevel == 3) {
+            tableName += "Medium";
+        } else {
+            tableName += "Major";
+        }
+
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "enhancement", "numAbilities", "abilityLevel" }, null,
+                null, null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            enhancement = cursor.getInt(3);
+            numAbilities = cursor.getInt(4);
+            abilityLevel = cursor.getInt(5);
+        }
+
+    }
+
     /*
      * query( boolean distinct - true or false - true if you want each row to be
      * unique, false otherwise. String table - The table name to compile the
@@ -379,6 +457,18 @@ public class LootDB {
                 + "itemName varchar(50), "
                 + "value varchar(50), "
                 + "dispGold int, " + "dispRoll int)";
+        private static final String CREATE_TABLE_ArmorTypes = "CREATE TABLE ArmorTypes "
+                + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "dLow int, "
+                + "dHigh int, "
+                + "armorType varchar(50), "
+                + "valueAdjust int)";
+        private static final String CREATE_TABLE_ShieldTypes = "CREATE TABLE ShieldTypes "
+                + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "dLow int, "
+                + "dHigh int, "
+                + "shieldType varchar(50), "
+                + "valueAdjust int)";
         private static final String DROP_TABLE = "DROP TABLE IF EXISTS contact";
 
         public LootDatabaseOpenHelper(Context context) {
@@ -392,7 +482,11 @@ public class LootDB {
         }
 
         public void initTables(SQLiteDatabase db) {
+            // Primary output
             db.execSQL(CREATE_TABLE_LootOut);
+            // Armor Types
+            db.execSQL(CREATE_TABLE_ArmorTypes);
+            db.execSQL(CREATE_TABLE_ShieldTypes);
 
             // Coins by APL
             for (int ii = 0; ii < 20; ii++) {
@@ -422,6 +516,74 @@ public class LootDB {
                         + "dieSize int, " + "itemRarityGroup int)";
                 db.execSQL(sqlcmd);
                 Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Items");
+            }
+
+            // Armor Enhancement and Abilities numbers by rarity
+            for (int ii = 0; ii < 3; ii++) {
+                for (int jj = 0; jj < 2; jj++) {
+                    String lesserOrGreater = null;
+                    switch (jj) {
+                    case 0:
+                        lesserOrGreater = "Lesser";
+                        break;
+                    case 1:
+                        lesserOrGreater = "Greater";
+                    }
+                    String rarityLevel = null;
+                    switch (ii) {
+                    case 0:
+                        rarityLevel = "Minor";
+                        break;
+                    case 1:
+                        rarityLevel = "Medium";
+                        break;
+                    case 2:
+                        rarityLevel = "Major";
+                    }
+                    String sqlcmd = "CREATE TABLE Armor_" + lesserOrGreater
+                            + "_" + rarityLevel
+                            + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                            + "dLow int, " + "dHigh int, "
+                            + "enhancement int, " + "numAbilities int, "
+                            + "abilityLevel int)";
+
+                    db.execSQL(sqlcmd);
+                    Log.d(TAG, "Creating Table Armor_" + lesserOrGreater + "_"
+                            + rarityLevel);
+                }
+            }
+            // Sepcial Abilities for Armor and Shield
+            for (int ii = 0; ii < 3; ii++) {
+                for (int jj = 0; jj < 2; jj++) {
+                    String lesserOrGreater = null;
+                    switch (jj) {
+                    case 0:
+                        lesserOrGreater = "Lesser";
+                        break;
+                    case 1:
+                        lesserOrGreater = "Greater";
+                    }
+                    String rarityLevel = null;
+                    switch (ii) {
+                    case 0:
+                        rarityLevel = "Minor";
+                        break;
+                    case 1:
+                        rarityLevel = "Medium";
+                        break;
+                    case 2:
+                        rarityLevel = "Major";
+                    }
+                    String sqlcmd = "CREATE TABLE Abilities_Armor_"
+                            + lesserOrGreater + "_" + rarityLevel
+                            + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                            + "dLow int, " + "dHigh int, "
+                            + "ability varchar(50), " + "priceAdjust int)";
+
+                    db.execSQL(sqlcmd);
+                    Log.d(TAG, "Creating Table Abilities_Armor_"
+                            + lesserOrGreater + "_" + rarityLevel);
+                }
             }
 
         }

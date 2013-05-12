@@ -244,11 +244,89 @@ public class LootCalc {
         }
 
         // TODO:
-        // Roll qualities
+        // Roll qualities, and special abilities.
+        if (item.getItemType() == 3) {
+            item = rollMagicArmor(rarityLevel);
+        } else if (item.getItemType() == 4) {
 
-        // if special abilities: Roll on ability chart
+        } else if (item.getItemType() == 5) {
+
+        } else if (item.getItemType() == 6) {
+
+        } else if (item.getItemType() == 7) {
+
+        } else if (item.getItemType() == 8) {
+
+        } else if (item.getItemType() == 9) {
+
+        } else if (item.getItemType() == 10) {
+
+        } else if (item.getItemType() == 11) {
+
+        }
 
         return item;
+    }
+
+    private LootItem rollMagicArmor(Integer rarityLevel) {
+        LootItem item = new LootItem();
+
+        // Is it made of special stuff?
+        if (rollPercent() > 95) {
+            String specialMat = rollSpecialMaterial();
+        }
+        // is it armor or shield?
+        Integer armorOrShield = dice.roll(1, 2);// 1 = armor, 2 = shield;
+        // What kind of armor or shield?
+        String armorType = rollArmorType(armorOrShield);
+
+        // Does it have special abilities?
+        String specialAbs = rollArmorSpecials(armorOrShield, rarityLevel);
+
+        return item;
+    }
+
+    public String rollArmorSpecials(int armorOrShield, Integer rarityLevel) {
+        String abilities = "+1";
+        Integer enhancement = 1;
+        Integer numAbilities = 0;
+        Integer abilityLevel = 1;
+        Integer dRoll = rollPercent();
+        // is it a Greater or Lesser Item?
+        boolean isGreaterItem = true;
+        if (dice.roll(1, 2) != 2) {
+            isGreaterItem = false;
+        }
+
+        if (armorOrShield != 2) {
+            books.getArmorSpecs(dRoll, isGreaterItem, rarityLevel, enhancement,
+                    numAbilities, abilityLevel);
+            // TODO: abilities = ;
+        } else {
+            books.getArmorSpecs(dRoll, isGreaterItem, rarityLevel, enhancement,
+                    numAbilities, abilityLevel);
+        }
+
+        return abilities;
+    }
+
+    private String rollArmorType(int armorOrShield) {
+        String type = "full plate";
+        Integer dRoll = rollPercent();
+
+        if (armorOrShield != 2) {
+            type = books.getArmorType(dRoll);
+        } else {
+            type = books.getShieldType(dRoll);
+        }
+
+        return type;
+    }
+
+    private String rollSpecialMaterial() {
+        String material = "Adamantine";
+        // TODO: find out how special materials are rolled, then put it here.
+        return material;
     }
 
     public LootItem rollMundaneItem() {
