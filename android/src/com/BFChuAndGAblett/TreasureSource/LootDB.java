@@ -408,7 +408,7 @@ public class LootDB {
 
     public String getArmorType(Integer dRoll) {
         Cursor cursor = db.query(true, "ArmorTypes", new String[] { "id",
-                "dLow", "dHigh", "armorType", "valueAdjust" }, null, null,
+                "dLow", "dHigh", "ArmorType", "valueAdjust" }, null, null,
                 null, null, null, null);
         cursor.moveToFirst();
 
@@ -428,7 +428,7 @@ public class LootDB {
 
     public String getShieldType(Integer dRoll) {
         Cursor cursor = db.query(true, "ShieldTypes", new String[] { "id",
-                "dLow", "dHigh", "shieldType", "valueAdjust" }, null, null,
+                "dLow", "dHigh", "ShieldType", "valueAdjust" }, null, null,
                 null, null, null, null);
         cursor.moveToFirst();
 
@@ -446,11 +446,110 @@ public class LootDB {
         return shieldType;
     }
 
+    public String getMeleeWeaponType(Integer dRoll) {
+        Cursor cursor = db.query(true, "WeaponTypes", new String[] { "id",
+                "dLow", "dHigh", "WeaponType", "valueAdjust" }, null, null,
+                null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String weaponType = "longsword";
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            weaponType = cursor.getString(3);
+        }
+
+        return weaponType;
+    }
+
+    public String getRangedWeaponType(Integer dRoll) {
+        Cursor cursor = db.query(true, "RangedWeaponTypes", new String[] {
+                "id", "dLow", "dHigh", "RangedWeaponType", "valueAdjust" },
+                null, null, null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String weaponType = "shortbow";
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            weaponType = cursor.getString(3);
+        }
+
+        return weaponType;
+    }
+
+    public String getAmmoType(Integer dRoll) {
+        Cursor cursor = db.query(true, "AmmoWeaponTypes", new String[] { "id",
+                "dLow", "dHigh", "AmmoType", "valueAdjust" }, null, null, null,
+                null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String ammoType = "dart";
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            ammoType = cursor.getString(3);
+        }
+
+        return ammoType;
+    }
+
     public void getArmorSpecs(Integer dRoll, boolean isGreaterItem,
             Integer rarityLevel, Integer enhancement, Integer numAbilities,
             Integer abilityLevel, Integer isSpecific) {
         // build table name
         String tableName = "Armor_";
+        if (isGreaterItem) {
+            tableName += "Greater_";
+        } else {
+            tableName += "Lesser_";
+        }
+
+        if (rarityLevel == 2) {
+            tableName += "Minor";
+        } else if (rarityLevel == 3) {
+            tableName += "Medium";
+        } else {
+            tableName += "Major";
+        }
+
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "enhancement", "numAbilities", "abilityLevel",
+                "isSpecific" }, null, null, null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            enhancement = cursor.getInt(3);
+            numAbilities = cursor.getInt(4);
+            abilityLevel = cursor.getInt(5);
+            isSpecific = cursor.getInt(6);
+        }
+
+    }
+
+    public void getWeaponSpecs(Integer dRoll, boolean isGreaterItem,
+            Integer rarityLevel, Integer enhancement, Integer numAbilities,
+            Integer abilityLevel, Integer isSpecific) {
+        // build table name
+        String tableName = "Weapon_";
         if (isGreaterItem) {
             tableName += "Greater_";
         } else {
@@ -607,9 +706,6 @@ public class LootDB {
         public void initTables(SQLiteDatabase db) {
             // Primary output
             db.execSQL(CREATE_TABLE_LootOut);
-            // Armor Types
-            db.execSQL(CREATE_TABLE_ArmorTypes);
-            db.execSQL(CREATE_TABLE_ShieldTypes);
 
             // Coins by APL
             for (int ii = 0; ii < 20; ii++) {
@@ -640,6 +736,13 @@ public class LootDB {
                 db.execSQL(sqlcmd);
                 Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Items");
             }
+
+            // Item Types
+            initItemTypeTable(db, "Armor");
+            initItemTypeTable(db, "Shield");
+            initItemTypeTable(db, "Weapon");
+            initItemTypeTable(db, "RangedWeapon");
+            initItemTypeTable(db, "Ammo");
 
             // Armor Enhancement and Abilities numbers by rarity
             initEnhancementTable(db, "Armor");
@@ -674,6 +777,16 @@ public class LootDB {
             initSpecificItemTable(db, "Wondrous_Wrists");
             initSpecificItemTable(db, "Wondrous_Slotless");
 
+        }
+
+        public void initItemTypeTable(SQLiteDatabase db, String itemType) {
+            String sqlcmd = "CREATE TABLE " + itemType + "Types "
+                    + "(id INTEGER PRIMARY KEY AUTOINCREMENT, " + "dLow int, "
+                    + "dHigh int, " + itemType + "Type varchar(50), "
+                    + "valueAdjust int)";
+
+            db.execSQL(sqlcmd);
+            Log.d(TAG, "Creating Table " + itemType + "Types ");
         }
 
         public void initEnhancementTable(SQLiteDatabase db, String itemType) {

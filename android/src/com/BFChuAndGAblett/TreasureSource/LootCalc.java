@@ -251,7 +251,7 @@ public class LootCalc {
         if (item.getItemType() == 3) {
             item = rollMagicArmor(rarityLevel);
         } else if (item.getItemType() == 4) {
-            // item = rollMagicWeapon(rarityLevel);
+            item = rollMagicWeapon(rarityLevel);
         } else if (item.getItemType() == 5) {
             item = rollSpecificItem(rarityLevel, "Potions");
         } else if (item.getItemType() == 6) {
@@ -313,6 +313,102 @@ public class LootCalc {
         return ring;
     }
 
+    /** MAGIC WEAPONS */
+    private LootItem rollMagicWeapon(Integer rarityLevel) {
+        LootItem item = new LootItem();
+        // TODO: clean up this method to match the tables for MAgic weapons
+        // instead of armor
+
+        // Is it made of special stuff?
+        if (rollPercent() > 95) {
+            item.setName(rollSpecialMaterial() + " ");
+        }
+        // is it a Weapon, Ranged Weapon, or Ammunition?
+        // 1,2,3 = weapon. 4,5 = ranged weapon. 6 = ammo;
+        Integer weaponRangedOrAmmo = dice.roll(1, 6);
+
+        // What kind of armor or shield?
+        String weaponType = rollWeaponType(weaponRangedOrAmmo);
+
+        Integer isSpecific = 0;
+        // Does it have special abilities?
+        String specialAbs = rollWeaponSpecials(weaponRangedOrAmmo, rarityLevel,
+                isSpecific);
+
+        if (isSpecific > 0) {
+            item.setName(specialAbs);
+        } else {
+            item.setName(item.getName() + specialAbs + weaponType);
+        }
+
+        item.setItemType(4);
+        return item;
+    }
+
+    private String rollWeaponType(int weaponRangedOrAmmo) {
+        String type = "longsword";
+        Integer dRoll = rollPercent();
+
+        if (weaponRangedOrAmmo < 4) {
+            type = books.getMeleeWeaponType(dRoll);
+        } else if (weaponRangedOrAmmo < 6) {
+            type = books.getRangedWeaponType(dRoll);
+        } else {
+            type = books.getAmmoType(dRoll);
+        }
+
+        return type;
+    }
+
+    public String rollWeaponSpecials(int weaponRangedOrAmmo,
+            Integer rarityLevel, Integer isSpecific) {
+        String abilities = "+1";
+        Integer enhancement = 1;
+        Integer numAbilities = 0;
+        Integer abilityLevel = 1;
+        double priceAdjust = 0.0;
+        Integer dRoll = rollPercent();
+        // is it a Greater or Lesser Item?
+        boolean isGreaterItem = true;
+        if (dice.roll(1, 2) != 2) {
+            isGreaterItem = false;
+        }
+
+        // Get Abilities
+        if (weaponRangedOrAmmo < 4) {
+            books.getWeaponSpecs(dRoll, isGreaterItem, rarityLevel,
+                    enhancement, numAbilities, abilityLevel, isSpecific);
+            if (isSpecific > 0) {
+                LootItem item = rollSpecificItem(rarityLevel, "Weapon");
+                abilities = item.getName();
+            } else {
+                abilities = rollAbilities("Weapon", numAbilities, abilityLevel,
+                        priceAdjust);
+            }
+        } else if (weaponRangedOrAmmo < 6) {
+            books.getWeaponSpecs(dRoll, isGreaterItem, rarityLevel,
+                    enhancement, numAbilities, abilityLevel, isSpecific);
+            if (isSpecific > 0) {
+                LootItem item = rollSpecificItem(rarityLevel, "Weapon");
+                abilities = item.getName();
+            } else {
+                abilities = rollAbilities("Ranged_Weapons", numAbilities,
+                        abilityLevel, priceAdjust);
+            }
+        } else {
+            if (isSpecific > 0) {
+                LootItem item = rollSpecificItem(rarityLevel, "Weapon");
+                abilities = item.getName();
+            } else {
+                abilities = rollAbilities("Ammunition", numAbilities,
+                        abilityLevel, priceAdjust);
+            }
+        }
+
+        return abilities;
+    }
+
+    /** MAGIC ARMOR */
     private LootItem rollMagicArmor(Integer rarityLevel) {
         LootItem item = new LootItem();
 
@@ -372,7 +468,8 @@ public class LootCalc {
                 LootItem item = rollSpecificItem(rarityLevel, "Shields");
                 abilities = item.getName();
             } else {
-                // TODO: abilities = ;
+                abilities = rollAbilities("Armor", numAbilities, abilityLevel,
+                        priceAdjust);
             }
         }
 
