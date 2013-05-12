@@ -43,7 +43,7 @@ public class LootPrefs {
         this.noRepeats = true;
         this.limitValByCR = false;
         this.itemRestrictions = new boolean[NUM_RESTRICTIONS];
-        this.displayOpts = new boolean[NUM_DISPLAY_OPTS];
+        this.c = new boolean[NUM_DISPLAY_OPTS];
     }
 
     public LootPrefs(Integer aPL, Integer eCR, Integer enDifficulty,

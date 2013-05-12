@@ -6,6 +6,7 @@ package com.BFChuAndGAblett.TreasureSource;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 
 /**
  * @author Brian Chu and Garrick Ablett
@@ -26,6 +28,34 @@ public class LootDisplay extends Activity {
     private ArrayAdapter<LootOutListItem> arrayAdapter;
     private LootDB lootDB;
     private Cursor lootCursor;
+    
+    private Intent getLootRules = getIntent();
+    private int aPL = getLootRules.getIntExtra("aPL", 0);
+    private int eCR = getLootRules.getIntExtra("eCR", 0);
+    private int enDifficulty = getLootRules.getIntExtra("enDifficulty", 0);
+    private int lootSize = getLootRules.getIntExtra("lootSize", 0);
+    private int magicLv = getLootRules.getIntExtra("magicLv", 0);
+    private boolean rollMundane = getLootRules.getBooleanExtra("rollMundane", false);
+    private boolean rollGoods = getLootRules.getBooleanExtra("rollGoods", false);
+    private boolean noRepeats = getLootRules.getBooleanExtra("noRepeats", false);
+    private boolean limitValByCR = getLootRules.getBooleanExtra("limByEV", false);
+    private boolean ignoreArmor = getLootRules.getBooleanExtra("ignoreArmor", false);
+    private boolean ignoreWeapons = getLootRules.getBooleanExtra("ignoreWeapons", false);
+    private boolean ignorePotions = getLootRules.getBooleanExtra("ignorePotions", false);
+    private boolean ignoreRings = getLootRules.getBooleanExtra("ignoreRings", false);
+    private boolean ignoreRods = getLootRules.getBooleanExtra("ignoreRods", false);
+    private boolean ignoreScrolls = getLootRules.getBooleanExtra("ignoreScrolls", false);
+    private boolean ignoreStaves = getLootRules.getBooleanExtra("ignoreStaves", false);
+    private boolean ignoreWands = getLootRules.getBooleanExtra("ignoreWands", false);
+    private boolean ignoreWondrous = getLootRules.getBooleanExtra("ignoreWondrous", false);
+    private boolean displayGold = getLootRules.getBooleanExtra("displayGold", false);
+    private boolean displayChance = getLootRules.getBooleanExtra("displayChance", false);
+    private boolean displayTotal = getLootRules.getBooleanExtra("displayChance", false);
+    
+    
+    
+    //    private boolean 
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
