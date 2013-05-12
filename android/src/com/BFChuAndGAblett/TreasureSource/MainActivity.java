@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.CheckBox;
 
 /**
  * @author Brian F. Chu, Garrick S. Ablett
