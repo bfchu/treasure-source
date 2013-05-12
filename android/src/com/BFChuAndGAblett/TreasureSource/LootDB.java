@@ -448,7 +448,7 @@ public class LootDB {
 
     public void getArmorSpecs(Integer dRoll, boolean isGreaterItem,
             Integer rarityLevel, Integer enhancement, Integer numAbilities,
-            Integer abilityLevel) {
+            Integer abilityLevel, Integer isSpecific) {
         // build table name
         String tableName = "Armor_";
         if (isGreaterItem) {
@@ -466,8 +466,8 @@ public class LootDB {
         }
 
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "enhancement", "numAbilities", "abilityLevel" }, null,
-                null, null, null, null, null);
+                "dHigh", "enhancement", "numAbilities", "abilityLevel",
+                "isSpecific" }, null, null, null, null, null, null);
         cursor.moveToFirst();
 
         int a = cursor.getInt(1);
@@ -480,6 +480,44 @@ public class LootDB {
             enhancement = cursor.getInt(3);
             numAbilities = cursor.getInt(4);
             abilityLevel = cursor.getInt(5);
+            isSpecific = cursor.getInt(6);
+        }
+
+    }
+
+    public void getSpecificItem(Integer dRoll, String itemType,
+            boolean isGreaterItem, Integer rarityLevel, String name,
+            double gValue) {
+        // build table name
+        String tableName = itemType + "_";
+        if (isGreaterItem) {
+            tableName += "Greater_";
+        } else {
+            tableName += "Lesser_";
+        }
+
+        if (rarityLevel == 2) {
+            tableName += "Minor";
+        } else if (rarityLevel == 3) {
+            tableName += "Medium";
+        } else {
+            tableName += "Major";
+        }
+
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "itemName", "price" }, null, null, null, null, null,
+                null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            name = cursor.getString(3);
+            gValue = cursor.getDouble(4);
         }
 
     }
@@ -602,7 +640,7 @@ public class LootDB {
                             + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                             + "dLow int, " + "dHigh int, "
                             + "enhancement int, " + "numAbilities int, "
-                            + "abilityLevel int)";
+                            + "abilityLevel int, " + "isSpecific int)";
 
                     db.execSQL(sqlcmd);
                     Log.d(TAG, "Creating Table Armor_" + lesserOrGreater + "_"
@@ -622,7 +660,30 @@ public class LootDB {
             }
             // TODO: init table for shield abilities
 
-            // Specific Magic Armor and shields
+            // Specific items
+            initSpecificItemTable(db, "Armor");
+            initSpecificItemTable(db, "Weapons");
+            initSpecificItemTable(db, "Potions");
+            initSpecificItemTable(db, "Rings");
+            initSpecificItemTable(db, "Rods");
+            initSpecificItemTable(db, "Staves");
+
+            initSpecificItemTable(db, "Wondrous_Belt");
+            initSpecificItemTable(db, "Wondrous_Body");
+            initSpecificItemTable(db, "Wondrous_Chest");
+            initSpecificItemTable(db, "Wondrous_Eyes");
+            initSpecificItemTable(db, "Wondrous_Feet");
+            initSpecificItemTable(db, "Wondrous_Hands");
+            initSpecificItemTable(db, "Wondrous_Head");
+            initSpecificItemTable(db, "Wondrous_Headband");
+            initSpecificItemTable(db, "Wondrous_Neck");
+            initSpecificItemTable(db, "Wondrous_Shoulders");
+            initSpecificItemTable(db, "Wondrous_Wrists");
+            initSpecificItemTable(db, "Wondrous_Slotless");
+
+        }
+
+        public void initSpecificItemTable(SQLiteDatabase db, String itemType) {
             for (int ii = 0; ii < 3; ii++) {
                 for (int jj = 0; jj < 2; jj++) {
                     String lesserOrGreater = null;
@@ -644,7 +705,7 @@ public class LootDB {
                     case 2:
                         rarityLevel = "Major";
                     }
-                    String sqlcmd = "CREATE TABLE Specific_Armor_"
+                    String sqlcmd = "CREATE TABLE Specific_" + itemType + "_"
                             + lesserOrGreater + "_" + rarityLevel
                             + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                             + "dLow int, " + "dHigh int, "

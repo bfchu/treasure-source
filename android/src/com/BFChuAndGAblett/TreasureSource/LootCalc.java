@@ -251,24 +251,64 @@ public class LootCalc {
         if (item.getItemType() == 3) {
             item = rollMagicArmor(rarityLevel);
         } else if (item.getItemType() == 4) {
-
+            // item = rollMagicWeapon(rarityLevel);
         } else if (item.getItemType() == 5) {
-
+            item = rollSpecificItem(rarityLevel, "Potions");
         } else if (item.getItemType() == 6) {
-
+            item = rollSpecificItem(rarityLevel, "Rings");
         } else if (item.getItemType() == 7) {
-
+            item = rollSpecificItem(rarityLevel, "Rods");
         } else if (item.getItemType() == 8) {
-
+            // item = rollScrolls(rarityLevel);
         } else if (item.getItemType() == 9) {
-
+            item = rollSpecificItem(rarityLevel, "Staves");
         } else if (item.getItemType() == 10) {
-
+            // item = rollWand();
         } else if (item.getItemType() == 11) {
-
+            // item = rollWondrousItem(rarityLevel);
         }
 
         return item;
+    }
+
+    private LootItem rollSpecificItem(Integer rarityLevel, String itemType) {
+        LootItem item = new LootItem();
+        Integer dRoll = rollPercent();
+        boolean isGreaterItem = true;
+        if (dice.roll(1, 2) != 2) {
+            isGreaterItem = false;
+        }
+        String name = null;
+        double gVal = 1.0;
+
+        books.getSpecificItem(dRoll, itemType, isGreaterItem, rarityLevel,
+                name, gVal);
+
+        item.setName(name);
+        item.setgValue(gVal);
+        item.setNumRolled(dRoll);
+
+        return item;
+    }
+
+    private LootItem rollRing(Integer rarityLevel) {
+        LootItem ring = new LootItem();
+        Integer dRoll = rollPercent();
+        boolean isGreaterItem = true;
+        if (dice.roll(1, 2) != 2) {
+            isGreaterItem = false;
+        }
+        String name = "Bellowing Dragoncrest Ring";
+        double gVal = 1.0;
+
+        books.getSpecificItem(dRoll, "Rings", isGreaterItem, rarityLevel, name,
+                gVal);
+
+        ring.setName(name);
+        ring.setgValue(gVal);
+        ring.setNumRolled(dRoll);
+
+        return ring;
     }
 
     private LootItem rollMagicArmor(Integer rarityLevel) {
@@ -276,20 +316,29 @@ public class LootCalc {
 
         // Is it made of special stuff?
         if (rollPercent() > 95) {
-            String specialMat = rollSpecialMaterial();
+            item.setName(rollSpecialMaterial() + " ");
         }
         // is it armor or shield?
         Integer armorOrShield = dice.roll(1, 2);// 1 = armor, 2 = shield;
         // What kind of armor or shield?
         String armorType = rollArmorType(armorOrShield);
 
+        Integer isSpecific = 0;
         // Does it have special abilities?
-        String specialAbs = rollArmorSpecials(armorOrShield, rarityLevel);
+        String specialAbs = rollArmorSpecials(armorOrShield, rarityLevel,
+                isSpecific);
+
+        if (isSpecific > 0) {
+            item.setName(specialAbs);
+        } else {
+            item.setName(item.getName() + specialAbs + " " + armorType);
+        }
 
         return item;
     }
 
-    public String rollArmorSpecials(int armorOrShield, Integer rarityLevel) {
+    public String rollArmorSpecials(int armorOrShield, Integer rarityLevel,
+            Integer isSpecific) {
         String abilities = "+1";
         Integer enhancement = 1;
         Integer numAbilities = 0;
@@ -301,13 +350,23 @@ public class LootCalc {
             isGreaterItem = false;
         }
 
+        // Get Abilities
         if (armorOrShield != 2) {
             books.getArmorSpecs(dRoll, isGreaterItem, rarityLevel, enhancement,
-                    numAbilities, abilityLevel);
-            // TODO: abilities = ;
+                    numAbilities, abilityLevel, isSpecific);
+            if (isSpecific > 0) {
+                // TODO: get specific item built and return it,
+            } else {
+                abilities = rollArmorAbilities();
+            }
         } else {
             books.getArmorSpecs(dRoll, isGreaterItem, rarityLevel, enhancement,
-                    numAbilities, abilityLevel);
+                    numAbilities, abilityLevel, isSpecific);
+            if (isSpecific > 0) {
+                // TODO: get specific item built and return it,
+            } else {
+                // TODO: abilities = ;
+            }
         }
 
         return abilities;
