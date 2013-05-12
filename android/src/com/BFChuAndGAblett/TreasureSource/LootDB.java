@@ -522,6 +522,34 @@ public class LootDB {
 
     }
 
+    public String getAbilities(Integer dRoll, String itemType,
+            Integer abilityLevel, double priceToAdjust) {
+        // build table name
+        String tableName = "Abilities_" + itemType + "+" + abilityLevel;
+
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "ability", "priceAdjust" }, null, null, null, null,
+                null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String ability = null;
+        double priceAdjust = 0.0;
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            ability = cursor.getString(3);
+            priceAdjust = cursor.getDouble(4);
+        }
+
+        priceToAdjust = priceAdjust;
+
+        return ability;
+    }
+
     /*
      * query( boolean distinct - true or false - true if you want each row to be
      * unique, false otherwise. String table - The table name to compile the
@@ -614,6 +642,41 @@ public class LootDB {
             }
 
             // Armor Enhancement and Abilities numbers by rarity
+            initEnhancementTable(db, "Armor");
+            initEnhancementTable(db, "Weapons");
+
+            // Special Abilities for Armor, Shield, Weapons:
+            initAbilitiesTable(db, "Armor");
+            initAbilitiesTable(db, "Shields");
+            initAbilitiesTable(db, "Weapons");
+            initAbilitiesTable(db, "Ranged_Weapons");
+            initAbilitiesTable(db, "Ammunition");
+
+            // Specific items
+            initSpecificItemTable(db, "Armor");
+            initSpecificItemTable(db, "Shields");
+            initSpecificItemTable(db, "Weapons");
+            initSpecificItemTable(db, "Potions");
+            initSpecificItemTable(db, "Rings");
+            initSpecificItemTable(db, "Rods");
+            initSpecificItemTable(db, "Staves");
+
+            initSpecificItemTable(db, "Wondrous_Belt");
+            initSpecificItemTable(db, "Wondrous_Body");
+            initSpecificItemTable(db, "Wondrous_Chest");
+            initSpecificItemTable(db, "Wondrous_Eyes");
+            initSpecificItemTable(db, "Wondrous_Feet");
+            initSpecificItemTable(db, "Wondrous_Hands");
+            initSpecificItemTable(db, "Wondrous_Head");
+            initSpecificItemTable(db, "Wondrous_Headband");
+            initSpecificItemTable(db, "Wondrous_Neck");
+            initSpecificItemTable(db, "Wondrous_Shoulders");
+            initSpecificItemTable(db, "Wondrous_Wrists");
+            initSpecificItemTable(db, "Wondrous_Slotless");
+
+        }
+
+        public void initEnhancementTable(SQLiteDatabase db, String itemType) {
             for (int ii = 0; ii < 3; ii++) {
                 for (int jj = 0; jj < 2; jj++) {
                     String lesserOrGreater = null;
@@ -635,52 +698,32 @@ public class LootDB {
                     case 2:
                         rarityLevel = "Major";
                     }
-                    String sqlcmd = "CREATE TABLE Armor_" + lesserOrGreater
-                            + "_" + rarityLevel
+                    String sqlcmd = "CREATE TABLE " + itemType + "_"
+                            + lesserOrGreater + "_" + rarityLevel
                             + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                             + "dLow int, " + "dHigh int, "
                             + "enhancement int, " + "numAbilities int, "
                             + "abilityLevel int, " + "isSpecific int)";
 
                     db.execSQL(sqlcmd);
-                    Log.d(TAG, "Creating Table Armor_" + lesserOrGreater + "_"
-                            + rarityLevel);
+                    Log.d(TAG, "Creating " + itemType + "_" + lesserOrGreater
+                            + "_" + rarityLevel);
                 }
             }
-            // Special Abilities for Armor and Shield
+        }
+
+        public void initAbilitiesTable(SQLiteDatabase db, String itemType) {
             for (int ii = 0; ii < 5; ii++) {
-                String sqlcmd = "CREATE TABLE Abilities_Armor_plus" + (ii + 1)
-                        + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                String sqlcmd = "CREATE TABLE Abilities_" + itemType + "_plus"
+                        + (ii + 1) + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                         + "dLow int, " + "dHigh int, "
                         + "ability varchar(50), " + "priceAdjust int)";
 
                 db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table Abilities_Armor_" + "+" + (ii + 1));
+                Log.d(TAG, "Creating Table Abilities_" + itemType + "+"
+                        + (ii + 1));
 
             }
-            // TODO: init table for shield abilities
-
-            // Specific items
-            initSpecificItemTable(db, "Armor");
-            initSpecificItemTable(db, "Weapons");
-            initSpecificItemTable(db, "Potions");
-            initSpecificItemTable(db, "Rings");
-            initSpecificItemTable(db, "Rods");
-            initSpecificItemTable(db, "Staves");
-
-            initSpecificItemTable(db, "Wondrous_Belt");
-            initSpecificItemTable(db, "Wondrous_Body");
-            initSpecificItemTable(db, "Wondrous_Chest");
-            initSpecificItemTable(db, "Wondrous_Eyes");
-            initSpecificItemTable(db, "Wondrous_Feet");
-            initSpecificItemTable(db, "Wondrous_Hands");
-            initSpecificItemTable(db, "Wondrous_Head");
-            initSpecificItemTable(db, "Wondrous_Headband");
-            initSpecificItemTable(db, "Wondrous_Neck");
-            initSpecificItemTable(db, "Wondrous_Shoulders");
-            initSpecificItemTable(db, "Wondrous_Wrists");
-            initSpecificItemTable(db, "Wondrous_Slotless");
-
         }
 
         public void initSpecificItemTable(SQLiteDatabase db, String itemType) {
@@ -712,7 +755,7 @@ public class LootDB {
                             + "itemName varchar(50), " + "price int)";
 
                     db.execSQL(sqlcmd);
-                    Log.d(TAG, "Creating Table Specific_Armor_"
+                    Log.d(TAG, "Creating Table Specific_" + itemType + "_"
                             + lesserOrGreater + "_" + rarityLevel);
                 }
             }

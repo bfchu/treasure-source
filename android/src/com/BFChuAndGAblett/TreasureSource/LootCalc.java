@@ -291,6 +291,8 @@ public class LootCalc {
         return item;
     }
 
+    @Deprecated
+    // use rollSpecificItem() instead
     private LootItem rollRing(Integer rarityLevel) {
         LootItem ring = new LootItem();
         Integer dRoll = rollPercent();
@@ -331,9 +333,10 @@ public class LootCalc {
         if (isSpecific > 0) {
             item.setName(specialAbs);
         } else {
-            item.setName(item.getName() + specialAbs + " " + armorType);
+            item.setName(item.getName() + specialAbs + armorType);
         }
 
+        item.setItemType(3);
         return item;
     }
 
@@ -343,6 +346,7 @@ public class LootCalc {
         Integer enhancement = 1;
         Integer numAbilities = 0;
         Integer abilityLevel = 1;
+        double priceAdjust = 0.0;
         Integer dRoll = rollPercent();
         // is it a Greater or Lesser Item?
         boolean isGreaterItem = true;
@@ -355,20 +359,35 @@ public class LootCalc {
             books.getArmorSpecs(dRoll, isGreaterItem, rarityLevel, enhancement,
                     numAbilities, abilityLevel, isSpecific);
             if (isSpecific > 0) {
-                // TODO: get specific item built and return it,
+                LootItem item = rollSpecificItem(rarityLevel, "Armor");
+                abilities = item.getName();
             } else {
-                abilities = rollArmorAbilities();
+                abilities = rollAbilities("Armor", numAbilities, abilityLevel,
+                        priceAdjust);
             }
         } else {
             books.getArmorSpecs(dRoll, isGreaterItem, rarityLevel, enhancement,
                     numAbilities, abilityLevel, isSpecific);
             if (isSpecific > 0) {
-                // TODO: get specific item built and return it,
+                LootItem item = rollSpecificItem(rarityLevel, "Shields");
+                abilities = item.getName();
             } else {
                 // TODO: abilities = ;
             }
         }
 
+        return abilities;
+    }
+
+    private String rollAbilities(String itemType, Integer numAbilities,
+            Integer abilityLevel, double priceAdjust) {
+        String abilities = null;
+        Integer dRoll = rollPercent();
+
+        for (int ii = 0; ii < numAbilities; ii++) {
+            abilities += books.getAbilities(dRoll, itemType, abilityLevel,
+                    priceAdjust) + " ";
+        }
         return abilities;
     }
 
