@@ -98,7 +98,11 @@ public class LootCalc {
         goods.setQuantity(rollNumGoods(numDiceGoods, dieSizeGoods));
 
         // Roll value per goods
-        goods.setgValue(rollGoodsVal(goods.getGoodsType()));
+        goods.setgValue(rollGoodsVal(goods.getGoodsType())); // TODO: decide if
+                                                             // this is the
+                                                             // place to
+                                                             // multiply for
+                                                             // treasure size
 
         return goods;
     }
@@ -119,7 +123,7 @@ public class LootCalc {
         int dRoll = rollPercent();
 
         // Hard-coded table for Gems and Art value ranges
-        if (goodsType != 2) {
+        if (goodsType != 2) { // Gems table
             if (rollIsBetween(dRoll, 1, 25)) {
                 numDice = 4;
                 dieSize = 4;
@@ -145,7 +149,7 @@ public class LootCalc {
                 dieSize = 4;
                 coinVal = 1000;
             }
-        } else {
+        } else { // Art table
             if (rollIsBetween(dRoll, 1, 10)) {
                 numDice = 1;
                 dieSize = 10;
@@ -174,7 +178,6 @@ public class LootCalc {
                 numDice = 4;
                 dieSize = 6;
                 coinVal = 100;
-
             } else if (rollIsBetween(dRoll, 81, 85)) {
                 numDice = 5;
                 dieSize = 6;
@@ -324,7 +327,7 @@ public class LootCalc {
     }
 
     private String rollSpecialMaterial() {
-        String material = "Adamantine";
+        String material = "Adamantine"; // placeholder
         // TODO: find out how special materials are rolled, then put it here.
         return material;
     }

@@ -17,6 +17,7 @@ public class LootBuilder {
 
     private ArrayList<LootOutListItem> hoard;
     private ArrayList<LootOutListItem> trove; // use for no duplicates
+    private ArrayList<LootOutListItem> trash;
     private LootCalc dM;
 
     public LootBuilder() {

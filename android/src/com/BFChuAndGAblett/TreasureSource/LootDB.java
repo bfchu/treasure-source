@@ -377,7 +377,7 @@ public class LootDB {
 
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
-        String shieldType = "full plate";
+        String shieldType = "buckler";
 
         while ((dRoll < a) || (dRoll > b)) {
             cursor.moveToNext();
@@ -563,6 +563,7 @@ public class LootDB {
                 Log.d(TAG, "Creating Table Abilities_Armor_" + "+" + (ii + 1));
 
             }
+            // TODO: init table for shield abilities
 
             // Specific Magic Armor and shields
             for (int ii = 0; ii < 3; ii++) {
