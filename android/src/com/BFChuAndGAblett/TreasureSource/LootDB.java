@@ -902,7 +902,8 @@ public class LootDB {
 
     public void popItemTypeTable(String tableType) throws IOException {
         String tableName = (tableType + "Types ");
-        String fileName = tableName + ".dat";
+        String fileName = ("file:///andoid_assets/sqlitedatabasetables/"
+                + tableName + ".dat");
         LootIO tableFiles = new LootIO(fileName);
 
         Integer dLow = 1;
