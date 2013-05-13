@@ -28,28 +28,7 @@ public class LootDisplay extends Activity {
     private ArrayAdapter<LootOutListItem> arrayAdapter;
     private LootDB lootDB;
     private Cursor lootCursor;
-    
-    
-    public Intent getLootRules = getIntent();
-    public int aPL = getLootRules.getIntExtra("aPL", 0);
-    public int eCR = getLootRules.getIntExtra("eCR", 0);
-    public int enDifficulty = getLootRules.getIntExtra("enDifficulty", 0);
-    public int lootSize = getLootRules.getIntExtra("lootSize", 0);
-    public int magicLv = getLootRules.getIntExtra("magicLv", 0);
-    public double resGold = getLootRules.getDoubleExtra("resGold", 0.0);
-    public boolean rollMundane = getLootRules.getBooleanExtra("rollMundane", false);
-    public boolean rollGoods = getLootRules.getBooleanExtra("rollGoods", false);
-    public boolean noRepeats = getLootRules.getBooleanExtra("noRepeats", false);
-    public boolean limitValByCR = getLootRules.getBooleanExtra("limByEV", false);
-    public boolean[] itemRestrictions = getLootRules.getBooleanArrayExtra("itemRestrictions");
-    public boolean[] displayOpts = getLootRules.getBooleanArrayExtra("displayOpts");
-    
-    public LootPrefs lootPrefs = new LootPrefs();
-    lootPrefs(aPL, eCR, enDifficulty, lootSize, magicLv, resGold, rollMundane, rollGoods, noRepeats, limitValByCR, itemRestrictions, displayOpts);
-    
-    
-
-    
+    private LootPrefs lootPrefs;
     
     
     
@@ -70,6 +49,8 @@ public class LootDisplay extends Activity {
         Log.d(TAG, "lootListView: " + lootListView);
         lootListView.setAdapter(arrayAdapter);
 
+        Intent getLootRules = getIntent();
+        initLootPrefs(getLootRules);
         // Database code
         lootDB = new LootDB(this);
         lootDB.open();
@@ -108,6 +89,24 @@ public class LootDisplay extends Activity {
         updateLootDisplay();
     }
 
+    private void initLootPrefs(Intent getLootRules)
+    {
+        int aPL = getLootRules.getIntExtra("aPL", 0);
+        int eCR = getLootRules.getIntExtra("eCR", 0);
+        int enDifficulty = getLootRules.getIntExtra("enDifficulty", 0);
+        int lootSize = getLootRules.getIntExtra("lootSize", 0);
+        int magicLv = getLootRules.getIntExtra("magicLv", 0);
+        double resGold = getLootRules.getDoubleExtra("resGold", 0.0);
+        boolean rollMundane = getLootRules.getBooleanExtra("rollMundane", false);
+        boolean rollGoods = getLootRules.getBooleanExtra("rollGoods", false);
+        boolean noRepeats = getLootRules.getBooleanExtra("noRepeats", false);
+        boolean limitValByCR = getLootRules.getBooleanExtra("limByEV", false);
+        boolean[] itemRestrictions = getLootRules.getBooleanArrayExtra("itemRestrictions");
+        boolean[] displayOpts = getLootRules.getBooleanArrayExtra("displayOpts");
+        
+        this.lootPrefs = new lootPrefs(aPL, eCR, enDifficulty, lootSize, magicLv, resGold, rollMundane, rollGoods, noRepeats, limitValByCR, itemRestrictions, displayOpts);
+    }
+    
     private void updateLootDisplay() {
         // 1
         lootCursor.requery();
