@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.CheckBox;
+import java.util.Arrays;
 
 /**
  * @author Brian F. Chu, Garrick S. Ablett
@@ -24,46 +25,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // if (BuildConfig.DEBUG) {
-        // Log.d(TAG, "in onCreate()");
-        // }
-/*
-        // store create SharedPreferences
+         if (BuildConfig.DEBUG) {
+         Log.d(TAG, "in onCreate()");
+         }
 
-        // get/create the preferences
-        SharedPreferences mySharedPreferences = getSharedPreferences(
-                "MY_PREFS", Activity.MODE_PRIVATE);
-
-        // get a preferences editor
-        SharedPreferences.Editor editor = mySharedPreferences.edit();
-
-        // store primitive values
-        editor.putInt("Apl", 1);
-        editor.putInt("EncounterDifficulty", 1);
-        editor.putFloat("TreasureSize", 0.5f);
-        editor.putInt("magicLevel", 1);
-        editor.putBoolean("rollMundane", true);
-        editor.putBoolean("rollGoods", true);
-        editor.putBoolean("throwAwayDuplicates", false);
-        editor.putBoolean("limitItemValue", false);
-        editor.putBoolean("restrictArmor", false);
-        editor.putBoolean("restrictWeapons", false);
-        editor.putBoolean("restrictPotions", false);
-        editor.putBoolean("restrictRings", false);
-        editor.putBoolean("restrictRods", false);
-        editor.putBoolean("restrictScrolls", false);
-        editor.putBoolean("restrictStaves", false);
-        editor.putBoolean("restrictWands", false);
-        editor.putBoolean("restrictWondrous", false);
-        editor.putBoolean("displayValue", true);
-        editor.putBoolean("displayLootRoll", false);
-        editor.putBoolean("displayHoardValue", false);
-        // editor.putLong("aNumber", 31);
-        // editor.putString("textEntryValue", "Not Empty");
-
-        // commit changes
-        editor.commit();
-*/
     }
 
     @Override
@@ -128,43 +93,58 @@ public class MainActivity extends Activity {
 
 
         EditText et_aPL = (EditText) findViewById(R.id.editText1);
-        int aPL = Integer.parseInt(et_aPL.getText().toString());
+        int aPL = 0;
+        aPL = Integer.parseInt(et_aPL.getText().toString());
         g.putExtra("aPL", aPL);
         
         EditText et_eD = (EditText) findViewById(R.id.editText2);
-        int eCR = Integer.parseInt(et_eD.getText().toString());
+        int eCR = 0;
+        eCR = Integer.parseInt(et_eD.getText().toString());
         g.putExtra("eCR", eCR);
         
         RadioGroup rg_dS = (RadioGroup) findViewById(R.id.difficulty_radioGroup);
-        int enDifficulty = rg_dS.getCheckedRadioButtonID();
+        int enDifficulty = 0;
+        enDifficulty = rg_dS.getCheckedRadioButtonID();
         //Switch Statement to determine what to use
         g.putExtra("enDifficulty", enDifficulty);
         
         RadioGroup rg_tS = (RadioGroup) findViewById(R.id.size_radioGroup);
-        int lootSize = rg_tS.getCheckedRadioButtonID();
+        int lootSize = 0;
+        lootSize = rg_tS.getCheckedRadioButtonID();
         //Switch Statement to determine what to use
         //Switch statement potentially actually handled in LootDisplay or LootCalc from theres
         g.putExtra("lootSize", lootSize);
         
         RadioGroup rg_mL = (RadioGroup) findViewById(R.id.magic_level_radioGroup);
-        int magicLv = rg_mL.getCheckedRadioButtonID();
+        int magicLv = 0;
+        magicLv = rg_mL.getCheckedRadioButtonID();
         //Switch Statement to determine what to use
         g.putExtra("magicLv", magicLv);
         
+        EditText et_rG = (EditText) findViewById(R.id.editText3);
+        double resGold = 0.0;
+        resGold = Double.parseDouble(et_rG.getText().toString());
+        g.putExtra("resGold", resGold);
+        
         CheckBox cb_rMun = (Checkbox) findViewById(R.id.checkBox1);
-        boolean rollMundane = cb_rMun.isChecked();
+        boolean rollMundane = false;
+        rollMundane = cb_rMun.isChecked();
         g.putExtra("rollMundane", rollMundane);
         
         CheckBox cb_rGoods = (Checkbox) findViewById(R.id.checkBox2);
-        boolean rollGoodss = cb_rGoods.isChecked();
+        boolean rollGoods = false;
+        rollGoods = cb_rGoods.isChecked();
         g.putExtra("rollGoods", rollGoods);
         
         CheckBox cb_discD = (Checkbox) findViewById(R.id.checkBox3);
-        boolean noRepeats = cb_DiscD.isChecked();
+        boolean noRepeats = false;
+        noRepeats = cb_DiscD.isChecked();
         g.putExtra("noRepeats", noRepeats);
         
         CheckBox cb_limByEV = (Checkbox) findViewById(R.id.checkBox4);
-        boolean limitValByCR = cb_limByEV.isChecked();
+        boolean limitValByCR = false;
+        limitValByCR = cb_limByEV.isChecked();
+        g.putExtra("limitValByCR", limitValByCR);
 
         boolean[] itemRestrictions = new boolean[9];
         CheckBox cb_ignoreArmor = (Checkbox) findViewById(R.id.checkBox5);
@@ -185,6 +165,7 @@ public class MainActivity extends Activity {
         itemRestrictions[7] = cb_ignoreWands.isChecked();
         CheckBox cb_ignoreWondrous = (Checkbox) findViewById(R.id.checkBox13);
         itemRestrictions[8] = cb_ignoreWondrous.isChecked();
+        g.putExtra("itemRestrictions", itemRestrictions);
         
         boolean[] displayOpts = new boolean[3]
         CheckBox cb_displayGold = (Checkbox) findViewById(R.id.checkBox14);
@@ -193,6 +174,7 @@ public class MainActivity extends Activity {
         displayOpts[1] = cb_displayChance.isChecked();
         CheckBox cb_displayTotal = (Checkbox) findViewById(R.id.checkBox16);
         displayOpts[2] = cb_displayTotal.isChecked();
+        g.putExtra("displayOpts", displayOpts);
         
 
         

@@ -14,7 +14,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import java.util.Arrays;
 
 /**
  * @author Brian Chu and Garrick Ablett
@@ -29,28 +29,27 @@ public class LootDisplay extends Activity {
     private LootDB lootDB;
     private Cursor lootCursor;
     
+    
     private Intent getLootRules = getIntent();
     private int aPL = getLootRules.getIntExtra("aPL", 0);
     private int eCR = getLootRules.getIntExtra("eCR", 0);
     private int enDifficulty = getLootRules.getIntExtra("enDifficulty", 0);
     private int lootSize = getLootRules.getIntExtra("lootSize", 0);
     private int magicLv = getLootRules.getIntExtra("magicLv", 0);
+    private double resGold = getLootRules.getDoubleExtra("resGold", 0.0);
     private boolean rollMundane = getLootRules.getBooleanExtra("rollMundane", false);
     private boolean rollGoods = getLootRules.getBooleanExtra("rollGoods", false);
     private boolean noRepeats = getLootRules.getBooleanExtra("noRepeats", false);
     private boolean limitValByCR = getLootRules.getBooleanExtra("limByEV", false);
-    private boolean ignoreArmor = getLootRules.getBooleanExtra("ignoreArmor", false);
-    private boolean ignoreWeapons = getLootRules.getBooleanExtra("ignoreWeapons", false);
-    private boolean ignorePotions = getLootRules.getBooleanExtra("ignorePotions", false);
-    private boolean ignoreRings = getLootRules.getBooleanExtra("ignoreRings", false);
-    private boolean ignoreRods = getLootRules.getBooleanExtra("ignoreRods", false);
-    private boolean ignoreScrolls = getLootRules.getBooleanExtra("ignoreScrolls", false);
-    private boolean ignoreStaves = getLootRules.getBooleanExtra("ignoreStaves", false);
-    private boolean ignoreWands = getLootRules.getBooleanExtra("ignoreWands", false);
-    private boolean ignoreWondrous = getLootRules.getBooleanExtra("ignoreWondrous", false);
-    private boolean displayGold = getLootRules.getBooleanExtra("displayGold", false);
-    private boolean displayChance = getLootRules.getBooleanExtra("displayChance", false);
-    private boolean displayTotal = getLootRules.getBooleanExtra("displayChance", false);
+    private boolean[] itemRestrictions = getLootRules.getBooleanArrayExtra("itemRestrictions");
+    private boolean[] displayOpts = getLootRules.getBooleanArrayExtra("displayOpts");
+    
+    private LootPrefs lootPrefs = new LootPrefs();
+    lootPrefs(aPL, eCR, enDifficulty, lootSize, magicLv, resGold, rollMundane, rollGoods, noRepeats, limitValByCR, itemRestrictions, displayOpts);
+    
+    
+
+    
     
     
     
@@ -62,41 +61,6 @@ public class LootDisplay extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loot_display);
 
-        /*
-         * // load data from SharedPreferences
-         * 
-         * // get/create the preferences SharedPreferences mySharedPreferences =
-         * getSharedPreferences( "MY_PREFS", Activity.MODE_PRIVATE);
-         * 
-         * int Apl = mySharedPreferences.getString("Apl", 1); int
-         * EncounterDifficulty = mySharedPreferences.getInt(
-         * "EncounterDifficulty", 1); float TreasureSize =
-         * mySharedPreferences.getFloat("TreasureSize", 0.5f); int magicLevel =
-         * mySharedPreferences.getInt("magicLevel", 1); boolean rollMundane =
-         * mySharedPreferences.getBoolean("rollMundane", true); boolean
-         * rollGoods = mySharedPreferences.getBoolean("rollGoods", true);
-         * boolean throwAwayDuplicates = mySharedPreferences.getBoolean(
-         * "throwAwayDuplicates", false); boolean limitItemValue =
-         * mySharedPreferences.getBoolean( "limitItemValue", false); boolean
-         * restrictArmor = mySharedPreferences.getBoolean("restrictArmor",
-         * false); boolean restrictWeapons = mySharedPreferences.getBoolean(
-         * "restrictWeapons", false); boolean restrictPotions =
-         * mySharedPreferences.getBoolean( "restrictPotions", false); boolean
-         * restrictRings = mySharedPreferences.getBoolean("restrictRings",
-         * false); boolean restrictRods =
-         * mySharedPreferences.getBoolean("restrictRods", false); boolean
-         * restrictScrolls = mySharedPreferences.getBoolean( "restrictScrolls",
-         * false); boolean restrictStaves = mySharedPreferences.getBoolean(
-         * "restrictStaves", false); boolean restrictWands =
-         * mySharedPreferences.getBoolean("restrictWands", false); boolean
-         * restrictWondrous = mySharedPreferences.getBoolean(
-         * "restrictWondrous", false);
-         * 
-         * boolean displayValue = mySharedPreferences.getBoolean("displayValue",
-         * true); boolean displayLootRoll = mySharedPreferences.getBoolean(
-         * "displayLootRoll", false); boolean displayHoardValue =
-         * mySharedPreferences.getBoolean( "displayHoardValue", false);
-         */
 
         lootListView = (ListView) findViewById(R.id.lootListView); // XML lookup
         lootItemList = new ArrayList<LootOutListItem>();
