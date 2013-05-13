@@ -3,6 +3,8 @@
  */
 package com.BFChuAndGAblett.TreasureSource;
 
+import java.io.IOException;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -29,9 +31,10 @@ public class LootDB {
     private Context context;
     private LootDatabaseOpenHelper dbHelper;
 
-    public LootDB(Context context) {
+    public LootDB(Context context) throws IOException {
         this.context = context;
         dbHelper = new LootDatabaseOpenHelper(context);
+        populateTables(this.db);
     }
 
     public void open() throws SQLiteException {
@@ -47,6 +50,13 @@ public class LootDB {
         db.close();
     }
 
+    public void clear(String tableName) {
+        db.delete(tableName, null, null);
+    }
+
+    /** DATABASE ENTRY SAVERS
+     * 
+     * */
     public boolean saveEntry(String tableName, Integer id, LootOutListItem item) {
         boolean successfull = false;
         int displayGold = 1;
@@ -264,24 +274,52 @@ public class LootDB {
         return successfull;
     }
 
-    public void clear(String tableName) {
-        db.delete(tableName, null, null);
+    public boolean saveEntryItemTypes(String tableName, Integer id, int dLow,
+            int dHigh, String itemName, Double valueAdjust) {
+        boolean successfull = false;
+        if (id == null) {
+            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", item Name: " + itemName + ", Value: "
+                    + valueAdjust);
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("itemType", itemName);
+            newItem.put("valueAdjust", valueAdjust);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", item Name: " + itemName + ", Value: "
+                    + valueAdjust);
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("itemType", itemName);
+            newItem.put("valueAdjust", valueAdjust);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
     }
 
-    @Deprecated
-    public LootItem getTableItem(Integer dRoll, String tableName) {
-
-        Cursor cursor = this.findItemByDRoll(dRoll, tableName);
-
-        // Integer sanitizedId = cursor.getInt(0);
-        String itemName = cursor.getString(3);
-        double value = cursor.getDouble(4);
-
-        LootItem item = new LootItem(dRoll, itemName, value);
-
-        return item;
-    }
-
+    /** DATABASE CALLERS
+     * */
     public Cursor findItemByDRoll(Integer dRoll, String tableName) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dRoll",
                 "quantity", "specials", "itemName", "value", "dispGold",
@@ -669,24 +707,108 @@ public class LootDB {
         return ability;
     }
 
-    /*
-     * query( boolean distinct - true or false - true if you want each row to be
-     * unique, false otherwise. String table - The table name to compile the
-     * query against. String[] columns - and array of column names to return
-     * String selection - the where clause String[] selectionArgs - arguments to
-     * the where clause - advanced topic, just use null - see
-     * findContactsByPhoneNumber below String groupBy - advanced topic, use null
-     * String having - advanced topic, use null String orderBy - sort the
-     * results - null for however the database feels like returning the data
-     * String limit - limit the number of row to return )
-     */
-    /*
-     * public Something get<something>(Integer id) { }
-     */
-
     /**
+     * DATABASE TABLE POPULATION
+     * */
+    public void populateTables(SQLiteDatabase db) throws IOException {
+        /*
+         * TODO: this method will handle all of the population of tables that
+         * are created in initTables().
+         */
+        LootIO tableFiles = new LootIO("ArmorTypes.dat");
+        // needs to construct a group of data, then push it into a
+        // saveEntry() that is tailored to that table. much like
+        // initTables(), it is probably best to create a function for each
+        // group of tables. Tables that have the exact same columns can be
+        // done in the same function, using the same methods of generating
+        // table names as initTables();
+
+        // TODO: popTable methods for coins, goods, items by APL;
+
+        popItemTypeTable(db, "Armor");
+        popItemTypeTable(db, "Shield");
+        popItemTypeTable(db, "Weapon");
+        popItemTypeTable(db, "RangedWeapon");
+        popItemTypeTable(db, "Ammo");
+        popItemTypeTable(db, "WondrousItem");
+
+        // Armor Enhancement and Abilities numbers by rarity
+        popEnhancementTable(db, "Armor");
+        popEnhancementTable(db, "Weapons");
+
+        // Special Abilities for Armor, Shield, Weapons:
+        popAbilitiesTable("Armor");
+        popAbilitiesTable("Shields");
+        popAbilitiesTable("Weapons");
+        popAbilitiesTable("Ranged_Weapons");
+        popAbilitiesTable("Ammunition");
+
+        // Specific items
+        popSpecificItemTable(db, "Armor");
+        popSpecificItemTable(db, "Shields");
+        popSpecificItemTable(db, "Weapons");
+        popSpecificItemTable(db, "Potions");
+        popSpecificItemTable(db, "Rings");
+        popSpecificItemTable(db, "Rods");
+        popSpecificItemTable(db, "Staves");
+
+        popSpecificItemTable(db, "Wondrous_Belt");
+        popSpecificItemTable(db, "Wondrous_Body");
+        popSpecificItemTable(db, "Wondrous_Chest");
+        popSpecificItemTable(db, "Wondrous_Eyes");
+        popSpecificItemTable(db, "Wondrous_Feet");
+        popSpecificItemTable(db, "Wondrous_Hands");
+        popSpecificItemTable(db, "Wondrous_Head");
+        popSpecificItemTable(db, "Wondrous_Headband");
+        popSpecificItemTable(db, "Wondrous_Neck");
+        popSpecificItemTable(db, "Wondrous_Shoulders");
+        popSpecificItemTable(db, "Wondrous_Wrists");
+        popSpecificItemTable(db, "Wondrous_Slotless");
+    }
+
+    public void popItemTypeTable(SQLiteDatabase db, String tableType)
+            throws IOException {
+        String tableName = (tableType + "Types ");
+        String fileName = tableName + ".dat";
+        LootIO tableFiles = new LootIO(fileName);
+
+        Integer dLow = 1;
+        Integer dHigh = 100;
+        String itemType = null;
+        Double valueAdjust = 1.0;
+
+        tableFiles.getIn().readLine();// cut off the header line of the file
+        while (tableFiles.getIn().ready()) {
+            String[] data = getLine(tableFiles);
+
+            dLow = Integer.valueOf(data[1]);
+            dHigh = Integer.valueOf(data[2]);
+            itemType = data[3];
+            valueAdjust = Double.valueOf(data[4]);
+
+            saveEntryItemTypes(tableName, null, dLow, dHigh, itemType,
+                    valueAdjust);
+        }
+
+        Log.d(TAG, "Populating Table " + tableName);
+    }
+
+    public String[] getLine(LootIO table) throws IOException {
+        String[] line = table.getIn().readLine().split("\t");
+        if (line.length <= 1) {
+            line = table.getIn().readLine().split("\t");
+        }
+        return line;
+    }
+
+    /** LootDatabaseOpenHelper
      * 
      * @author Brian Chu and Garrick Ablett
+     * 
+     * 
+     * 
+     * 
+     * 
      * 
      */
     private static class LootDatabaseOpenHelper extends SQLiteOpenHelper {
@@ -803,7 +925,7 @@ public class LootDB {
         public void initItemTypeTable(SQLiteDatabase db, String itemType) {
             String sqlcmd = "CREATE TABLE " + itemType + "Types "
                     + "(id INTEGER PRIMARY KEY AUTOINCREMENT, " + "dLow int, "
-                    + "dHigh int, " + itemType + "Type varchar(50), "
+                    + "dHigh int, " + "itemType varchar(50), "
                     + "valueAdjust int)";
 
             db.execSQL(sqlcmd);
