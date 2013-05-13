@@ -3,6 +3,7 @@
  */
 package com.BFChuAndGAblett.TreasureSource;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -42,7 +43,12 @@ public class LootDisplay extends Activity {
         lootListView.setAdapter(arrayAdapter);
 
         // Database code
-        lootDB = new LootDB(this);
+        try {
+            lootDB = new LootDB(this);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         lootDB.open();
 
         // add test entries to database
