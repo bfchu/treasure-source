@@ -644,7 +644,7 @@ public class LootDB {
     public String getAbilities(Integer dRoll, String itemType,
             Integer abilityLevel, double priceToAdjust) {
         // build table name
-        String tableName = "Abilities_" + itemType + "+" + abilityLevel;
+        String tableName = "Abilities_" + itemType + "plus" + abilityLevel;
 
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "ability", "priceAdjust" }, null, null, null, null,

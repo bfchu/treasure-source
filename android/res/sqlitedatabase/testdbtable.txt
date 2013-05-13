@@ -1,0 +1,9 @@
+d%	Armor or Shield
+01—10	+3 armor or shield (9,000 gp base price)
+11—22	+4 armor or shield (16,000 gp base price)
+23—32	+1 armor with one +2 special ability1 or +1 shield with one +2 special ability1
+33—44	+1 armor with one +3 special ability1 or +1 shield with one +3 special ability1
+45—56	+2 armor with one +2 special ability1 or +2 shield with one +2 special ability1
+57—68	+3 armor with one +1 special ability1 or +3 shield with one +1 special ability1
+69—80	+4 armor with one +1 special ability1 or +4 shield with one +1 special ability1
+81—100	Lesser major specific armor or shield
