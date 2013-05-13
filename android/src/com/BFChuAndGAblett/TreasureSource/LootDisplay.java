@@ -30,21 +30,21 @@ public class LootDisplay extends Activity {
     private Cursor lootCursor;
     
     
-    private Intent getLootRules = getIntent();
-    private int aPL = getLootRules.getIntExtra("aPL", 0);
-    private int eCR = getLootRules.getIntExtra("eCR", 0);
-    private int enDifficulty = getLootRules.getIntExtra("enDifficulty", 0);
-    private int lootSize = getLootRules.getIntExtra("lootSize", 0);
-    private int magicLv = getLootRules.getIntExtra("magicLv", 0);
-    private double resGold = getLootRules.getDoubleExtra("resGold", 0.0);
-    private boolean rollMundane = getLootRules.getBooleanExtra("rollMundane", false);
-    private boolean rollGoods = getLootRules.getBooleanExtra("rollGoods", false);
-    private boolean noRepeats = getLootRules.getBooleanExtra("noRepeats", false);
-    private boolean limitValByCR = getLootRules.getBooleanExtra("limByEV", false);
-    private boolean[] itemRestrictions = getLootRules.getBooleanArrayExtra("itemRestrictions");
-    private boolean[] displayOpts = getLootRules.getBooleanArrayExtra("displayOpts");
+    public Intent getLootRules = getIntent();
+    public int aPL = getLootRules.getIntExtra("aPL", 0);
+    public int eCR = getLootRules.getIntExtra("eCR", 0);
+    public int enDifficulty = getLootRules.getIntExtra("enDifficulty", 0);
+    public int lootSize = getLootRules.getIntExtra("lootSize", 0);
+    public int magicLv = getLootRules.getIntExtra("magicLv", 0);
+    public double resGold = getLootRules.getDoubleExtra("resGold", 0.0);
+    public boolean rollMundane = getLootRules.getBooleanExtra("rollMundane", false);
+    public boolean rollGoods = getLootRules.getBooleanExtra("rollGoods", false);
+    public boolean noRepeats = getLootRules.getBooleanExtra("noRepeats", false);
+    public boolean limitValByCR = getLootRules.getBooleanExtra("limByEV", false);
+    public boolean[] itemRestrictions = getLootRules.getBooleanArrayExtra("itemRestrictions");
+    public boolean[] displayOpts = getLootRules.getBooleanArrayExtra("displayOpts");
     
-    private LootPrefs lootPrefs = new LootPrefs();
+    public LootPrefs lootPrefs = new LootPrefs();
     lootPrefs(aPL, eCR, enDifficulty, lootSize, magicLv, resGold, rollMundane, rollGoods, noRepeats, limitValByCR, itemRestrictions, displayOpts);
     
     
