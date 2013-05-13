@@ -8,6 +8,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import android.content.res.AssetFileDescriptor;
+
 /**
  * @author Brian Chu and Garrick Ablett
  * 
@@ -38,6 +40,12 @@ public class LootIO {
         } catch (IOException e) {
             System.out.println("e: " + e);
         }
+    }
+
+    public LootIO(AssetFileDescriptor descriptor) throws IOException {
+        super();
+        this.in = new BufferedReader(new FileReader(
+                descriptor.getFileDescriptor()));
     }
 
     public void printLootIO() throws IOException {

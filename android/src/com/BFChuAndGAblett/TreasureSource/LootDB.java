@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -34,7 +35,7 @@ public class LootDB {
     public LootDB(Context context) throws IOException {
         this.context = context;
         dbHelper = new LootDatabaseOpenHelper(context);
-        populateTables(this.db);
+
     }
 
     public void open() throws SQLiteException {
@@ -844,7 +845,7 @@ public class LootDB {
     /**
      * DATABASE TABLE POPULATION
      * */
-    public void populateTables(SQLiteDatabase db) throws IOException {
+    public void populateTables() throws IOException {
         /*
          * TODO: this method will handle all of the population of tables that
          * are created in initTables().
@@ -902,9 +903,9 @@ public class LootDB {
 
     public void popItemTypeTable(String tableType) throws IOException {
         String tableName = (tableType + "Types ");
-        String fileName = ("file:///andoid_assets/sqlitedatabasetables/"
-                + tableName + ".dat");
-        LootIO tableFiles = new LootIO(fileName);
+        String fileName = ("sqlitedatabasetables/" + tableName + ".dat");
+        AssetFileDescriptor descriptor = context.getAssets().openFd(fileName);
+        LootIO tableFiles = new LootIO(descriptor);
 
         Integer dLow = 1;
         Integer dHigh = 100;
@@ -954,8 +955,9 @@ public class LootDB {
                 Log.d(TAG, "Populating Table " + tableName);
             }
         }
-        String fileName = tableName + ".dat";
-        LootIO tableFiles = new LootIO(fileName);
+        String fileName = ("sqlitedatabasetables/" + tableName + ".dat");
+        AssetFileDescriptor descriptor = context.getAssets().openFd(fileName);
+        LootIO tableFiles = new LootIO(descriptor);
 
         Integer dLow = 1;
         Integer dHigh = 100;
@@ -986,8 +988,9 @@ public class LootDB {
             tableName = tableType + "_plus" + (ii + 1);
             Log.d(TAG, "Populating Table " + tableName);
         }
-        String fileName = tableName + ".dat";
-        LootIO tableFiles = new LootIO(fileName);
+        String fileName = ("sqlitedatabasetables/" + tableName + ".dat");
+        AssetFileDescriptor descriptor = context.getAssets().openFd(fileName);
+        LootIO tableFiles = new LootIO(descriptor);
 
         Integer dLow = 1;
         Integer dHigh = 100;
@@ -1037,8 +1040,9 @@ public class LootDB {
                 Log.d(TAG, "Populating Table " + tableName);
             }
         }
-        String fileName = tableName + ".dat";
-        LootIO tableFiles = new LootIO(fileName);
+        String fileName = ("sqlitedatabasetables/" + tableName + ".dat");
+        AssetFileDescriptor descriptor = context.getAssets().openFd(fileName);
+        LootIO tableFiles = new LootIO(descriptor);
 
         Integer dLow = 1;
         Integer dHigh = 100;
@@ -1088,18 +1092,6 @@ public class LootDB {
                 + "itemName varchar(50), "
                 + "value varchar(50), "
                 + "dispGold int, " + "dispRoll int)";
-        private static final String CREATE_TABLE_ArmorTypes = "CREATE TABLE ArmorTypes "
-                + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "dLow int, "
-                + "dHigh int, "
-                + "armorType varchar(50), "
-                + "valueAdjust int)";
-        private static final String CREATE_TABLE_ShieldTypes = "CREATE TABLE ShieldTypes "
-                + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "dLow int, "
-                + "dHigh int, "
-                + "shieldType varchar(50), "
-                + "valueAdjust int)";
         private static final String DROP_TABLE = "DROP TABLE IF EXISTS contact";
 
         public LootDatabaseOpenHelper(Context context) {
