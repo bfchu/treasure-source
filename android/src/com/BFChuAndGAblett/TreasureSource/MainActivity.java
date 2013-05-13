@@ -177,39 +177,6 @@ public class MainActivity extends Activity {
         g.putExtra("displayOpts", displayOpts);
         
 
-        
-        
-/*        
-         * Something about retrieving the radio button name and then uses a
-         * switch statement to search by buttonName or some recorded buttonValue
-         * for the desired float value to pass?(If Button Value exists, use?)
-         
-        SharedPreferences mySharedPreferences = getSharedPreferences(
-                "MY_PREFS", Activity.MODE_PRIVATE);
-        SharedPreferences.Editor editor = mySharedPreferences.edit();
-        editor.putInt("Apl", aPL);
-        editor.putInt("EncounterDifficulty", eD);
-//        editor.putFloat("TreasureSize", 0.5f);
-//        editor.putInt("magicLevel", 1);
-        editor.putBoolean("rollMundane", rMun);
-        editor.putBoolean("rollGoods", rGoods);
-        editor.putBoolean("throwAwayDuplicates", discD);
-        editor.putBoolean("limitItemValue", limByEV);
-        editor.putBoolean("restrictArmor", ignoreArmor);
-        editor.putBoolean("restrictWeapons", ignoreWeapons);
-        editor.putBoolean("restrictPotions", ignorePotions);
-        editor.putBoolean("restrictRings", ignoreRings);
-        editor.putBoolean("restrictRods", ignoreRods);
-        editor.putBoolean("restrictScrolls", ignoreScrolls);
-        editor.putBoolean("restrictStaves", ignoreStaves);
-        editor.putBoolean("restrictWands", ignoreWands);
-        editor.putBoolean("restrictWondrous", ignoreWondrous);
-        editor.putBoolean("displayValue", displayGold);
-        editor.putBoolean("displayLootRoll", displayChance);
-        editor.putBoolean("displayHoardValue", displayTotal);
-        editor.commit();*/
-
-
         startActivity(g);
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in onRollLootButton()");
