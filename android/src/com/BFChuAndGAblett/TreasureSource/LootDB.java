@@ -318,6 +318,140 @@ public class LootDB {
         return successfull;
     }
 
+    private void saveEntryEnhancement(String tableName, Integer id,
+            Integer dLow, Integer dHigh, Integer enhancement,
+            Integer numAbilities, Integer abilityLevel, Integer isSpecific) {
+        boolean successfull = false;
+        if (id == null) {
+            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", enhancement: " + enhancement
+                    + ", numAbilities: " + numAbilities + ", abilityLevel: "
+                    + abilityLevel + ", isSpecific: " + isSpecific);
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("enhancement", enhancement);
+            newItem.put("numAbilities", numAbilities);
+            newItem.put("abilityLevel", abilityLevel);
+            newItem.put("isSpecific", isSpecific);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", enhancement: " + enhancement
+                    + ", numAbilities: " + numAbilities + ", abilityLevel: "
+                    + abilityLevel + ", isSpecific: " + isSpecific);
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("enhancement", enhancement);
+            newItem.put("numAbilities", numAbilities);
+            newItem.put("abilityLevel", abilityLevel);
+            newItem.put("isSpecific", isSpecific);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+        }
+    }
+
+    private boolean saveEntryAbilities(String tableName, Integer id,
+            Integer dLow, Integer dHigh, String ability, Double priceAdjust) {
+        boolean successfull = false;
+        if (id == null) {
+            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", ability: " + ability + ", priceAdjust: "
+                    + priceAdjust);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("ability", ability);
+            newItem.put("priceAdjust", priceAdjust);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", ability: " + ability + ", priceAdjust: "
+                    + priceAdjust);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("ability", ability);
+            newItem.put("priceAdjust", priceAdjust);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
+
+    }
+
+    private boolean saveEntrySpecificItems(String tableName, Integer id,
+            Integer dLow, Integer dHigh, String itemName, Double price) {
+        boolean successfull = false;
+        if (id == null) {
+            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", itemName: " + itemName + ", price: " + price);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("itemName", itemName);
+            newItem.put("price", price);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", itemName: " + itemName + ", price: " + price);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("itemName", itemName);
+            newItem.put("price", price);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
+
+    }
+
+    // TODO: remaining saveEntry forms;
+
     /** DATABASE CALLERS
      * */
     public Cursor findItemByDRoll(Integer dRoll, String tableName) {
@@ -725,16 +859,16 @@ public class LootDB {
 
         // TODO: popTable methods for coins, goods, items by APL;
 
-        popItemTypeTable(db, "Armor");
-        popItemTypeTable(db, "Shield");
-        popItemTypeTable(db, "Weapon");
-        popItemTypeTable(db, "RangedWeapon");
-        popItemTypeTable(db, "Ammo");
-        popItemTypeTable(db, "WondrousItem");
+        popItemTypeTable("Armor");
+        popItemTypeTable("Shield");
+        popItemTypeTable("Weapon");
+        popItemTypeTable("RangedWeapon");
+        popItemTypeTable("Ammo");
+        popItemTypeTable("WondrousItem");
 
         // Armor Enhancement and Abilities numbers by rarity
-        popEnhancementTable(db, "Armor");
-        popEnhancementTable(db, "Weapons");
+        popEnhancementTable("Armor");
+        popEnhancementTable("Weapons");
 
         // Special Abilities for Armor, Shield, Weapons:
         popAbilitiesTable("Armor");
@@ -744,30 +878,29 @@ public class LootDB {
         popAbilitiesTable("Ammunition");
 
         // Specific items
-        popSpecificItemTable(db, "Armor");
-        popSpecificItemTable(db, "Shields");
-        popSpecificItemTable(db, "Weapons");
-        popSpecificItemTable(db, "Potions");
-        popSpecificItemTable(db, "Rings");
-        popSpecificItemTable(db, "Rods");
-        popSpecificItemTable(db, "Staves");
+        popSpecificItemTable("Armor");
+        popSpecificItemTable("Shields");
+        popSpecificItemTable("Weapons");
+        popSpecificItemTable("Potions");
+        popSpecificItemTable("Rings");
+        popSpecificItemTable("Rods");
+        popSpecificItemTable("Staves");
 
-        popSpecificItemTable(db, "Wondrous_Belt");
-        popSpecificItemTable(db, "Wondrous_Body");
-        popSpecificItemTable(db, "Wondrous_Chest");
-        popSpecificItemTable(db, "Wondrous_Eyes");
-        popSpecificItemTable(db, "Wondrous_Feet");
-        popSpecificItemTable(db, "Wondrous_Hands");
-        popSpecificItemTable(db, "Wondrous_Head");
-        popSpecificItemTable(db, "Wondrous_Headband");
-        popSpecificItemTable(db, "Wondrous_Neck");
-        popSpecificItemTable(db, "Wondrous_Shoulders");
-        popSpecificItemTable(db, "Wondrous_Wrists");
-        popSpecificItemTable(db, "Wondrous_Slotless");
+        popSpecificItemTable("Wondrous_Belt");
+        popSpecificItemTable("Wondrous_Body");
+        popSpecificItemTable("Wondrous_Chest");
+        popSpecificItemTable("Wondrous_Eyes");
+        popSpecificItemTable("Wondrous_Feet");
+        popSpecificItemTable("Wondrous_Hands");
+        popSpecificItemTable("Wondrous_Head");
+        popSpecificItemTable("Wondrous_Headband");
+        popSpecificItemTable("Wondrous_Neck");
+        popSpecificItemTable("Wondrous_Shoulders");
+        popSpecificItemTable("Wondrous_Wrists");
+        popSpecificItemTable("Wondrous_Slotless");
     }
 
-    public void popItemTypeTable(SQLiteDatabase db, String tableType)
-            throws IOException {
+    public void popItemTypeTable(String tableType) throws IOException {
         String tableName = (tableType + "Types ");
         String fileName = tableName + ".dat";
         LootIO tableFiles = new LootIO(fileName);
@@ -793,6 +926,141 @@ public class LootDB {
         Log.d(TAG, "Populating Table " + tableName);
     }
 
+    public void popEnhancementTable(String tableType) throws IOException {
+        String tableName = null;
+        for (int ii = 0; ii < 3; ii++) {
+            for (int jj = 0; jj < 2; jj++) {
+                String lesserOrGreater = null;
+                switch (jj) {
+                case 0:
+                    lesserOrGreater = "Lesser";
+                    break;
+                case 1:
+                    lesserOrGreater = "Greater";
+                }
+                String rarityLevel = null;
+                switch (ii) {
+                case 0:
+                    rarityLevel = "Minor";
+                    break;
+                case 1:
+                    rarityLevel = "Medium";
+                    break;
+                case 2:
+                    rarityLevel = "Major";
+                }
+                tableName = (tableType + "_" + lesserOrGreater + "_" + rarityLevel);
+                Log.d(TAG, "Populating Table " + tableName);
+            }
+        }
+        String fileName = tableName + ".dat";
+        LootIO tableFiles = new LootIO(fileName);
+
+        Integer dLow = 1;
+        Integer dHigh = 100;
+        Integer enhancement = 1;
+        Integer numAbilities = 0;
+        Integer abilityLevel = 0;
+        Integer isSpecific = 0;
+
+        tableFiles.getIn().readLine();// cut off the header line of the file
+        while (tableFiles.getIn().ready()) {
+            String[] data = getLine(tableFiles);
+
+            dLow = Integer.valueOf(data[1]);
+            dHigh = Integer.valueOf(data[2]);
+            enhancement = Integer.valueOf(data[3]);
+            numAbilities = Integer.valueOf(data[4]);
+            abilityLevel = Integer.valueOf(data[5]);
+            isSpecific = Integer.valueOf(data[6]);
+
+            saveEntryEnhancement(tableName, null, dLow, dHigh, enhancement,
+                    numAbilities, abilityLevel, isSpecific);
+        }
+    }
+
+    public void popAbilitiesTable(String tableType) throws IOException {
+        String tableName = null;
+        for (int ii = 0; ii < 5; ii++) {
+            tableName = tableType + "_plus" + (ii + 1);
+            Log.d(TAG, "Populating Table " + tableName);
+        }
+        String fileName = tableName + ".dat";
+        LootIO tableFiles = new LootIO(fileName);
+
+        Integer dLow = 1;
+        Integer dHigh = 100;
+        String ability = null;
+        Double priceAdjust = 1.0;
+
+        tableFiles.getIn().readLine();// cut off the header line of the file
+        while (tableFiles.getIn().ready()) {
+            String[] data = getLine(tableFiles);
+
+            dLow = Integer.valueOf(data[1]);
+            dHigh = Integer.valueOf(data[2]);
+            ability = data[3];
+            priceAdjust = Double.valueOf(data[4]);
+
+            saveEntryAbilities(tableName, null, dLow, dHigh, ability,
+                    priceAdjust);
+        }
+
+    }
+
+    public void popSpecificItemTable(String tableType) throws IOException {
+        String tableName = null;
+        for (int ii = 0; ii < 3; ii++) {
+            for (int jj = 0; jj < 2; jj++) {
+                String lesserOrGreater = null;
+                switch (jj) {
+                case 0:
+                    lesserOrGreater = "Lesser";
+                    break;
+                case 1:
+                    lesserOrGreater = "Greater";
+                }
+                String rarityLevel = null;
+                switch (ii) {
+                case 0:
+                    rarityLevel = "Minor";
+                    break;
+                case 1:
+                    rarityLevel = "Medium";
+                    break;
+                case 2:
+                    rarityLevel = "Major";
+                }
+                tableName = ("Specific_" + tableType + "_" + lesserOrGreater
+                        + "_" + rarityLevel);
+                Log.d(TAG, "Populating Table " + tableName);
+            }
+        }
+        String fileName = tableName + ".dat";
+        LootIO tableFiles = new LootIO(fileName);
+
+        Integer dLow = 1;
+        Integer dHigh = 100;
+        String itemName = null;
+        Double price = 1.0;
+
+        tableFiles.getIn().readLine();// cut off the header line of the file
+        while (tableFiles.getIn().ready()) {
+            String[] data = getLine(tableFiles);
+
+            dLow = Integer.valueOf(data[1]);
+            dHigh = Integer.valueOf(data[2]);
+            itemName = data[3];
+            price = Double.valueOf(data[4]);
+
+            saveEntrySpecificItems(tableName, null, dLow, dHigh, itemName,
+                    price);
+        }
+
+    }
+
+    // TODO: remaining popTable forms;
+
     public String[] getLine(LootIO table) throws IOException {
         String[] line = table.getIn().readLine().split("\t");
         if (line.length <= 1) {
@@ -804,8 +1072,6 @@ public class LootDB {
     /** LootDatabaseOpenHelper
      * 
      * @author Brian Chu and Garrick Ablett
-     * 
-     * 
      * 
      * 
      * 
@@ -842,11 +1108,11 @@ public class LootDB {
         public LootDatabaseOpenHelper(Context context, String name,
                 CursorFactory factory, int version) {
             super(context, name, factory, version);
-            // TODO Auto-generated constructor stub
+
         }
 
         public void initTables(SQLiteDatabase db) {
-            // Primary output
+            // Primary output table
             db.execSQL(CREATE_TABLE_LootOut);
 
             // Coins by APL
