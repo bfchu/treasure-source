@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import android.content.res.AssetFileDescriptor;
 
@@ -46,6 +48,11 @@ public class LootIO {
         super();
         this.in = new BufferedReader(new FileReader(
                 descriptor.getFileDescriptor()));
+    }
+
+    public LootIO(InputStream stream) throws IOException {
+        super();
+        this.in = new BufferedReader(new InputStreamReader(stream));
     }
 
     public void printLootIO() throws IOException {

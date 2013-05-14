@@ -8,6 +8,7 @@ import java.io.IOException;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -55,7 +56,8 @@ public class LootDB {
         db.delete(tableName, null, null);
     }
 
-    /** DATABASE ENTRY SAVERS
+    /**
+     * DATABASE ENTRY SAVERS
      * 
      * */
     public boolean saveEntry(String tableName, Integer id, LootOutListItem item) {
@@ -453,7 +455,8 @@ public class LootDB {
 
     // TODO: remaining saveEntry forms;
 
-    /** DATABASE CALLERS
+    /**
+     * DATABASE CALLERS
      * */
     public Cursor findItemByDRoll(Integer dRoll, String tableName) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dRoll",
@@ -902,10 +905,10 @@ public class LootDB {
     }
 
     public void popItemTypeTable(String tableType) throws IOException {
-        String tableName = (tableType + "Types ");
-        String fileName = ("sqlitedatabasetables/" + tableName + ".dat");
-        AssetFileDescriptor descriptor = context.getAssets().openFd(fileName);
-        LootIO tableFiles = new LootIO(descriptor);
+        String tableName = (tableType + "Types");
+        String fileName = (tableName + ".dat");
+        AssetManager manager = context.getAssets();
+        LootIO tableFiles = new LootIO(manager.open(fileName));
 
         Integer dLow = 1;
         Integer dHigh = 100;
@@ -916,8 +919,8 @@ public class LootDB {
         while (tableFiles.getIn().ready()) {
             String[] data = getLine(tableFiles);
 
-            dLow = Integer.valueOf(data[1]);
-            dHigh = Integer.valueOf(data[2]);
+            dLow = Integer.parseInt(data[1]);
+            dHigh = Integer.parseInt(data[2]);
             itemType = data[3];
             valueAdjust = Double.valueOf(data[4]);
 
@@ -1074,7 +1077,8 @@ public class LootDB {
         return line;
     }
 
-    /** LootDatabaseOpenHelper
+    /**
+     * LootDatabaseOpenHelper
      * 
      * @author Brian Chu and Garrick Ablett
      * 
