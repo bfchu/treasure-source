@@ -22,6 +22,8 @@ public class MainActivity extends Activity {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in onCreate()");
         }
+        startService(new Intent(this, DatabaseLoaderService.class));
+
     }
 
     @Override

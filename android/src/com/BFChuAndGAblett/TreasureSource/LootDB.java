@@ -852,7 +852,7 @@ public class LootDB {
          * TODO: this method will handle all of the population of tables that
          * are created in initTables().
          */
-        LootIO tableFiles = new LootIO("ArmorTypes.dat");
+        AssetManager manager = context.getAssets();
         // needs to construct a group of data, then push it into a
         // saveEntry() that is tailored to that table. much like
         // initTables(), it is probably best to create a function for each
@@ -862,51 +862,54 @@ public class LootDB {
 
         // TODO: popTable methods for coins, goods, items by APL;
 
-        popItemTypeTable("Armor");
-        // popItemTypeTable("Shield");
-        // popItemTypeTable("Weapon");
-        popItemTypeTable("RangedWeapon");
-        popItemTypeTable("Ammo");
-        popItemTypeTable("WondrousItem");
+        popItemTypeTable("Armor", manager);
+        popItemTypeTable("Shield", manager);
+        popItemTypeTable("Weapon", manager);
+        popItemTypeTable("RangedWeapon", manager);
+        popItemTypeTable("Ammo", manager);
+        popItemTypeTable("WondrousItem", manager);
 
         // Armor Enhancement and Abilities numbers by rarity
-        popEnhancementTable("Armor");
-        popEnhancementTable("Weapons");
+        popEnhancementTable("Armor", manager);
+        popEnhancementTable("Weapons", manager);
 
         // Special Abilities for Armor, Shield, Weapons:
-        popAbilitiesTable("Armor");
-        popAbilitiesTable("Shields");
-        popAbilitiesTable("Weapons");
-        popAbilitiesTable("Ranged_Weapons");
-        popAbilitiesTable("Ammunition");
+        popAbilitiesTable("Armor", manager);
+        popAbilitiesTable("Shields", manager);
+        popAbilitiesTable("Weapons", manager);
+        popAbilitiesTable("Ranged_Weapons", manager);
+        popAbilitiesTable("Ammunition", manager);
 
         // Specific items
-        popSpecificItemTable("Armor");
-        popSpecificItemTable("Shields");
-        popSpecificItemTable("Weapons");
-        popSpecificItemTable("Potions");
-        popSpecificItemTable("Rings");
-        popSpecificItemTable("Rods");
-        popSpecificItemTable("Staves");
+        popSpecificItemTable("Armor", manager);
+        popSpecificItemTable("Shields", manager);
+        popSpecificItemTable("Weapons", manager);
+        popSpecificItemTable("Potions", manager);
+        popSpecificItemTable("Rings", manager);
+        popSpecificItemTable("Rods", manager);
+        popSpecificItemTable("Staves", manager);
 
-        popSpecificItemTable("Wondrous_Belt");
-        popSpecificItemTable("Wondrous_Body");
-        popSpecificItemTable("Wondrous_Chest");
-        popSpecificItemTable("Wondrous_Eyes");
-        popSpecificItemTable("Wondrous_Feet");
-        popSpecificItemTable("Wondrous_Hands");
-        popSpecificItemTable("Wondrous_Head");
-        popSpecificItemTable("Wondrous_Headband");
-        popSpecificItemTable("Wondrous_Neck");
-        popSpecificItemTable("Wondrous_Shoulders");
-        popSpecificItemTable("Wondrous_Wrists");
-        popSpecificItemTable("Wondrous_Slotless");
+        popSpecificItemTable("Wondrous_Belt", manager);
+        popSpecificItemTable("Wondrous_Body", manager);
+        popSpecificItemTable("Wondrous_Chest", manager);
+        popSpecificItemTable("Wondrous_Eyes", manager);
+        popSpecificItemTable("Wondrous_Feet", manager);
+        popSpecificItemTable("Wondrous_Hands", manager);
+        popSpecificItemTable("Wondrous_Head", manager);
+        popSpecificItemTable("Wondrous_Headband", manager);
+        popSpecificItemTable("Wondrous_Neck", manager);
+        popSpecificItemTable("Wondrous_Shoulders", manager);
+        popSpecificItemTable("Wondrous_Wrists", manager);
+        popSpecificItemTable("Wondrous_Slotless", manager);
+
+        manager.close();
     }
 
-    public void popItemTypeTable(String tableType) throws IOException {
+    public void popItemTypeTable(String tableType, AssetManager manager)
+            throws IOException {
         String tableName = (tableType + "Types");
         String fileName = (tableName + ".dat");
-        AssetManager manager = context.getAssets();
+
         LootIO tableFiles = new LootIO(manager.open(fileName));
         Log.d(TAG, "Begin Populating Table " + tableName);
 
@@ -926,12 +929,15 @@ public class LootDB {
 
             saveEntryItemTypes(tableName, null, dLow, dHigh, itemType,
                     valueAdjust);
+
         }
 
         Log.d(TAG, "Done Populating Table " + tableName);
+        tableFiles.close();
     }
 
-    public void popEnhancementTable(String tableType) throws IOException {
+    public void popEnhancementTable(String tableType, AssetManager manager)
+            throws IOException {
         String tableName = null;
         for (int ii = 0; ii < 3; ii++) {
             for (int jj = 0; jj < 2; jj++) {
@@ -958,7 +964,6 @@ public class LootDB {
                 Log.d(TAG, "Begin Populating Table " + tableName);
 
                 String fileName = (tableName + ".dat");
-                AssetManager manager = context.getAssets();
                 LootIO tableFiles = new LootIO(manager.open(fileName));
 
                 Integer dLow = 1;
@@ -982,20 +987,22 @@ public class LootDB {
 
                     saveEntryEnhancement(tableName, null, dLow, dHigh,
                             enhancement, numAbilities, abilityLevel, isSpecific);
+
                 }
                 Log.d(TAG, "Done Populating Table " + tableName);
+                tableFiles.close();
             }
         }
     }
 
-    public void popAbilitiesTable(String tableType) throws IOException {
+    public void popAbilitiesTable(String tableType, AssetManager manager)
+            throws IOException {
         String tableName = null;
         for (int ii = 0; ii < 5; ii++) {
             tableName = tableType + "_plus" + (ii + 1);
             Log.d(TAG, "Begin Populating Table " + tableName);
 
             String fileName = (tableName + ".dat");
-            AssetManager manager = context.getAssets();
             LootIO tableFiles = new LootIO(manager.open(fileName));
 
             Integer dLow = 1;
@@ -1016,10 +1023,12 @@ public class LootDB {
                         priceAdjust);
             }
             Log.d(TAG, "Done Populating Table " + tableName);
+            tableFiles.close();
         }
     }
 
-    public void popSpecificItemTable(String tableType) throws IOException {
+    public void popSpecificItemTable(String tableType, AssetManager manager)
+            throws IOException {
         String tableName = null;
         for (int ii = 0; ii < 3; ii++) {
             for (int jj = 0; jj < 2; jj++) {
@@ -1047,7 +1056,6 @@ public class LootDB {
                 Log.d(TAG, "Begin Populating Table " + tableName);
 
                 String fileName = (tableName + ".dat");
-                AssetManager manager = context.getAssets();
                 LootIO tableFiles = new LootIO(manager.open(fileName));
 
                 Integer dLow = 1;
@@ -1069,6 +1077,7 @@ public class LootDB {
                             itemName, price);
                 }
                 Log.d(TAG, "Done Populating Table " + tableName);
+                tableFiles.close();
             }
         }
     }

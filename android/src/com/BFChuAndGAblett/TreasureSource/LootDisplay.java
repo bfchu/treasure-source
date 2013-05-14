@@ -50,12 +50,6 @@ public class LootDisplay extends Activity {
             e.printStackTrace();
         }
         lootDB.open();
-        try {
-            lootDB.populateTables();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
 
         // add test entries to database
         // replace this part with lootRoller logic (LootBuilder)
