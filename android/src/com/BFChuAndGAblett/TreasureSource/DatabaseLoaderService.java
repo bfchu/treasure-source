@@ -60,7 +60,7 @@ public class DatabaseLoaderService extends Service {
         Toast.makeText(this, "Database finished loading!", Toast.LENGTH_LONG)
                 .show();
 
-        stopSelf();
+        // stopSelf();
         return r;
 
     }

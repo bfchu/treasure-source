@@ -852,13 +852,8 @@ public class LootDB {
          * TODO: this method will handle all of the population of tables that
          * are created in initTables().
          */
+
         AssetManager manager = context.getAssets();
-        // needs to construct a group of data, then push it into a
-        // saveEntry() that is tailored to that table. much like
-        // initTables(), it is probably best to create a function for each
-        // group of tables. Tables that have the exact same columns can be
-        // done in the same function, using the same methods of generating
-        // table names as initTables();
 
         // TODO: popTable methods for coins, goods, items by APL;
 
@@ -903,6 +898,7 @@ public class LootDB {
         popSpecificItemTable("Wondrous_Slotless", manager);
 
         manager.close();
+
     }
 
     public void popItemTypeTable(String tableType, AssetManager manager)
@@ -922,14 +918,15 @@ public class LootDB {
         while (tableFiles.getIn().ready()) {
             String[] data = getLine(tableFiles);
 
-            dLow = Integer.parseInt(data[1]);
-            dHigh = Integer.parseInt(data[2]);
-            itemType = data[3];
-            valueAdjust = Double.valueOf(data[4]);
+            if (data.length >= 4) {
+                dLow = Integer.parseInt(data[1]);
+                dHigh = Integer.parseInt(data[2]);
+                itemType = data[3];
+                valueAdjust = Double.valueOf(data[4]);
 
-            saveEntryItemTypes(tableName, null, dLow, dHigh, itemType,
-                    valueAdjust);
-
+                saveEntryItemTypes(tableName, null, dLow, dHigh, itemType,
+                        valueAdjust);
+            }
         }
 
         Log.d(TAG, "Done Populating Table " + tableName);
@@ -978,16 +975,18 @@ public class LootDB {
                 while (tableFiles.getIn().ready()) {
                     String[] data = getLine(tableFiles);
 
-                    dLow = Integer.valueOf(data[1]);
-                    dHigh = Integer.valueOf(data[2]);
-                    enhancement = Integer.valueOf(data[3]);
-                    numAbilities = Integer.valueOf(data[4]);
-                    abilityLevel = Integer.valueOf(data[5]);
-                    isSpecific = Integer.valueOf(data[6]);
+                    if (data.length >= 6) {
+                        dLow = Integer.valueOf(data[1]);
+                        dHigh = Integer.valueOf(data[2]);
+                        enhancement = Integer.valueOf(data[3]);
+                        numAbilities = Integer.valueOf(data[4]);
+                        abilityLevel = Integer.valueOf(data[5]);
+                        isSpecific = Integer.valueOf(data[6]);
 
-                    saveEntryEnhancement(tableName, null, dLow, dHigh,
-                            enhancement, numAbilities, abilityLevel, isSpecific);
-
+                        saveEntryEnhancement(tableName, null, dLow, dHigh,
+                                enhancement, numAbilities, abilityLevel,
+                                isSpecific);
+                    }
                 }
                 Log.d(TAG, "Done Populating Table " + tableName);
                 tableFiles.close();
@@ -999,7 +998,7 @@ public class LootDB {
             throws IOException {
         String tableName = null;
         for (int ii = 0; ii < 5; ii++) {
-            tableName = tableType + "_plus" + (ii + 1);
+            tableName = "Abilities_" + tableType + "_plus" + (ii + 1);
             Log.d(TAG, "Begin Populating Table " + tableName);
 
             String fileName = (tableName + ".dat");
@@ -1014,13 +1013,15 @@ public class LootDB {
             while (tableFiles.getIn().ready()) {
                 String[] data = getLine(tableFiles);
 
-                dLow = Integer.valueOf(data[1]);
-                dHigh = Integer.valueOf(data[2]);
-                ability = data[3];
-                priceAdjust = Double.valueOf(data[4]);
+                if (data.length >= 4) {
+                    dLow = Integer.valueOf(data[1]);
+                    dHigh = Integer.valueOf(data[2]);
+                    ability = data[3];
+                    priceAdjust = Double.valueOf(data[4]);
 
-                saveEntryAbilities(tableName, null, dLow, dHigh, ability,
-                        priceAdjust);
+                    saveEntryAbilities(tableName, null, dLow, dHigh, ability,
+                            priceAdjust);
+                }
             }
             Log.d(TAG, "Done Populating Table " + tableName);
             tableFiles.close();
@@ -1068,13 +1069,15 @@ public class LootDB {
                 while (tableFiles.getIn().ready()) {
                     String[] data = getLine(tableFiles);
 
-                    dLow = Integer.valueOf(data[1]);
-                    dHigh = Integer.valueOf(data[2]);
-                    itemName = data[3];
-                    price = Double.valueOf(data[4]);
+                    if (data.length >= 4) {
+                        dLow = Integer.valueOf(data[1]);
+                        dHigh = Integer.valueOf(data[2]);
+                        itemName = data[3];
+                        price = Double.valueOf(data[4]);
 
-                    saveEntrySpecificItems(tableName, null, dLow, dHigh,
-                            itemName, price);
+                        saveEntrySpecificItems(tableName, null, dLow, dHigh,
+                                itemName, price);
+                    }
                 }
                 Log.d(TAG, "Done Populating Table " + tableName);
                 tableFiles.close();
@@ -1089,6 +1092,7 @@ public class LootDB {
         if (line.length <= 1) {
             line = table.getIn().readLine().split("\t");
         }
+
         return line;
     }
 
