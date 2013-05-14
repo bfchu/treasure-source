@@ -115,6 +115,7 @@ public class MainActivity extends Activity {
         int enDifficulty = 0;
         enDifficulty = rg_dS.getCheckedRadioButtonID();
         //Switch Statement to determine what to use
+        //Switch statement potentially actually handled in LootDisplay or LootCalc from theres
         intent.putExtra("enDifficulty", enDifficulty);
         
         RadioGroup rg_tS = (RadioGroup) findViewById(R.id.size_radioGroup);
