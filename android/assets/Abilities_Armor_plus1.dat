@@ -1,0 +1,18 @@
+	dlow	dhigh	itemType	valueAdjust
+	1	6	Benevolent	2000
+	7	12	Poison-resistant	2250
+	13	18	Balanced	1000
+	19	24	Bitter	1000
+	25	30	Bolstering	1000
+	31	36	Brawling	1000
+	37	42	Champion	1000
+	43	48	Dastard	1000
+	49	54	Deathless	1000
+	55	60	Defiant	1000
+	61	66	Light Fortification	1000
+	67	71	Grinding	1000
+	72	76	Impervious	1000
+	77	82	Mirrored	1000
+	83	88	Spell Storing	1000
+	89	94	Stanching	1000
+	95	100	Warding	1000

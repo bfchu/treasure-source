@@ -1,0 +1,12 @@
+	dlow	dhigh	itemType	valueAdjust
+	1	8	Adhesive	7000
+	9	17	Hosteling	7500
+	18	26	Radiant	7500
+	27	36	Delving	10000
+	37	45	Putrid	10000
+	46	55	Moderate Fortification	9000
+	56	65	Ghost Touch	9000
+	66	74	Invulnerability	9000
+	75	84	Spell Resistance (15)	9000
+	85	92	Titanic	9000
+	93	100	Wild	9000

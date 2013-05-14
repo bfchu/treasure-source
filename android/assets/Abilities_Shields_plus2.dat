@@ -1,0 +1,7 @@
+	dlow	dhigh	itemType	valueAdjust
+	1	15	Rallying	5000
+	16	30	Wyrmsbreath	5000
+	31	50	Animated	4000
+	51	67	Arrow Deflection	4000
+	68	82	Merging	4000
+	83	100	Spell Resistance	4000
