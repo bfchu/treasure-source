@@ -7,7 +7,6 @@ import java.io.IOException;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -958,9 +957,9 @@ public class LootDB {
                 Log.d(TAG, "Populating Table " + tableName);
             }
         }
-        String fileName = ("sqlitedatabasetables/" + tableName + ".dat");
-        AssetFileDescriptor descriptor = context.getAssets().openFd(fileName);
-        LootIO tableFiles = new LootIO(descriptor);
+        String fileName = (tableName + ".dat");
+        AssetManager manager = context.getAssets();
+        LootIO tableFiles = new LootIO(manager.open(fileName));
 
         Integer dLow = 1;
         Integer dHigh = 100;
@@ -991,9 +990,9 @@ public class LootDB {
             tableName = tableType + "_plus" + (ii + 1);
             Log.d(TAG, "Populating Table " + tableName);
         }
-        String fileName = ("sqlitedatabasetables/" + tableName + ".dat");
-        AssetFileDescriptor descriptor = context.getAssets().openFd(fileName);
-        LootIO tableFiles = new LootIO(descriptor);
+        String fileName = (tableName + ".dat");
+        AssetManager manager = context.getAssets();
+        LootIO tableFiles = new LootIO(manager.open(fileName));
 
         Integer dLow = 1;
         Integer dHigh = 100;
@@ -1043,9 +1042,9 @@ public class LootDB {
                 Log.d(TAG, "Populating Table " + tableName);
             }
         }
-        String fileName = ("sqlitedatabasetables/" + tableName + ".dat");
-        AssetFileDescriptor descriptor = context.getAssets().openFd(fileName);
-        LootIO tableFiles = new LootIO(descriptor);
+        String fileName = (tableName + ".dat");
+        AssetManager manager = context.getAssets();
+        LootIO tableFiles = new LootIO(manager.open(fileName));
 
         Integer dLow = 1;
         Integer dHigh = 100;
