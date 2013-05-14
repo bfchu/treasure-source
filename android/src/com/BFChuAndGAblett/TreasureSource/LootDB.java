@@ -452,6 +452,140 @@ public class LootDB {
 
     }
 
+    private boolean saveEntryAPLcoins(String tableName, Integer id,
+            Integer dLow, Integer dHigh, Integer numDice, Integer dieSize,
+            Integer quantity, Integer coinType) {
+        boolean successfull = false;
+        if (id == null) {
+            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
+                    + ", quantity: " + quantity + ", coinType: " + coinType);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("numDice", numDice);
+            newItem.put("quantity", quantity);
+            newItem.put("coinType", coinType);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
+                    + ", quantity: " + quantity + ", coinType: " + coinType);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("numDice", numDice);
+            newItem.put("quantity", quantity);
+            newItem.put("coinType", coinType);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
+
+    }
+
+    private boolean saveEntryAPLGoods(String tableName, Integer id,
+            Integer dLow, Integer dHigh, Integer numDice, Integer dieSize,
+            Integer goodsType) {
+        boolean successfull = false;
+        if (id == null) {
+            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
+                    + ", goodsType: " + goodsType);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("numDice", numDice);
+            newItem.put("goodsType", goodsType);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
+                    + ", goodsType: " + goodsType);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("numDice", numDice);
+            newItem.put("goodsType", goodsType);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
+
+    }
+
+    private boolean saveEntryAPLItems(String tableName, Integer id,
+            Integer dLow, Integer dHigh, Integer numDice, Integer dieSize,
+            Integer itemRarityGroup) {
+        boolean successfull = false;
+        if (id == null) {
+            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
+                    + ", itemRarityGroup: " + itemRarityGroup);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("numDice", numDice);
+            newItem.put("itemRarityGroup", itemRarityGroup);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
+                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
+                    + ", itemRarityGroup: " + itemRarityGroup);
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("dLow", dLow);
+            newItem.put("dHigh", dHigh);
+            newItem.put("numDice", numDice);
+            newItem.put("itemRarityGroup", itemRarityGroup);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
+
+    }
+
     // TODO: remaining saveEntry forms;
 
     /**
@@ -856,6 +990,9 @@ public class LootDB {
         AssetManager manager = context.getAssets();
 
         // TODO: popTable methods for coins, goods, items by APL;
+        popAPLCoins(manager);
+        popAPLGoods(manager);
+        popAPLItems(manager);
 
         popItemTypeTable("Armor", manager);
         popItemTypeTable("Shield", manager);
@@ -899,6 +1036,113 @@ public class LootDB {
 
         manager.close();
 
+    }
+
+    public void popAPLCoins(AssetManager manager) throws IOException {
+        for (int ii = 0; ii < 20; ii++) {
+            String tableName = "APL" + (ii + 1) + "_Coins";
+            String fileName = (tableName + ".dat");
+
+            LootIO tableFiles = new LootIO(manager.open(fileName));
+            Log.d(TAG, "Begin Populating Table " + tableName);
+
+            Integer dLow = 1;
+            Integer dHigh = 100;
+            Integer numDice = 1;
+            Integer dieSize = 6;
+            Integer quantity = 1;
+            Integer coinType = 3;
+
+            tableFiles.getIn().readLine();// cut off the header line of the file
+            while (tableFiles.getIn().ready()) {
+                String[] data = getLine(tableFiles);
+
+                if (data.length >= 6) {
+                    dLow = Integer.parseInt(data[1]);
+                    dHigh = Integer.parseInt(data[2]);
+                    numDice = Integer.parseInt(data[3]);
+                    dieSize = Integer.parseInt(data[4]);
+                    quantity = Integer.parseInt(data[5]);
+                    coinType = Integer.parseInt(data[6]);
+
+                    saveEntryAPLcoins(tableName, null, dLow, dHigh, numDice,
+                            dieSize, quantity, coinType);
+                }
+            }
+
+            Log.d(TAG, "Done Populating Table " + tableName);
+            tableFiles.close();
+        }
+    }
+
+    public void popAPLGoods(AssetManager manager) throws IOException {
+        for (int ii = 0; ii < 20; ii++) {
+            String tableName = "APL" + (ii + 1) + "_Goods";
+            String fileName = (tableName + ".dat");
+
+            LootIO tableFiles = new LootIO(manager.open(fileName));
+            Log.d(TAG, "Begin Populating Table " + tableName);
+
+            Integer dLow = 1;
+            Integer dHigh = 100;
+            Integer numDice = 1;
+            Integer dieSize = 6;
+            Integer goodsType = 1;
+
+            tableFiles.getIn().readLine();// cut off the header line of the file
+            while (tableFiles.getIn().ready()) {
+                String[] data = getLine(tableFiles);
+
+                if (data.length >= 4) {
+                    dLow = Integer.parseInt(data[1]);
+                    dHigh = Integer.parseInt(data[2]);
+                    numDice = Integer.parseInt(data[3]);
+                    dieSize = Integer.parseInt(data[4]);
+                    goodsType = Integer.parseInt(data[5]);
+
+                    saveEntryAPLGoods(tableName, null, dLow, dHigh, numDice,
+                            dieSize, goodsType);
+                }
+            }
+
+            Log.d(TAG, "Done Populating Table " + tableName);
+            tableFiles.close();
+        }
+    }
+
+    public void popAPLItems(AssetManager manager) throws IOException {
+        for (int ii = 0; ii < 20; ii++) {
+            String tableName = "APL" + (ii + 1) + "_Items";
+            String fileName = (tableName + ".dat");
+
+            LootIO tableFiles = new LootIO(manager.open(fileName));
+            Log.d(TAG, "Begin Populating Table " + tableName);
+
+            Integer dLow = 1;
+            Integer dHigh = 100;
+            Integer numDice = 1;
+            Integer dieSize = 6;
+            Integer itemRarityGroup = 1;
+
+            tableFiles.getIn().readLine();// cut off the header line of the file
+            while (tableFiles.getIn().ready()) {
+                String[] data = getLine(tableFiles);
+
+                if (data.length >= 4) {
+                    dLow = Integer.parseInt(data[1]);
+                    dHigh = Integer.parseInt(data[2]);
+                    numDice = Integer.parseInt(data[3]);
+                    dieSize = Integer.parseInt(data[4]);
+                    itemRarityGroup = Integer.parseInt(data[5]);
+
+                    saveEntryAPLItems(tableName, null, dLow, dHigh, numDice,
+                            dieSize, itemRarityGroup);
+                }
+            }
+
+            Log.d(TAG, "Done Populating Table " + tableName);
+            tableFiles.close();
+        }
     }
 
     public void popItemTypeTable(String tableType, AssetManager manager)
