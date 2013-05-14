@@ -863,8 +863,8 @@ public class LootDB {
         // TODO: popTable methods for coins, goods, items by APL;
 
         popItemTypeTable("Armor");
-        popItemTypeTable("Shield");
-        popItemTypeTable("Weapon");
+        // popItemTypeTable("Shield");
+        // popItemTypeTable("Weapon");
         popItemTypeTable("RangedWeapon");
         popItemTypeTable("Ammo");
         popItemTypeTable("WondrousItem");
@@ -908,6 +908,7 @@ public class LootDB {
         String fileName = (tableName + ".dat");
         AssetManager manager = context.getAssets();
         LootIO tableFiles = new LootIO(manager.open(fileName));
+        Log.d(TAG, "Begin Populating Table " + tableName);
 
         Integer dLow = 1;
         Integer dHigh = 100;
@@ -927,7 +928,7 @@ public class LootDB {
                     valueAdjust);
         }
 
-        Log.d(TAG, "Populating Table " + tableName);
+        Log.d(TAG, "Done Populating Table " + tableName);
     }
 
     public void popEnhancementTable(String tableType) throws IOException {
@@ -954,33 +955,36 @@ public class LootDB {
                     rarityLevel = "Major";
                 }
                 tableName = (tableType + "_" + lesserOrGreater + "_" + rarityLevel);
-                Log.d(TAG, "Populating Table " + tableName);
+                Log.d(TAG, "Begin Populating Table " + tableName);
+
+                String fileName = (tableName + ".dat");
+                AssetManager manager = context.getAssets();
+                LootIO tableFiles = new LootIO(manager.open(fileName));
+
+                Integer dLow = 1;
+                Integer dHigh = 100;
+                Integer enhancement = 1;
+                Integer numAbilities = 0;
+                Integer abilityLevel = 0;
+                Integer isSpecific = 0;
+
+                tableFiles.getIn().readLine();// cut off the header line of the
+                                              // file
+                while (tableFiles.getIn().ready()) {
+                    String[] data = getLine(tableFiles);
+
+                    dLow = Integer.valueOf(data[1]);
+                    dHigh = Integer.valueOf(data[2]);
+                    enhancement = Integer.valueOf(data[3]);
+                    numAbilities = Integer.valueOf(data[4]);
+                    abilityLevel = Integer.valueOf(data[5]);
+                    isSpecific = Integer.valueOf(data[6]);
+
+                    saveEntryEnhancement(tableName, null, dLow, dHigh,
+                            enhancement, numAbilities, abilityLevel, isSpecific);
+                }
+                Log.d(TAG, "Done Populating Table " + tableName);
             }
-        }
-        String fileName = (tableName + ".dat");
-        AssetManager manager = context.getAssets();
-        LootIO tableFiles = new LootIO(manager.open(fileName));
-
-        Integer dLow = 1;
-        Integer dHigh = 100;
-        Integer enhancement = 1;
-        Integer numAbilities = 0;
-        Integer abilityLevel = 0;
-        Integer isSpecific = 0;
-
-        tableFiles.getIn().readLine();// cut off the header line of the file
-        while (tableFiles.getIn().ready()) {
-            String[] data = getLine(tableFiles);
-
-            dLow = Integer.valueOf(data[1]);
-            dHigh = Integer.valueOf(data[2]);
-            enhancement = Integer.valueOf(data[3]);
-            numAbilities = Integer.valueOf(data[4]);
-            abilityLevel = Integer.valueOf(data[5]);
-            isSpecific = Integer.valueOf(data[6]);
-
-            saveEntryEnhancement(tableName, null, dLow, dHigh, enhancement,
-                    numAbilities, abilityLevel, isSpecific);
         }
     }
 
@@ -988,30 +992,31 @@ public class LootDB {
         String tableName = null;
         for (int ii = 0; ii < 5; ii++) {
             tableName = tableType + "_plus" + (ii + 1);
-            Log.d(TAG, "Populating Table " + tableName);
+            Log.d(TAG, "Begin Populating Table " + tableName);
+
+            String fileName = (tableName + ".dat");
+            AssetManager manager = context.getAssets();
+            LootIO tableFiles = new LootIO(manager.open(fileName));
+
+            Integer dLow = 1;
+            Integer dHigh = 100;
+            String ability = null;
+            Double priceAdjust = 1.0;
+
+            tableFiles.getIn().readLine();// cut off the header line of the file
+            while (tableFiles.getIn().ready()) {
+                String[] data = getLine(tableFiles);
+
+                dLow = Integer.valueOf(data[1]);
+                dHigh = Integer.valueOf(data[2]);
+                ability = data[3];
+                priceAdjust = Double.valueOf(data[4]);
+
+                saveEntryAbilities(tableName, null, dLow, dHigh, ability,
+                        priceAdjust);
+            }
+            Log.d(TAG, "Done Populating Table " + tableName);
         }
-        String fileName = (tableName + ".dat");
-        AssetManager manager = context.getAssets();
-        LootIO tableFiles = new LootIO(manager.open(fileName));
-
-        Integer dLow = 1;
-        Integer dHigh = 100;
-        String ability = null;
-        Double priceAdjust = 1.0;
-
-        tableFiles.getIn().readLine();// cut off the header line of the file
-        while (tableFiles.getIn().ready()) {
-            String[] data = getLine(tableFiles);
-
-            dLow = Integer.valueOf(data[1]);
-            dHigh = Integer.valueOf(data[2]);
-            ability = data[3];
-            priceAdjust = Double.valueOf(data[4]);
-
-            saveEntryAbilities(tableName, null, dLow, dHigh, ability,
-                    priceAdjust);
-        }
-
     }
 
     public void popSpecificItemTable(String tableType) throws IOException {
@@ -1039,31 +1044,33 @@ public class LootDB {
                 }
                 tableName = ("Specific_" + tableType + "_" + lesserOrGreater
                         + "_" + rarityLevel);
-                Log.d(TAG, "Populating Table " + tableName);
+                Log.d(TAG, "Begin Populating Table " + tableName);
+
+                String fileName = (tableName + ".dat");
+                AssetManager manager = context.getAssets();
+                LootIO tableFiles = new LootIO(manager.open(fileName));
+
+                Integer dLow = 1;
+                Integer dHigh = 100;
+                String itemName = null;
+                Double price = 1.0;
+
+                tableFiles.getIn().readLine();// cut off the header line of the
+                                              // file
+                while (tableFiles.getIn().ready()) {
+                    String[] data = getLine(tableFiles);
+
+                    dLow = Integer.valueOf(data[1]);
+                    dHigh = Integer.valueOf(data[2]);
+                    itemName = data[3];
+                    price = Double.valueOf(data[4]);
+
+                    saveEntrySpecificItems(tableName, null, dLow, dHigh,
+                            itemName, price);
+                }
+                Log.d(TAG, "Done Populating Table " + tableName);
             }
         }
-        String fileName = (tableName + ".dat");
-        AssetManager manager = context.getAssets();
-        LootIO tableFiles = new LootIO(manager.open(fileName));
-
-        Integer dLow = 1;
-        Integer dHigh = 100;
-        String itemName = null;
-        Double price = 1.0;
-
-        tableFiles.getIn().readLine();// cut off the header line of the file
-        while (tableFiles.getIn().ready()) {
-            String[] data = getLine(tableFiles);
-
-            dLow = Integer.valueOf(data[1]);
-            dHigh = Integer.valueOf(data[2]);
-            itemName = data[3];
-            price = Double.valueOf(data[4]);
-
-            saveEntrySpecificItems(tableName, null, dLow, dHigh, itemName,
-                    price);
-        }
-
     }
 
     // TODO: remaining popTable forms;
