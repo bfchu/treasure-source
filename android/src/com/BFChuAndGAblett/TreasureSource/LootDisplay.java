@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +29,7 @@ public class LootDisplay extends Activity {
     private LootDB lootDB;
     private Cursor lootCursor;
     private LootBuilder DM;
+    private LootPrefs lootPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class LootDisplay extends Activity {
         Log.d(TAG, "lootListView: " + lootListView);
         lootListView.setAdapter(arrayAdapter);
 
+        Intent getLootRules = getIntent();
+        initLootPrefs(getLootRules);
         // Database code
         try {
             lootDB = new LootDB(this);
@@ -86,6 +90,30 @@ public class LootDisplay extends Activity {
         startManagingCursor(lootCursor);
 
         updateLootDisplay();
+    }
+
+    private void initLootPrefs(Intent getLootRules) {
+        int aPL = getLootRules.getIntExtra("aPL", 0);
+        int eCR = getLootRules.getIntExtra("eCR", 0);
+        int enDifficulty = getLootRules.getIntExtra("enDifficulty", 0);
+        int lootSize = getLootRules.getIntExtra("lootSize", 0);
+        int magicLv = getLootRules.getIntExtra("magicLv", 0);
+        double resGold = getLootRules.getDoubleExtra("resGold", 0.0);
+        boolean rollMundane = getLootRules
+                .getBooleanExtra("rollMundane", false);
+        boolean rollGoods = getLootRules.getBooleanExtra("rollGoods", false);
+        boolean noRepeats = getLootRules.getBooleanExtra("noRepeats", false);
+        boolean limitValByCR = getLootRules.getBooleanExtra("limByEV", false);
+        boolean[] itemRestrictions = getLootRules
+                .getBooleanArrayExtra("itemRestrictions");
+        boolean[] displayOpts = getLootRules
+                .getBooleanArrayExtra("displayOpts");
+
+        this.lootPrefs = new LootPrefs(aPL, eCR, enDifficulty, lootSize,
+                magicLv, resGold, rollMundane, rollGoods, noRepeats,
+                limitValByCR, itemRestrictions, displayOpts);
+
+        Log.d(TAG, "in InitLootPrefs");
     }
 
     private void updateLootDisplay() {
