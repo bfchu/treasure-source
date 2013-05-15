@@ -25,11 +25,14 @@ public class MainActivity extends Activity {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in onCreate()");
         }
+
+        Intent dbService = new Intent(this, DatabaseLoaderService.class);
         try {
-            startService(new Intent(this, DatabaseLoaderService.class));
+            startService(dbService);
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }
+
     }
 
     @Override

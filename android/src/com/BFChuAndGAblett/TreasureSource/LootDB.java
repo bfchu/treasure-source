@@ -1093,13 +1093,11 @@ public class LootDB {
     /**
      * DATABASE TABLE POPULATION
      * */
-    public void populateTables() throws IOException {
+    public void populateTables(AssetManager manager) throws IOException {
         /*
          * TODO: this method will handle all of the population of tables that
          * are created in initTables().
          */
-
-        AssetManager manager = context.getAssets();
 
         popEncounterValsTable(manager);
 
@@ -1133,13 +1131,13 @@ public class LootDB {
         popMundaneItemTable("Armor", manager);
         popMundaneItemTable("Tools_and_gear", manager);
 
-        popSpecificItemTable("Armor", manager);
-        popSpecificItemTable("Shields", manager);
-        popSpecificItemTable("Weapons", manager);
-        popSpecificItemTable("Potions", manager);
-        popSpecificItemTable("Rings", manager);
-        popSpecificItemTable("Rods", manager);
-        popSpecificItemTable("Staves", manager);
+        // popSpecificItemTable("Armor", manager);
+        // popSpecificItemTable("Shields", manager);
+        // popSpecificItemTable("Weapons", manager);
+        // popSpecificItemTable("Potions", manager);
+        // popSpecificItemTable("Rings", manager);
+        // popSpecificItemTable("Rods", manager);
+        // popSpecificItemTable("Staves", manager);
 
         popSpecificItemTable("Wondrous_Belt", manager);
         popSpecificItemTable("Wondrous_Body", manager);
@@ -1153,8 +1151,6 @@ public class LootDB {
         popSpecificItemTable("Wondrous_Shoulders", manager);
         popSpecificItemTable("Wondrous_Wrists", manager);
         popSpecificItemTable("Wondrous_Slotless", manager);
-
-        manager.close();
 
     }
 
@@ -1293,6 +1289,7 @@ public class LootDB {
 
             Log.d(TAG, "Done Populating Table " + tableName);
             tableFiles.close();
+
         }
     }
 
@@ -1325,6 +1322,7 @@ public class LootDB {
 
         Log.d(TAG, "Done Populating Table " + tableName);
         tableFiles.close();
+
     }
 
     public void popItemTypeTable(String tableType, AssetManager manager)
@@ -1357,6 +1355,7 @@ public class LootDB {
 
         Log.d(TAG, "Done Populating Table " + tableName);
         tableFiles.close();
+
     }
 
     public void popEnhancementTable(String tableType, AssetManager manager)
@@ -1418,6 +1417,7 @@ public class LootDB {
                 tableFiles.close();
             }
         }
+
     }
 
     public void popAbilitiesTable(String tableType, AssetManager manager)
@@ -1452,6 +1452,7 @@ public class LootDB {
             Log.d(TAG, "Done Populating Table " + tableName);
             tableFiles.close();
         }
+
     }
 
     public void popMundaneItemTable(String tableType, AssetManager manager)
@@ -1486,6 +1487,7 @@ public class LootDB {
         }
         Log.d(TAG, "Done Populating Table " + tableName);
         tableFiles.close();
+
     }
 
     public void popSpecificItemTable(String tableType, AssetManager manager)
@@ -1541,6 +1543,7 @@ public class LootDB {
                 }
                 Log.d(TAG, "Done Populating Table " + tableName);
                 tableFiles.close();
+
             }
         }
     }

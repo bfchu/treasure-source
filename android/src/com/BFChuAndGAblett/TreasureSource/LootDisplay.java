@@ -46,6 +46,7 @@ public class LootDisplay extends Activity {
 
         Intent getLootRules = getIntent();
         initLootPrefs(getLootRules);
+
         // Database code
         try {
             lootDB = new LootDB(this);
