@@ -1594,35 +1594,10 @@ public class LootDB {
             // Gold value of encounters:
             initEncounterValsTable(db);
 
-            // Coins by APL
-            for (int ii = 0; ii < 20; ii++) {
-                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Coins "
-                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int, " + "quantity int, " + "coinType int)";
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Coins");
-            }
-
-            // Goods by APL
-            for (int ii = 0; ii < 20; ii++) {
-                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Goods "
-                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int, " + "goodsType int)";
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Goods");
-            }
-
-            // Items by APL
-            for (int ii = 0; ii < 20; ii++) {
-                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Items "
-                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int, " + "itemRarityGroup int)";
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Items");
-            }
+            // Coins, goods, and items by APL
+            initAPLcoinsTable(db);
+            initAPLgoodsTable(db);
+            initAPLitemsTable(db);
 
             // Item Types
             initItemTypeTable(db, "Mundane");
@@ -1681,6 +1656,39 @@ public class LootDB {
 
             db.execSQL(sqlcmd);
             Log.d(TAG, "Creating Table " + tableName);
+        }
+
+        public void initAPLcoinsTable(SQLiteDatabase db) {
+            for (int ii = 0; ii < 20; ii++) {
+                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Coins "
+                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, " + "numDice int, "
+                        + "dieSize int, " + "quantity int, " + "coinType int)";
+                db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Coins");
+            }
+        }
+
+        public void initAPLgoodsTable(SQLiteDatabase db) {
+            for (int ii = 0; ii < 20; ii++) {
+                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Goods "
+                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, " + "numDice int, "
+                        + "dieSize int, " + "goodsType int)";
+                db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Goods");
+            }
+        }
+
+        public void initAPLitemsTable(SQLiteDatabase db) {
+            for (int ii = 0; ii < 20; ii++) {
+                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Items "
+                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, " + "numDice int, "
+                        + "dieSize int, " + "itemRarityGroup int)";
+                db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Items");
+            }
         }
 
         public void initItemTypeTable(SQLiteDatabase db, String itemType) {
