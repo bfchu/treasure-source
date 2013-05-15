@@ -276,6 +276,50 @@ public class LootDB {
         return successfull;
     }
 
+    public boolean saveEntryEncounterVals(String tableName, Integer id,
+            int APL, double slowGold, double mediumGold, double fastGold) {
+        boolean successfull = false;
+        if (id == null) {
+            Log.d(TAG, "Creating a new entry: APL: " + APL + ", slowGold: "
+                    + slowGold + ", mediumGold: " + mediumGold + ", fastGold: "
+                    + fastGold);
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("APL", APL);
+            newItem.put("slowGold", slowGold);
+            newItem.put("mediumGold", mediumGold);
+            newItem.put("fastGold", fastGold);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            Log.d(TAG, "updating a new entry: APL: " + APL + ", slowGold: "
+                    + slowGold + ", mediumGold: " + mediumGold + ", fastGold: "
+                    + fastGold);
+            // create
+
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("APL", APL);
+            newItem.put("slowGold", slowGold);
+            newItem.put("mediumGold", mediumGold);
+            newItem.put("fastGold", fastGold);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+
+        }
+
+        return successfull;
+    }
+
     public boolean saveEntryItemTypes(String tableName, Integer id, int dLow,
             int dHigh, String itemName, Double valueAdjust) {
         boolean successfull = false;
@@ -1037,11 +1081,15 @@ public class LootDB {
 
         AssetManager manager = context.getAssets();
 
-        // TODO: popTable methods for coins, goods, items by APL;
-        popAPLCoins(manager);
-        popAPLGoods(manager);
-        popAPLItems(manager);
+        popEncounterValsTable(manager);
 
+        // TODO: popTable methods for coins, goods, items by APL;
+        // popAPLCoins(manager);
+        // popAPLGoods(manager);
+        // popAPLItems(manager);
+
+        // Item Types
+        popMundaneTypeTable(manager);
         popItemTypeTable("Armor", manager);
         popItemTypeTable("Shield", manager);
         popItemTypeTable("Weapon", manager);
@@ -1061,9 +1109,9 @@ public class LootDB {
         popAbilitiesTable("Ammunition", manager);
 
         // Specific items
-        popSpecificItemTable("MundaneItem_Alchemical_item", manager);
-        popSpecificItemTable("MundaneItem_Armor", manager);
-        popSpecificItemTable("MundaneItem_Tools_and_gear", manager);
+        popMundaneItemTable("Alchemical_item", manager);
+        popMundaneItemTable("Armor", manager);
+        popMundaneItemTable("Tools_and_gear", manager);
 
         popSpecificItemTable("Armor", manager);
         popSpecificItemTable("Shields", manager);
@@ -1088,6 +1136,37 @@ public class LootDB {
 
         manager.close();
 
+    }
+
+    public void popEncounterValsTable(AssetManager manager) throws IOException {
+        String tableName = "Encounter_Values";
+        String fileName = (tableName + ".dat");
+
+        LootIO tableFiles = new LootIO(manager.open(fileName));
+        Log.d(TAG, "Begin Populating Table " + tableName);
+
+        Integer APL = 1;
+        Double slowGold = 1.0;
+        Double mediumGold = 1.0;
+        Double fastGold = 1.0;
+
+        tableFiles.getIn().readLine();// cut off the header line of the file
+        while (tableFiles.getIn().ready()) {
+            String[] data = getLine(tableFiles);
+
+            if (data.length >= 4) {
+                APL = Integer.parseInt(data[1]);
+                slowGold = Double.valueOf(data[2]);
+                mediumGold = Double.valueOf(data[3]);
+                fastGold = Double.valueOf(data[4]);
+
+                saveEntryEncounterVals(tableName, null, APL, slowGold,
+                        mediumGold, fastGold);
+            }
+        }
+
+        Log.d(TAG, "Done Populating Table " + tableName);
+        tableFiles.close();
     }
 
     public void popAPLCoins(AssetManager manager) throws IOException {
@@ -1195,6 +1274,37 @@ public class LootDB {
             Log.d(TAG, "Done Populating Table " + tableName);
             tableFiles.close();
         }
+    }
+
+    public void popMundaneTypeTable(AssetManager manager) throws IOException {
+        String tableName = "MundaneTypes";
+        String fileName = (tableName + ".dat");
+
+        LootIO tableFiles = new LootIO(manager.open(fileName));
+        Log.d(TAG, "Begin Populating Table " + tableName);
+
+        Integer dLow = 1;
+        Integer dHigh = 100;
+        String itemType = null;
+        Double valueAdjust = 1.0;
+
+        tableFiles.getIn().readLine();// cut off the header line of the file
+        while (tableFiles.getIn().ready()) {
+            String[] data = getLine(tableFiles);
+
+            if (data.length >= 4) {
+                dLow = Integer.parseInt(data[1]);
+                dHigh = Integer.parseInt(data[2]);
+                itemType = data[3];
+                valueAdjust = Double.valueOf(data[4]);
+
+                saveEntryItemTypes(tableName, null, dLow, dHigh, itemType,
+                        valueAdjust);
+            }
+        }
+
+        Log.d(TAG, "Done Populating Table " + tableName);
+        tableFiles.close();
     }
 
     public void popItemTypeTable(String tableType, AssetManager manager)
@@ -1324,6 +1434,40 @@ public class LootDB {
         }
     }
 
+    public void popMundaneItemTable(String tableType, AssetManager manager)
+            throws IOException {
+        String tableName = null;
+
+        tableName = ("Mundane_" + tableType);
+        Log.d(TAG, "Begin Populating Table " + tableName);
+
+        String fileName = (tableName + ".dat");
+        LootIO tableFiles = new LootIO(manager.open(fileName));
+
+        Integer dLow = 1;
+        Integer dHigh = 100;
+        String itemName = null;
+        Double price = 1.0;
+
+        tableFiles.getIn().readLine();// cut off the header line of the
+                                      // file
+        while (tableFiles.getIn().ready()) {
+            String[] data = getLine(tableFiles);
+
+            if (data.length >= 4) {
+                dLow = Integer.valueOf(data[1]);
+                dHigh = Integer.valueOf(data[2]);
+                itemName = data[3];
+                price = Double.valueOf(data[4]);
+
+                saveEntrySpecificItems(tableName, null, dLow, dHigh, itemName,
+                        price);
+            }
+        }
+        Log.d(TAG, "Done Populating Table " + tableName);
+        tableFiles.close();
+    }
+
     public void popSpecificItemTable(String tableType, AssetManager manager)
             throws IOException {
         String tableName = null;
@@ -1427,6 +1571,9 @@ public class LootDB {
             // Primary output table
             db.execSQL(CREATE_TABLE_LootOut);
 
+            // Gold value of encounters:
+            initEncounterValsTable(db);
+
             // Coins by APL
             for (int ii = 0; ii < 20; ii++) {
                 String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Coins "
@@ -1458,7 +1605,7 @@ public class LootDB {
             }
 
             // Item Types
-            initItemTypeTable(db, "MundaneItems");
+            initItemTypeTable(db, "Mundane");
             initItemTypeTable(db, "Armor");
             initItemTypeTable(db, "Shield");
             initItemTypeTable(db, "Weapon");
@@ -1478,9 +1625,9 @@ public class LootDB {
             initAbilitiesTable(db, "Ammunition");
 
             // Specific items
-            initSpecificItemTable(db, "Mundane_Alchemical_item");
-            initSpecificItemTable(db, "Mundane_Armor");
-            initSpecificItemTable(db, "Mundane_Tools_and_gear");
+            initMundaneItemTable(db, "Alchemical_item");
+            initMundaneItemTable(db, "Armor");
+            initMundaneItemTable(db, "Tools_and_gear");
 
             initSpecificItemTable(db, "Armor");
             initSpecificItemTable(db, "Shields");
@@ -1503,6 +1650,17 @@ public class LootDB {
             initSpecificItemTable(db, "Wondrous_Wrists");
             initSpecificItemTable(db, "Wondrous_Slotless");
 
+        }
+
+        public void initEncounterValsTable(SQLiteDatabase db) {
+            String tableName = "Encounter_Values";
+            String sqlcmd = "CREATE TABLE " + tableName
+                    + "(id INTEGER PRIMARY KEY AUTOINCREMENT, " + "APL int, "
+                    + "slowGold double, " + "mediumGold double, "
+                    + "fastGold double)";
+
+            db.execSQL(sqlcmd);
+            Log.d(TAG, "Creating Table " + tableName);
         }
 
         public void initItemTypeTable(SQLiteDatabase db, String itemType) {
@@ -1553,16 +1711,27 @@ public class LootDB {
 
         public void initAbilitiesTable(SQLiteDatabase db, String itemType) {
             for (int ii = 0; ii < 5; ii++) {
-                String sqlcmd = "CREATE TABLE Abilities_" + itemType + "_plus"
-                        + (ii + 1) + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                String tableName = "Abilities_" + itemType + "_plus" + (ii + 1);
+                String sqlcmd = "CREATE TABLE " + tableName
+                        + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                         + "dLow int, " + "dHigh int, "
                         + "ability varchar(50), " + "priceAdjust int)";
 
                 db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table Abilities_" + itemType + "+"
-                        + (ii + 1));
+                Log.d(TAG, "Creating Table " + tableName);
 
             }
+        }
+
+        public void initMundaneItemTable(SQLiteDatabase db, String itemType) {
+            String tableName = "Mundane_" + itemType;
+            String sqlcmd = "CREATE TABLE " + tableName
+                    + " (id INTEGER PRIMARY KEY AUTOINCREMENT, " + "dLow int, "
+                    + "dHigh int, " + "itemName varchar(50), " + "price int)";
+
+            db.execSQL(sqlcmd);
+            Log.d(TAG, "Creating Table " + tableName);
+
         }
 
         public void initSpecificItemTable(SQLiteDatabase db, String itemType) {
