@@ -44,7 +44,7 @@ public class LootCalc {
     public LootItem rollCoins() {
         LootItemGold coins = new LootItemGold();
 
-        String tableIndex = "APL" + prefs.getaPL() + "_Coins";
+        String tableIndex = "APL" + prefs.getAPL() + "_Coins";
         Integer dRoll = rollPercent();
 
         Integer numDice = getNumDice(tableIndex, dRoll);
@@ -87,7 +87,7 @@ public class LootCalc {
     public LootItemGoods rollGoods() {
         LootItemGoods goods = new LootItemGoods();
 
-        String tableIndex = "APL" + prefs.getaPL() + "_Goods";
+        String tableIndex = "APL" + prefs.getAPL() + "_Goods";
         Integer dRoll = rollPercent();
 
         // Roll on goods chart to determine if and what kind of goods
@@ -122,6 +122,7 @@ public class LootCalc {
         int coinVal = 10;
         int dRoll = rollPercent();
 
+        // TODO: replace with database calls
         // Hard-coded table for Gems and Art value ranges
         if (goodsType != 2) { // Gems table
             if (rollIsBetween(dRoll, 1, 25)) {
@@ -210,7 +211,7 @@ public class LootCalc {
 
     public void rollItemGrouping(Integer numDice, Integer dieSize,
             Integer itemGroup) {
-        String tableIndex = "APL" + prefs.getaPL() + "_Items";
+        String tableIndex = "APL" + prefs.getAPL() + "_Items";
         Integer dRoll = rollPercent();
 
         // Roll on goods chart to determine if and what kind of goods
@@ -271,24 +272,40 @@ public class LootCalc {
         return item;
     }
 
-    private LootItem rollSpecificItem(Integer rarityLevel, String itemType) {
+    /**MUNDANE ITEMS
+     * */
+    public LootItem rollMundaneItem() {
+
         LootItem item = new LootItem();
+        String mundaneType = rollMundaneType();
         Integer dRoll = rollPercent();
-        boolean isGreaterItem = true;
-        if (dice.roll(1, 2) != 2) {
-            isGreaterItem = false;
+
+        if (mundaneType == "Alchemical_item") {
+            item = books.getMundaneItem(dRoll, mundaneType);
+        } else if (mundaneType == "Armor") {
+            item = books.getMundaneItem(dRoll, mundaneType);
+        } else if (mundaneType == "Weapon") {
+            if (dRoll < 71) {
+                item = new LootItem(dRoll, "Masterwork " + rollWeaponType(1),
+                        300);
+            } else {
+                item = new LootItem(dRoll, "Masterwork " + rollWeaponType(4),
+                        300);
+            }
+        } else if (mundaneType == "Tools_and_gear") {
+            item = books.getMundaneItem(dRoll, mundaneType);
         }
-        String name = null;
-        double gVal = 1.0;
-
-        books.getSpecificItem(dRoll, itemType, isGreaterItem, rarityLevel,
-                name, gVal);
-
-        item.setName(name);
-        item.setgValue(gVal);
-        item.setNumRolled(dRoll);
 
         return item;
+    }
+
+    private String rollMundaneType() {
+        String type = "Weapon";
+        Integer dRoll = rollPercent();
+
+        type = books.getMundaneType(dRoll);
+
+        return type;
     }
 
     /** WONDROUS ITEMS */
@@ -308,6 +325,26 @@ public class LootCalc {
         type += books.getWondrousType(dRoll);
 
         return type;
+    }
+
+    private LootItem rollSpecificItem(Integer rarityLevel, String itemType) {
+        LootItem item = new LootItem();
+        Integer dRoll = rollPercent();
+        boolean isGreaterItem = true;
+        if (dice.roll(1, 2) != 2) {
+            isGreaterItem = false;
+        }
+        String name = null;
+        double gVal = 1.0;
+
+        books.getSpecificItem(dRoll, itemType, isGreaterItem, rarityLevel,
+                name, gVal);
+
+        item.setName(name);
+        item.setgValue(gVal);
+        item.setNumRolled(dRoll);
+
+        return item;
     }
 
     /** MAGIC WEAPONS */
@@ -500,13 +537,6 @@ public class LootCalc {
         String material = "Adamantine"; // placeholder
         // TODO: find out how special materials are rolled, then put it here.
         return material;
-    }
-
-    public LootItem rollMundaneItem() {
-        LootItem item = new LootItem();
-        // TODO: make database table containing all possible mundane items, then
-        // make this function create a LootItem object from that table
-        return item;
     }
 
     public Integer rollMinorItemType() {

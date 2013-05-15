@@ -66,19 +66,19 @@ public class LootPrefs {
         this.displayOpts = displayOpts;
     }
 
-    public Integer getaPL() {
+    public Integer getAPL() {
         return aPL;
     }
 
-    public void setaPL(Integer aPL) {
+    public void setAPL(Integer aPL) {
         this.aPL = aPL;
     }
 
-    public Integer geteCR() {
+    public Integer getECR() {
         return eCR;
     }
 
-    public void seteCR(Integer eCR) {
+    public void setECR(Integer eCR) {
         this.eCR = eCR;
     }
 

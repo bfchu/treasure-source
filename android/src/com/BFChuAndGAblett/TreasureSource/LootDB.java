@@ -715,6 +715,26 @@ public class LootDB {
         return itemType;
     }
 
+    public String getMundaneType(Integer dRoll) {
+        Cursor cursor = db.query(true, "MundaneTypes", new String[] { "id",
+                "dLow", "dHigh", "itemType", "valueAdjust" }, null, null, null,
+                null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String itemType = "Weapon";
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            itemType = cursor.getString(3);
+        }
+
+        return itemType;
+    }
+
     public String getArmorType(Integer dRoll) {
         Cursor cursor = db.query(true, "ArmorTypes", new String[] { "id",
                 "dLow", "dHigh", "ArmorType", "valueAdjust" }, null, null,
@@ -913,6 +933,34 @@ public class LootDB {
 
     }
 
+    public LootItem getMundaneItem(Integer dRoll, String mundaneType) {
+
+        String tableName = "Mundane_" + mundaneType;
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "itemName", "value" }, null, null, null, null, null,
+                null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String itemName = "Tanglefoot Bag";
+        Double gValue = 1.0;
+        Integer itemType = 0;
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            itemName = cursor.getString(3);
+            gValue = cursor.getDouble(4);
+            itemType = 0;
+        }
+
+        LootItem item = new LootItem(dRoll, itemName, gValue);
+
+        return item;
+    }
+
     public void getSpecificItem(Integer dRoll, String itemType,
             boolean isGreaterItem, Integer rarityLevel, String name,
             double gValue) {
@@ -1013,6 +1061,10 @@ public class LootDB {
         popAbilitiesTable("Ammunition", manager);
 
         // Specific items
+        popSpecificItemTable("MundaneItem_Alchemical_item", manager);
+        popSpecificItemTable("MundaneItem_Armor", manager);
+        popSpecificItemTable("MundaneItem_Tools_and_gear", manager);
+
         popSpecificItemTable("Armor", manager);
         popSpecificItemTable("Shields", manager);
         popSpecificItemTable("Weapons", manager);
@@ -1406,6 +1458,7 @@ public class LootDB {
             }
 
             // Item Types
+            initItemTypeTable(db, "MundaneItems");
             initItemTypeTable(db, "Armor");
             initItemTypeTable(db, "Shield");
             initItemTypeTable(db, "Weapon");
@@ -1425,6 +1478,10 @@ public class LootDB {
             initAbilitiesTable(db, "Ammunition");
 
             // Specific items
+            initSpecificItemTable(db, "Mundane_Alchemical_item");
+            initSpecificItemTable(db, "Mundane_Armor");
+            initSpecificItemTable(db, "Mundane_Tools_and_gear");
+
             initSpecificItemTable(db, "Armor");
             initSpecificItemTable(db, "Shields");
             initSpecificItemTable(db, "Weapons");
