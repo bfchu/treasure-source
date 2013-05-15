@@ -156,25 +156,28 @@ public class MainActivity extends Activity {
         limitValByCR = cb_limByEV.isChecked();
         intent.putExtra("limitValByCR", limitValByCR);
 
-        boolean[] itemRestrictions = new boolean[9];
+        boolean[] itemRestrictions = new boolean[12];
+        itemRestrictions[0] = false;
+        itemRestrictions[1] = false;
+        itemRestrictions[2] = false;
         CheckBox cb_ignoreArmor = (Checkbox) findViewById(R.id.checkBox5);
-        itemRestrictions[0] = cb_ignoreArmor.isChecked();
+        itemRestrictions[3] = cb_ignoreArmor.isChecked();
         CheckBox cb_ignoreWeapons = (Checkbox) findViewById(R.id.checkBox6);
-        itemRestrictions[1] = cb_ignoreWeapons.isChecked();
+        itemRestrictions[4] = cb_ignoreWeapons.isChecked();
         CheckBox cb_ignorePotions = (Checkbox) findViewById(R.id.checkBox7);
-        itemRestrictions[2] = cb_ignorePotions.isChecked();
+        itemRestrictions[5] = cb_ignorePotions.isChecked();
         CheckBox cb_ignoreRings = (Checkbox) findViewById(R.id.checkBox8);
-        itemRestrictions[3] = cb_ignoreRings.isChecked();
+        itemRestrictions[6] = cb_ignoreRings.isChecked();
         CheckBox cb_ignoreRods = (Checkbox) findViewById(R.id.checkBox9);
-        itemRestrictions[4] = cb_ignoreRods.isChecked();
+        itemRestrictions[7] = cb_ignoreRods.isChecked();
         CheckBox cb_ignoreScrolls = (Checkbox) findViewById(R.id.checkBox10);
-        itemRestrictions[5] = cb_ignoreScrolls.isChecked();
+        itemRestrictions[8] = cb_ignoreScrolls.isChecked();
         CheckBox cb_ignoreStaves = (Checkbox) findViewById(R.id.checkBox11);
-        itemRestrictions[6] = cb_ignoreStaves.isChecked();
+        itemRestrictions[9] = cb_ignoreStaves.isChecked();
         CheckBox cb_ignoreWands = (Checkbox) findViewById(R.id.checkBox12);
-        itemRestrictions[7] = cb_ignoreWands.isChecked();
+        itemRestrictions[10] = cb_ignoreWands.isChecked();
         CheckBox cb_ignoreWondrous = (Checkbox) findViewById(R.id.checkBox13);
-        itemRestrictions[8] = cb_ignoreWondrous.isChecked();
+        itemRestrictions[11] = cb_ignoreWondrous.isChecked();
         intent.putExtra("itemRestrictions", itemRestrictions);
         
         boolean[] displayOpts = new boolean[3]
