@@ -74,7 +74,8 @@ public class LootBuilder {
         this.dM.rollItemGrouping(numDiceItems, dieSizeItems, itemGroup);
 
         // roll number to items to generate
-        Integer numItems = this.dM.rollNumItems(numDiceItems, dieSizeItems);
+        Integer numItems = dM.getPrefs().getLootSize()
+                * this.dM.rollNumItems(numDiceItems, dieSizeItems);
 
         // Roll each Item, then add to the ArrayList.
         for (int ii = 0; ii < numItems; ii++) {

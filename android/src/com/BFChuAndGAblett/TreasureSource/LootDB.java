@@ -640,7 +640,8 @@ public class LootDB {
                 "quantity", "specials", "itemName", "value", "dispGold",
                 "dispRoll" }, null, null, null, null, null, null);
         cursor.moveToFirst();
-
+        // TODO: use this function to refactor all get functions that need to
+        // find items by dRoll.
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
 
@@ -697,6 +698,25 @@ public class LootDB {
         }
 
         return dieSize;
+    }
+
+    public Double getEncounterValue(Integer APL, Integer campaignSpeed) {
+        Cursor cursor = db.query(true, "Encounter_Values", new String[] { "id",
+                "APL", "slowGold", "mediumGold", "fastGold" }, null, null,
+                null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        double gold = 1.0;
+        Integer campSpeedIndex = campaignSpeed + 1;
+
+        while (a != APL) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            gold = cursor.getDouble(campSpeedIndex);
+        }
+
+        return gold;
     }
 
     public Integer getCoinType(Integer dRoll, String tableName) {
