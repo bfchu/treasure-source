@@ -1,0 +1,6 @@
+	dlow	dhigh	numdice	diesize	quantity	cointype
+	1	10	0	0	0	0
+	11	15	1	12	10000	0.01
+	16	29	2	6	1000	0.1
+	30	87	2	8	100	1
+	88	100	3	6	10	10

@@ -98,8 +98,8 @@ public class LootCalc {
         goods.setQuantity(rollNumGoods(numDiceGoods, dieSizeGoods));
 
         // Roll value per goods
-        goods.setgValue(rollGoodsVal(goods.getGoodsType())
-                * prefs.getLootSize());
+        double goodsMultiplier = getTreasureMultiplier();
+        goods.setgValue(rollGoodsVal(goods.getGoodsType()) * goodsMultiplier);
 
         return goods;
     }

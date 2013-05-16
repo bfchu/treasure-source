@@ -58,28 +58,28 @@ public class LootDisplay extends Activity {
 
         // add test entries to database
         // replace this part with lootRoller logic (LootBuilder)
-        lootDB.clear("lootOut");
-        lootDB.saveEntry("lootOut", null, 1, 1, "Robe of Stars", 58000.00,
-                true, true);
-        lootDB.saveEntry("lootOut", null, 11, 1, "Robe of gates", 64000.00,
-                true, true);
-        lootDB.saveEntry("lootOut", null, 16, 1, "Otherworldly kimono",
-                67000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 21, 1,
-                "Bodywrap of mighty strikes +5", 75000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 41, 1,
-                "Resplendent robe of the thespian", 75000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 52, 1, "Robe of the archmagi",
-                75000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 68, 4, "Adamantine",
-                "Bodywrap of mighty strikes +6", 108000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 78, 1, "Robe of eyes", 120000.00,
-                true, true);
-        lootDB.saveEntry("lootOut", null, 98, 1,
-                "Bodywrap of mighty strikes +7", 147000.00, true, true);
+        // lootDB.clear("lootOut");
+        // lootDB.saveEntry("lootOut", null, 1, 1, "Robe of Stars", 58000.00,
+        // true, true);
+        // lootDB.saveEntry("lootOut", null, 11, 1, "Robe of gates", 64000.00,
+        // true, true);
+        // lootDB.saveEntry("lootOut", null, 16, 1, "Otherworldly kimono",
+        // 67000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 21, 1,
+        // "Bodywrap of mighty strikes +5", 75000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 41, 1,
+        // "Resplendent robe of the thespian", 75000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 52, 1, "Robe of the archmagi",
+        // 75000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 68, 4, "Adamantine",
+        // "Bodywrap of mighty strikes +6", 108000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 78, 1, "Robe of eyes", 120000.00,
+        // true, true);
+        // lootDB.saveEntry("lootOut", null, 98, 1,
+        // "Bodywrap of mighty strikes +7", 147000.00, true, true);
 
-        // DM = new LootBuilder();
-        // DM.genLoot(null, prefs, lootDB);
+        DM = new LootBuilder();
+        DM.genLoot(null, lootPrefs, lootDB);
 
         populateLootDisplay();
     }
