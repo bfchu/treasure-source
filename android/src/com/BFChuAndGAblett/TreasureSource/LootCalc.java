@@ -3,6 +3,8 @@
  */
 package com.BFChuAndGAblett.TreasureSource;
 
+import android.util.Log;
+
 /**
  * @author Brian Chu and Garrick Ablett
  * 
@@ -14,6 +16,7 @@ package com.BFChuAndGAblett.TreasureSource;
  */
 public class LootCalc {
 
+    private static final String TAG = "LootCalc";
     private LootDice dice;
     private LootDB books;
     private LootPrefs prefs;
@@ -44,25 +47,28 @@ public class LootCalc {
     /**
      * COINS
      * */
-    public LootItem rollCoins() {
+    public LootItemGold rollCoins() {
         LootItemGold coins = new LootItemGold();
 
         String tableIndex = "APL" + prefs.getAPL() + "_Coins";
         Integer dRoll = rollPercent();
 
-        Integer numDice = getNumDice(tableIndex, dRoll);
-        Integer dieSize = getDieSize(tableIndex, dRoll);
-        Integer coinType = getCoinType(tableIndex, dRoll); // 1 = cp, 2 = sp, 3
-                                                           // // = gp, 4 = pp.
-        Integer coinQuantity = rollCoinsQuanitity(numDice, dieSize);
+        Integer numDice = 1;
+        Integer dieSize = 6;
+        Integer coinQuantity = 10;
+        Integer coinType = 3; // 1 = cp, 2 = sp, 3 = gp, 4 = pp.
+
+        books.getCoinsByAPL(dRoll, tableIndex, prefs.getAPL(), numDice,
+                dieSize, coinQuantity, coinType);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "Roll: " + dRoll + ", got from DB: numDice: " + numDice
+                    + ", dieSize: " + dieSize + ", quantity: " + coinQuantity
+                    + ", coinType: " + coinType);
+        }
 
         coins.setCoinType(coinType);
-        coins.setQuantity(coinQuantity);
+        coins.setQuantity((int) (coinQuantity * dice.roll(numDice, dieSize) * getTreasureMultiplier()));
         return coins;
-    }
-
-    public Integer getCoinType(String tableIndex, Integer numRolled) {
-        return books.getCoinType(numRolled, tableIndex);
     }
 
     public Integer rollCoinsQuanitity(Integer numDice, Integer dieSize) {
@@ -100,6 +106,14 @@ public class LootCalc {
         Integer numDice = 1;
         Integer dieSize = 6;
         Integer goodsType = 1;
+
+        books.getGoodsByAPL(dRoll, tableIndex, prefs.getAPL(), numDice,
+                dieSize, goodsType);
+
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "Roll: " + dRoll + ", got from DB: numDice: " + numDice
+                    + ", dieSize: " + dieSize + ", goodsType: " + goodsType);
+        }
 
         goods.setGoodsType(goodsType);
         // Roll number of goods

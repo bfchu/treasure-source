@@ -38,6 +38,17 @@ public class LootOutListItem extends LootItem {
         this.dispRoll = false;
     }
 
+    public LootOutListItem(LootItemGold coins) {
+        super();
+        this.setNumRolled(coins.getNumRolled());
+        this.specials = "";
+        super.setQuantity(coins.getQuantity());
+        this.setName(coins.getName());
+        this.setgValue(coins.getgValue());
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
     public LootOutListItem(LootItemGoods item) {
         super();
         this.setNumRolled(item.getNumRolled());
@@ -168,7 +179,8 @@ public class LootOutListItem extends LootItem {
         string += this.getName();
 
         if (dispGold) {
-            string += ", worth: " + this.getgValue() + "gp";
+            string += ", worth: " + (this.getgValue() * this.getQuantity())
+                    + "gp";
         }
         if (dispRoll) {
             string += " (rolled " + this.getNumRolled() + "%)";

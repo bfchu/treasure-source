@@ -795,7 +795,8 @@ public class LootDB {
         return gold;
     }
 
-    public Integer getCoinType(Integer dRoll, String tableName) {
+    public void getCoinsByAPL(Integer dRoll, String tableName, Integer APL,
+            Integer numDice, Integer dieSize, Integer quantity, Integer coinType) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
                 null, null, null, null, null);
@@ -803,16 +804,17 @@ public class LootDB {
 
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
-        int coinType = 3;
 
         while ((dRoll < a) || (dRoll > b)) {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
+            numDice = cursor.getInt(3);
+            dieSize = cursor.getInt(4);
+            quantity = cursor.getInt(5);
             coinType = cursor.getInt(6);
         }
 
-        return coinType;
     }
 
     public void getGoodsByAPL(Integer dRoll, String tableName, Integer APL,

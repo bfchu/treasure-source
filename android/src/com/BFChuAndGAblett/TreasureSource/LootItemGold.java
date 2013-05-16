@@ -23,6 +23,7 @@ public class LootItemGold extends LootItem {
 
     public LootItemGold() {
         super();
+        this.setName("Gold");
         this.coinType = 3;
     }
 
@@ -56,15 +57,19 @@ public class LootItemGold extends LootItem {
         switch (coinType) {
         case 1:
             this.setgValue(0.01);
+            this.setName("Copper pieces");
             break;
         case 2:
             this.setgValue(0.10);
+            this.setName("Silver pieces");
             break;
         case 3:
             this.setgValue(1.00);
+            this.setName("Gold pieces");
             break;
         case 4:
             this.setgValue(10.00);
+            this.setName("Platinum pieces");
             break;
         }
     }
