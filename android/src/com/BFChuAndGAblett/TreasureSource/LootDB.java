@@ -795,68 +795,31 @@ public class LootDB {
         return gold;
     }
 
-    public void getCoinsByAPL(Integer dRoll, String tableName, Integer APL,
-            Integer numDice, Integer dieSize, Integer quantity, Integer coinType) {
+    public Cursor getCoinsByAPL(String tableName) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
                 null, null, null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            numDice = cursor.getInt(3);
-            dieSize = cursor.getInt(4);
-            quantity = cursor.getInt(5);
-            coinType = cursor.getInt(6);
-        }
-
+        return cursor;
     }
 
-    public void getGoodsByAPL(Integer dRoll, String tableName, Integer APL,
-            Integer numDice, Integer dieSize, Integer goodsType) {
+    public Cursor getGoodsByAPL(String tableName) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "goodsType" }, null, null, null,
                 null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            numDice = cursor.getInt(3);
-            dieSize = cursor.getInt(4);
-            goodsType = cursor.getInt(5);
-        }
-
+        return cursor;
     }
 
-    public void getItemsByAPL(Integer dRoll, String tableName, Integer numDice,
-            Integer dieSize, Integer itemGroup) {
+    public Cursor getItemsByAPL(String tableName) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "itemRarityGroup" }, null, null,
                 null, null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            numDice = cursor.getInt(3);
-            dieSize = cursor.getInt(4);
-            itemGroup = cursor.getInt(5);
-        }
-
+        return cursor;
     }
 
     public String getMundaneType(Integer dRoll) {
@@ -1038,9 +1001,8 @@ public class LootDB {
 
     }
 
-    public void getWeaponSpecs(Integer dRoll, boolean isGreaterItem,
-            Integer rarityLevel, Integer enhancement, Integer numAbilities,
-            Integer abilityLevel, Integer isSpecific) {
+    public Cursor getWeaponsEnhancement(boolean isGreaterItem,
+            Integer rarityLevel) {
         // build table name
         String tableName = "Weapon_";
         if (isGreaterItem) {
@@ -1062,19 +1024,7 @@ public class LootDB {
                 "isSpecific" }, null, null, null, null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            enhancement = cursor.getInt(3);
-            numAbilities = cursor.getInt(4);
-            abilityLevel = cursor.getInt(5);
-            isSpecific = cursor.getInt(6);
-        }
-
+        return cursor;
     }
 
     public LootItem getMundaneItem(Integer dRoll, String mundaneType) {
@@ -1105,9 +1055,8 @@ public class LootDB {
         return item;
     }
 
-    public void getSpecificItem(Integer dRoll, String itemType,
-            boolean isGreaterItem, Integer rarityLevel, String name,
-            double gValue) {
+    public LootItem getSpecificItem(Integer dRoll, String itemType,
+            boolean isGreaterItem, Integer rarityLevel) {
         // build table name
         String tableName = itemType + "_";
         if (isGreaterItem) {
@@ -1129,6 +1078,8 @@ public class LootDB {
                 null);
         cursor.moveToFirst();
 
+        LootItem item = new LootItem();
+        item.setNumRolled(dRoll);
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
 
@@ -1136,14 +1087,14 @@ public class LootDB {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
-            name = cursor.getString(3);
-            gValue = cursor.getDouble(4);
+            item.setName(cursor.getString(3));
+            item.setgValue(cursor.getDouble(4));
         }
-
+        return item;
     }
 
     public String getAbilities(Integer dRoll, String itemType,
-            Integer abilityLevel, double priceToAdjust) {
+            Integer abilityLevel) {
         // build table name
         String tableName = "Abilities_" + itemType + "plus" + abilityLevel;
 
@@ -1155,17 +1106,13 @@ public class LootDB {
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
         String ability = null;
-        double priceAdjust = 0.0;
 
         while ((dRoll < a) || (dRoll > b)) {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
             ability = cursor.getString(3);
-            priceAdjust = cursor.getDouble(4);
         }
-
-        priceToAdjust = priceAdjust;
 
         return ability;
     }

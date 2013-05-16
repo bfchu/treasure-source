@@ -67,16 +67,9 @@ public class LootBuilder {
     public void rollItems() {
         // initializing variables, values unimportant
         // itemGroup: 1 = mundane, 2 = minor, 3 = medium, 4 = major
-        Integer itemGroup = 1;
-        Integer numDiceItems = 1;
-        Integer dieSizeItems = 6;
-        // Database Call returns numDice, dieSize, and itemGroup
-        this.dM.rollItemGrouping(numDiceItems, dieSizeItems, itemGroup);
-
-        double itemMultiplier = dM.getTreasureMultiplier();
-        // roll number to items to generate
-        Integer numItems = (int) (this.dM.rollNumItems(numDiceItems,
-                dieSizeItems) * itemMultiplier);
+        Integer dRoll = dM.rollPercent();
+        Integer itemGroup = dM.getItemGrouping(dRoll);
+        Integer numItems = dM.getNumItems(dRoll);
 
         // Roll each Item, then add to the ArrayList.
         for (int ii = 0; ii < numItems; ii++) {
