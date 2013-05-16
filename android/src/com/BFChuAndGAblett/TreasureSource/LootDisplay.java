@@ -96,12 +96,12 @@ public class LootDisplay extends Activity {
     }
 
     private void initLootPrefs(Intent getLootRules) {
-        int aPL = getLootRules.getIntExtra("aPL", 0);
-        int eCR = getLootRules.getIntExtra("eCR", 0);
-        int enDifficulty = getLootRules.getIntExtra("enDifficulty", 0);
-        int lootSize = getLootRules.getIntExtra("lootSize", 0);
-        int magicLv = getLootRules.getIntExtra("magicLv", 0);
-        double resGold = getLootRules.getDoubleExtra("resGold", 0.0);
+        int aPL = getLootRules.getIntExtra("aPL", 1);
+        int eCR = getLootRules.getIntExtra("eCR", 1);
+        int enDifficulty = getLootRules.getIntExtra("enDifficulty", 1);
+        int lootSize = getLootRules.getIntExtra("lootSize", 3);
+        int magicLv = getLootRules.getIntExtra("magicLv", 2);
+        double resGold = getLootRules.getDoubleExtra("resGold", 10.0);
         boolean rollMundane = getLootRules
                 .getBooleanExtra("rollMundane", false);
         boolean rollGoods = getLootRules.getBooleanExtra("rollGoods", false);
