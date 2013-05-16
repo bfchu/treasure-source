@@ -82,7 +82,9 @@ public class LootBuilder {
         for (int ii = 0; ii < numItems; ii++) {
             LootOutListItem item = new LootOutListItem(
                     this.dM.rollItem(itemGroup));
+
             addItem(item);
+
         }
     }
 

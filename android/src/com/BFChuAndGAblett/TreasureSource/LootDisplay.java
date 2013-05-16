@@ -56,9 +56,11 @@ public class LootDisplay extends Activity {
         }
         lootDB.open();
 
+        lootDB.clear("lootOut");
+
         // add test entries to database
         // replace this part with lootRoller logic (LootBuilder)
-        // lootDB.clear("lootOut");
+
         // lootDB.saveEntry("lootOut", null, 1, 1, "Robe of Stars", 58000.00,
         // true, true);
         // lootDB.saveEntry("lootOut", null, 11, 1, "Robe of gates", 64000.00,
@@ -143,9 +145,11 @@ public class LootDisplay extends Activity {
                     dispRoll = true;
                 }
 
-                Log.d(TAG, "\nid: " + id + "\ndRoll: " + dRoll + "\nQuantity"
-                        + quantity + "\nSpecials: " + specials + "\nitemName: "
-                        + itemName + "\nvalue: " + value);
+                if (BuildConfig.DEBUG) {
+                    Log.d(TAG, "id: " + id + " dRoll: " + dRoll + " Quantity"
+                            + quantity + " Specials: " + specials
+                            + " itemName: " + itemName + " value: " + value);
+                }
 
                 LootOutListItem item = new LootOutListItem(id, dRoll, quantity,
                         specials, itemName, value, dispGold, dispRoll);

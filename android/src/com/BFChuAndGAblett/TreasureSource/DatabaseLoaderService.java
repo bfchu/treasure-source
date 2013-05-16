@@ -20,6 +20,7 @@ public class DatabaseLoaderService extends Service {
 
     private LootDB db;
     private Context context;
+    private AssetManager manager;
 
     /*
      * (non-Javadoc)
@@ -48,7 +49,7 @@ public class DatabaseLoaderService extends Service {
             e.printStackTrace();
         }
         db.open();
-        AssetManager manager = context.getAssets();
+        manager = context.getAssets();
         try {
             db.populateTables(manager);
         } catch (IOException e) {
@@ -59,7 +60,6 @@ public class DatabaseLoaderService extends Service {
         Toast.makeText(this, "Database finished loading!", Toast.LENGTH_LONG)
                 .show();
 
-        // manager.close();
         stopSelf();
         return r;
 
@@ -67,7 +67,7 @@ public class DatabaseLoaderService extends Service {
 
     @Override
     public void onDestroy() {
-
+        // manager.close();
     }
 
 }

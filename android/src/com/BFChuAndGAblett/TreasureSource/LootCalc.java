@@ -41,6 +41,9 @@ public class LootCalc {
     }
 
     // Paizo math
+    /**
+     * COINS
+     * */
     public LootItem rollCoins() {
         LootItemGold coins = new LootItemGold();
 
@@ -84,6 +87,9 @@ public class LootCalc {
         return 1.0;
     }
 
+    /**
+     * GOODS
+     * */
     public LootItemGoods rollGoods() {
         LootItemGoods goods = new LootItemGoods();
 
@@ -91,25 +97,19 @@ public class LootCalc {
         Integer dRoll = rollPercent();
 
         // Roll on goods chart to determine if and what kind of goods
-        Integer numDiceGoods = books.getNumDice(dRoll, tableIndex);
-        Integer dieSizeGoods = books.getDieSize(dRoll, tableIndex);
-        goods.setGoodsType(books.getGoodsType(dRoll, tableIndex));
+        Integer numDice = 1;
+        Integer dieSize = 6;
+        Integer goodsType = 1;
+
+        goods.setGoodsType(goodsType);
         // Roll number of goods
-        goods.setQuantity(rollNumGoods(numDiceGoods, dieSizeGoods));
+        goods.setQuantity(dice.roll(numDice, dieSize));
 
         // Roll value per goods
         double goodsMultiplier = getTreasureMultiplier();
         goods.setgValue(rollGoodsVal(goods.getGoodsType()) * goodsMultiplier);
 
         return goods;
-    }
-
-    public Integer rollNumGoods(Integer numDice, Integer dieSize) {
-        return dice.roll(numDice, dieSize);
-    }
-
-    public Integer rollNumItems(Integer numDice, Integer dieSize) {
-        return dice.roll(numDice, dieSize);
     }
 
     public Double rollGoodsVal(Integer goodsType) {
@@ -206,21 +206,27 @@ public class LootCalc {
         return false;
     }
 
+    /**
+     * ITEMS
+     * */
     public void rollItemGrouping(Integer numDice, Integer dieSize,
             Integer itemGroup) {
         String tableIndex = "APL" + prefs.getAPL() + "_Items";
         Integer dRoll = rollPercent();
 
-        // Roll on goods chart to determine if and what kind of goods
-        numDice = books.getNumDice(dRoll, tableIndex);
-        dieSize = books.getDieSize(dRoll, tableIndex);
-        itemGroup = books.getItemGroup(dRoll, tableIndex);
+        books.getItemsByAPL(dRoll, tableIndex, numDice, dieSize, itemGroup);
     }
 
+    public Integer rollNumItems(Integer numDice, Integer dieSize) {
+        return dice.roll(numDice, dieSize);
+    }
+
+    @Deprecated
     public Integer getNumDice(String tableIndex, Integer numRolled) {
         return books.getNumDice(numRolled, tableIndex);
     }
 
+    @Deprecated
     public Integer getDieSize(String tableIndex, Integer numRolled) {
         return books.getDieSize(numRolled, tableIndex);
     }
