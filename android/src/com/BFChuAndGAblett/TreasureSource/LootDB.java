@@ -558,13 +558,6 @@ public class LootDB {
             Integer quantity, Integer coinType) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", numDice: " + numDice + ", dieSize: "
-            // + dieSize + ", quantity: " + quantity + ", coinType: "
-            // + coinType);
-            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -572,6 +565,7 @@ public class LootDB {
             newItem.put("dLow", dLow);
             newItem.put("dHigh", dHigh);
             newItem.put("numDice", numDice);
+            newItem.put("dieSize", dieSize);
             newItem.put("quantity", quantity);
             newItem.put("coinType", coinType);
 
@@ -580,13 +574,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", numDice: " + numDice + ", dieSize: "
-            // + dieSize + ", quantity: " + quantity + ", coinType: "
-            // + coinType);
-            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -594,6 +581,7 @@ public class LootDB {
             newItem.put("dLow", dLow);
             newItem.put("dHigh", dHigh);
             newItem.put("numDice", numDice);
+            newItem.put("dieSize", dieSize);
             newItem.put("quantity", quantity);
             newItem.put("coinType", coinType);
 
@@ -612,18 +600,13 @@ public class LootDB {
             Integer goodsType) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", numDice: " + numDice + ", dieSize: "
-            // + dieSize + ", goodsType: " + goodsType);
-            // }
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
             newItem.put("dLow", dLow);
             newItem.put("dHigh", dHigh);
             newItem.put("numDice", numDice);
+            newItem.put("dieSize", dieSize);
             newItem.put("goodsType", goodsType);
 
             long newId = db.insert(tableName, null, newItem);
@@ -631,12 +614,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", numDice: " + numDice + ", dieSize: "
-            // + dieSize + ", goodsType: " + goodsType);
-            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -644,6 +621,7 @@ public class LootDB {
             newItem.put("dLow", dLow);
             newItem.put("dHigh", dHigh);
             newItem.put("numDice", numDice);
+            newItem.put("dieSize", dieSize);
             newItem.put("goodsType", goodsType);
 
             db.update(tableName, newItem, "id = " + id, null);
@@ -661,12 +639,6 @@ public class LootDB {
             Integer itemRarityGroup) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", numDice: " + numDice + ", dieSize: "
-            // + dieSize + ", itemRarityGroup: " + itemRarityGroup);
-            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -674,6 +646,7 @@ public class LootDB {
             newItem.put("dLow", dLow);
             newItem.put("dHigh", dHigh);
             newItem.put("numDice", numDice);
+            newItem.put("dieSize", dieSize);
             newItem.put("itemRarityGroup", itemRarityGroup);
 
             long newId = db.insert(tableName, null, newItem);
@@ -681,12 +654,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", numDice: " + numDice + ", dieSize: "
-            // + dieSize + ", itemRarityGroup: " + itemRarityGroup);
-            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -694,6 +661,7 @@ public class LootDB {
             newItem.put("dLow", dLow);
             newItem.put("dHigh", dHigh);
             newItem.put("numDice", numDice);
+            newItem.put("dieSize", dieSize);
             newItem.put("itemRarityGroup", itemRarityGroup);
 
             db.update(tableName, newItem, "id = " + id, null);
@@ -716,8 +684,8 @@ public class LootDB {
                 "quantity", "specials", "itemName", "value", "dispGold",
                 "dispRoll" }, null, null, null, null, null, null);
         cursor.moveToFirst();
-        // TODO: use this function to refactor all get functions that need to
-        // find items by dRoll.
+        // TODO: use this function as a template for all all get functions that
+        // need to find items by dRoll.
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
 
@@ -795,29 +763,52 @@ public class LootDB {
         return gold;
     }
 
-    public Cursor getCoinsByAPL(String tableName) {
+    public Cursor getCoinsByAPL(String tableName, Integer dRoll) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
                 null, null, null, null, null);
         cursor.moveToFirst();
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
 
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
         return cursor;
     }
 
-    public Cursor getGoodsByAPL(String tableName) {
+    public Cursor getGoodsByAPL(String tableName, Integer dRoll) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "goodsType" }, null, null, null,
                 null, null, null);
         cursor.moveToFirst();
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
 
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
         return cursor;
     }
 
-    public Cursor getItemsByAPL(String tableName) {
+    public Cursor getItemsByAPL(String tableName, Integer dRoll) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "itemRarityGroup" }, null, null,
                 null, null, null, null);
         cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
 
         return cursor;
     }
@@ -923,7 +914,7 @@ public class LootDB {
     }
 
     public String getAmmoType(Integer dRoll) {
-        Cursor cursor = db.query(true, "AmmoWeaponTypes", new String[] { "id",
+        Cursor cursor = db.query(true, "AmmoTypes", new String[] { "id",
                 "dLow", "dHigh", "itemType", "valueAdjust" }, null, null, null,
                 null, null, null);
         cursor.moveToFirst();
@@ -1004,7 +995,7 @@ public class LootDB {
     public Cursor getWeaponsEnhancement(boolean isGreaterItem,
             Integer rarityLevel) {
         // build table name
-        String tableName = "Weapon_";
+        String tableName = "Weapons_";
         if (isGreaterItem) {
             tableName += "Greater_";
         } else {
@@ -1058,7 +1049,7 @@ public class LootDB {
     public LootItem getSpecificItem(Integer dRoll, String itemType,
             boolean isGreaterItem, Integer rarityLevel) {
         // build table name
-        String tableName = itemType + "_";
+        String tableName = "Specific_" + itemType + "_";
         if (isGreaterItem) {
             tableName += "Greater_";
         } else {
@@ -1073,6 +1064,10 @@ public class LootDB {
             tableName += "Major";
         }
 
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "Pulling Specific item: " + dRoll + " from " + tableName);
+        }
+
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "itemName", "price" }, null, null, null, null, null,
                 null);
@@ -1082,21 +1077,29 @@ public class LootDB {
         item.setNumRolled(dRoll);
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
+        String itemName = null;
+        Double price = 0.0;
 
         while ((dRoll < a) || (dRoll > b)) {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
-            item.setName(cursor.getString(3));
-            item.setgValue(cursor.getDouble(4));
+            itemName = cursor.getString(3);
+            price = cursor.getDouble(4);
+        }
+        item.setName(itemName);
+        item.setgValue(price);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "Found Specific item: " + dRoll + " from " + tableName
+                    + ": " + item.getName());
         }
         return item;
     }
 
-    public String getAbilities(Integer dRoll, String itemType,
+    public Cursor getAbilities(Integer dRoll, String itemType,
             Integer abilityLevel) {
         // build table name
-        String tableName = "Abilities_" + itemType + "plus" + abilityLevel;
+        String tableName = "Abilities_" + itemType + "_plus" + abilityLevel;
 
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "ability", "priceAdjust" }, null, null, null, null,
@@ -1105,16 +1108,14 @@ public class LootDB {
 
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
-        String ability = null;
 
         while ((dRoll < a) || (dRoll > b)) {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
-            ability = cursor.getString(3);
         }
 
-        return ability;
+        return cursor;
     }
 
     /**
@@ -1158,13 +1159,12 @@ public class LootDB {
         popMundaneItemTable("Armor", manager);
         popMundaneItemTable("Tools_and_gear", manager);
 
-        // popSpecificItemTable("Armor", manager);
-        // popSpecificItemTable("Shields", manager);
-        // popSpecificItemTable("Weapons", manager);
-        // popSpecificItemTable("Potions", manager);
-        // popSpecificItemTable("Rings", manager);
-        // popSpecificItemTable("Rods", manager);
-        // popSpecificItemTable("Staves", manager);
+        popSpecificItemTable("Armor", manager);
+        popSpecificItemTable("Shields", manager);
+        popSpecificItemTable("Weapons", manager);
+        popSpecificItemTable("Potions", manager);
+        popSpecificItemTable("Rings", manager);
+        popRodsAndStavesItemTable(manager);
 
         popSpecificItemTable("Wondrous_Belt", manager);
         popSpecificItemTable("Wondrous_Body", manager);
@@ -1543,6 +1543,109 @@ public class LootDB {
                 }
                 tableName = ("Specific_" + tableType + "_" + lesserOrGreater
                         + "_" + rarityLevel);
+                Log.d(TAG, "Begin Populating Table " + tableName);
+
+                String fileName = (tableName + ".dat");
+                LootIO tableFiles = new LootIO(manager.open(fileName));
+
+                Integer dLow = 1;
+                Integer dHigh = 100;
+                String itemName = null;
+                Double price = 1.0;
+
+                tableFiles.getIn().readLine();// cut off the header line of the
+                                              // file
+                while (tableFiles.getIn().ready()) {
+                    String[] data = getLine(tableFiles);
+
+                    if (data.length >= 4) {
+                        dLow = Integer.valueOf(data[1]);
+                        dHigh = Integer.valueOf(data[2]);
+                        itemName = data[3];
+                        price = Double.valueOf(data[4]);
+
+                        saveEntrySpecificItems(tableName, null, dLow, dHigh,
+                                itemName, price);
+                    }
+                }
+                Log.d(TAG, "Done Populating Table " + tableName);
+                tableFiles.close();
+
+            }
+        }
+    }
+
+    public void popRodsAndStavesItemTable(AssetManager manager)
+            throws IOException {
+        String tableName = null;
+        for (int ii = 0; ii < 2; ii++) {
+            for (int jj = 0; jj < 2; jj++) {
+                String lesserOrGreater = null;
+                switch (jj) {
+                case 0:
+                    lesserOrGreater = "Lesser";
+                    break;
+                case 1:
+                    lesserOrGreater = "Greater";
+                }
+                String rarityLevel = null;
+                switch (ii) {
+                case 0:
+                    rarityLevel = "Medium";
+                    break;
+                case 1:
+                    rarityLevel = "Major";
+                }
+                tableName = ("Specific_Rods_" + lesserOrGreater + "_" + rarityLevel);
+                Log.d(TAG, "Begin Populating Table " + tableName);
+
+                String fileName = (tableName + ".dat");
+                LootIO tableFiles = new LootIO(manager.open(fileName));
+
+                Integer dLow = 1;
+                Integer dHigh = 100;
+                String itemName = null;
+                Double price = 1.0;
+
+                tableFiles.getIn().readLine();// cut off the header line of the
+                                              // file
+                while (tableFiles.getIn().ready()) {
+                    String[] data = getLine(tableFiles);
+
+                    if (data.length >= 4) {
+                        dLow = Integer.valueOf(data[1]);
+                        dHigh = Integer.valueOf(data[2]);
+                        itemName = data[3];
+                        price = Double.valueOf(data[4]);
+
+                        saveEntrySpecificItems(tableName, null, dLow, dHigh,
+                                itemName, price);
+                    }
+                }
+                Log.d(TAG, "Done Populating Table " + tableName);
+                tableFiles.close();
+
+            }
+        }
+        for (int ii = 0; ii < 2; ii++) {
+            for (int jj = 0; jj < 2; jj++) {
+                String lesserOrGreater = null;
+                switch (jj) {
+                case 0:
+                    lesserOrGreater = "Lesser";
+                    break;
+                case 1:
+                    lesserOrGreater = "Greater";
+                }
+                String rarityLevel = null;
+                switch (ii) {
+                case 0:
+                    rarityLevel = "Medium";
+                    break;
+                case 1:
+                    rarityLevel = "Major";
+                }
+                tableName = ("Specific_Staves_" + lesserOrGreater + "_" + rarityLevel);
                 Log.d(TAG, "Begin Populating Table " + tableName);
 
                 String fileName = (tableName + ".dat");

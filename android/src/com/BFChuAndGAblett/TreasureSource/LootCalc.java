@@ -59,29 +59,26 @@ public class LootCalc {
         Integer coinQuantity = 10;
         Integer coinType = 3; // 1 = cp, 2 = sp, 3 = gp, 4 = pp.
 
-        Cursor cursor = books.getCoinsByAPL(tableIndex);
+        Cursor cursor = books.getCoinsByAPL(tableIndex, dRoll);
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            numDice = cursor.getInt(3);
-            dieSize = cursor.getInt(4);
-            coinQuantity = cursor.getInt(5);
-            coinType = cursor.getInt(6);
-        }
+        numDice = cursor.getInt(3);
+        dieSize = cursor.getInt(4);
+        coinQuantity = cursor.getInt(5);
+        coinType = cursor.getInt(6);
 
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "Roll: " + dRoll + ", got from DB: numDice: " + numDice
-                    + ", dieSize: " + dieSize + ", quantity: " + coinQuantity
-                    + ", coinType: " + coinType);
+            Log.d(TAG, "In rollCoins() Roll: " + dRoll
+                    + ", got from DB: numDice: " + numDice + ", dieSize: "
+                    + dieSize + ", quantity: " + coinQuantity + ", coinType: "
+                    + coinType);
         }
 
         coins.setCoinType(coinType);
         coins.setQuantity((int) (coinQuantity * dice.roll(numDice, dieSize) * getTreasureMultiplier()));
+
+        if (!(coins.getQuantity() > 0)) {
+            coins.setName("");
+        }
         return coins;
     }
 
@@ -121,23 +118,16 @@ public class LootCalc {
         Integer dieSize = 6;
         Integer goodsType = 1;
 
-        Cursor cursor = books.getGoodsByAPL(tableIndex);
+        Cursor cursor = books.getGoodsByAPL(tableIndex, dRoll);
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            numDice = cursor.getInt(3);
-            dieSize = cursor.getInt(4);
-            goodsType = cursor.getInt(5);
-        }
+        numDice = cursor.getInt(3);
+        dieSize = cursor.getInt(4);
+        goodsType = cursor.getInt(5);
 
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "Roll: " + dRoll + ", got from DB: numDice: " + numDice
-                    + ", dieSize: " + dieSize + ", goodsType: " + goodsType);
+            Log.d(TAG, "In rollGoods() Roll: " + dRoll
+                    + ", got from DB: numDice: " + numDice + ", dieSize: "
+                    + dieSize + ", goodsType: " + goodsType);
         }
 
         goods.setGoodsType(goodsType);
@@ -148,6 +138,9 @@ public class LootCalc {
         double goodsMultiplier = getTreasureMultiplier();
         goods.setgValue(rollGoodsVal(goods.getGoodsType()) * goodsMultiplier);
 
+        if (!(goods.getQuantity() > 0)) {
+            goods.setName("");
+        }
         return goods;
     }
 
@@ -252,16 +245,9 @@ public class LootCalc {
         String tableIndex = "APL" + prefs.getAPL() + "_Items";
         Integer itemGroup = 4;
 
-        Cursor cursor = books.getItemsByAPL(tableIndex);
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
+        Cursor cursor = books.getItemsByAPL(tableIndex, dRoll);
 
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            itemGroup = cursor.getInt(5);
-        }
+        itemGroup = cursor.getInt(5);
 
         return itemGroup;
     }
@@ -271,33 +257,29 @@ public class LootCalc {
         Integer numDice = null;
         Integer dieSize = null;
 
-        Cursor cursor = books.getItemsByAPL(tableIndex);
+        Cursor cursor = books.getItemsByAPL(tableIndex, dRoll);
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
+        numDice = cursor.getInt(3);
+        dieSize = cursor.getInt(4);
 
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            numDice = cursor.getInt(3);
-            dieSize = cursor.getInt(4);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in getNumItems() Roll: " + dRoll
+                    + ", got from DB: numDice: " + numDice + ", dieSize: "
+                    + dieSize);
         }
 
-        return (int) (dice.roll(numDice, dieSize) * getTreasureMultiplier());
-    }
+        Integer numItems = 0;
+        if ((numDice > 0) && (dieSize > 0)) {
+            numItems = (int) (dice.roll(numDice, dieSize) * getTreasureMultiplier());
+        }
 
-    @Deprecated
-    public Integer getNumDice(String tableIndex, Integer numRolled) {
-        return books.getNumDice(numRolled, tableIndex);
-    }
-
-    @Deprecated
-    public Integer getDieSize(String tableIndex, Integer numRolled) {
-        return books.getDieSize(numRolled, tableIndex);
+        return numItems;
     }
 
     public LootItem rollItem(Integer rarityLevel) {
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollItem() rarity:" + rarityLevel);
+        }
         LootItem item = new LootItem();
         // catch mundane item calls first
         if (rarityLevel == 1) {
@@ -318,6 +300,9 @@ public class LootCalc {
                 item.setItemType(rollMajorItemType());
             }
 
+            if (BuildConfig.DEBUG) {
+                Log.d(TAG, "In rollItem() rolling for: " + item.getItemType());
+            }
             // TODO:
             // Roll qualities, and special abilities.
             if (item.getItemType() == 3) {
@@ -354,6 +339,10 @@ public class LootCalc {
         String mundaneType = rollMundaneType();
         Integer dRoll = rollPercent();
 
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMundaneITem: rolled " + dRoll);
+        }
+
         if (mundaneType == "Alchemical_item") {
             item = books.getMundaneItem(dRoll, mundaneType);
         } else if (mundaneType == "Armor") {
@@ -386,6 +375,10 @@ public class LootCalc {
     private LootItem rollWondrousItem(Integer rarityLevel) {
         String wondrousType = rollWondrousType();
 
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollWondrousItem: Type:" + wondrousType);
+        }
+
         LootItem item = rollSpecificItem(rarityLevel, wondrousType);
 
         item.setItemType(11);
@@ -409,8 +402,15 @@ public class LootCalc {
             isGreaterItem = false;
         }
 
-        item = books.getSpecificItem(dRoll, itemType, isGreaterItem,
-                rarityLevel);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollSpecificItem: rolled " + dRoll + " for "
+                    + itemType);
+        }
+
+        if ((((itemType != "Rods") || (rarityLevel != 2)) && ((itemType != "Staves") || (rarityLevel != 2)))) {
+            item = books.getSpecificItem(dRoll, itemType, isGreaterItem,
+                    rarityLevel);
+        }
         item.setNumRolled(dRoll);
 
         return item;
@@ -420,18 +420,7 @@ public class LootCalc {
     private LootItem rollMagicWeapon(Integer rarityLevel) {
         LootItem item = new LootItem();
 
-        // Is it made of special stuff?
-        if (rollPercent() > 95) {
-            item.setName(rollSpecialMaterial() + " ");
-        }
-        // is it a Weapon, Ranged Weapon, or Ammunition?
-        // 1,2,3 = weapon. 4,5 = ranged weapon. 6 = ammo;
-        Integer weaponRangedOrAmmo = dice.roll(1, 6);
-
-        // What kind of weapon?
-        String weaponType = rollWeaponType(weaponRangedOrAmmo);
-
-        // Does it have special abilities?
+        // find out if it's a specific item first.
         Integer dRoll = rollPercent();
         boolean isGreaterItem = true;
         if (dice.roll(1, 2) != 2) {
@@ -440,10 +429,10 @@ public class LootCalc {
         Integer isSpecific = 0;
         Cursor cursor = books.getWeaponsEnhancement(isGreaterItem, rarityLevel);
 
-        // find out if it's a specific item first.
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
 
+        // sets the cursor to the correct row, checks for specificity
         while ((dRoll < a) || (dRoll > b)) {
             cursor.moveToNext();
             a = cursor.getInt(1);
@@ -453,11 +442,21 @@ public class LootCalc {
 
         // if its specific, return a specific item, otherwise roll abilities
         if (isSpecific > 0) {
-            item = rollSpecificItem(rarityLevel, "Weapon");
+            item = rollSpecificItem(rarityLevel, "Weapons");
         } else {
-            String specialAbs = getWeaponSpecials(cursor, isGreaterItem,
-                    weaponRangedOrAmmo, rarityLevel);
-            item.setName(item.getName() + specialAbs + weaponType);
+            // Is it made of special stuff?
+            if (rollPercent() > 95) {
+                item.setName(rollSpecialMaterial() + " ");
+            }
+            // is it a Weapon, Ranged Weapon, or Ammunition?
+            // 1,2,3 = weapon. 4,5 = ranged weapon. 6 = ammo;
+            Integer weaponRangedOrAmmo = dice.roll(1, 6);
+
+            // What kind of weapon?
+            String weaponType = rollWeaponType(weaponRangedOrAmmo);
+            // What special abilities does it get?
+            item = getWeaponSpecials(cursor, item, isGreaterItem,
+                    weaponRangedOrAmmo, rarityLevel, weaponType);
         }
 
         item.setItemType(4);
@@ -479,106 +478,128 @@ public class LootCalc {
         return type;
     }
 
-    public LootItem getWeaponSpecials(Cursor cursor, boolean isGreaterItem,
-            int weaponRangedOrAmmo, Integer rarityLevel) {
-        // TODO: make this chain of methods all return LootItem, each time
-        // reconstructing the item they will eventually finish, adding bits to
-        // it at each method, since they are returning a LootItem, it will be
-        // easy to get every piece of information
-        String abilities = "+1";
+    public LootItem getWeaponSpecials(Cursor cursor, LootItem item,
+            boolean isGreaterItem, int weaponRangedOrAmmo, Integer rarityLevel,
+            String weaponType) {
         Integer enhancement = cursor.getInt(3);
         Integer numAbilities = cursor.getInt(4);
         Integer abilityLevel = cursor.getInt(5);
-        double priceAdjust = cursor.getInt(6);
 
-        // Get Abilities
+        item.setmLevel(enhancement);
         if (weaponRangedOrAmmo < 4) {
-            abilities = rollAbilities("Weapon", numAbilities, abilityLevel);
+            item = rollAbilities("Weapons", item, numAbilities, abilityLevel,
+                    weaponType);
         } else if (weaponRangedOrAmmo < 6) {
-            abilities = rollAbilities("Ranged_Weapons", numAbilities,
-                    abilityLevel);
+            item = rollAbilities("Ranged_Weapons", item, numAbilities,
+                    abilityLevel, weaponType);
         } else {
-            abilities = rollAbilities("Ammunition", numAbilities, abilityLevel);
+            item = rollAbilities("Ammunition", item, numAbilities,
+                    abilityLevel, weaponType);
         }
 
-        return abilities;
+        return item;
     }
 
     /** MAGIC ARMOR */
     private LootItem rollMagicArmor(Integer rarityLevel) {
+
         LootItem item = new LootItem();
 
-        // Is it made of special stuff?
-        if (rollPercent() > 95) {
-            item.setName(rollSpecialMaterial() + " ");
+        // find out if it's a specific item first.
+        Integer dRoll = rollPercent();
+        boolean isGreaterItem = true;
+        if (dice.roll(1, 2) != 2) {
+            isGreaterItem = false;
+        }
+        Integer isSpecific = 0;
+        Cursor cursor = books.getWeaponsEnhancement(isGreaterItem, rarityLevel);
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+
+        // sets the cursor to the correct row, checks for specificity
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+            isSpecific = cursor.getInt(6);
         }
         // is it armor or shield?
         Integer armorOrShield = dice.roll(1, 2);// 1 = armor, 2 = shield;
-        // What kind of armor or shield?
-        String armorType = rollArmorType(armorOrShield);
 
-        Integer isSpecific = 0;
-        // Does it have special abilities?
-        String specialAbs = rollArmorSpecials(armorOrShield, rarityLevel,
-                isSpecific);
+        // if its specific, return a specific item, otherwise roll abilities
+        if (armorOrShield != 2) {
+            if (isSpecific > 0) {
+                item = rollSpecificItem(rarityLevel, "Armor");
+            } else {
+                // Is it made of special stuff?
+                if (rollPercent() > 95) {
+                    item.setName(rollSpecialMaterial() + " ");
+                }
 
-        if (isSpecific > 0) {
-            item.setName(specialAbs);
+                // What kind of armor or shield?
+                String armorType = rollArmorType(armorOrShield);
+                // What special abilities does it get?
+                item = getArmorSpecials(cursor, item, isGreaterItem,
+                        armorOrShield, rarityLevel, armorType);
+            }
         } else {
-            item.setName(item.getName() + specialAbs + armorType);
+            if (isSpecific > 0) {
+                item = rollSpecificItem(rarityLevel, "Shields");
+            } else {
+                // Is it made of special stuff?
+                if (rollPercent() > 95) {
+                    item.setName(rollSpecialMaterial() + " ");
+                }
+
+                // What kind of armor or shield?
+                String armorType = rollArmorType(armorOrShield);
+                // What special abilities does it get?
+                item = getArmorSpecials(cursor, item, isGreaterItem,
+                        armorOrShield, rarityLevel, armorType);
+            }
         }
 
         item.setItemType(3);
         return item;
     }
 
-    public String rollArmorSpecials(int armorOrShield, Integer rarityLevel,
-            Integer isSpecific) {
-        String abilities = "+1";
-        Integer enhancement = 1;
-        Integer numAbilities = 0;
-        Integer abilityLevel = 1;
-        Integer dRoll = rollPercent();
-        // is it a Greater or Lesser Item?
-        boolean isGreaterItem = true;
-        if (dice.roll(1, 2) != 2) {
-            isGreaterItem = false;
-        }
+    private LootItem getArmorSpecials(Cursor cursor, LootItem item,
+            boolean isGreaterItem, Integer armorOrShield, Integer rarityLevel,
+            String armorType) {
+        Integer enhancement = cursor.getInt(3);
+        Integer numAbilities = cursor.getInt(4);
+        Integer abilityLevel = cursor.getInt(5);
 
-        // Get Abilities
+        item.setmLevel(enhancement);
         if (armorOrShield != 2) {
-            books.getArmorSpecs(dRoll, isGreaterItem, rarityLevel, enhancement,
-                    numAbilities, abilityLevel, isSpecific);
-            if (isSpecific > 0) {
-                LootItem item = rollSpecificItem(rarityLevel, "Armor");
-                abilities = item.getName();
-            } else {
-                abilities = rollAbilities("Armor", numAbilities, abilityLevel);
-            }
+            item = rollAbilities("Armor", item, numAbilities, abilityLevel,
+                    armorType);
         } else {
-            books.getArmorSpecs(dRoll, isGreaterItem, rarityLevel, enhancement,
-                    numAbilities, abilityLevel, isSpecific);
-            if (isSpecific > 0) {
-                LootItem item = rollSpecificItem(rarityLevel, "Shields");
-                abilities = item.getName();
-            } else {
-                abilities = rollAbilities("Armor", numAbilities, abilityLevel);
-            }
+            item = rollAbilities("Shields", item, numAbilities, abilityLevel,
+                    armorType);
         }
 
-        return abilities;
+        return item;
     }
 
-    private LootItem rollAbilities(String itemType, Integer numAbilities,
-            Integer abilityLevel) {
-        String abilities = null;
-        Integer dRoll = rollPercent();
+    private LootItem rollAbilities(String itemsClass, LootItem item,
+            Integer numAbilities, Integer abilityLevel, String itemsType) {
 
+        String abilities = null;
+        double priceAdjust = 0.0;
         for (int ii = 0; ii < numAbilities; ii++) {
-            abilities += books.getAbilities(dRoll, itemType, abilityLevel)
-                    + " ";
+            Integer dRoll = rollPercent();
+            Cursor abilityCursor = books.getAbilities(dRoll, itemsClass,
+                    abilityLevel);
+            abilities += abilityCursor.getString(3) + " ";
+            priceAdjust += abilityCursor.getDouble(4);
+
         }
-        return abilities;
+        item.setName(item.getName() + abilities + itemsType);
+        item.setgValue(item.getgValue() + priceAdjust);
+        item.setmLevel(item.getmLevel() + (abilityLevel * numAbilities));
+        return item;
     }
 
     private String rollArmorType(int armorOrShield) {
@@ -602,18 +623,21 @@ public class LootCalc {
 
     public Integer rollMinorItemType() {
         // Hard-coded static table
-        Integer roll = rollPercent();
-        if (roll < 5) {
+        Integer dRoll = rollPercent();
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMinorItemType() rolled: " + dRoll);
+        }
+        if (dRoll < 5) {
             return 3; // Armor and Shields
-        } else if (roll < 10) {
+        } else if (dRoll < 10) {
             return 4; // Weapons
-        } else if (roll < 45) {
+        } else if (dRoll < 45) {
             return 5; // Potions
-        } else if (roll < 47) {
+        } else if (dRoll < 47) {
             return 6; // Rings
-        } else if (roll < 82) {
+        } else if (dRoll < 82) {
             return 8; // Scrolls
-        } else if (roll < 92) {
+        } else if (dRoll < 92) {
             return 10; // Wands
         } else {
             return 11; // Wondrous Items
@@ -622,22 +646,25 @@ public class LootCalc {
 
     public Integer rollMediumItemType() {
         // Hard-coded static table
-        Integer roll = rollPercent();
-        if (roll < 11) {
+        Integer dRoll = rollPercent();
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMediumItem() rolled: " + dRoll);
+        }
+        if (dRoll < 11) {
             return 3; // Armor and Shields
-        } else if (roll < 21) {
+        } else if (dRoll < 21) {
             return 4; // Weapons
-        } else if (roll < 31) {
+        } else if (dRoll < 31) {
             return 5; // Potions
-        } else if (roll < 41) {
+        } else if (dRoll < 41) {
             return 6; // Rings
-        } else if (roll < 51) {
+        } else if (dRoll < 51) {
             return 7; // Rods
-        } else if (roll < 66) {
+        } else if (dRoll < 66) {
             return 8; // Scrolls
-        } else if (roll < 69) {
+        } else if (dRoll < 69) {
             return 9; // Staves
-        } else if (roll < 84) {
+        } else if (dRoll < 84) {
             return 10; // Wands
         } else {
             return 11; // Wondrous Items
@@ -646,22 +673,25 @@ public class LootCalc {
 
     public Integer rollMajorItemType() {
         // Hard-Coded static table
-        Integer roll = rollPercent();
-        if (roll < 11) {
+        Integer dRoll = rollPercent();
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMajorItem() rolled: " + dRoll);
+        }
+        if (dRoll < 11) {
             return 3;
-        } else if (roll < 21) {
+        } else if (dRoll < 21) {
             return 4;
-        } else if (roll < 26) {
+        } else if (dRoll < 26) {
             return 5;
-        } else if (roll < 36) {
+        } else if (dRoll < 36) {
             return 6;
-        } else if (roll < 46) {
+        } else if (dRoll < 46) {
             return 7;
-        } else if (roll < 56) {
+        } else if (dRoll < 56) {
             return 8;
-        } else if (roll < 76) {
+        } else if (dRoll < 76) {
             return 9;
-        } else if (roll < 81) {
+        } else if (dRoll < 81) {
             return 10;
         } else {
             return 11;

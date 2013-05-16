@@ -72,12 +72,12 @@ public class LootBuilder {
         Integer numItems = dM.getNumItems(dRoll);
 
         // Roll each Item, then add to the ArrayList.
-        for (int ii = 0; ii < numItems; ii++) {
+        while ((hoard.size() < numItems) && (trove.size() < numItems)) {
             LootOutListItem item = new LootOutListItem(
                     this.dM.rollItem(itemGroup));
-
-            addItem(item);
-
+            if (item.getName() != "") {
+                addItem(item);
+            }
         }
     }
 
