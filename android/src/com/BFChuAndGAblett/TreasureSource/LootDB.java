@@ -350,14 +350,6 @@ public class LootDB {
             int dHigh, String itemName, Double valueAdjust) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", item Name: " + itemName + ", Value: "
-            // + valueAdjust);
-            // }
-            // create
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -371,15 +363,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", item Name: " + itemName + ", Value: "
-            // + valueAdjust);
-            // }
-
-            // create
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -690,7 +673,8 @@ public class LootDB {
         int b = cursor.getInt(2);
         int id = 1;
 
-        while ((dRoll < a) || (dRoll > b)) {
+        // is dRoll between a and b?
+        while ((dRoll < a) || ((dRoll > b) && !cursor.isAfterLast())) {
             // cursor.moveToNext();
             cursor.moveToPosition(id);
             a = cursor.getInt(1);
@@ -837,11 +821,20 @@ public class LootDB {
     }
 
     public String getArmorType(Integer dRoll) {
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in getArmorType(): dRoll" + dRoll);
+        }
         Cursor cursor = db.query(true, "ArmorTypes", new String[] { "id",
                 "dLow", "dHigh", "itemType", "valueAdjust" }, null, null, null,
                 null, null, null);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in getArmorType(): successfull querry");
+        }
         cursor.moveToFirst();
 
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in getArmorType(): successfully moved to first entry");
+        }
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
         String armorType = "full plate";
@@ -853,6 +846,12 @@ public class LootDB {
             b = cursor.getInt(2);
             armorType = cursor.getString(3);
             // id++;
+            if (BuildConfig.DEBUG) {
+                Log.d(TAG,
+                        "in getArmorType(): row: " + cursor.getInt(0) + " dLow"
+                                + cursor.getInt(1) + "type: "
+                                + cursor.getString(3));
+            }
         }
 
         return armorType;
@@ -872,9 +871,8 @@ public class LootDB {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
-            shieldType = cursor.getString(3);
         }
-
+        shieldType = cursor.getString(3);
         return shieldType;
     }
 
@@ -892,8 +890,9 @@ public class LootDB {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
-            weaponType = cursor.getString(3);
         }
+
+        weaponType = cursor.getString(3);
 
         return weaponType;
     }
@@ -1168,7 +1167,7 @@ public class LootDB {
         String itemName = null;
         Double price = 0.0;
 
-        while ((dRoll < a) || (dRoll > b)) {
+        while (((dRoll < a) || ((dRoll > b) && (!cursor.isAfterLast())))) {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
@@ -1450,7 +1449,7 @@ public class LootDB {
 
         Integer dLow = 1;
         Integer dHigh = 100;
-        String itemType = null;
+        String itemType = "";
         Double valueAdjust = 1.0;
 
         tableFiles.getIn().readLine();// cut off the header line of the file
