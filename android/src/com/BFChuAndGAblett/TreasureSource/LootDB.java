@@ -691,6 +691,7 @@ public class LootDB {
         int id = 1;
 
         while ((dRoll < a) || (dRoll > b)) {
+            // cursor.moveToNext();
             cursor.moveToPosition(id);
             a = cursor.getInt(1);
             b = cursor.getInt(2);
@@ -845,13 +846,13 @@ public class LootDB {
         int b = cursor.getInt(2);
         String armorType = "full plate";
 
-        int id = 1;
+        // int id = 1;
         while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToPosition(id);
+            cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
             armorType = cursor.getString(3);
-            id++;
+            // id++;
         }
 
         return armorType;
