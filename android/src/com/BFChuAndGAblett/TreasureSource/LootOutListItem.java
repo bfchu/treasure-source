@@ -117,6 +117,8 @@ public class LootOutListItem extends LootItem {
     }
 
     public String findSpecialMatByID(Integer id) {
+        // TODO: find out what all the special materials to roll for are and put
+        // them here, or replace with database calls
         switch (id) {
         case 1:
             return "Iron";

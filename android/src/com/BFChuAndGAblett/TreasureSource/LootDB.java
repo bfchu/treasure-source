@@ -1102,9 +1102,9 @@ public class LootDB {
         popEncounterValsTable(manager);
 
         // TODO: popTable methods for coins, goods, items by APL;
-        // popAPLCoins(manager);
-        // popAPLGoods(manager);
-        // popAPLItems(manager);
+        popAPLCoins(manager);
+        popAPLGoods(manager);
+        popAPLItems(manager);
 
         // Item Types
         popMundaneTypeTable(manager);
