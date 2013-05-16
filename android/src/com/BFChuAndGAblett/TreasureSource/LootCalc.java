@@ -426,8 +426,14 @@ public class LootCalc {
         if (dice.roll(1, 2) != 2) {
             isGreaterItem = false;
         }
+
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMagicWeapon(): rolled " + dRoll + " for rarity"
+                    + rarityLevel + " and isGreaterItem: " + isGreaterItem);
+        }
         Integer isSpecific = 0;
-        Cursor cursor = books.getWeaponsEnhancement(isGreaterItem, rarityLevel);
+        Cursor cursor = books.getEnhancement(dRoll, "Weapons", isGreaterItem,
+                rarityLevel);
 
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
@@ -511,19 +517,16 @@ public class LootCalc {
         if (dice.roll(1, 2) != 2) {
             isGreaterItem = false;
         }
-        Integer isSpecific = 0;
-        Cursor cursor = books.getWeaponsEnhancement(isGreaterItem, rarityLevel);
-
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        // sets the cursor to the correct row, checks for specificity
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            isSpecific = cursor.getInt(6);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMagicArmor(): rolled " + dRoll + " for rarity"
+                    + rarityLevel + " and isGreaterItem: " + isGreaterItem);
         }
+        Integer isSpecific = 0;
+        Cursor cursor = books.getEnhancement(dRoll, "Armor", isGreaterItem,
+                rarityLevel);
+
+        isSpecific = cursor.getInt(6);
+
         // is it armor or shield?
         Integer armorOrShield = dice.roll(1, 2);// 1 = armor, 2 = shield;
 
