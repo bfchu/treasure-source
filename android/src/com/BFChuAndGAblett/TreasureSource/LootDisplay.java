@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +29,7 @@ public class LootDisplay extends Activity {
     private LootDB lootDB;
     private Cursor lootCursor;
     private LootBuilder DM;
+    private LootPrefs lootPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,9 @@ public class LootDisplay extends Activity {
         Log.d(TAG, "lootListView: " + lootListView);
         lootListView.setAdapter(arrayAdapter);
 
+        Intent getLootRules = getIntent();
+        initLootPrefs(getLootRules);
+
         // Database code
         try {
             lootDB = new LootDB(this);
@@ -51,30 +56,32 @@ public class LootDisplay extends Activity {
         }
         lootDB.open();
 
+        lootDB.clear("lootOut");
+
         // add test entries to database
         // replace this part with lootRoller logic (LootBuilder)
-        lootDB.clear("lootOut");
-        lootDB.saveEntry("lootOut", null, 1, 1, "Robe of Stars", 58000.00,
-                true, true);
-        lootDB.saveEntry("lootOut", null, 11, 1, "Robe of gates", 64000.00,
-                true, true);
-        lootDB.saveEntry("lootOut", null, 16, 1, "Otherworldly kimono",
-                67000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 21, 1,
-                "Bodywrap of mighty strikes +5", 75000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 41, 1,
-                "Resplendent robe of the thespian", 75000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 52, 1, "Robe of the archmagi",
-                75000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 68, 4, "Adamantine",
-                "Bodywrap of mighty strikes +6", 108000.00, true, true);
-        lootDB.saveEntry("lootOut", null, 78, 1, "Robe of eyes", 120000.00,
-                true, true);
-        lootDB.saveEntry("lootOut", null, 98, 1,
-                "Bodywrap of mighty strikes +7", 147000.00, true, true);
 
-        // DM = new LootBuilder();
-        // DM.genLoot(null, prefs, lootDB);
+        // lootDB.saveEntry("lootOut", null, 1, 1, "Robe of Stars", 58000.00,
+        // true, true);
+        // lootDB.saveEntry("lootOut", null, 11, 1, "Robe of gates", 64000.00,
+        // true, true);
+        // lootDB.saveEntry("lootOut", null, 16, 1, "Otherworldly kimono",
+        // 67000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 21, 1,
+        // "Bodywrap of mighty strikes +5", 75000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 41, 1,
+        // "Resplendent robe of the thespian", 75000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 52, 1, "Robe of the archmagi",
+        // 75000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 68, 4, "Adamantine",
+        // "Bodywrap of mighty strikes +6", 108000.00, true, true);
+        // lootDB.saveEntry("lootOut", null, 78, 1, "Robe of eyes", 120000.00,
+        // true, true);
+        // lootDB.saveEntry("lootOut", null, 98, 1,
+        // "Bodywrap of mighty strikes +7", 147000.00, true, true);
+
+        DM = new LootBuilder();
+        DM.genLoot(null, lootPrefs, lootDB);
 
         populateLootDisplay();
     }
@@ -86,6 +93,30 @@ public class LootDisplay extends Activity {
         startManagingCursor(lootCursor);
 
         updateLootDisplay();
+    }
+
+    private void initLootPrefs(Intent getLootRules) {
+        int aPL = getLootRules.getIntExtra("aPL", 0);
+        int eCR = getLootRules.getIntExtra("eCR", 0);
+        int enDifficulty = getLootRules.getIntExtra("enDifficulty", 0);
+        int lootSize = getLootRules.getIntExtra("lootSize", 0);
+        int magicLv = getLootRules.getIntExtra("magicLv", 0);
+        double resGold = getLootRules.getDoubleExtra("resGold", 0.0);
+        boolean rollMundane = getLootRules
+                .getBooleanExtra("rollMundane", false);
+        boolean rollGoods = getLootRules.getBooleanExtra("rollGoods", false);
+        boolean noRepeats = getLootRules.getBooleanExtra("noRepeats", false);
+        boolean limitValByCR = getLootRules.getBooleanExtra("limByEV", false);
+        boolean[] itemRestrictions = getLootRules
+                .getBooleanArrayExtra("itemRestrictions");
+        boolean[] displayOpts = getLootRules
+                .getBooleanArrayExtra("displayOpts");
+
+        this.lootPrefs = new LootPrefs(aPL, eCR, enDifficulty, lootSize,
+                magicLv, resGold, rollMundane, rollGoods, noRepeats,
+                limitValByCR, itemRestrictions, displayOpts);
+
+        Log.d(TAG, "in InitLootPrefs");
     }
 
     private void updateLootDisplay() {
@@ -114,9 +145,11 @@ public class LootDisplay extends Activity {
                     dispRoll = true;
                 }
 
-                Log.d(TAG, "\nid: " + id + "\ndRoll: " + dRoll + "\nQuantity"
-                        + quantity + "\nSpecials: " + specials + "\nitemName: "
-                        + itemName + "\nvalue: " + value);
+                if (BuildConfig.DEBUG) {
+                    Log.d(TAG, "id: " + id + " dRoll: " + dRoll + " Quantity"
+                            + quantity + " Specials: " + specials
+                            + " itemName: " + itemName + " value: " + value);
+                }
 
                 LootOutListItem item = new LootOutListItem(id, dRoll, quantity,
                         specials, itemName, value, dispGold, dispRoll);

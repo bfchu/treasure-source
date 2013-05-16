@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class LootPrefs {
 
-    private static final Integer NUM_RESTRICTIONS = 9; // [1] = armor, ect...
+    private static final Integer NUM_RESTRICTIONS = 12; // [3] = armor, ect...
     private static final Integer NUM_DISPLAY_OPTS = 3;// [ ]
 
     private Integer aPL; // Average Party Level
@@ -67,7 +67,8 @@ public class LootPrefs {
     }
 
     public Integer getAPL() {
-        return aPL;
+        // TODO: adjust APL that is returned by difficulty setting
+        return (aPL);
     }
 
     public void setAPL(Integer aPL) {

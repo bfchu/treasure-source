@@ -4,11 +4,11 @@
 package com.BFChuAndGAblett.TreasureSource;
 
 import java.io.IOException;
-import java.util.Timer;
 
-import android.app.NotificationManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.IBinder;
 import android.widget.Toast;
 
@@ -18,11 +18,9 @@ import android.widget.Toast;
  */
 public class DatabaseLoaderService extends Service {
 
-    private final int UPDATE_INTERVAL = 60 * 1000;
-    private Timer timer = new Timer();
-    private static final int NOTIFICATION_EX = 1;
-    private NotificationManager notificationManager;
     private LootDB db;
+    private Context context;
+    private AssetManager manager;
 
     /*
      * (non-Javadoc)
@@ -37,6 +35,7 @@ public class DatabaseLoaderService extends Service {
 
     @Override
     public void onCreate() {
+        context = this;
         // code to execute when the service is first created
     }
 
@@ -50,8 +49,9 @@ public class DatabaseLoaderService extends Service {
             e.printStackTrace();
         }
         db.open();
+        manager = context.getAssets();
         try {
-            db.populateTables();
+            db.populateTables(manager);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -60,16 +60,14 @@ public class DatabaseLoaderService extends Service {
         Toast.makeText(this, "Database finished loading!", Toast.LENGTH_LONG)
                 .show();
 
-        // stopSelf();
+        stopSelf();
         return r;
 
     }
 
     @Override
     public void onDestroy() {
-        if (timer != null) {
-            timer.cancel();
-        }
+        // manager.close();
     }
 
 }

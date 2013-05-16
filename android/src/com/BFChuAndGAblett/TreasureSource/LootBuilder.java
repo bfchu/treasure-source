@@ -73,14 +73,18 @@ public class LootBuilder {
         // Database Call returns numDice, dieSize, and itemGroup
         this.dM.rollItemGrouping(numDiceItems, dieSizeItems, itemGroup);
 
+        double itemMultiplier = dM.getTreasureMultiplier();
         // roll number to items to generate
-        Integer numItems = this.dM.rollNumItems(numDiceItems, dieSizeItems);
+        Integer numItems = (int) (this.dM.rollNumItems(numDiceItems,
+                dieSizeItems) * itemMultiplier);
 
         // Roll each Item, then add to the ArrayList.
         for (int ii = 0; ii < numItems; ii++) {
             LootOutListItem item = new LootOutListItem(
                     this.dM.rollItem(itemGroup));
+
             addItem(item);
+
         }
     }
 

@@ -2,10 +2,16 @@ package com.BFChuAndGAblett.TreasureSource;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 /**
  * @author Brian F. Chu, Garrick S. Ablett
@@ -22,11 +28,51 @@ public class MainActivity extends Activity {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in onCreate()");
         }
+
+        SharedPreferences mySharedPreferences = getSharedPreferences(
+                "Run_Once_Prefs", Activity.MODE_PRIVATE);
+
+        int lastVersionCode = mySharedPreferences.getInt("lastVersionCode", 0); // the
+                                                                                // last
+                                                                                // time
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "lastVersionCode:" + lastVersionCode);
+        }
+
+        int versionCode = 0;
         try {
-            startService(new Intent(this, DatabaseLoaderService.class));
-        } catch (IllegalStateException e) {
+            versionCode = getPackageManager().getPackageInfo(getPackageName(),
+                    0).versionCode;
+        } catch (NameNotFoundException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "versionCode:" + versionCode);
+        }
+
+        if (lastVersionCode == 0) {
+
+            Intent dbService = new Intent(this, DatabaseLoaderService.class);
+            try {
+                startService(dbService);
+            } catch (IllegalStateException e) {
+                e.printStackTrace();
+            }
+
+            SharedPreferences.Editor editor = mySharedPreferences.edit();
+            editor.putInt("lastVersionCode", versionCode);
+            editor.commit();
+
+        } else {
+            Toast.makeText(this, "Skipped initializing database",
+                    Toast.LENGTH_LONG).show();
+
+            SharedPreferences.Editor editor = mySharedPreferences.edit();
+            editor.putInt("lastVersionCode", versionCode);
+            editor.commit();
+        }
+
     }
 
     @Override
@@ -86,9 +132,105 @@ public class MainActivity extends Activity {
 
     public void onRollLootButton(View v) {
         Intent g = new Intent(this, LootDisplay.class);
+        setPrefs(g);
+
         startActivity(g);
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in onRollLootButton()");
         }
+    }
+
+    public void setPrefs(Intent intent) {
+        Log.d(TAG, "in setPrefs");
+
+        EditText et_aPL = (EditText) findViewById(R.id.editText1);
+        int aPL = 0;
+        aPL = Integer.parseInt(et_aPL.getText().toString());
+        intent.putExtra("aPL", aPL);
+
+        EditText et_eD = (EditText) findViewById(R.id.editText2);
+        int eCR = 0;
+        eCR = Integer.parseInt(et_eD.getText().toString());
+        intent.putExtra("eCR", eCR);
+
+        RadioGroup rg_dS = (RadioGroup) findViewById(R.id.difficulty_radioGroup);
+        int enDifficulty = 0;
+        enDifficulty = rg_dS.getCheckedRadioButtonId();
+        // Switch Statement to determine what to use
+        // Switch statement potentially actually handled in LootDisplay or
+        // LootCalc from theres
+        intent.putExtra("enDifficulty", enDifficulty);
+
+        RadioGroup rg_tS = (RadioGroup) findViewById(R.id.size_radioGroup);
+        int lootSize = 0;
+        lootSize = rg_tS.getCheckedRadioButtonId();
+        // Switch Statement to determine what to use
+        // Switch statement potentially actually handled in LootDisplay or
+        // LootCalc from theres
+        intent.putExtra("lootSize", lootSize);
+
+        RadioGroup rg_mL = (RadioGroup) findViewById(R.id.magic_level_radioGroup);
+        int magicLv = 0;
+        magicLv = rg_mL.getCheckedRadioButtonId();
+        // Switch Statement to determine what to use
+        intent.putExtra("magicLv", magicLv);
+
+        EditText et_rG = (EditText) findViewById(R.id.editText3);
+        double resGold = 0.0;
+        resGold = Double.parseDouble(et_rG.getText().toString());
+        intent.putExtra("resGold", resGold);
+
+        CheckBox cb_rMun = (CheckBox) findViewById(R.id.checkBox1);
+        boolean rollMundane = false;
+        rollMundane = cb_rMun.isChecked();
+        intent.putExtra("rollMundane", rollMundane);
+
+        CheckBox cb_rGoods = (CheckBox) findViewById(R.id.checkBox2);
+        boolean rollGoods = false;
+        rollGoods = cb_rGoods.isChecked();
+        intent.putExtra("rollGoods", rollGoods);
+
+        CheckBox cb_discD = (CheckBox) findViewById(R.id.checkBox3);
+        boolean noRepeats = false;
+        noRepeats = cb_discD.isChecked();
+        intent.putExtra("noRepeats", noRepeats);
+
+        CheckBox cb_limByEV = (CheckBox) findViewById(R.id.checkBox4);
+        boolean limitValByCR = false;
+        limitValByCR = cb_limByEV.isChecked();
+        intent.putExtra("limitValByCR", limitValByCR);
+
+        boolean[] itemRestrictions = new boolean[12];
+        itemRestrictions[0] = false;
+        itemRestrictions[1] = false;
+        itemRestrictions[2] = false;
+        CheckBox cb_ignoreArmor = (CheckBox) findViewById(R.id.checkBox5);
+        itemRestrictions[3] = cb_ignoreArmor.isChecked();
+        CheckBox cb_ignoreWeapons = (CheckBox) findViewById(R.id.checkBox6);
+        itemRestrictions[4] = cb_ignoreWeapons.isChecked();
+        CheckBox cb_ignorePotions = (CheckBox) findViewById(R.id.checkBox7);
+        itemRestrictions[5] = cb_ignorePotions.isChecked();
+        CheckBox cb_ignoreRings = (CheckBox) findViewById(R.id.checkBox8);
+        itemRestrictions[6] = cb_ignoreRings.isChecked();
+        CheckBox cb_ignoreRods = (CheckBox) findViewById(R.id.checkBox9);
+        itemRestrictions[7] = cb_ignoreRods.isChecked();
+        CheckBox cb_ignoreScrolls = (CheckBox) findViewById(R.id.checkBox10);
+        itemRestrictions[8] = cb_ignoreScrolls.isChecked();
+        CheckBox cb_ignoreStaves = (CheckBox) findViewById(R.id.checkBox11);
+        itemRestrictions[9] = cb_ignoreStaves.isChecked();
+        CheckBox cb_ignoreWands = (CheckBox) findViewById(R.id.checkBox12);
+        itemRestrictions[10] = cb_ignoreWands.isChecked();
+        CheckBox cb_ignoreWondrous = (CheckBox) findViewById(R.id.checkBox13);
+        itemRestrictions[11] = cb_ignoreWondrous.isChecked();
+        intent.putExtra("itemRestrictions", itemRestrictions);
+
+        boolean[] displayOpts = new boolean[3];
+        CheckBox cb_displayGold = (CheckBox) findViewById(R.id.checkBox14);
+        displayOpts[0] = cb_displayGold.isChecked();
+        CheckBox cb_displayChance = (CheckBox) findViewById(R.id.checkBox15);
+        displayOpts[1] = cb_displayChance.isChecked();
+        CheckBox cb_displayTotal = (CheckBox) findViewById(R.id.checkBox16);
+        displayOpts[2] = cb_displayTotal.isChecked();
+        intent.putExtra("displayOpts", displayOpts);
     }
 }

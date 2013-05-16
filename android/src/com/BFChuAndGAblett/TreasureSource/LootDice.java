@@ -41,8 +41,10 @@ public class LootDice {
     // Dice-related Methods
     public Integer roll() {
         Integer numRolled = 0;
-        for (int ii = 0; ii < numDice; ii++) {
-            numRolled += ((Math.abs(unRand()) % dieSize) + 1);
+        if (dieSize != 0) {
+            for (int ii = 0; ii < numDice; ii++) {
+                numRolled += ((Math.abs(unRand()) % dieSize) + 1);
+            }
         }
         return numRolled;
     }
@@ -52,8 +54,10 @@ public class LootDice {
         this.dieSize = dieSize;
 
         Integer numRolled = 0;
-        for (int ii = 0; ii < numDice; ii++) {
-            numRolled += ((Math.abs(unRand()) % dieSize) + 1);
+        if (dieSize != 0) {
+            for (int ii = 0; ii < numDice; ii++) {
+                numRolled += ((Math.abs(unRand()) % dieSize) + 1);
+            }
         }
         return numRolled;
     }

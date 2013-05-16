@@ -71,9 +71,11 @@ public class LootDB {
             displayRoll = 1;
         }
         if (id == null) {
-            Log.d(TAG, "Creating a new entry: d%: " + item.getNumRolled()
-                    + ", quantity: " + item.getQuantity() + ", item Name: "
-                    + item.getName() + ", Value: " + item.getgValue());
+            if (BuildConfig.DEBUG) {
+                // Log.d(TAG, "Creating a new entry: d%: " + item.getNumRolled()
+                // + ", quantity: " + item.getQuantity() + ", item Name: "
+                // + item.getName() + ", Value: " + item.getgValue());
+            }
             // create
 
             // Create a new row:
@@ -92,9 +94,11 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating am entry: d%: " + item.getNumRolled()
-                    + ", quantity: " + item.getQuantity() + ", item Name: "
-                    + item.getName() + ", Value: " + item.getgValue());
+            if (BuildConfig.DEBUG) {
+                // Log.d(TAG, "updating am entry: d%: " + item.getNumRolled()
+                // + ", quantity: " + item.getQuantity() + ", item Name: "
+                // + item.getName() + ", Value: " + item.getgValue());
+            }
             // update
 
             ContentValues newItem = new ContentValues();
@@ -120,9 +124,11 @@ public class LootDB {
             int quantity, String itemName, Double gValue) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
-                    + quantity + ", item Name: " + itemName + ", Value: "
-                    + gValue);
+            if (BuildConfig.DEBUG) {
+                // Log.d(TAG, "updating a new entry: d%: " + dRoll
+                // + ", quantity: " + quantity + ", item Name: "
+                // + itemName + ", Value: " + gValue);
+            }
             // create
 
             // Create a new row:
@@ -138,9 +144,11 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
-                    + quantity + ", item Name: " + itemName + ", Value: "
-                    + gValue);
+            if (BuildConfig.DEBUG) {
+                // Log.d(TAG, "updating a new entry: d%: " + dRoll
+                // + ", quantity: " + quantity + ", item Name: "
+                // + itemName + ", Value: " + gValue);
+            }
             // update
 
             ContentValues newItem = new ContentValues();
@@ -174,9 +182,11 @@ public class LootDB {
         }
 
         if (id == null) {
-            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
-                    + quantity + ", item Name: " + itemName + ", Value: "
-                    + gValue);
+            if (BuildConfig.DEBUG) {
+                // Log.d(TAG, "updating a new entry: d%: " + dRoll
+                // + ", quantity: " + quantity + ", item Name: "
+                // + itemName + ", Value: " + gValue);
+            }
             // create
 
             // Create a new row:
@@ -194,9 +204,11 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
-                    + quantity + ", item Name: " + itemName + ", Value: "
-                    + gValue);
+            if (BuildConfig.DEBUG) {
+                // Log.d(TAG, "updating a new entry: d%: " + dRoll
+                // + ", quantity: " + quantity + ", item Name: "
+                // + itemName + ", Value: " + gValue);
+            }
             // update
 
             ContentValues newItem = new ContentValues();
@@ -231,9 +243,12 @@ public class LootDB {
             displayRoll = 1;
         }
         if (id == null) {
-            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
-                    + quantity + ", item Name: " + itemName + ", Value: "
-                    + gValue);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: d%: " + dRoll
+            // + ", quantity: " + quantity + ", item Name: "
+            // + itemName + ", Value: " + gValue);
+            // }
+
             // create
 
             // Create a new row:
@@ -252,9 +267,12 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: d%: " + dRoll + ", quantity: "
-                    + quantity + ", item Name: " + itemName + ", Value: "
-                    + gValue);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: d%: " + dRoll
+            // + ", quantity: " + quantity + ", item Name: "
+            // + itemName + ", Value: " + gValue);
+            // }
+
             // update
 
             ContentValues newItem = new ContentValues();
@@ -280,9 +298,13 @@ public class LootDB {
             int APL, double slowGold, double mediumGold, double fastGold) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "Creating a new entry: APL: " + APL + ", slowGold: "
-                    + slowGold + ", mediumGold: " + mediumGold + ", fastGold: "
-                    + fastGold);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "Creating a new entry: APL: " + APL +
+            // ", slowGold: "
+            // + slowGold + ", mediumGold: " + mediumGold
+            // + ", fastGold: " + fastGold);
+            // }
+
             // create
 
             // Create a new row:
@@ -298,9 +320,13 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: APL: " + APL + ", slowGold: "
-                    + slowGold + ", mediumGold: " + mediumGold + ", fastGold: "
-                    + fastGold);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: APL: " + APL +
+            // ", slowGold: "
+            // + slowGold + ", mediumGold: " + mediumGold
+            // + ", fastGold: " + fastGold);
+            // }
+
             // create
 
             // Create a new row:
@@ -324,9 +350,12 @@ public class LootDB {
             int dHigh, String itemName, Double valueAdjust) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", item Name: " + itemName + ", Value: "
-                    + valueAdjust);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", item Name: " + itemName + ", Value: "
+            // + valueAdjust);
+            // }
             // create
 
             // Create a new row:
@@ -342,9 +371,13 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", item Name: " + itemName + ", Value: "
-                    + valueAdjust);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", item Name: " + itemName + ", Value: "
+            // + valueAdjust);
+            // }
+
             // create
 
             // Create a new row:
@@ -369,10 +402,15 @@ public class LootDB {
             Integer numAbilities, Integer abilityLevel, Integer isSpecific) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", enhancement: " + enhancement
-                    + ", numAbilities: " + numAbilities + ", abilityLevel: "
-                    + abilityLevel + ", isSpecific: " + isSpecific);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", enhancement: " + enhancement
+            // + ", numAbilities: " + numAbilities
+            // + ", abilityLevel: " + abilityLevel + ", isSpecific: "
+            // + isSpecific);
+            // }
+
             // create
 
             // Create a new row:
@@ -390,10 +428,15 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", enhancement: " + enhancement
-                    + ", numAbilities: " + numAbilities + ", abilityLevel: "
-                    + abilityLevel + ", isSpecific: " + isSpecific);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", enhancement: " + enhancement
+            // + ", numAbilities: " + numAbilities
+            // + ", abilityLevel: " + abilityLevel + ", isSpecific: "
+            // + isSpecific);
+            // }
+
             // create
 
             // Create a new row:
@@ -416,9 +459,12 @@ public class LootDB {
             Integer dLow, Integer dHigh, String ability, Double priceAdjust) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", ability: " + ability + ", priceAdjust: "
-                    + priceAdjust);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", ability: " + ability + ", priceAdjust: "
+            // + priceAdjust);
+            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -433,9 +479,12 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", ability: " + ability + ", priceAdjust: "
-                    + priceAdjust);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", ability: " + ability + ", priceAdjust: "
+            // + priceAdjust);
+            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -459,8 +508,12 @@ public class LootDB {
             Integer dLow, Integer dHigh, String itemName, Double price) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", itemName: " + itemName + ", price: " + price);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", itemName: " + itemName + ", price: "
+            // + price);
+            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -475,8 +528,12 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", itemName: " + itemName + ", price: " + price);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", itemName: " + itemName + ", price: "
+            // + price);
+            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -501,9 +558,13 @@ public class LootDB {
             Integer quantity, Integer coinType) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
-                    + ", quantity: " + quantity + ", coinType: " + coinType);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", numDice: " + numDice + ", dieSize: "
+            // + dieSize + ", quantity: " + quantity + ", coinType: "
+            // + coinType);
+            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -519,9 +580,13 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
-                    + ", quantity: " + quantity + ", coinType: " + coinType);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", numDice: " + numDice + ", dieSize: "
+            // + dieSize + ", quantity: " + quantity + ", coinType: "
+            // + coinType);
+            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -547,10 +612,12 @@ public class LootDB {
             Integer goodsType) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
-                    + ", goodsType: " + goodsType);
-
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", numDice: " + numDice + ", dieSize: "
+            // + dieSize + ", goodsType: " + goodsType);
+            // }
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -564,9 +631,12 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
-                    + ", goodsType: " + goodsType);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", numDice: " + numDice + ", dieSize: "
+            // + dieSize + ", goodsType: " + goodsType);
+            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -591,9 +661,12 @@ public class LootDB {
             Integer itemRarityGroup) {
         boolean successfull = false;
         if (id == null) {
-            Log.d(TAG, "Creating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
-                    + ", itemRarityGroup: " + itemRarityGroup);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", numDice: " + numDice + ", dieSize: "
+            // + dieSize + ", itemRarityGroup: " + itemRarityGroup);
+            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -608,9 +681,12 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            Log.d(TAG, "updating a new entry: dLow: " + dLow + ", dHigh: "
-                    + dHigh + ", numDice: " + numDice + ", dieSize: " + dieSize
-                    + ", itemRarityGroup: " + itemRarityGroup);
+            // if (BuildConfig.DEBUG) {
+            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
+            // ", dHigh: "
+            // + dHigh + ", numDice: " + numDice + ", dieSize: "
+            // + dieSize + ", itemRarityGroup: " + itemRarityGroup);
+            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -640,7 +716,8 @@ public class LootDB {
                 "quantity", "specials", "itemName", "value", "dispGold",
                 "dispRoll" }, null, null, null, null, null, null);
         cursor.moveToFirst();
-
+        // TODO: use this function to refactor all get functions that need to
+        // find items by dRoll.
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
 
@@ -699,6 +776,25 @@ public class LootDB {
         return dieSize;
     }
 
+    public Double getEncounterValue(Integer APL, Integer campaignSpeed) {
+        Cursor cursor = db.query(true, "Encounter_Values", new String[] { "id",
+                "APL", "slowGold", "mediumGold", "fastGold" }, null, null,
+                null, null, null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        double gold = 1.0;
+        Integer campSpeedIndex = campaignSpeed + 1;
+
+        while (a != APL) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            gold = cursor.getDouble(campSpeedIndex);
+        }
+
+        return gold;
+    }
+
     public Integer getCoinType(Integer dRoll, String tableName) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
@@ -719,7 +815,8 @@ public class LootDB {
         return coinType;
     }
 
-    public Integer getGoodsType(Integer dRoll, String tableName) {
+    public void getGoodsByAPL(Integer dRoll, String tableName, Integer APL,
+            Integer numDice, Integer dieSize, Integer goodsType) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "goodsType" }, null, null, null,
                 null, null, null);
@@ -727,19 +824,20 @@ public class LootDB {
 
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
-        int goodsType = 1;
 
         while ((dRoll < a) || (dRoll > b)) {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
+            numDice = cursor.getInt(3);
+            dieSize = cursor.getInt(4);
             goodsType = cursor.getInt(5);
         }
 
-        return goodsType;
     }
 
-    public Integer getItemGroup(Integer dRoll, String tableName) {
+    public void getItemsByAPL(Integer dRoll, String tableName, Integer numDice,
+            Integer dieSize, Integer itemGroup) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "itemRarityGroup" }, null, null,
                 null, null, null, null);
@@ -747,16 +845,16 @@ public class LootDB {
 
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
-        int itemType = 1;
 
         while ((dRoll < a) || (dRoll > b)) {
             cursor.moveToNext();
             a = cursor.getInt(1);
             b = cursor.getInt(2);
-            itemType = cursor.getInt(5);
+            numDice = cursor.getInt(3);
+            dieSize = cursor.getInt(4);
+            itemGroup = cursor.getInt(5);
         }
 
-        return itemType;
     }
 
     public String getMundaneType(Integer dRoll) {
@@ -781,8 +879,8 @@ public class LootDB {
 
     public String getArmorType(Integer dRoll) {
         Cursor cursor = db.query(true, "ArmorTypes", new String[] { "id",
-                "dLow", "dHigh", "ArmorType", "valueAdjust" }, null, null,
-                null, null, null, null);
+                "dLow", "dHigh", "itemType", "valueAdjust" }, null, null, null,
+                null, null, null);
         cursor.moveToFirst();
 
         int a = cursor.getInt(1);
@@ -801,8 +899,8 @@ public class LootDB {
 
     public String getShieldType(Integer dRoll) {
         Cursor cursor = db.query(true, "ShieldTypes", new String[] { "id",
-                "dLow", "dHigh", "ShieldType", "valueAdjust" }, null, null,
-                null, null, null, null);
+                "dLow", "dHigh", "itemType", "valueAdjust" }, null, null, null,
+                null, null, null);
         cursor.moveToFirst();
 
         int a = cursor.getInt(1);
@@ -821,8 +919,8 @@ public class LootDB {
 
     public String getMeleeWeaponType(Integer dRoll) {
         Cursor cursor = db.query(true, "WeaponTypes", new String[] { "id",
-                "dLow", "dHigh", "WeaponType", "valueAdjust" }, null, null,
-                null, null, null, null);
+                "dLow", "dHigh", "itemType", "valueAdjust" }, null, null, null,
+                null, null, null);
         cursor.moveToFirst();
 
         int a = cursor.getInt(1);
@@ -841,8 +939,8 @@ public class LootDB {
 
     public String getRangedWeaponType(Integer dRoll) {
         Cursor cursor = db.query(true, "RangedWeaponTypes", new String[] {
-                "id", "dLow", "dHigh", "RangedWeaponType", "valueAdjust" },
-                null, null, null, null, null, null);
+                "id", "dLow", "dHigh", "itemType", "valueAdjust" }, null, null,
+                null, null, null, null);
         cursor.moveToFirst();
 
         int a = cursor.getInt(1);
@@ -861,7 +959,7 @@ public class LootDB {
 
     public String getAmmoType(Integer dRoll) {
         Cursor cursor = db.query(true, "AmmoWeaponTypes", new String[] { "id",
-                "dLow", "dHigh", "AmmoType", "valueAdjust" }, null, null, null,
+                "dLow", "dHigh", "itemType", "valueAdjust" }, null, null, null,
                 null, null, null);
         cursor.moveToFirst();
 
@@ -1073,20 +1171,18 @@ public class LootDB {
     /**
      * DATABASE TABLE POPULATION
      * */
-    public void populateTables() throws IOException {
+    public void populateTables(AssetManager manager) throws IOException {
         /*
          * TODO: this method will handle all of the population of tables that
          * are created in initTables().
          */
 
-        AssetManager manager = context.getAssets();
-
         popEncounterValsTable(manager);
 
         // TODO: popTable methods for coins, goods, items by APL;
-        // popAPLCoins(manager);
-        // popAPLGoods(manager);
-        // popAPLItems(manager);
+        popAPLCoins(manager);
+        popAPLGoods(manager);
+        popAPLItems(manager);
 
         // Item Types
         popMundaneTypeTable(manager);
@@ -1113,13 +1209,13 @@ public class LootDB {
         popMundaneItemTable("Armor", manager);
         popMundaneItemTable("Tools_and_gear", manager);
 
-        popSpecificItemTable("Armor", manager);
-        popSpecificItemTable("Shields", manager);
-        popSpecificItemTable("Weapons", manager);
-        popSpecificItemTable("Potions", manager);
-        popSpecificItemTable("Rings", manager);
-        popSpecificItemTable("Rods", manager);
-        popSpecificItemTable("Staves", manager);
+        // popSpecificItemTable("Armor", manager);
+        // popSpecificItemTable("Shields", manager);
+        // popSpecificItemTable("Weapons", manager);
+        // popSpecificItemTable("Potions", manager);
+        // popSpecificItemTable("Rings", manager);
+        // popSpecificItemTable("Rods", manager);
+        // popSpecificItemTable("Staves", manager);
 
         popSpecificItemTable("Wondrous_Belt", manager);
         popSpecificItemTable("Wondrous_Body", manager);
@@ -1133,8 +1229,6 @@ public class LootDB {
         popSpecificItemTable("Wondrous_Shoulders", manager);
         popSpecificItemTable("Wondrous_Wrists", manager);
         popSpecificItemTable("Wondrous_Slotless", manager);
-
-        manager.close();
 
     }
 
@@ -1273,6 +1367,7 @@ public class LootDB {
 
             Log.d(TAG, "Done Populating Table " + tableName);
             tableFiles.close();
+
         }
     }
 
@@ -1305,6 +1400,7 @@ public class LootDB {
 
         Log.d(TAG, "Done Populating Table " + tableName);
         tableFiles.close();
+
     }
 
     public void popItemTypeTable(String tableType, AssetManager manager)
@@ -1337,6 +1433,7 @@ public class LootDB {
 
         Log.d(TAG, "Done Populating Table " + tableName);
         tableFiles.close();
+
     }
 
     public void popEnhancementTable(String tableType, AssetManager manager)
@@ -1398,6 +1495,7 @@ public class LootDB {
                 tableFiles.close();
             }
         }
+
     }
 
     public void popAbilitiesTable(String tableType, AssetManager manager)
@@ -1432,6 +1530,7 @@ public class LootDB {
             Log.d(TAG, "Done Populating Table " + tableName);
             tableFiles.close();
         }
+
     }
 
     public void popMundaneItemTable(String tableType, AssetManager manager)
@@ -1466,6 +1565,7 @@ public class LootDB {
         }
         Log.d(TAG, "Done Populating Table " + tableName);
         tableFiles.close();
+
     }
 
     public void popSpecificItemTable(String tableType, AssetManager manager)
@@ -1521,6 +1621,7 @@ public class LootDB {
                 }
                 Log.d(TAG, "Done Populating Table " + tableName);
                 tableFiles.close();
+
             }
         }
     }
@@ -1555,7 +1656,7 @@ public class LootDB {
                 + "itemName varchar(50), "
                 + "value varchar(50), "
                 + "dispGold int, " + "dispRoll int)";
-        private static final String DROP_TABLE = "DROP TABLE IF EXISTS contact";
+        private static final String DROP_TABLE = "DROP TABLE IF EXISTS lootOut";
 
         public LootDatabaseOpenHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -1567,6 +1668,11 @@ public class LootDB {
 
         }
 
+        private void clearLootOutTable(SQLiteDatabase db) {
+            db.execSQL("DROP TABLE IF EXISTS lootOut");
+            db.execSQL(CREATE_TABLE_LootOut);
+        }
+
         public void initTables(SQLiteDatabase db) {
             // Primary output table
             db.execSQL(CREATE_TABLE_LootOut);
@@ -1574,35 +1680,10 @@ public class LootDB {
             // Gold value of encounters:
             initEncounterValsTable(db);
 
-            // Coins by APL
-            for (int ii = 0; ii < 20; ii++) {
-                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Coins "
-                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int, " + "quantity int, " + "coinType int)";
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Coins");
-            }
-
-            // Goods by APL
-            for (int ii = 0; ii < 20; ii++) {
-                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Goods "
-                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int, " + "goodsType int)";
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Goods");
-            }
-
-            // Items by APL
-            for (int ii = 0; ii < 20; ii++) {
-                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Items "
-                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int, " + "itemRarityGroup int)";
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Items");
-            }
+            // Coins, goods, and items by APL
+            initAPLcoinsTable(db);
+            initAPLgoodsTable(db);
+            initAPLitemsTable(db);
 
             // Item Types
             initItemTypeTable(db, "Mundane");
@@ -1661,6 +1742,39 @@ public class LootDB {
 
             db.execSQL(sqlcmd);
             Log.d(TAG, "Creating Table " + tableName);
+        }
+
+        public void initAPLcoinsTable(SQLiteDatabase db) {
+            for (int ii = 0; ii < 20; ii++) {
+                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Coins "
+                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, " + "numDice int, "
+                        + "dieSize int, " + "quantity int, " + "coinType int)";
+                db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Coins");
+            }
+        }
+
+        public void initAPLgoodsTable(SQLiteDatabase db) {
+            for (int ii = 0; ii < 20; ii++) {
+                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Goods "
+                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, " + "numDice int, "
+                        + "dieSize int, " + "goodsType int)";
+                db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Goods");
+            }
+        }
+
+        public void initAPLitemsTable(SQLiteDatabase db) {
+            for (int ii = 0; ii < 20; ii++) {
+                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Items "
+                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + "dLow int, " + "dHigh int, " + "numDice int, "
+                        + "dieSize int, " + "itemRarityGroup int)";
+                db.execSQL(sqlcmd);
+                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Items");
+            }
         }
 
         public void initItemTypeTable(SQLiteDatabase db, String itemType) {

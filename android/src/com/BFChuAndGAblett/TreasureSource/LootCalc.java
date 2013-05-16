@@ -41,6 +41,9 @@ public class LootCalc {
     }
 
     // Paizo math
+    /**
+     * COINS
+     * */
     public LootItem rollCoins() {
         LootItemGold coins = new LootItemGold();
 
@@ -84,6 +87,9 @@ public class LootCalc {
         return 1.0;
     }
 
+    /**
+     * GOODS
+     * */
     public LootItemGoods rollGoods() {
         LootItemGoods goods = new LootItemGoods();
 
@@ -91,28 +97,19 @@ public class LootCalc {
         Integer dRoll = rollPercent();
 
         // Roll on goods chart to determine if and what kind of goods
-        Integer numDiceGoods = books.getNumDice(dRoll, tableIndex);
-        Integer dieSizeGoods = books.getDieSize(dRoll, tableIndex);
-        goods.setGoodsType(books.getGoodsType(dRoll, tableIndex));
+        Integer numDice = 1;
+        Integer dieSize = 6;
+        Integer goodsType = 1;
+
+        goods.setGoodsType(goodsType);
         // Roll number of goods
-        goods.setQuantity(rollNumGoods(numDiceGoods, dieSizeGoods));
+        goods.setQuantity(dice.roll(numDice, dieSize));
 
         // Roll value per goods
-        goods.setgValue(rollGoodsVal(goods.getGoodsType())); // TODO: decide if
-                                                             // this is the
-                                                             // place to
-                                                             // multiply for
-                                                             // treasure size
+        double goodsMultiplier = getTreasureMultiplier();
+        goods.setgValue(rollGoodsVal(goods.getGoodsType()) * goodsMultiplier);
 
         return goods;
-    }
-
-    public Integer rollNumGoods(Integer numDice, Integer dieSize) {
-        return dice.roll(numDice, dieSize);
-    }
-
-    public Integer rollNumItems(Integer numDice, Integer dieSize) {
-        return dice.roll(numDice, dieSize);
     }
 
     public Double rollGoodsVal(Integer goodsType) {
@@ -209,70 +206,81 @@ public class LootCalc {
         return false;
     }
 
+    /**
+     * ITEMS
+     * */
     public void rollItemGrouping(Integer numDice, Integer dieSize,
             Integer itemGroup) {
         String tableIndex = "APL" + prefs.getAPL() + "_Items";
         Integer dRoll = rollPercent();
 
-        // Roll on goods chart to determine if and what kind of goods
-        numDice = books.getNumDice(dRoll, tableIndex);
-        dieSize = books.getDieSize(dRoll, tableIndex);
-        itemGroup = books.getItemGroup(dRoll, tableIndex);
+        books.getItemsByAPL(dRoll, tableIndex, numDice, dieSize, itemGroup);
     }
 
+    public Integer rollNumItems(Integer numDice, Integer dieSize) {
+        return dice.roll(numDice, dieSize);
+    }
+
+    @Deprecated
     public Integer getNumDice(String tableIndex, Integer numRolled) {
         return books.getNumDice(numRolled, tableIndex);
     }
 
+    @Deprecated
     public Integer getDieSize(String tableIndex, Integer numRolled) {
         return books.getDieSize(numRolled, tableIndex);
     }
 
     public LootItem rollItem(Integer rarityLevel) {
-
+        LootItem item = new LootItem();
         // catch mundane item calls first
         if (rarityLevel == 1) {
             LootItem mundane = rollMundaneItem();
             return mundane;
         }
 
-        LootItem item = new LootItem();
-        item.setrPower(rarityLevel);
-        // Roll to determine item type (ie. armor, weapon, scroll...)
-        if (rarityLevel == 2) {
-            item.setItemType(rollMinorItemType());
-        } else if (rarityLevel == 3) {
-            item.setItemType(rollMediumItemType());
-        } else if (rarityLevel == 4) {
-            item.setItemType(rollMajorItemType());
-        }
+        do {
+            // Roll to determine item type (ie. armor, weapon, scroll...)
+            if (rarityLevel == 2) {
+                item.setItemType(rollMinorItemType());
+                while (!isValid(item)) {
+                    item.setItemType(rollMinorItemType());
+                }
+            } else if (rarityLevel == 3) {
+                item.setItemType(rollMediumItemType());
+            } else if (rarityLevel == 4) {
+                item.setItemType(rollMajorItemType());
+            }
 
-        // TODO:
-        // Roll qualities, and special abilities.
-        if (item.getItemType() == 3) {
-            item = rollMagicArmor(rarityLevel);
-        } else if (item.getItemType() == 4) {
-            item = rollMagicWeapon(rarityLevel);
-        } else if (item.getItemType() == 5) {
-            item = rollSpecificItem(rarityLevel, "Potions");
-        } else if (item.getItemType() == 6) {
-            item = rollSpecificItem(rarityLevel, "Rings");
-        } else if (item.getItemType() == 7) {
-            item = rollSpecificItem(rarityLevel, "Rods");
-        } else if (item.getItemType() == 8) {
-            // item = rollScrolls(rarityLevel);
-        } else if (item.getItemType() == 9) {
-            item = rollSpecificItem(rarityLevel, "Staves");
-        } else if (item.getItemType() == 10) {
-            // item = rollWand();
-        } else if (item.getItemType() == 11) {
-            item = rollWondrousItem(rarityLevel);
-        }
+            // TODO:
+            // Roll qualities, and special abilities.
+            if (item.getItemType() == 3) {
+                item = rollMagicArmor(rarityLevel);
+            } else if (item.getItemType() == 4) {
+                item = rollMagicWeapon(rarityLevel);
+            } else if (item.getItemType() == 5) {
+                item = rollSpecificItem(rarityLevel, "Potions");
+            } else if (item.getItemType() == 6) {
+                item = rollSpecificItem(rarityLevel, "Rings");
+            } else if (item.getItemType() == 7) {
+                item = rollSpecificItem(rarityLevel, "Rods");
+            } else if (item.getItemType() == 8) {
+                // item = rollScrolls(rarityLevel);
+            } else if (item.getItemType() == 9) {
+                item = rollSpecificItem(rarityLevel, "Staves");
+            } else if (item.getItemType() == 10) {
+                // item = rollWand();
+            } else if (item.getItemType() == 11) {
+                item = rollWondrousItem(rarityLevel);
+            }
+            item.setrPower(rarityLevel + item.getmLevel());
 
+        } while (isValid(item));
         return item;
     }
 
-    /**MUNDANE ITEMS
+    /**
+     * MUNDANE ITEMS
      * */
     public LootItem rollMundaneItem() {
 
@@ -614,9 +622,25 @@ public class LootCalc {
     public boolean isValid(LootItem item) {
         // TODO: create validity tests based on APL, CR, encounter value,
         // allowed item types, and other prefs
-        // lol...
+        boolean validity = true;
+        Integer campaignSpeed = 2; // normal speed
+        double goldAmmount = books.getEncounterValue(prefs.getAPL(),
+                campaignSpeed);
+        Integer magicLevel = prefs.getAPL() * prefs.getMagicLv();
 
-        return true;
+        if ((item.getgValue() > goldAmmount) && prefs.isLimitValByCR()) {
+            validity = false;
+        }
+
+        if (item.getmLevel() > magicLevel) {
+            validity = false;
+        }
+
+        if (prefs.getItemRestrictions()[item.getItemType()]) {
+            validity = false;
+        }
+
+        return validity;
     }
 
     // Getter/setters
