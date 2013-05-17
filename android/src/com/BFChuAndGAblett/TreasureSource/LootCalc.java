@@ -334,7 +334,10 @@ public class LootCalc {
             }
             item.setrPower(rarityLevel + item.getmLevel());
 
-        } while (isValid(item));
+        } while (prefs.isLimitValByCR()
+                && (item.getgValue() > books.getEncounterValue(prefs.getAPL(),
+                        1))); // TODO: figure out what needs to be true about
+        // at item before it can be returned.
         return item;
     }
 
@@ -596,7 +599,7 @@ public class LootCalc {
 
     private LootItem rollAbilities(String itemsClass, LootItem item,
             Integer numAbilities, Integer abilityLevel, String itemsType) {
-
+        // TODO: abilities are getting returned as null sometimes.
         String abilities = null;
         double priceAdjust = 0.0;
         for (int ii = 0; ii < numAbilities; ii++) {
@@ -713,6 +716,7 @@ public class LootCalc {
         return dice.roll(1, 100);
     }
 
+    @Deprecated
     public boolean isValid(LootItem item) {
         // TODO: create validity tests based on APL, CR, encounter value,
         // allowed item types, and other prefs
@@ -721,6 +725,10 @@ public class LootCalc {
         double goldAmmount = books.getEncounterValue(prefs.getAPL(),
                 campaignSpeed);
         Integer magicLevel = prefs.getAPL() * prefs.getMagicLv();
+
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in isValid()");
+        }
 
         // if ((item.getName() == "")) {
         // validity = false;

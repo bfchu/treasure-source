@@ -88,6 +88,7 @@ public class MainActivity extends Activity {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in onStart()");
         }
+        initializeFields();
     }
 
     @Override
@@ -104,7 +105,7 @@ public class MainActivity extends Activity {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in onResume()");
         }
-        initializeFields();
+
     }
 
     @Override
