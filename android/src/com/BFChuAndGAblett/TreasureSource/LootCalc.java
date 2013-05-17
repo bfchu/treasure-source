@@ -504,13 +504,13 @@ public class LootCalc {
 
         item.setmLevel(enhancement);
         if (weaponRangedOrAmmo < 4) {
-            item = rollAbilities("Weapons", item, numAbilities, abilityLevel,
-                    weaponType);
-        } else if (weaponRangedOrAmmo < 6) {
-            item = rollAbilities("Ranged_Weapons", item, numAbilities,
+            item = rollAbilities("Weapons", item, enhancement, numAbilities,
                     abilityLevel, weaponType);
+        } else if (weaponRangedOrAmmo < 6) {
+            item = rollAbilities("Ranged_Weapons", item, enhancement,
+                    numAbilities, abilityLevel, weaponType);
         } else {
-            item = rollAbilities("Ammunition", item, numAbilities,
+            item = rollAbilities("Ammunition", item, enhancement, numAbilities,
                     abilityLevel, weaponType);
         }
 
@@ -587,20 +587,24 @@ public class LootCalc {
 
         item.setmLevel(enhancement);
         if (armorOrShield != 2) {
-            item = rollAbilities("Armor", item, numAbilities, abilityLevel,
-                    armorType);
+            item = rollAbilities("Armor", item, enhancement, numAbilities,
+                    abilityLevel, armorType);
         } else {
-            item = rollAbilities("Shields", item, numAbilities, abilityLevel,
-                    armorType);
+            item = rollAbilities("Shields", item, enhancement, numAbilities,
+                    abilityLevel, armorType);
         }
 
         return item;
     }
 
     private LootItem rollAbilities(String itemsClass, LootItem item,
-            Integer numAbilities, Integer abilityLevel, String itemsType) {
+            Integer enhancement, Integer numAbilities, Integer abilityLevel,
+            String itemsType) {
         // TODO: abilities are getting returned as null sometimes.
-        String abilities = null;
+        String abilities = "";
+        if (enhancement > 0) {
+            abilities = "+" + enhancement + " ";
+        }
         double priceAdjust = 0.0;
         for (int ii = 0; ii < numAbilities; ii++) {
             Integer dRoll = rollPercent();
@@ -610,9 +614,15 @@ public class LootCalc {
             priceAdjust += abilityCursor.getDouble(4);
 
         }
-        item.setName(item.getName() + abilities + itemsType);
+        if (numAbilities > 0) {
+            item.setName(item.getName() + abilities + itemsType);
+        } else {
+            item.setName(item.getName() + itemsType);
+        }
+
         item.setgValue(item.getgValue() + priceAdjust);
         item.setmLevel(item.getmLevel() + (abilityLevel * numAbilities));
+        // TODO: add database call to get real price based on new magic level
         return item;
     }
 

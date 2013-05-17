@@ -56,8 +56,6 @@ public class LootDisplay extends Activity {
         }
         lootDB.open();
 
-        lootDB.clear("lootOut");
-
         // add test entries to database
         // replace this part with lootRoller logic (LootBuilder)
 
@@ -80,10 +78,22 @@ public class LootDisplay extends Activity {
         // lootDB.saveEntry("lootOut", null, 98, 1,
         // "Bodywrap of mighty strikes +7", 147000.00, true, true);
 
+        rollTheLoot();
+    }
+
+    public void rollTheLoot() {
+        lootDB.clear("lootOut");
         DM = new LootBuilder();
         DM.genLoot(null, lootPrefs, lootDB);
 
         populateLootDisplay();
+    }
+
+    public void onRerollButton(View v) {
+        rollTheLoot();
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in onRerollButton()");
+        }
     }
 
     private void populateLootDisplay() {

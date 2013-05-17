@@ -33,6 +33,7 @@
             android:layout_height="50dp"
             android:gravity="center_vertical|center_horizontal|fill_horizontal"
             android:text="@string/loot_reroller" 
+            android:onClick="onRerollButton"
             android:layout_weight="1"/>
 
         <Button

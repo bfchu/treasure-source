@@ -71,9 +71,11 @@ public class LootBuilder {
         Integer itemGroup = dM.getItemGrouping(dRoll);
         Integer numItems = 0;
         if (dM.getPrefs().isNoRepeats()) {
-            numItems = dM.getNumItems(dRoll) + trove.size();
+            numItems = (int) (dM.getNumItems(dRoll) * dM
+                    .getTreasureMultiplier()) + trove.size();
         } else {
-            numItems = dM.getNumItems(dRoll) + hoard.size();
+            numItems = (int) (dM.getNumItems(dRoll) * dM
+                    .getTreasureMultiplier()) + hoard.size();
         }
 
         // Roll each Item, then add to the ArrayList.

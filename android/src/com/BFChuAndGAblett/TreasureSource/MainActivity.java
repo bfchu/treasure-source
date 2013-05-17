@@ -219,7 +219,8 @@ public class MainActivity extends Activity {
 
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in setRules: aPL: " + aPL + " eCR: " + eCR
-                    + " enDifficulty: " + enDifficulty + " rollMundane: "
+                    + " enDifficulty: " + enDifficulty + " lootSize: "
+                    + lootSize + " magicLv " + magicLv + " rollMundane: "
                     + rollMundane + " rollGood: " + rollGoods);
         }
         boolean[] itemRestrictions = new boolean[12];
