@@ -28,7 +28,6 @@ public class MainActivity extends Activity {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in onCreate()");
         }
-        
 
         SharedPreferences mySharedPreferences = getSharedPreferences(
                 "Run_Once_Prefs", Activity.MODE_PRIVATE);
@@ -73,9 +72,6 @@ public class MainActivity extends Activity {
             editor.putInt("lastVersionCode", versionCode);
             editor.commit();
         }
-        
-
-        
 
     }
 
@@ -146,38 +142,36 @@ public class MainActivity extends Activity {
     }
 
     public void setRules(Intent intent) {
-        Log.d(TAG, "in setPrefs");
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in setRules");
+        }
 
         EditText et_aPL = (EditText) findViewById(R.id.editText1);
         int aPL = 0;
         aPL = Integer.parseInt(et_aPL.getText().toString());
-        if (aPL != null;)
-        {
-        intent.putExtra("aPL", aPL);
+        if (et_aPL.getText().toString() != "") { // if the user input anything
+            intent.putExtra("aPL", aPL);
+        } else {
+            intent.putExtra("aPL", 1);
         }
-        else intent.putExtra("aPL", 1);
 
         EditText et_eD = (EditText) findViewById(R.id.editText2);
         int eCR = 0;
         eCR = Integer.parseInt(et_eD.getText().toString());
-        if (eCR != null;)
-        {
-        intent.putExtra("eCR", eCR);
+        if (et_eD.getText().toString() != "") {
+            intent.putExtra("eCR", eCR);
+        } else {
+            intent.putExtra("eCR", 1);
         }
-        else intent.putExtra("eCR", 1);
-        
 
         RadioGroup rg_dS = (RadioGroup) findViewById(R.id.difficulty_radioGroup);
         int enDifficulty = 0;
         enDifficulty = rg_dS.getCheckedRadioButtonId();
+
         // Switch Statement to determine what to use
         // Switch statement potentially actually handled in LootDisplay or
         // LootCalc from theres
-        if (enDifficulty != null)
-        {
         intent.putExtra("enDifficulty", enDifficulty);
-        }
-        else intent.putExtra("enDifficulty", 3);
 
         RadioGroup rg_tS = (RadioGroup) findViewById(R.id.size_radioGroup);
         int lootSize = 0;
@@ -187,25 +181,20 @@ public class MainActivity extends Activity {
         // LootCalc from theres
         intent.putExtra("lootSize", lootSize);
 
-
         RadioGroup rg_mL = (RadioGroup) findViewById(R.id.magic_level_radioGroup);
         int magicLv = 0;
         magicLv = rg_mL.getCheckedRadioButtonId();
-        // Switch Statement to determine what to use
-        if (magicLv != null)
-        {
         intent.putExtra("magicLv", magicLv);
-        }
-        else intent.putExtra("magicLv", 2);
+        // Switch Statement to determine what to use
 
         EditText et_rG = (EditText) findViewById(R.id.editText3);
         double resGold = 0.0;
         resGold = Double.parseDouble(et_rG.getText().toString());
-        if (resGold != null)
-        {
-        intent.putExtra("resGold", resGold);
+        if (et_rG.getText().toString() != "") {
+            intent.putExtra("resGold", resGold);
+        } else {
+            intent.putExtra("resGold", 50.0);
         }
-        else intent.putExtra("resGold", 50.0);
 
         CheckBox cb_rMun = (CheckBox) findViewById(R.id.checkBox1);
         boolean rollMundane = false;
@@ -227,6 +216,11 @@ public class MainActivity extends Activity {
         limitValByCR = cb_limByEV.isChecked();
         intent.putExtra("limitValByCR", limitValByCR);
 
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in setRules: aPL: " + aPL + " eCR: " + eCR
+                    + " enDifficulty: " + enDifficulty + " rollMundane: "
+                    + rollMundane + " rollGood: " + rollGoods);
+        }
         boolean[] itemRestrictions = new boolean[12];
         itemRestrictions[0] = false;
         itemRestrictions[1] = false;
@@ -260,18 +254,16 @@ public class MainActivity extends Activity {
         displayOpts[2] = cb_displayTotal.isChecked();
         intent.putExtra("displayOpts", displayOpts);
     }
-    
-    public void initializeFields()
-    {
-    	EditText TextFieldAPL = (EditText) findViewById(R.id.editText1);
-    	TextFieldAPL.setText("1");
-    	
-    	EditText TextFieldECR = (EditText) findViewById(R.id.editText2);
-    	TextFieldECR.setText("1");
-    	
-    	EditText TextFieldResGold = (EditText) findViewById(R.id.editText3);
-    	TextFieldResGold.setText("10.0");
+
+    public void initializeFields() {
+        EditText TextFieldAPL = (EditText) findViewById(R.id.editText1);
+        TextFieldAPL.setText("1");
+
+        EditText TextFieldECR = (EditText) findViewById(R.id.editText2);
+        TextFieldECR.setText("1");
+
+        EditText TextFieldResGold = (EditText) findViewById(R.id.editText3);
+        TextFieldResGold.setText("10.0");
     }
-    
-    }
+
 }

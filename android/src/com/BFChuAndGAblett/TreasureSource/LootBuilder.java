@@ -80,9 +80,9 @@ public class LootBuilder {
         while ((hoard.size() < numItems) && (trove.size() < numItems)) {
             LootOutListItem item = new LootOutListItem(
                     this.dM.rollItem(itemGroup));
-            if (item.getName() != "") {
-                addItem(item);
-            }
+
+            addItem(item);
+
         }
     }
 
@@ -98,11 +98,15 @@ public class LootBuilder {
     // Getters/Setters
     public void addItem(LootOutListItem item) {
         if (this.dM.getPrefs().isNoRepeats() && this.dM.isValid(item)) {
-            addToTrove(item);
+            if (item.getName() != "") {
+                addToTrove(item);
+            }
         } else if (this.dM.isValid(item)) {
-            addToHoard(item);
+            if (item.getName() != "") {
+                addToHoard(item);
+            }
         } else {
-            // increment some throw-out counter
+            // TODO: add to trash
         }
     }
 

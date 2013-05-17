@@ -290,14 +290,22 @@ public class LootCalc {
         do {
             // Roll to determine item type (ie. armor, weapon, scroll...)
             if (rarityLevel == 2) {
-                item.setItemType(rollMinorItemType());
-                while (!isValid(item)) {
+                do {
                     item.setItemType(rollMinorItemType());
-                }
+                    if (BuildConfig.DEBUG) {
+                        Log.d(TAG,
+                                "in rollItem: item type set to: "
+                                        + item.getItemType());
+                    }
+                } while (prefs.getItemRestrictions()[item.getItemType()]);
             } else if (rarityLevel == 3) {
-                item.setItemType(rollMediumItemType());
+                do {
+                    item.setItemType(rollMediumItemType());
+                } while (prefs.getItemRestrictions()[item.getItemType()]);
             } else if (rarityLevel == 4) {
-                item.setItemType(rollMajorItemType());
+                do {
+                    item.setItemType(rollMajorItemType());
+                } while (prefs.getItemRestrictions()[item.getItemType()]);
             }
 
             if (BuildConfig.DEBUG) {
@@ -334,7 +342,7 @@ public class LootCalc {
      * MUNDANE ITEMS
      * */
     public LootItem rollMundaneItem() {
-
+        // TODO: get correct values out somehow.
         LootItem item = new LootItem();
         String mundaneType = rollMundaneType();
         Integer dRoll = rollPercent();
@@ -714,16 +722,26 @@ public class LootCalc {
                 campaignSpeed);
         Integer magicLevel = prefs.getAPL() * prefs.getMagicLv();
 
-        if ((item.getgValue() > goldAmmount) && prefs.isLimitValByCR()) {
-            validity = false;
+        // if ((item.getName() == "")) {
+        // validity = false;
+        // }
+
+        if (item.getgValue() != 0.0) {
+            if ((item.getgValue() > goldAmmount) && prefs.isLimitValByCR()) {
+                return false;
+            }
         }
 
-        if (item.getmLevel() > magicLevel) {
-            validity = false;
+        if (item.getmLevel() > 0) {
+            if (item.getmLevel() > magicLevel) {
+                return false;
+            }
         }
 
-        if (prefs.getItemRestrictions()[item.getItemType()]) {
-            validity = false;
+        if (item.getItemType() != 0) {
+            if (prefs.getItemRestrictions()[item.getItemType()]) {
+                return false;
+            }
         }
 
         return validity;
