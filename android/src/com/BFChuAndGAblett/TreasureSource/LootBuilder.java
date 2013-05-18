@@ -3,6 +3,9 @@
  */
 package com.BFChuAndGAblett.TreasureSource;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  * @author Brian Chu and Garrick Ablett
  * 
@@ -13,109 +16,140 @@ package com.BFChuAndGAblett.TreasureSource;
  */
 public class LootBuilder {
 
-    private LootList hoard;
-    private LootListNoDuplicates trove;
+    private ArrayList<LootOutListItem> hoard;
+    private ArrayList<LootOutListItem> trove; // use for no duplicates
+    private ArrayList<LootOutListItem> trash;
+    private LootCalc dM;
 
     public LootBuilder() {
         super();
-        this.hoard = new LootList();
-        this.trove = new LootListNoDuplicates();
+        this.hoard = new ArrayList<LootOutListItem>();
+        this.trove = new ArrayList<LootOutListItem>();
     }
 
     /**
      * @param hoard
      * @param trove
      */
-    public LootBuilder(LootList hoard, LootListNoDuplicates trove) {
+    public LootBuilder(ArrayList<LootOutListItem> hoard,
+            ArrayList<LootOutListItem> trove) {
         super();
         this.hoard = hoard;
         this.trove = trove;
     }
 
-    public void genMain(String[] args, LootPrefs prefs) {
-        LootCalc dM = new LootCalc();
-        dM.setPrefs(prefs);
+    public void genLoot(String[] args, LootPrefs prefs, LootDB books) {
+        this.dM = new LootCalc(books, prefs);
 
-        rollCoins(dM);
-        // rollGoods(dM);
-        // rollItems(dM);
+        rollCoins();
+        rollGoods();
+        rollItems();
+
+        if (this.dM.getPrefs().isNoRepeats()) {
+            addToDB(this.getTrove());
+            // return this.getTrove();
+        } else {
+            addToDB(this.getHoard());
+            // return this.getHoard();
+        }
     }
 
-    public void rollCoins(LootCalc dM) {
-        addItem(dM, dM.rollCoins());
-
+    public void rollCoins() {
+        LootOutListItem coins = new LootOutListItem(this.dM.rollCoins());
+        addItem(coins);
     }
 
-    public void rollGoods(LootCalc dM) {
-        LootItemGoods goods = new LootItemGoods();
-
-        // Roll on goods chart to determine if and what kind of goods
-        Integer numDiceGoods = 1;
-        Integer dieSizeGoods = 6;
-        int goodsType = 1;
-        dM.rollGoodsType(numDiceGoods, dieSizeGoods, goodsType);
-
-        goods.setGoodsType(goodsType);
-        goods.setQuantity(dM.rollNumGoods(numDiceGoods, dieSizeGoods));
-
-        // Roll value range
-        Integer valRange;
-        valRange = dM.rollPercent();
-
-        // Roll value per goods
-        goods.setgValue(dM.rollGoodsVal());
-
-        addItem(dM, goods);
-
+    public void rollGoods() {
+        LootOutListItem outGoods = new LootOutListItem(this.dM.rollGoods());
+        addItem(outGoods);
     }
 
-    public void rollItems(LootCalc dM) {
+    public void rollItems() {
+        // initializing variables, values unimportant
+        // itemGroup: 1 = mundane, 2 = minor, 3 = medium, 4 = major
+        Integer dRoll = dM.rollPercent();
+        Integer itemGroup = dM.getItemGrouping(dRoll);
+        Integer numItems = 0;
+        if (dM.getPrefs().isNoRepeats()) {
+            numItems = (int) (dM.getNumItems(dRoll) * dM
+                    .getTreasureMultiplier()) + trove.size();
+        } else {
+            numItems = (int) (dM.getNumItems(dRoll) * dM
+                    .getTreasureMultiplier()) + hoard.size();
+        }
 
-        String itemGroup = "mundane";
-        Integer numDiceItems = 1;
-        Integer dieSizeItems = 6;
-        dM.rollItemGrouping(numDiceItems, dieSizeItems, itemGroup);
+        // Roll each Item, then add to the ArrayList.
+        while ((hoard.size() < numItems) && (trove.size() < numItems)) {
+            LootOutListItem item = new LootOutListItem(
+                    this.dM.rollItem(itemGroup));
 
-        Integer numItems = dM.getDice().roll(numDiceItems, dieSizeItems);
-        for (int ii = 0; ii < numItems; ii++) {
-            LootItem item = dM.rollItem(itemGroup);
-            addItem(dM, item);
+            addItem(item);
+
+        }
+    }
+
+    public void addToDB(ArrayList<LootOutListItem> lootList) {
+        Iterator<LootOutListItem> itr = lootList.iterator();
+        while (itr.hasNext()) {
+            LootOutListItem item = itr.next();
+            this.getdM().getBooks().saveEntry("lootOut", null, item);
         }
 
     }
 
     // Getters/Setters
-    public void addItem(LootCalc dM, LootItem item) {
-        if (dM.getPrefs().isNoRepeats() && dM.isValid(item)) {
-            addToTrove(item);
-        } else if (dM.isValid(item)) {
-            addToHoard(item);
+    public void addItem(LootOutListItem item) {
+        if (this.dM.getPrefs().isNoRepeats() && this.dM.isValid(item)) {
+            if (item.getName() != "") {
+                addToTrove(item);
+            }
+        } else if (this.dM.isValid(item)) {
+            if (item.getName() != "") {
+                addToHoard(item);
+            }
         } else {
-            // increment some throw-out counter
+            // TODO: add to trash
         }
     }
 
-    public void addToHoard(LootItem item) {
-        this.hoard.getLoot().put(this.hoard.getLoot().size(), item);
+    public void addToHoard(LootOutListItem item) {
+        this.hoard.add(item);
     }
 
-    public void addToTrove(LootItem item) {
-        this.trove.getLoot().put(this.trove.getLoot().size(), item);
+    public void addToTrove(LootOutListItem item) {
+        this.trove.add(item);
     }
 
-    public LootList getHoard() {
+    // eclipse Getters and setters
+    public ArrayList<LootOutListItem> getHoard() {
         return hoard;
     }
 
-    public void setHoard(LootList hoard) {
+    public void setHoard(ArrayList<LootOutListItem> hoard) {
         this.hoard = hoard;
     }
 
-    public LootListNoDuplicates getTrove() {
+    public ArrayList<LootOutListItem> getTrove() {
         return trove;
     }
 
-    public void setTrove(LootListNoDuplicates trove) {
+    public void setTrove(ArrayList<LootOutListItem> trove) {
         this.trove = trove;
+    }
+
+    public ArrayList<LootOutListItem> getTrash() {
+        return trash;
+    }
+
+    public void setTrash(ArrayList<LootOutListItem> trash) {
+        this.trash = trash;
+    }
+
+    public LootCalc getdM() {
+        return dM;
+    }
+
+    public void setdM(LootCalc dM) {
+        this.dM = dM;
     }
 }

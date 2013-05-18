@@ -25,6 +25,7 @@ public class LootItem {
     private Integer numRolled; // % value that was rolled for the item on the
                                // most relevant chart.
     private Integer itemType;
+    private Integer specialMat;
 
     /**
      * 0 = null,
@@ -133,6 +134,20 @@ public class LootItem {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the specialMat
+     */
+    public Integer getSpecialMat() {
+        return specialMat;
+    }
+
+    /**
+     * @param specialMat the specialMat to set
+     */
+    public void setSpecialMat(Integer specialMat) {
+        this.specialMat = specialMat;
     }
 
 }

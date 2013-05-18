@@ -28,6 +28,11 @@ public class LootItemGoods extends LootItem {
 
     public void setGoodsType(int goodsType) {
         this.goodsType = goodsType;
+        if (this.goodsType != 2) {
+            this.setName("Gems");
+        } else {
+            this.setName("Art");
+        }
     }
 
     @Override

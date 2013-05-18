@@ -4,6 +4,7 @@
     <string name="app_name">Treasure Source</string>
     <string name="loot_display">Results</string>
     <string name="action_settings">Settings</string>
+    <string name="dbloader_service">Database Loader Service</string>
     
 
     

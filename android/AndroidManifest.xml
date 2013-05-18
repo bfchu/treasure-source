@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.BFChuAndGAblett.TreasureSource"
-    android:versionCode="1"
+    android:versionCode="1100100"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.BFChuAndGAblett.TreasureSource.MainActivity"
+            android:name="com.BFChuAndGAblett.TreasureSource.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.BFChuAndGAblett.TreasureSource.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <service
+            android:name=".DatabaseLoaderService"
+            android:label="@string/dbloader_service" >
+        </service>
         <activity
             android:name=".LootDisplay"
             android:label="@string/loot_display" />

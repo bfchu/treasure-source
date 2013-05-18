@@ -1,0 +1,5 @@
+	dlow	dhigh	itemType	valueAdjust
+	1	24	Bolts	1
+	25	49	sling bullets	0.1
+	50	74	blowgun darts	0.5
+	75	100	Arrows	1
