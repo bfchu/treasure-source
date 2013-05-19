@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 /**
  * @author Brian Chu and Garrick Ablett
- *
+ * 
  */
 public class SplashActivity extends Activity {
 
