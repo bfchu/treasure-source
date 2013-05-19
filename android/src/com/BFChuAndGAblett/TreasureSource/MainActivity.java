@@ -17,6 +17,10 @@ import android.widget.RadioGroup;
  */
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
+    private static final int TREASURE_SIZE = 2131230737;
+    private static final int ENCOUNTER_SIZE = 2131230729;
+    private static final int MAGIC_SIZE = 2131230745;
+    private static final int CAMPAIGN_SIZE = 2131230751;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,7 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        initializeFields();
         return true;
     }
 
@@ -41,7 +46,7 @@ public class MainActivity extends Activity {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "in onStart()");
         }
-        initializeFields();
+
     }
 
     @Override
@@ -118,26 +123,29 @@ public class MainActivity extends Activity {
             intent.putExtra("eCR", 1);
         }
 
+        RadioGroup rg_tS = (RadioGroup) findViewById(R.id.size_radioGroup);
+        int lootSize = 0;
+        // int lootSizeID = rg_tS.getCheckedRadioButtonId();
+        lootSize = rg_tS.getCheckedRadioButtonId() - TREASURE_SIZE;
+        // Switch Statement to determine what to use
+        // Switch statement potentially actually handled in LootDisplay or
+        // LootCalc from theres
+        intent.putExtra("lootSize", lootSize);
+
         RadioGroup rg_dS = (RadioGroup) findViewById(R.id.difficulty_radioGroup);
         int enDifficulty = 0;
-        enDifficulty = rg_dS.getCheckedRadioButtonId();
+        // int enDifficultyID = rg_dS.getCheckedRadioButtonId();
+        enDifficulty = rg_dS.getCheckedRadioButtonId() - ENCOUNTER_SIZE;
 
         // Switch Statement to determine what to use
         // Switch statement potentially actually handled in LootDisplay or
         // LootCalc from theres
         intent.putExtra("enDifficulty", enDifficulty);
 
-        RadioGroup rg_tS = (RadioGroup) findViewById(R.id.size_radioGroup);
-        int lootSize = 0;
-        lootSize = rg_tS.getCheckedRadioButtonId();
-        // Switch Statement to determine what to use
-        // Switch statement potentially actually handled in LootDisplay or
-        // LootCalc from theres
-        intent.putExtra("lootSize", lootSize);
-
         RadioGroup rg_mL = (RadioGroup) findViewById(R.id.magic_level_radioGroup);
         int magicLv = 0;
-        magicLv = rg_mL.getCheckedRadioButtonId();
+        // int magicLvID = rg_mL.getCheckedRadioButtonId();
+        magicLv = rg_mL.getCheckedRadioButtonId() - MAGIC_SIZE;
         intent.putExtra("magicLv", magicLv);
         // Switch Statement to determine what to use
 
@@ -170,12 +178,6 @@ public class MainActivity extends Activity {
         limitValByCR = cb_limByEV.isChecked();
         intent.putExtra("limitValByCR", limitValByCR);
 
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "in setRules: aPL: " + aPL + " eCR: " + eCR
-                    + " enDifficulty: " + enDifficulty + " lootSize: "
-                    + lootSize + " magicLv " + magicLv + " rollMundane: "
-                    + rollMundane + " rollGood: " + rollGoods);
-        }
         boolean[] itemRestrictions = new boolean[12];
         itemRestrictions[0] = false;
         itemRestrictions[1] = false;
@@ -208,6 +210,29 @@ public class MainActivity extends Activity {
         CheckBox cb_displayTotal = (CheckBox) findViewById(R.id.checkBox16);
         displayOpts[2] = cb_displayTotal.isChecked();
         intent.putExtra("displayOpts", displayOpts);
+
+        // TODO: Use useClassic in lootPrefs
+        CheckBox cb_useClassic = (CheckBox) findViewById(R.id.checkBox17);
+        boolean useClassic = false;
+        noRepeats = cb_useClassic.isChecked();
+        intent.putExtra("useClassic", useClassic);
+
+        // TODO: Use Campaign Speed in lootPrefs
+        RadioGroup rg_cS = (RadioGroup) findViewById(R.id.campaign_speed_radioGroup);
+        int campSpeed = 0;
+        // int campSpeedID = rg_cS.getCheckedRadioButtonId();
+        campSpeed = rg_cS.getCheckedRadioButtonId() - CAMPAIGN_SIZE;
+        intent.putExtra("campSpeed", campSpeed);
+        // Switch Statement to determine what to use
+
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in setRules: aPL: " + aPL + " eCR: " + eCR
+                    + " enDifficulty: " + enDifficulty + " lootSize: "
+                    + lootSize + " magicLv " + magicLv + " rollMundane: "
+                    + rollMundane + " rollGood: " + rollGoods + "campSpeed"
+                    + campSpeed);
+        }
+
     }
 
     public void initializeFields() {
