@@ -1,49 +1,49 @@
 	dlow	dhigh	itemType	valueAdjust
-	1	2	Blur	300
-	3	7	Cure Moderate Wounds	300
-	8	9	Darkvision	300
-	10	11	Invisibility (Potion or Oil)	300
-	12	12	Lesser Restoration	300
-	13	13	Remove Paralysis	300
-	14	14	Shield of Faith +3	300
-	15	15	Undetectable Alignment	300
-	16	16	Barksin +3	600
-	17	18	Shield of Faith +4	600
-	19	20	Resist Energy (Type) 20	600
-	21	28	Cure Serious Wounds	700
-	29	29	Daylight	700
-	30	32	Displacement	750
-	33	33	Flame Arrow	750
-	34	38	Fly	750
-	39	39	Gaseous Form	750
-	40	41	Haste	750
-	42	44	Heroism	750
-	45	46	Keen Edge	750
-	47	47	Magic Circle Against (Alignment)	750
-	48	50	Neutralize Poison	750
-	51	52	Nondetection	750
-	53	54	Protection from Energy	750
-	55	55	Rage	750
-	56	56	Remove Blindness/Deafness	750
-	57	57	Remove Curse	750
-	58	58	Remove Disease	750
-	59	59	Tongues	750
-	60	60	Water Breathing	750
-	61	61	Water Walk	750
-	62	63	Barksin +4	900
-	64	64	Shield of Faith +5	900
-	65	65	Good Hope	1050
-	66	68	Resist Energy (Type) 30	1100
-	69	69	Barkskin +5	1200
-	70	73	Greater Magic Fang +2	1200
-	74	77	Great Magic Weapon +2	1200
-	78	81	Magic Vestment +2	1200
-	82	82	Protection from Arrows 15/Magic	1500
-	83	85	Greater Magic Fang +3	1800
-	86	88	Greater Magic Weapon +3	1800
-	89	91	Magic Vestment +3	1800
-	92	93	Great Magic Fang +4	2400
-	96	97	Magic Vestment +4	2400
-	98	98	Greater Magic Fang +5	3000
-	99	99	Greater Magic Weapon +5	3000
-	100	100	Magic Vestment +5	3000
+	1	2	Potion of Blur	300
+	3	7	Potion of Cure Moderate Wounds	300
+	8	9	Potion of Darkvision	300
+	10	11	Potion or Oil of Invisibility	300
+	12	12	Potion of Lesser Restoration	300
+	13	13	Potion of Remove Paralysis	300
+	14	14	Potion of Shield of Faith +3	300
+	15	15	Potion of Undetectable Alignment	300
+	16	16	Potion of Barkskin +3	600
+	17	18	Potion of Shield of Faith +4	600
+	19	20	Potion of Resist Energy (Type) 20	600
+	21	28	Potion of Cure Serious Wounds	700
+	29	29	Potion of Daylight	700
+	30	32	Potion of Displacement	750
+	33	33	Oil of Flame Arrow	750
+	34	38	Potion of Fly	750
+	39	39	Potion of Gaseous Form	750
+	40	41	Potion of Haste	750
+	42	44	Potion of Heroism	750
+	45	46	Oil of Keen Edge	750
+	47	47	Potion of Magic Circle Against (Alignment)	750
+	48	50	Potion of Neutralize Poison	750
+	51	52	Potion of Nondetection	750
+	53	54	Potion of Protection from Energy	750
+	55	55	Potion of Rage	750
+	56	56	Potion of Remove Blindness/Deafness	750
+	57	57	Potion of Remove Curse	750
+	58	58	Potion of Remove Disease	750
+	59	59	Potion of Tongues	750
+	60	60	Potion of Water Breathing	750
+	61	61	Potion of Water Walk	750
+	62	63	Potion of Barkskin +4	900
+	64	64	Potion of Shield of Faith +5	900
+	65	65	Potion of Good Hope	1050
+	66	68	Potion of Resist Energy (Type) 30	1100
+	69	69	Potion of Barkskin +5	1200
+	70	73	Potion of Greater Magic Fang +2	1200
+	74	77	Oil of Great Magic Weapon +2	1200
+	78	81	Oil of Magic Vestment +2	1200
+	82	82	Potion of Protection from Arrows 15/Magic	1500
+	83	85	Potion of Greater Magic Fang +3	1800
+	86	88	Oil of Greater Magic Weapon +3	1800
+	89	91	Oil of Magic Vestment +3	1800
+	92	93	Potion of Great Magic Fang +4	2400
+	96	97	Oil of Magic Vestment +4	2400
+	98	98	Potion of Greater Magic Fang +5	3000
+	99	99	Oil of Greater Magic Weapon +5	3000
+	100	100	Oil of Magic Vestment +5	3000
