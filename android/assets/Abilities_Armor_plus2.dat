@@ -1,0 +1,9 @@
+	dlow	dhigh	itemType	valueAdjust
+	1	12	Glamered	2700
+	13	24	Jousting	3750
+	25	38	Shadow	3750
+	39	52	Slick	3750
+	53	64	Expeditious	4000
+	65	76	Creeping	5000
+	77	88	Rallying	5000
+	89	100	Spell Resistance (13)	4000

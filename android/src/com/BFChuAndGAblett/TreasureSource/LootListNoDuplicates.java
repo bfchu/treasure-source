@@ -14,6 +14,7 @@ import java.util.Set;
  *  found. 
  *
  */
+@Deprecated
 public class LootListNoDuplicates extends LootList {
 
     private Set<LootItem> loot;

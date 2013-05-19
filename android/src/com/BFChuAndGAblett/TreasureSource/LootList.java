@@ -12,6 +12,7 @@ import java.util.TreeMap;
  *  Container that holds all of the loot items rolled by the calculator
  *
  */
+@Deprecated
 public class LootList {
 
     private TreeMap<Integer, LootItem> loot;

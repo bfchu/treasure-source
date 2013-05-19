@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class LootPrefs {
 
-    private static final Integer NUM_RESTRICTIONS = 9; // [1] = armor, ect...
+    private static final Integer NUM_RESTRICTIONS = 12; // [3] = armor, ect...
     private static final Integer NUM_DISPLAY_OPTS = 3;// [ ]
 
     private Integer aPL; // Average Party Level
@@ -66,19 +66,20 @@ public class LootPrefs {
         this.displayOpts = displayOpts;
     }
 
-    public Integer getaPL() {
-        return aPL;
+    public Integer getAPL() {
+        // TODO: adjust APL that is returned by difficulty setting
+        return (aPL);
     }
 
-    public void setaPL(Integer aPL) {
+    public void setAPL(Integer aPL) {
         this.aPL = aPL;
     }
 
-    public Integer geteCR() {
+    public Integer getECR() {
         return eCR;
     }
 
-    public void seteCR(Integer eCR) {
+    public void setECR(Integer eCR) {
         this.eCR = eCR;
     }
 

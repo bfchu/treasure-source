@@ -1,0 +1,7 @@
+	dlow	dhigh	itemType	valueAdjust
+	1	10	Buckler	165
+	11	15	Light wooden shield	153
+	16	20	Light steel shield	159
+	21	30	Heavy wooden shield	157
+	31	95	Heavy steel shield	170
+	96	100	Tower shield	180

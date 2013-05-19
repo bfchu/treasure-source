@@ -1,0 +1,5 @@
+	dlow	dhigh	itemType	valueAdjust
+	1	17	Alchemical_item	0
+	18	50	Armor	0
+	51	83	Weapon	0
+	84	100	Tools_and_gear	0

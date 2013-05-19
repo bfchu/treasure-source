@@ -7,6 +7,7 @@ package com.BFChuAndGAblett.TreasureSource;
  * @author Brian Chu and Garrick Ablett
  * 
  */
+@Deprecated
 public class LootItemMundane extends LootItem {
 
     private Integer quality;
@@ -46,10 +47,12 @@ public class LootItemMundane extends LootItem {
         this.quality = quality;
     }
 
+    @Override
     public Integer getSpecialMat() {
         return specialMat;
     }
 
+    @Override
     public void setSpecialMat(Integer specialMat) {
         this.specialMat = specialMat;
     }

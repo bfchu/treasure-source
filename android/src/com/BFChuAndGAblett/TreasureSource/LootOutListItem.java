@@ -5,7 +5,7 @@ package com.BFChuAndGAblett.TreasureSource;
 
 /**
  * @author Brian
- *
+ * 
  */
 public class LootOutListItem extends LootItem {
     private int id;
@@ -23,6 +23,66 @@ public class LootOutListItem extends LootItem {
         this.id = id;
         this.setNumRolled(numRolled);
         super.setQuantity(quantity);
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
+    public LootOutListItem(LootItem item) {
+        super();
+        this.setNumRolled(item.getNumRolled());
+        this.specials = "";
+        super.setQuantity(item.getQuantity());
+        this.setName(item.getName());
+        this.setgValue(item.getgValue());
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
+    public LootOutListItem(LootItemGold coins) {
+        super();
+        this.setNumRolled(coins.getNumRolled());
+        this.specials = "";
+        super.setQuantity(coins.getQuantity());
+        this.setName(coins.getName());
+        this.setgValue(coins.getgValue());
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
+    public LootOutListItem(LootItemGoods item) {
+        super();
+        this.setNumRolled(item.getNumRolled());
+        this.specials = "";
+        super.setQuantity(item.getQuantity());
+        this.setName(item.getName());
+        this.setgValue(item.getgValue());
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
+    public LootOutListItem(LootItemMundane item) {
+        super();
+
+        this.setNumRolled(item.getNumRolled());
+        this.specials = findSpecialMatByID(item.getSpecialMat());
+        super.setQuantity(item.getQuantity());
+        this.setName(item.getName());
+        this.setgValue(item.getgValue());
+        this.setmLevel(0);
+        this.setrPower(1);
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
+    public LootOutListItem(LootItemMagic item) {
+        super();
+        this.setNumRolled(item.getNumRolled());
+        this.specials = findSpecialMatByID(item.getSpecialMat());
+        super.setQuantity(item.getQuantity());
+        this.setName(item.getName());
+        this.setgValue(item.getgValue());
+        this.setmLevel(item.getmLevel());
+        this.setrPower(item.getrPower());
         this.dispGold = true;
         this.dispRoll = false;
     }
@@ -67,6 +127,24 @@ public class LootOutListItem extends LootItem {
         this.dispRoll = dispRoll;
     }
 
+    public String findSpecialMatByID(Integer id) {
+        // TODO: find out what all the special materials to roll for are and put
+        // them here, or replace with database calls
+        switch (id) {
+        case 1:
+            return "Iron";
+        case 2:
+            return "Steel";
+        case 3:
+            return "Adamantine";
+        case 4:
+            return "Dragon hide";
+        case 5:
+            break;
+        }
+        return null;
+    }
+
     /**
      * @return the id
      */
@@ -75,7 +153,8 @@ public class LootOutListItem extends LootItem {
     }
 
     /**
-     * @param id the id to set
+     * @param id
+     *            the id to set
      */
     public void setId(int id) {
         this.id = id;
@@ -100,7 +179,8 @@ public class LootOutListItem extends LootItem {
         string += this.getName();
 
         if (dispGold) {
-            string += ", worth: " + this.getgValue() + "gp";
+            string += ", worth: " + (this.getgValue() * this.getQuantity())
+                    + "gp";
         }
         if (dispRoll) {
             string += " (rolled " + this.getNumRolled() + "%)";
@@ -117,9 +197,26 @@ public class LootOutListItem extends LootItem {
     }
 
     /**
-     * @param specials the specials to set
+     * @param specials
+     *            the specials to set
      */
     public void setSpecials(String specials) {
         this.specials = specials;
+    }
+
+    public boolean isDispGold() {
+        return dispGold;
+    }
+
+    public void setDispGold(boolean dispGold) {
+        this.dispGold = dispGold;
+    }
+
+    public boolean isDispRoll() {
+        return dispRoll;
+    }
+
+    public void setDispRoll(boolean dispRoll) {
+        this.dispRoll = dispRoll;
     }
 }

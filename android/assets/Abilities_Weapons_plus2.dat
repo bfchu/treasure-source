@@ -1,0 +1,25 @@
+	dlow	dhigh	itemType	valueAdjust
+	1	1	Advancing	8000
+	2	10	Anarchic	8000
+	11	19	Anchoring	8000
+	20	20	Axiomatic	8000
+	21	27	Corrosive Burst	8000
+	28	28	Defiant	8000
+	29	29	Dispelling Burst	8000
+	30	38	Disruption	8000
+	39	47	Flaming Burst	8000
+	48	48	Furyborn	8000
+	49	49	Glorious	8000
+	50	58	Holy	8000
+	59	67	Icy Burst	8000
+	68	68	Igniting	8000
+	69	69	Impact	8000
+	70	70	Invigorating	8000
+	71	71	Ki Intensifying	8000
+	72	72	Lifesurge	8000
+	73	73	Negating	8000
+	74	74	Phase Locking	8000
+	75	83	Shocking Burst	8000
+	84	84	Stalking	8000
+	85	91	Unholy	8000
+	92	100	Wounding	8000

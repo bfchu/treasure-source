@@ -7,6 +7,7 @@ package com.BFChuAndGAblett.TreasureSource;
  * @author Brian Chu and Garrick Ablett
  * 
  */
+@Deprecated
 public class LootItemMagic extends LootItem {
 
     private Integer specialMat;
@@ -34,10 +35,12 @@ public class LootItemMagic extends LootItem {
     }
 
     // Getters setters
+    @Override
     public Integer getSpecialMat() {
         return specialMat;
     }
 
+    @Override
     public void setSpecialMat(Integer specialMat) {
         this.specialMat = specialMat;
     }

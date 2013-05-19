@@ -1,0 +1,4 @@
+	dlow	dhigh	numdice	diesize	goodsType
+	1	4	0	0	0
+	5	63	4	8	1
+	64	100	3	8	2
