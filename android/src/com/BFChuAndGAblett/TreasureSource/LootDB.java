@@ -1024,46 +1024,6 @@ public class LootDB {
         return itemType;
     }
 
-    @Deprecated
-    public void getArmorSpecs(Integer dRoll, boolean isGreaterItem,
-            Integer rarityLevel, Integer enhancement, Integer numAbilities,
-            Integer abilityLevel, Integer isSpecific) {
-        // build table name
-        String tableName = "Armor_";
-        if (isGreaterItem) {
-            tableName += "Greater_";
-        } else {
-            tableName += "Lesser_";
-        }
-
-        if (rarityLevel == 2) {
-            tableName += "Minor";
-        } else if (rarityLevel == 3) {
-            tableName += "Medium";
-        } else {
-            tableName += "Major";
-        }
-
-        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "enhancement", "numAbilities", "abilityLevel",
-                "isSpecific" }, null, null, null, null, null, null);
-        cursor.moveToFirst();
-
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            enhancement = cursor.getInt(3);
-            numAbilities = cursor.getInt(4);
-            abilityLevel = cursor.getInt(5);
-            isSpecific = cursor.getInt(6);
-        }
-
-    }
-
     public Cursor getEnhancement(Integer dRoll, String itemType,
             boolean isGreaterItem, Integer rarityLevel) {
         // build table name
@@ -1100,12 +1060,42 @@ public class LootDB {
         return cursor;
     }
 
+    public LootItem getMundaneWeapon(Integer dRoll) {
+
+        String tableName = "WeaponTypes";
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "itemType", "valueAdjust" }, null, null, null, null,
+                null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String itemName = cursor.getString(3);
+        Double gValue = cursor.getDouble(4);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
+
+        itemName = cursor.getString(3);
+        gValue = cursor.getDouble(4);
+
+        LootItem item = new LootItem();
+        item.setName("Masterwork " + itemName);
+        item.setgValue(gValue);
+        item.setItemType(4);
+
+        return item;
+    }
+
     public LootItem getMundaneAlchemical(Integer dRoll) {
 
         String tableName = "Mundane_Alchemical_item";
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "itemName", "valueAdjust" }, null, null, null, null,
-                null, null);
+                "dHigh", "itemName", "price" }, null, null, null, null, null,
+                null);
         cursor.moveToFirst();
 
         int a = cursor.getInt(1);
@@ -1133,8 +1123,8 @@ public class LootDB {
 
         String tableName = "Mundane_Armor";
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "itemType", "valueAdjust" }, null, null, null, null,
-                null, null);
+                "dHigh", "itemName", "price" }, null, null, null, null, null,
+                null);
         cursor.moveToFirst();
 
         int a = cursor.getInt(1);
@@ -1158,42 +1148,12 @@ public class LootDB {
         return item;
     }
 
-    public LootItem getMundaneWeapon(Integer dRoll) {
-
-        String tableName = "WeaponTypes";
-        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "itemType", "valueAdjust" }, null, null, null, null,
-                null, null);
-        cursor.moveToFirst();
-
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-        String itemName = cursor.getString(3);
-        Double gValue = cursor.getDouble(4);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
-
-        itemName = cursor.getString(3);
-        gValue = cursor.getDouble(4);
-
-        LootItem item = new LootItem();
-        item.setName("Masterwork_" + itemName);
-        item.setgValue(gValue);
-        item.setItemType(4);
-
-        return item;
-    }
-
     public LootItem getMundaneToolsGear(Integer dRoll) {
 
         String tableName = "Mundane_Tools_and_gear";
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "itemType", "valueAdjust" }, null, null, null, null,
-                null, null);
+                "dHigh", "itemName", "price" }, null, null, null, null, null,
+                null);
         cursor.moveToFirst();
 
         int a = cursor.getInt(1);
@@ -1401,7 +1361,7 @@ public class LootDB {
         while (tableFiles.getIn().ready()) {
             String[] data = getLine(tableFiles);
 
-            if (data.length >= 4) {
+            if (data.length >= 2) {
                 magicLevel = Integer.parseInt(data[1]);
                 valueAdjust = Double.valueOf(data[2]);
 
