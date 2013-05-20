@@ -355,16 +355,17 @@ public class LootCalc {
         Integer dRoll = rollPercent();
 
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "In rollMundaneITem: rolled " + dRoll);
+            Log.d(TAG, "In rollMundaneItem: rolled " + dRoll);
         }
 
-        if (mundaneType == "Alchemical_item") {
+        if (mundaneType.equals("Alchemical_item")) {
             item = books.getMundaneAlchemical(dRoll);
-        } else if (mundaneType == "Armor") {
+        } else if (mundaneType.equals("Armor")) {
             item = books.getMundaneArmor(dRoll);
-        } else if (mundaneType == "Weapon") {
+        } else if (mundaneType.equals("Weapon")) {
+            // TODO: make it possible to get ranged weapons
             item = books.getMundaneWeapon(dRoll);
-        } else if (mundaneType == "Tools_and_gear") {
+        } else if (mundaneType.equals("Tools_and_gear")) {
             item = books.getMundaneToolsGear(dRoll);
         }
 
@@ -519,6 +520,9 @@ public class LootCalc {
                     abilityLevel, weaponType);
         }
 
+        double priceAdjust = books.getMagicPrice(item.getmLevel(), "Weapons");
+        item.setgValue(item.getgValue() + priceAdjust);
+
         return item;
     }
 
@@ -602,6 +606,8 @@ public class LootCalc {
                     abilityLevel, armorType);
         }
 
+        double priceAdjust = books.getMagicPrice(item.getmLevel(), "Armor");
+        item.setgValue(item.getgValue() + priceAdjust);
         return item;
     }
 
@@ -623,11 +629,6 @@ public class LootCalc {
         item.setName(item.getName() + abilities + itemsType);
         item.setmLevel(item.getmLevel() + (abilityLevel * numAbilities));
 
-        double priceAdjust = 0.0;
-        // TODO: priceAdjust = books.getMagicPrice(item.getmLevel());
-        item.setgValue(item.getgValue() + priceAdjust);
-
-        // TODO: add database call to get real price based on new magic level
         return item;
     }
 

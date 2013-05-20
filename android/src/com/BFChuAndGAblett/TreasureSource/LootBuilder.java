@@ -91,16 +91,16 @@ public class LootBuilder {
             mundanes.setQuantity(dM.getNumItems(dRoll));
             mundanes.setName("Mundane Items");
             addItem(mundanes);
-        }
+        } else {
 
-        // Roll each Item, then add to the ArrayList.
-        while ((hoard.size() < numItems) && (trove.size() < numItems)
-                && (itemGroup != 1)) {
-            LootOutListItem item = new LootOutListItem(
-                    this.dM.rollItem(itemGroup));
+            // Roll each Item, then add to the ArrayList.
+            while ((hoard.size() < numItems) && (trove.size() < numItems)) {
+                LootOutListItem item = new LootOutListItem(
+                        this.dM.rollItem(itemGroup));
 
-            addItem(item);
+                addItem(item);
 
+            }
         }
     }
 
