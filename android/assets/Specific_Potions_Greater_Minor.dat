@@ -1,42 +1,42 @@
 	dlow	dhigh	itemType	valueAdjust
-	1	10	Cure Light Wounds	50
-	11	13	Endure Elements	50
-	14	15	Hide from Animals	50
-	16	17	Hide from Undead	50
-	18	19	Jump	50
-	20	22	Mage Armor	50
-	23	25	Magic Fang	50
-	26	26	Magic Stone	50
-	27	29	Magic Weapon	50
-	30	30	Pass Without Trace	50
-	31	32	Protection from (alignment)	50
-	33	34	Remove Fear	50
-	35	35	Sanctuary	50
-	36	38	Shield of Faith +2	50
-	39	39	Shillelagh	50
-	40	41	Bless Weapon	100
-	42	44	Enlarge Person	250
-	45	45	Reduce Person	250
-	46	47	Aid	300
-	48	50	Barksin +2	300
-	51	53	Bear's Endurance	300
-	54	56	Blur	300
-	57	59	Bull's Strength	300
-	60	62	Cat's Grace	300
-	63	67	Cure Moderate Wounds	300
-	68	68	Darkness	300
-	69	71	Darkvision	300
-	72	74	Delay Poison	300
-	75	76	Eagle's Splendor	300
-	77	78	Fox's Cunning	300
-	79	81	Invisibility (Potion or Oil)	300
-	82	84	Lesser Restoration	300
-	85	86	Levitate	300
-	87	87	Misdirection	300
-	88	89	Owl's Wisdom	300
-	90	91	Protection from Arrows	300
-	92	93	Remove Paralysis	300
-	94	96	Resist Energy (Type) 10	300
-	97	97	Shield of Faith +3	300
-	98	99	Spider Climb	300
-	100	100	Undetectable Alignment	300
+	1	10	Potion of Cure Light Wounds	50
+	11	13	Potion of Endure Elements	50
+	14	15	Potion of Hide from Animals	50
+	16	17	Potion of Hide from Undead	50
+	18	19	Potion of Jump	50
+	20	22	Potion of Mage Armor	50
+	23	25	Potion of Magic Fang	50
+	26	26	Oil of Magic Stone	50
+	27	29	Oil of Magic Weapon	50
+	30	30	Potion of Pass Without Trace	50
+	31	32	Potion of Protection from (alignment)	50
+	33	34	Potion of Remove Fear	50
+	35	35	Potion of Sanctuary	50
+	36	38	Potion of Shield of Faith +2	50
+	39	39	Oil of Shillelagh	50
+	40	41	Oil of Bless Weapon	100
+	42	44	Potion of Enlarge Person	250
+	45	45	Potion of Reduce Person	250
+	46	47	Potion of Aid	300
+	48	50	Potion of Barkskin +2	300
+	51	53	Potion of Bear's Endurance	300
+	54	56	Potion of Blur	300
+	57	59	Potion of Bull's Strength	300
+	60	62	Potion of Cat's Grace	300
+	63	67	Potion of Cure Moderate Wounds	300
+	68	68	Potion of Darkness	300
+	69	71	Potion of Darkvision	300
+	72	74	Potion of Delay Poison	300
+	75	76	Potion of Eagle's Splendor	300
+	77	78	Potion of Fox's Cunning	300
+	79	81	Potion or Oil of Invisibility	300
+	82	84	Potion of Lesser Restoration	300
+	85	86	Potion of Levitate	300
+	87	87	Potion of Misdirection	300
+	88	89	Potion of Owl's Wisdom	300
+	90	91	Potion of Protection from Arrows	300
+	92	93	Potion of Remove Paralysis	300
+	94	96	Potion of Resist Energy (Type) 10	300
+	97	97	Potion of Shield of Faith +3	300
+	98	99	Potion of Spider Climb	300
+	100	100	Potion of Undetectable Alignment	300

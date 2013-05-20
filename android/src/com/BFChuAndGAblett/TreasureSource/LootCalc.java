@@ -282,9 +282,13 @@ public class LootCalc {
         }
         LootItem item = new LootItem();
         // catch mundane item calls first
-        if (rarityLevel == 1) {
+        if ((rarityLevel == 1) && prefs.isRollMundane()) {
             LootItem mundane = rollMundaneItem();
-            return mundane;
+            item.setName(mundane.getName());
+            item.setgValue(mundane.getgValue());
+            item.setItemType(mundane.getItemType());
+            item.setQuantity(mundane.getQuantity());
+            return item;
         }
 
         do {
@@ -351,23 +355,18 @@ public class LootCalc {
         Integer dRoll = rollPercent();
 
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "In rollMundaneITem: rolled " + dRoll);
+            Log.d(TAG, "In rollMundaneItem: rolled " + dRoll);
         }
 
-        if (mundaneType == "Alchemical_item") {
-            item = books.getMundaneItem(dRoll, mundaneType);
-        } else if (mundaneType == "Armor") {
-            item = books.getMundaneItem(dRoll, mundaneType);
-        } else if (mundaneType == "Weapon") {
-            if (dRoll < 71) {
-                item = new LootItem(dRoll, "Masterwork " + rollWeaponType(1),
-                        300);
-            } else {
-                item = new LootItem(dRoll, "Masterwork " + rollWeaponType(4),
-                        300);
-            }
-        } else if (mundaneType == "Tools_and_gear") {
-            item = books.getMundaneItem(dRoll, mundaneType);
+        if (mundaneType.equals("Alchemical_item")) {
+            item = books.getMundaneAlchemical(dRoll);
+        } else if (mundaneType.equals("Armor")) {
+            item = books.getMundaneArmor(dRoll);
+        } else if (mundaneType.equals("Weapon")) {
+            // TODO: make it possible to get ranged weapons
+            item = books.getMundaneWeapon(dRoll);
+        } else if (mundaneType.equals("Tools_and_gear")) {
+            item = books.getMundaneToolsGear(dRoll);
         }
 
         return item;
@@ -433,28 +432,28 @@ public class LootCalc {
 
         // find out if it's a specific item first.
         Integer dRoll = rollPercent();
+        Integer dRoll2 = rollPercent();
         boolean isGreaterItem = true;
         if (dice.roll(1, 2) != 2) {
             isGreaterItem = false;
         }
 
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "In rollMagicWeapon(): rolled " + dRoll + " for rarity"
-                    + rarityLevel + " and isGreaterItem: " + isGreaterItem);
-        }
         Integer isSpecific = 0;
         Cursor cursor = books.getEnhancement(dRoll, "Weapons", isGreaterItem,
                 rarityLevel);
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
+        isSpecific = cursor.getInt(6);
+        Integer enhancement = cursor.getInt(3);
+        Integer numAbilities = cursor.getInt(4);
+        Integer abilityLevel = cursor.getInt(5);
+        isSpecific = cursor.getInt(6);
 
-        // sets the cursor to the correct row, checks for specificity
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            isSpecific = cursor.getInt(6);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMagicWeapon(): rolled " + dRoll + " for rarity"
+                    + rarityLevel + " and isGreaterItem: " + isGreaterItem
+                    + ", isSpecific = " + isSpecific
+                    + " enhancement, num, lv: " + enhancement + " "
+                    + numAbilities + " " + abilityLevel);
         }
 
         // if its specific, return a specific item, otherwise roll abilities
@@ -469,8 +468,16 @@ public class LootCalc {
             // 1,2,3 = weapon. 4,5 = ranged weapon. 6 = ammo;
             Integer weaponRangedOrAmmo = dice.roll(1, 6);
 
-            // What kind of weapon?
-            String weaponType = rollWeaponType(weaponRangedOrAmmo);
+            // What kind of weapon? get its price too
+            String weaponType = rollWeaponType(weaponRangedOrAmmo, dRoll2);
+            if (weaponRangedOrAmmo < 4) {
+                item.setgValue(books.getItemValue("WeaponTypes", dRoll2));
+            } else if (weaponRangedOrAmmo < 6) {
+                item.setgValue(books.getItemValue("RangedWeaponTypes", dRoll2));
+            } else {
+                item.setgValue(books.getItemValue("AmmoTypes", dRoll2));
+            }
+
             // What special abilities does it get?
             item = getWeaponSpecials(cursor, item, isGreaterItem,
                     weaponRangedOrAmmo, rarityLevel, weaponType);
@@ -480,9 +487,8 @@ public class LootCalc {
         return item;
     }
 
-    private String rollWeaponType(int weaponRangedOrAmmo) {
+    private String rollWeaponType(int weaponRangedOrAmmo, Integer dRoll) {
         String type = "longsword";
-        Integer dRoll = rollPercent();
 
         if (weaponRangedOrAmmo < 4) {
             type = books.getMeleeWeaponType(dRoll);
@@ -514,6 +520,9 @@ public class LootCalc {
                     abilityLevel, weaponType);
         }
 
+        double priceAdjust = books.getMagicPrice(item.getmLevel(), "Weapons");
+        item.setgValue(item.getgValue() + priceAdjust);
+
         return item;
     }
 
@@ -524,6 +533,7 @@ public class LootCalc {
 
         // find out if it's a specific item first.
         Integer dRoll = rollPercent();
+        Integer dRoll2 = rollPercent();
         boolean isGreaterItem = true;
         if (dice.roll(1, 2) != 2) {
             isGreaterItem = false;
@@ -551,8 +561,9 @@ public class LootCalc {
                     item.setName(rollSpecialMaterial() + " ");
                 }
 
-                // What kind of armor or shield?
-                String armorType = rollArmorType(armorOrShield);
+                // What kind of armor or shield? get its price too
+                String armorType = rollArmorType(armorOrShield, dRoll2);
+                item.setgValue(books.getItemValue("ArmorTypes", dRoll2));
                 // What special abilities does it get?
                 item = getArmorSpecials(cursor, item, isGreaterItem,
                         armorOrShield, rarityLevel, armorType);
@@ -566,8 +577,9 @@ public class LootCalc {
                     item.setName(rollSpecialMaterial() + " ");
                 }
 
-                // What kind of armor or shield?
-                String armorType = rollArmorType(armorOrShield);
+                // What kind of armor or shield? get its price too
+                String armorType = rollArmorType(armorOrShield, dRoll2);
+                item.setgValue(books.getItemValue("ArmorTypes", dRoll2));
                 // What special abilities does it get?
                 item = getArmorSpecials(cursor, item, isGreaterItem,
                         armorOrShield, rarityLevel, armorType);
@@ -594,6 +606,8 @@ public class LootCalc {
                     abilityLevel, armorType);
         }
 
+        double priceAdjust = books.getMagicPrice(item.getmLevel(), "Armor");
+        item.setgValue(item.getgValue() + priceAdjust);
         return item;
     }
 
@@ -605,30 +619,21 @@ public class LootCalc {
         if (enhancement > 0) {
             abilities = "+" + enhancement + " ";
         }
-        double priceAdjust = 0.0;
+
         for (int ii = 0; ii < numAbilities; ii++) {
             Integer dRoll = rollPercent();
             Cursor abilityCursor = books.getAbilities(dRoll, itemsClass,
                     abilityLevel);
             abilities += abilityCursor.getString(3) + " ";
-            priceAdjust += abilityCursor.getDouble(4);
-
         }
-        if (numAbilities > 0) {
-            item.setName(item.getName() + abilities + itemsType);
-        } else {
-            item.setName(item.getName() + itemsType);
-        }
-
-        item.setgValue(item.getgValue() + priceAdjust);
+        item.setName(item.getName() + abilities + itemsType);
         item.setmLevel(item.getmLevel() + (abilityLevel * numAbilities));
-        // TODO: add database call to get real price based on new magic level
+
         return item;
     }
 
-    private String rollArmorType(int armorOrShield) {
+    private String rollArmorType(int armorOrShield, Integer dRoll) {
         String type = "full plate";
-        Integer dRoll = rollPercent();
 
         if (armorOrShield != 2) {
             type = books.getArmorType(dRoll);

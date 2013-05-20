@@ -1,53 +1,53 @@
 	dlow	dhigh	itemType	valueAdjust
-	1	2	Bless Weapon	100
-	3	4	Enlarge Person	250
-	5	5	Reduce Person	250
-	6	6	Aid	300
-	7	7	Barksin +2	300
-	8	10	Bear's Endurance	300
-	11	13	Blur	300
-	14	16	Bull's Strength	300
-	17	19	Cat's Grace	300
-	20	27	Cure Moderate Wounds	300
-	28	28	Darkness	300
-	29	30	Darkvision	300
-	31	31	Delay Poison	300
-	32	33	Eagle's Splendor	300
-	34	35	Fox's Cunning	300
-	36	37	Invisibility (Potion or Oil)	300
-	38	38	Lesser Restoration	300
-	39	39	Levitate	300
-	40	40	Misdirection	300
-	41	42	Owl's Wisdom	300
-	43	43	Protection from Arrows	300
-	44	44	Remove Paralysis	300
-	45	46	Resist Energy (Type) 10	300
-	47	48	Shield of Faith +3	300
-	49	49	Spider Climb	300
-	50	50	Undetectable Alignment	300
-	51	51	Barksin +3	600
-	52	52	Shield of Faith +4	600
-	53	55	Resist Energy (Type) 20	600
-	56	60	Cure Serious Wounds	700
-	61	61	Daylight	700
-	62	64	Displacement	750
-	65	65	Flame Arrow	750
-	66	68	Fly	750
-	69	69	Gaseous Form	750
-	70	71	Greater Magic Fang +1	750
-	72	73	Greater Magic Weapon +1	750
-	74	75	Haste	750
-	76	78	Heroism	750
-	79	80	Keen Edge	750
-	81	81	Magic Circle Against (Alignment)	750
-	82	83	Magic Vestment +1	750
-	84	86	Neutralize Poison	750
-	87	88	Nondetection	750
-	89	91	Protection from Energy	750
-	92	93	Rage	750
-	94	94	Remove Blindness/Deafness	750
-	95	95	Remove Curse	750
-	96	96	Remove Disease	750
-	97	97	Tongues	750
-	98	99	Water Breathing	750
-	100	100	Water Walk	750
+	1	2	Oil of Bless Weapon	100
+	3	4	Potion of Enlarge Person	250
+	5	5	Potion of Reduce Person	250
+	6	6	Potion of Aid	300
+	7	7	Potion of Barkskin +2	300
+	8	10	Potion of Bear's Endurance	300
+	11	13	Potion of Blur	300
+	14	16	Potion of Bull's Strength	300
+	17	19	Potion of Cat's Grace	300
+	20	27	Potion of Cure Moderate Wounds	300
+	28	28	Potion of Darkness	300
+	29	30	Potion of Darkvision	300
+	31	31	Potion of Delay Poison	300
+	32	33	Potion of Eagle's Splendor	300
+	34	35	Potion of Fox's Cunning	300
+	36	37	Potion or Oil of Invisibility	300
+	38	38	Potion of Lesser Restoration	300
+	39	39	Potion of Levitate	300
+	40	40	Potion of Misdirection	300
+	41	42	Potion of Owl's Wisdom	300
+	43	43	Potion of Protection from Arrows	300
+	44	44	Potion of Remove Paralysis	300
+	45	46	Potion of Resist Energy (Type) 10	300
+	47	48	Potion of Shield of Faith +3	300
+	49	49	Potion of Spider Climb	300
+	50	50	Potion of Undetectable Alignment	300
+	51	51	Potion of Barkskin +3	600
+	52	52	Potion of Shield of Faith +4	600
+	53	55	Potion of Resist Energy (Type) 20	600
+	56	60	Potion of Cure Serious Wounds	700
+	61	61	Potion of Daylight	700
+	62	64	Potion of Displacement	750
+	65	65	Potion of Flame Arrow	750
+	66	68	Potion of Fly	750
+	69	69	Potion of Gaseous Form	750
+	70	71	Potion of Potion of Greater Magic Fang +1	750
+	72	73	Potion of Greater Magic Weapon +1	750
+	74	75	Potion of Haste	750
+	76	78	Potion of Heroism	750
+	79	80	Oil of Keen Edge	750
+	81	81	Potion of Magic Circle Against (Alignment)	750
+	82	83	Oil of Magic Vestment +1	750
+	84	86	Potion of Neutralize Poison	750
+	87	88	Potion of Nondetection	750
+	89	91	Potion of Protection from Energy	750
+	92	93	Potion of Rage	750
+	94	94	Potion of Remove Blindness/Deafness	750
+	95	95	Potion of Remove Curse	750
+	96	96	Potion of Remove Disease	750
+	97	97	Potion of Tongues	750
+	98	99	Potion of Water Breathing	750
+	100	100	Potion of Water Walk	750

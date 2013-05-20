@@ -13,6 +13,13 @@ public class LootOutListItem extends LootItem {
     private boolean dispGold;
     private boolean dispRoll;
 
+    public LootOutListItem() {
+        super();
+        this.specials = "";
+        this.dispGold = true;
+        this.dispRoll = false;
+    }
+
     /**
      * @param id
      * @param dLow

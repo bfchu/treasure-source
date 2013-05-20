@@ -43,7 +43,14 @@ public class LootBuilder {
 
         rollCoins();
         rollGoods();
-        rollItems();
+
+        if (dM.getTreasureMultiplier() < 1) {
+            rollItems();
+        } else {
+            for (int ii = 0; ii < dM.getTreasureMultiplier(); ii++) {
+                rollItems();
+            }
+        }
 
         if (this.dM.getPrefs().isNoRepeats()) {
             addToDB(this.getTrove());
@@ -78,13 +85,22 @@ public class LootBuilder {
                     .getTreasureMultiplier()) + hoard.size();
         }
 
-        // Roll each Item, then add to the ArrayList.
-        while ((hoard.size() < numItems) && (trove.size() < numItems)) {
-            LootOutListItem item = new LootOutListItem(
-                    this.dM.rollItem(itemGroup));
+        // If you aren't rolling mundane items, tell the user how many
+        if ((itemGroup == 1) && !dM.getPrefs().isRollMundane()) {
+            LootOutListItem mundanes = new LootOutListItem();
+            mundanes.setQuantity(dM.getNumItems(dRoll));
+            mundanes.setName("Mundane Items");
+            addItem(mundanes);
+        } else {
 
-            addItem(item);
+            // Roll each Item, then add to the ArrayList.
+            while ((hoard.size() < numItems) && (trove.size() < numItems)) {
+                LootOutListItem item = new LootOutListItem(
+                        this.dM.rollItem(itemGroup));
 
+                addItem(item);
+
+            }
         }
     }
 

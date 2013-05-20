@@ -380,6 +380,34 @@ public class LootDB {
         return successfull;
     }
 
+    private boolean saveEntryMagicVals(String tableName, Integer id,
+            Integer magicLevel, Double valueAdjust) {
+        boolean successfull = false;
+        if (id == null) {
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("magicLevel", magicLevel);
+            newItem.put("valueAdjust", valueAdjust);
+
+            long newId = db.insert(tableName, null, newItem);
+            if (newId != -1) {
+                successfull = true;
+            }
+        } else {
+            // Create a new row:
+            ContentValues newItem = new ContentValues();
+            // Assign values for each column.
+            newItem.put("magicLevel", magicLevel);
+            newItem.put("valueAdjust", valueAdjust);
+
+            db.update(tableName, newItem, "id = " + id, null);
+
+            successfull = true;
+        }
+        return successfull;
+    }
+
     private void saveEntryEnhancement(String tableName, Integer id,
             Integer dLow, Integer dHigh, Integer enhancement,
             Integer numAbilities, Integer abilityLevel, Integer isSpecific) {
@@ -794,6 +822,27 @@ public class LootDB {
         return cursor;
     }
 
+    // TODO: consolodate item type methods into one and implement in lootCalc
+    public String getItemType(String tableName, Integer dRoll) {
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "itemType", "valueAdjust" }, null, null, null, null,
+                null, null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String itemType = cursor.getString(3);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
+        itemType = cursor.getString(3);
+
+        return itemType;
+    }
+
     public String getMundaneType(Integer dRoll) {
         Cursor cursor = db.query(true, "MundaneTypes", new String[] { "id",
                 "dLow", "dHigh", "itemType", "valueAdjust" }, null, null, null,
@@ -821,14 +870,8 @@ public class LootDB {
         Cursor cursor = db.query(true, "ArmorTypes", new String[] { "id",
                 "dLow", "dHigh", "itemType", "valueAdjust" }, null, null, null,
                 null, null, null);
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "in getArmorType(): successfull querry");
-        }
         cursor.moveToFirst();
 
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "in getArmorType(): successfully moved to first entry");
-        }
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
         String armorType = cursor.getString(3);
@@ -841,6 +884,47 @@ public class LootDB {
         armorType = cursor.getString(3);
 
         return armorType;
+    }
+
+    public double getItemValue(String tableName, Integer dRoll) {
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "in getArmorValue(): dRoll" + dRoll);
+        }
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "itemType", "valueAdjust" }, null, null, null, null,
+                null, null);
+
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        double gValue = cursor.getDouble(4);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
+        gValue = cursor.getDouble(4);
+
+        return gValue;
+    }
+
+    public double getMagicPrice(Integer mLevel, String itemType) {
+        String tableName = "magicAdjustValues_" + itemType;
+        Cursor cursor = db.query(true, tableName, new String[] { "id",
+                "magicLevel", "valueAdjust" }, null, null, null, null, null,
+                null);
+        cursor.moveToFirst();
+        int a = cursor.getInt(1);
+        double price = cursor.getDouble(2);
+
+        while (a != mLevel) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+        }
+        price = cursor.getDouble(2);
+        return price;
     }
 
     public String getShieldType(Integer dRoll) {
@@ -940,46 +1024,6 @@ public class LootDB {
         return itemType;
     }
 
-    @Deprecated
-    public void getArmorSpecs(Integer dRoll, boolean isGreaterItem,
-            Integer rarityLevel, Integer enhancement, Integer numAbilities,
-            Integer abilityLevel, Integer isSpecific) {
-        // build table name
-        String tableName = "Armor_";
-        if (isGreaterItem) {
-            tableName += "Greater_";
-        } else {
-            tableName += "Lesser_";
-        }
-
-        if (rarityLevel == 2) {
-            tableName += "Minor";
-        } else if (rarityLevel == 3) {
-            tableName += "Medium";
-        } else {
-            tableName += "Major";
-        }
-
-        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "enhancement", "numAbilities", "abilityLevel",
-                "isSpecific" }, null, null, null, null, null, null);
-        cursor.moveToFirst();
-
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-            enhancement = cursor.getInt(3);
-            numAbilities = cursor.getInt(4);
-            abilityLevel = cursor.getInt(5);
-            isSpecific = cursor.getInt(6);
-        }
-
-    }
-
     public Cursor getEnhancement(Integer dRoll, String itemType,
             boolean isGreaterItem, Integer rarityLevel) {
         // build table name
@@ -1016,92 +1060,18 @@ public class LootDB {
         return cursor;
     }
 
-    @Deprecated
-    public Cursor getWeaponsEnhancement(Integer dRoll, boolean isGreaterItem,
-            Integer rarityLevel) {
-        // build table name
-        String tableName = "Weapons_";
-        if (isGreaterItem) {
-            tableName += "Greater_";
-        } else {
-            tableName += "Lesser_";
-        }
+    public LootItem getMundaneWeapon(Integer dRoll) {
 
-        if (rarityLevel == 2) {
-            tableName += "Minor";
-        } else if (rarityLevel == 3) {
-            tableName += "Medium";
-        } else {
-            tableName += "Major";
-        }
-
+        String tableName = "WeaponTypes";
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "enhancement", "numAbilities", "abilityLevel",
-                "isSpecific" }, null, null, null, null, null, null);
-        cursor.moveToFirst();
-
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-
-        }
-
-        return cursor;
-    }
-
-    @Deprecated
-    public Cursor getArmorEnhancement(Integer dRoll, boolean isGreaterItem,
-            Integer rarityLevel) {
-        // build table name
-        String tableName = "Armor_";
-        if (isGreaterItem) {
-            tableName += "Greater_";
-        } else {
-            tableName += "Lesser_";
-        }
-
-        if (rarityLevel == 2) {
-            tableName += "Minor";
-        } else if (rarityLevel == 3) {
-            tableName += "Medium";
-        } else {
-            tableName += "Major";
-        }
-
-        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "enhancement", "numAbilities", "abilityLevel",
-                "isSpecific" }, null, null, null, null, null, null);
-        cursor.moveToFirst();
-
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
-
-        return cursor;
-    }
-
-    public LootItem getMundaneItem(Integer dRoll, String mundaneType) {
-
-        String tableName = "Mundane_" + mundaneType;
-        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
-                "dHigh", "itemName", "value" }, null, null, null, null, null,
-                null);
+                "dHigh", "itemType", "valueAdjust" }, null, null, null, null,
+                null, null);
         cursor.moveToFirst();
 
         int a = cursor.getInt(1);
         int b = cursor.getInt(2);
         String itemName = cursor.getString(3);
         Double gValue = cursor.getDouble(4);
-        Integer itemType = 0;
 
         while ((dRoll < a) || (dRoll > b)) {
             cursor.moveToNext();
@@ -1111,8 +1081,99 @@ public class LootDB {
 
         itemName = cursor.getString(3);
         gValue = cursor.getDouble(4);
-        itemType = 0;
-        LootItem item = new LootItem(dRoll, itemName, gValue);
+
+        LootItem item = new LootItem();
+        item.setName("Masterwork " + itemName);
+        item.setgValue(gValue);
+        item.setItemType(4);
+
+        return item;
+    }
+
+    public LootItem getMundaneAlchemical(Integer dRoll) {
+
+        String tableName = "Mundane_Alchemical_item";
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "itemName", "price" }, null, null, null, null, null,
+                null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String itemName = cursor.getString(3);
+        Double gValue = cursor.getDouble(4);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
+
+        itemName = cursor.getString(3);
+        gValue = cursor.getDouble(4);
+        LootItem item = new LootItem();
+        item.setName(itemName);
+        item.setgValue(gValue);
+        item.setItemType(0);
+
+        return item;
+    }
+
+    public LootItem getMundaneArmor(Integer dRoll) {
+
+        String tableName = "Mundane_Armor";
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "itemName", "price" }, null, null, null, null, null,
+                null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String itemName = cursor.getString(3);
+        Double gValue = cursor.getDouble(4);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
+
+        itemName = cursor.getString(3);
+        gValue = cursor.getDouble(4);
+        LootItem item = new LootItem();
+        item.setName(itemName);
+        item.setgValue(gValue);
+        item.setItemType(3);
+
+        return item;
+    }
+
+    public LootItem getMundaneToolsGear(Integer dRoll) {
+
+        String tableName = "Mundane_Tools_and_gear";
+        Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
+                "dHigh", "itemName", "price" }, null, null, null, null, null,
+                null);
+        cursor.moveToFirst();
+
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        String itemName = cursor.getString(3);
+        Double gValue = cursor.getDouble(4);
+
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
+
+        itemName = cursor.getString(3);
+        gValue = cursor.getDouble(4);
+
+        LootItem item = new LootItem();
+        item.setName(itemName);
+        item.setgValue(gValue);
+        item.setItemType(4);
 
         return item;
     }
@@ -1199,6 +1260,8 @@ public class LootDB {
          */
 
         popEncounterValsTable(manager);
+        popMagicValsTable(manager, "Weapons");
+        popMagicValsTable(manager, "Armor");
 
         // TODO: popTable methods for coins, goods, items by APL;
         popAPLCoins(manager);
@@ -1276,6 +1339,33 @@ public class LootDB {
 
                 saveEntryEncounterVals(tableName, null, APL, slowGold,
                         mediumGold, fastGold);
+            }
+        }
+
+        Log.d(TAG, "Done Populating Table " + tableName);
+        tableFiles.close();
+    }
+
+    public void popMagicValsTable(AssetManager manager, String itemType)
+            throws IOException {
+        String tableName = "magicAdjustValues_" + itemType;
+        String fileName = (tableName + ".dat");
+
+        LootIO tableFiles = new LootIO(manager.open(fileName));
+        Log.d(TAG, "Begin Populating Table " + tableName);
+
+        Integer magicLevel = 1;
+        Double valueAdjust = 1.0;
+
+        tableFiles.getIn().readLine();// cut off the header line of the file
+        while (tableFiles.getIn().ready()) {
+            String[] data = getLine(tableFiles);
+
+            if (data.length >= 2) {
+                magicLevel = Integer.parseInt(data[1]);
+                valueAdjust = Double.valueOf(data[2]);
+
+                saveEntryMagicVals(tableName, null, magicLevel, valueAdjust);
             }
         }
 
@@ -1803,6 +1893,10 @@ public class LootDB {
             // Gold value of encounters:
             initEncounterValsTable(db);
 
+            // value adjust of magic items:
+            initMagicValsTable(db, "Weapons");
+            initMagicValsTable(db, "Armor");
+
             // Coins, goods, and items by APL
             initAPLcoinsTable(db);
             initAPLgoodsTable(db);
@@ -1867,6 +1961,16 @@ public class LootDB {
             Log.d(TAG, "Creating Table " + tableName);
         }
 
+        public void initMagicValsTable(SQLiteDatabase db, String itemType) {
+            String tableName = "magicAdjustValues_" + itemType;
+            String sqlcmd = "CREATE TABLE " + tableName
+                    + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + "magicLevel int, " + "valueAdjust double)";
+
+            db.execSQL(sqlcmd);
+            Log.d(TAG, "Creating Table " + tableName);
+        }
+
         public void initAPLcoinsTable(SQLiteDatabase db) {
             for (int ii = 0; ii < 20; ii++) {
                 String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Coins "
@@ -1904,7 +2008,7 @@ public class LootDB {
             String sqlcmd = "CREATE TABLE " + itemType + "Types "
                     + "(id INTEGER PRIMARY KEY AUTOINCREMENT, " + "dLow int, "
                     + "dHigh int, " + "itemType varchar(50), "
-                    + "valueAdjust int)";
+                    + "valueAdjust double)";
 
             db.execSQL(sqlcmd);
             Log.d(TAG, "Creating Table " + itemType + "Types ");
