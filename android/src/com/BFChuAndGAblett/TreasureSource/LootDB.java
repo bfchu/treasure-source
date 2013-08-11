@@ -1221,10 +1221,12 @@ public class LootDB {
         price = cursor.getDouble(4);
         item.setName(itemName);
         item.setgValue(price);
+
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "Found Specific item: " + dRoll + " from " + tableName
                     + ": " + item.getName());
         }
+
         return item;
     }
 
