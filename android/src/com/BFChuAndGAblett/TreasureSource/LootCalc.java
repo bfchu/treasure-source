@@ -328,7 +328,7 @@ public class LootCalc {
             } else if (item.getItemType() == 7) {
                 item = rollSpecificItem(rarityLevel, "Rods");
             } else if (item.getItemType() == 8) {
-                // item = rollScrolls(rarityLevel);
+                item = rollScroll(rarityLevel);
             } else if (item.getItemType() == 9) {
                 item = rollSpecificItem(rarityLevel, "Staves");
             } else if (item.getItemType() == 10) {
@@ -343,6 +343,83 @@ public class LootCalc {
                         1))); // TODO: figure out what needs to be true about
         // at item before it can be returned.
         return item;
+    }
+
+    public Integer rollMinorItemType() {
+        // Hard-coded static table
+        Integer dRoll = rollPercent();
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMinorItemType() rolled: " + dRoll);
+        }
+        if (dRoll < 5) {
+            return 3; // Armor and Shields
+        } else if (dRoll < 10) {
+            return 4; // Weapons
+        } else if (dRoll < 45) {
+            return 5; // Potions
+        } else if (dRoll < 47) {
+            return 6; // Rings
+        } else if (dRoll < 82) {
+            return 8; // Scrolls
+        } else if (dRoll < 92) {
+            return 10; // Wands
+        } else {
+            return 11; // Wondrous Items
+        }
+    }
+
+    public Integer rollMediumItemType() {
+        // Hard-coded static table
+        Integer dRoll = rollPercent();
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMediumItem() rolled: " + dRoll);
+        }
+        if (dRoll < 11) {
+            return 3; // Armor and Shields
+        } else if (dRoll < 21) {
+            return 4; // Weapons
+        } else if (dRoll < 31) {
+            return 5; // Potions
+        } else if (dRoll < 41) {
+            return 6; // Rings
+        } else if (dRoll < 51) {
+            return 7; // Rods
+        } else if (dRoll < 66) {
+            return 8; // Scrolls
+        } else if (dRoll < 69) {
+            return 9; // Staves
+        } else if (dRoll < 84) {
+            return 10; // Wands
+        } else {
+            return 11; // Wondrous Items
+        }
+    }
+
+    public Integer rollMajorItemType() {
+        // Hard-Coded static table
+        Integer dRoll = rollPercent();
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "In rollMajorItem() rolled: " + dRoll);
+        }
+        if (dRoll < 11) {
+            return 3;
+        } else if (dRoll < 21) {
+            return 4;
+        } else if (dRoll < 26) {
+            return 5;
+        } else if (dRoll < 36) {
+            return 6;
+        } else if (dRoll < 46) {
+            return 7;
+        } else if (dRoll < 56) {
+            return 8;
+        } else if (dRoll < 76) {
+            return 9;
+        } else if (dRoll < 81) {
+            return 10;
+        } else {
+            return 11;
+        }
     }
 
     /**
@@ -650,83 +727,6 @@ public class LootCalc {
         return material;
     }
 
-    public Integer rollMinorItemType() {
-        // Hard-coded static table
-        Integer dRoll = rollPercent();
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "In rollMinorItemType() rolled: " + dRoll);
-        }
-        if (dRoll < 5) {
-            return 3; // Armor and Shields
-        } else if (dRoll < 10) {
-            return 4; // Weapons
-        } else if (dRoll < 45) {
-            return 5; // Potions
-        } else if (dRoll < 47) {
-            return 6; // Rings
-        } else if (dRoll < 82) {
-            return 8; // Scrolls
-        } else if (dRoll < 92) {
-            return 10; // Wands
-        } else {
-            return 11; // Wondrous Items
-        }
-    }
-
-    public Integer rollMediumItemType() {
-        // Hard-coded static table
-        Integer dRoll = rollPercent();
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "In rollMediumItem() rolled: " + dRoll);
-        }
-        if (dRoll < 11) {
-            return 3; // Armor and Shields
-        } else if (dRoll < 21) {
-            return 4; // Weapons
-        } else if (dRoll < 31) {
-            return 5; // Potions
-        } else if (dRoll < 41) {
-            return 6; // Rings
-        } else if (dRoll < 51) {
-            return 7; // Rods
-        } else if (dRoll < 66) {
-            return 8; // Scrolls
-        } else if (dRoll < 69) {
-            return 9; // Staves
-        } else if (dRoll < 84) {
-            return 10; // Wands
-        } else {
-            return 11; // Wondrous Items
-        }
-    }
-
-    public Integer rollMajorItemType() {
-        // Hard-Coded static table
-        Integer dRoll = rollPercent();
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "In rollMajorItem() rolled: " + dRoll);
-        }
-        if (dRoll < 11) {
-            return 3;
-        } else if (dRoll < 21) {
-            return 4;
-        } else if (dRoll < 26) {
-            return 5;
-        } else if (dRoll < 36) {
-            return 6;
-        } else if (dRoll < 46) {
-            return 7;
-        } else if (dRoll < 56) {
-            return 8;
-        } else if (dRoll < 76) {
-            return 9;
-        } else if (dRoll < 81) {
-            return 10;
-        } else {
-            return 11;
-        }
-    }
-
     public Integer rollPercent() {
         return dice.roll(1, 100);
     }
@@ -770,7 +770,68 @@ public class LootCalc {
         return validity;
     }
 
-    // Getter/setters
+    /**
+     * SCROLLS
+     * 
+     * @param rarityLevel
+     * @return
+     */
+
+    // TODO: Scrolls and Wands; database initialization, logic, database calls.
+    private LootItem rollScroll(Integer rarityLevel) {
+        LootItem item = new LootItem();
+
+        // Which class's spell list?
+        Integer rpgClass = getRPGClass();
+
+        // What Spell level and Caster Level?
+        Integer dRoll = rollPercent();
+        Integer spellLv = getSpellLv(dRoll, rpgClass, rarityLevel);
+        // Integer castLv = getCastLv(dRoll, rpgClass, rarityLevel);
+
+        // What is the cost of that spell level on that list?
+        // Double gValue = getScrollValue(rpgClass, spellLv);
+
+        // What is the spell?
+        // item.setName(getScrollName(rpgClass, spellLv) + " CL" + castLv);
+
+        // build and return item.
+
+        // item.setgValue(gValue);
+        item.setItemType(8);
+
+        return item;
+    }
+
+    private Integer getSpellLv(Integer dRoll, Integer rpgClass,
+            Integer rarityLevel) {
+
+        return null;
+    }
+
+    private Integer getRPGClass() {
+        Integer dRoll = rollPercent();
+
+        if (dRoll < 25) {
+            return 1; // Cleric & Oracle
+        } else if (dRoll < 53) {
+            return 2; // Wizard
+        } else if (dRoll < 68) {
+            return 3; // Druid
+        } else if (dRoll < 78) {
+            return 4; // Bard
+        } else if (dRoll < 93) {
+            return 5; // Paladin
+        } else if (dRoll < 100) {
+            return 5; // Ranger
+        }
+
+        return 0; // Error code
+    }
+
+    // ////////////////////////
+    // Getter/setters//
+    // ////////////////////////
     /**
      * @return the dice
      */
