@@ -17,7 +17,8 @@ import android.widget.RadioGroup;
  */
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
-    private static final int TREASURE_SIZE = 2131230737;
+    private static final int TREASURE_SIZE = 2131230737; // ID values for radio
+                                                         // buttons
     private static final int ENCOUNTER_SIZE = 2131230729;
     private static final int MAGIC_SIZE = 2131230745;
     private static final int CAMPAIGN_SIZE = 2131230751;

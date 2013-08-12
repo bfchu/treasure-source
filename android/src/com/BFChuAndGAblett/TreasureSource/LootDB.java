@@ -690,22 +690,26 @@ public class LootDB {
     /**
      * DATABASE CALLERS
      * */
+
+    private void moveCursorByDRoll(Cursor cursor, Integer dRoll) {
+
+        cursor.moveToFirst();
+        int a = cursor.getInt(1);
+        int b = cursor.getInt(2);
+        // is dRoll between a and b?s
+        while ((dRoll < a) || (dRoll > b)) {
+            cursor.moveToNext();
+            a = cursor.getInt(1);
+            b = cursor.getInt(2);
+        }
+    }
+
     public Cursor findItemByDRoll(Integer dRoll, String tableName) {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dRoll",
                 "quantity", "specials", "itemName", "value", "dispGold",
                 "dispRoll" }, null, null, null, null, null, null);
         cursor.moveToFirst();
-        // TODO: use this function as a template for all all get functions that
-        // need to find items by dRoll.
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        // is dRoll between a and b?
-        while ((dRoll < a) || ((dRoll > b) && !cursor.isAfterLast())) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
 
         return cursor;
     }
@@ -721,16 +725,8 @@ public class LootDB {
                 "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
                 null, null, null, null, null);
         cursor.moveToFirst();
-
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         int numDice = cursor.getInt(3);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         numDice = cursor.getInt(3);
         return numDice;
     }
@@ -740,16 +736,8 @@ public class LootDB {
                 "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
                 null, null, null, null, null);
         cursor.moveToFirst();
-
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         int dieSize = cursor.getInt(4);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         dieSize = cursor.getInt(4);
         return dieSize;
     }
@@ -776,15 +764,8 @@ public class LootDB {
         Cursor cursor = db.query(true, tableName, new String[] { "id", "dLow",
                 "dHigh", "numDice", "dieSize", "quantity", "coinType" }, null,
                 null, null, null, null, null);
-        cursor.moveToFirst();
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
 
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         return cursor;
     }
 
@@ -793,14 +774,7 @@ public class LootDB {
                 "dHigh", "numDice", "dieSize", "goodsType" }, null, null, null,
                 null, null, null);
         cursor.moveToFirst();
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         return cursor;
     }
 
@@ -810,14 +784,7 @@ public class LootDB {
                 null, null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
 
         return cursor;
     }
@@ -829,15 +796,8 @@ public class LootDB {
                 null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String itemType = cursor.getString(3);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         itemType = cursor.getString(3);
 
         return itemType;
@@ -849,15 +809,8 @@ public class LootDB {
                 null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String itemType = cursor.getString(3);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         itemType = cursor.getString(3);
 
         return itemType;
@@ -872,15 +825,8 @@ public class LootDB {
                 null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String armorType = cursor.getString(3);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         armorType = cursor.getString(3);
 
         return armorType;
@@ -896,15 +842,8 @@ public class LootDB {
 
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         double gValue = cursor.getDouble(4);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         gValue = cursor.getDouble(4);
 
         return gValue;
@@ -933,15 +872,8 @@ public class LootDB {
                 null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String shieldType = cursor.getString(3);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         shieldType = cursor.getString(3);
         return shieldType;
     }
@@ -952,16 +884,8 @@ public class LootDB {
                 null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String weaponType = cursor.getString(3);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
-
+        moveCursorByDRoll(cursor, dRoll);
         weaponType = cursor.getString(3);
 
         return weaponType;
@@ -973,15 +897,8 @@ public class LootDB {
                 null, null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String weaponType = cursor.getString(3);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         weaponType = cursor.getString(3);
         return weaponType;
     }
@@ -992,15 +909,8 @@ public class LootDB {
                 null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String ammoType = cursor.getString(3);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         ammoType = cursor.getString(3);
         return ammoType;
     }
@@ -1011,15 +921,9 @@ public class LootDB {
                 null, null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String itemType = cursor.getString(3);
 
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
         itemType = cursor.getString(3);
         return itemType;
     }
@@ -1047,15 +951,7 @@ public class LootDB {
                 "isSpecific" }, null, null, null, null, null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-
-        }
+        moveCursorByDRoll(cursor, dRoll);
 
         return cursor;
     }
@@ -1068,17 +964,9 @@ public class LootDB {
                 null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String itemName = cursor.getString(3);
         Double gValue = cursor.getDouble(4);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
-
+        moveCursorByDRoll(cursor, dRoll);
         itemName = cursor.getString(3);
         gValue = cursor.getDouble(4);
 
@@ -1098,16 +986,9 @@ public class LootDB {
                 null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String itemName = cursor.getString(3);
         Double gValue = cursor.getDouble(4);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
 
         itemName = cursor.getString(3);
         gValue = cursor.getDouble(4);
@@ -1127,16 +1008,10 @@ public class LootDB {
                 null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String itemName = cursor.getString(3);
         Double gValue = cursor.getDouble(4);
 
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
 
         itemName = cursor.getString(3);
         gValue = cursor.getDouble(4);
@@ -1156,16 +1031,9 @@ public class LootDB {
                 null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String itemName = cursor.getString(3);
         Double gValue = cursor.getDouble(4);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
 
         itemName = cursor.getString(3);
         gValue = cursor.getDouble(4);
@@ -1207,16 +1075,11 @@ public class LootDB {
 
         LootItem item = new LootItem();
         item.setNumRolled(dRoll);
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
         String itemName = cursor.getString(3);
         Double price = cursor.getDouble(4);
 
-        while (((dRoll < a) || ((dRoll > b) && (!cursor.isAfterLast())))) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
+
         itemName = cursor.getString(3);
         price = cursor.getDouble(4);
         item.setName(itemName);
@@ -1240,14 +1103,7 @@ public class LootDB {
                 null, null);
         cursor.moveToFirst();
 
-        int a = cursor.getInt(1);
-        int b = cursor.getInt(2);
-
-        while ((dRoll < a) || (dRoll > b)) {
-            cursor.moveToNext();
-            a = cursor.getInt(1);
-            b = cursor.getInt(2);
-        }
+        moveCursorByDRoll(cursor, dRoll);
 
         return cursor;
     }
