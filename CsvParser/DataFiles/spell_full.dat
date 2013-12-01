@@ -1,0 +1,4675 @@
+	9999	9999	Acid Arrow	sorcerer_wizard2
+	9999	9999	Acid Arrow	magus2
+	9999	9999	Acid Fog	sorcerer_wizard6
+	9999	9999	Acid Fog	magus6
+	9999	9999	Acid Splash	sorcerer_wizard0
+	9999	9999	Acid Splash	summoner0
+	9999	9999	Acid Splash	inquisitor0
+	9999	9999	Acid Splash	magus0
+	9999	9999	Aid	cleric2_oracle2
+	9999	9999	Aid	inquisitor2
+	9999	9999	Aid	alchemist2
+	9999	9999	Air Walk	cleric4_oracle4
+	9999	9999	Air Walk	druid4
+	9999	9999	Air Walk	alchemist4
+	9999	9999	Align Weapon	cleric2_oracle2
+	9999	9999	Align Weapon	inquisitor2
+	9999	9999	Alter Self	bard2
+	9999	9999	Alter Self	sorcerer_wizard2
+	9999	9999	Alter Self	witch2
+	9999	9999	Alter Self	summoner2
+	9999	9999	Alter Self	alchemist2
+	9999	9999	Alter Self	magus2
+	9999	9999	Alarm	bard1
+	9999	9999	Alarm	ranger1
+	9999	9999	Alarm	sorcerer_wizard1
+	9999	9999	Alarm	summoner1
+	9999	9999	Alarm	inquisitor1
+	9999	9999	Analyze Dweomer	bard6
+	9999	9999	Analyze Dweomer	sorcerer_wizard6
+	9999	9999	Analyze Dweomer	witch6
+	9999	9999	Analyze Dweomer	alchemist6
+	9999	9999	Animal Growth	druid5
+	9999	9999	Animal Growth	ranger4
+	9999	9999	Animal Growth	sorcerer_wizard5
+	9999	9999	Animal Messenger	bard2
+	9999	9999	Animal Messenger	druid2
+	9999	9999	Animal Messenger	ranger1
+	9999	9999	Animal Shapes	druid8
+	9999	9999	Animal Trance	bard2
+	9999	9999	Animal Trance	druid2
+	9999	9999	Animate Dead	cleric_oracle3
+	9999	9999	Animate Dead	sorcerer_wizard4
+	9999	9999	Animate Dead	antipaladin3
+	9999	9999	Animate Objects	bard6
+	9999	9999	Animate Objects	cleric_oracle6
+	9999	9999	Animate Objects	witch6
+	9999	9999	Animate Plants	druid7
+	9999	9999	Animate Rope	bard1
+	9999	9999	Animate Rope	sorcerer_wizard1
+	9999	9999	Antilife Shell	cleric6_oracle6
+	9999	9999	Antilife Shell	druid6
+	9999	9999	Antimagic Field	cleric_oracle8
+	9999	9999	Antimagic Field	sorcerer_wizard6
+	9999	9999	Antipathy	druid9
+	9999	9999	Antipathy	sorcerer_wizard8
+	9999	9999	Antipathy	witch8
+	9999	9999	Antipathy	summoner6
+	9999	9999	Antiplant Shell	druid4
+	9999	9999	Arcane Eye	sorcerer_wizard4
+	9999	9999	Arcane Eye	witch4
+	9999	9999	Arcane Eye	alchemist4
+	9999	9999	Arcane Lock	sorcerer_wizard2
+	9999	9999	Arcane Mark	sorcerer_wizard0
+	9999	9999	Arcane Mark	summoner0
+	9999	9999	Arcane Mark	magus0
+	9999	9999	Arcane Sight	sorcerer_wizard3
+	9999	9999	Arcane Sight	witch3
+	9999	9999	Arcane Sight	inquisitor3
+	9999	9999	Arcane Sight	alchemist3
+	9999	9999	Arcane Sight	magus3
+	9999	9999	Arcane Sight, Greater	sorcerer_wizard7
+	9999	9999	Arcane Sight, Greater	witch7
+	9999	9999	Astral Projection	cleric9_oracle9
+	9999	9999	Astral Projection	sorcerer_wizard9
+	9999	9999	Astral Projection	witch9
+	9999	9999	Atonement	cleric5_oracle5
+	9999	9999	Atonement	druid5
+	9999	9999	Atonement	inquisitor5
+	9999	9999	Augury	cleric2_oracle2
+	9999	9999	Augury	witch2
+	9999	9999	Awaken	druid5
+	9999	9999	Bane	antipaladin1
+	9999	9999	Bane	cleric_oracle1
+	9999	9999	Bane	inquisitor1
+	9999	9999	Banishment	cleric6_oracle6
+	9999	9999	Banishment	sorcerer_wizard7
+	9999	9999	Banishment	summoner5
+	9999	9999	Banishment	inquisitor5
+	9999	9999	Barkskin	druid2
+	9999	9999	Barkskin	ranger2
+	9999	9999	Barkskin	summoner2
+	9999	9999	Barkskin	alchemist2
+	9999	9999	Bear's Endurance	cleric2_oracle2
+	9999	9999	Bear's Endurance	druid2
+	9999	9999	Bear's Endurance	ranger2
+	9999	9999	Bear's Endurance	sorcerer_wizard2
+	9999	9999	Bear's Endurance	summoner2
+	9999	9999	Bear's Endurance	alchemist2
+	9999	9999	Bear's Endurance	magus2
+	9999	9999	Bear's Endurance, Mass	cleric6_oracle6
+	9999	9999	Bear's Endurance, Mass	druid6
+	9999	9999	Bear's Endurance, Mass	sorcerer_wizard6
+	9999	9999	Bear's Endurance, Mass	summoner4
+	9999	9999	Bear's Endurance, Mass	magus6
+	9999	9999	Beast Shape I	sorcerer_wizard3
+	9999	9999	Beast Shape I	alchemist3
+	9999	9999	Beast Shape I	magus3
+	9999	9999	Beast Shape II	sorcerer_wizard4
+	9999	9999	Beast Shape II	alchemist4
+	9999	9999	Beast Shape II	magus4
+	9999	9999	Beast Shape III	sorcerer_wizard5
+	9999	9999	Beast Shape III	alchemist5
+	9999	9999	Beast Shape III	magus5
+	9999	9999	Beast Shape IV	sorcerer_wizard6
+	9999	9999	Beast Shape IV	alchemist6
+	9999	9999	Beast Shape IV	magus6
+	9999	9999	Bestow Curse	cleric3_oracle3
+	9999	9999	Bestow Curse	sorcerer_wizard4
+	9999	9999	Bestow Curse	witch3
+	9999	9999	Bestow Curse	antipaladin3
+	9999	9999	Binding	sorcerer_wizard8
+	9999	9999	Binding	summoner6
+	9999	9999	Black Tentacles	sorcerer_wizard4
+	9999	9999	Black Tentacles	witch4
+	9999	9999	Black Tentacles	summoner3
+	9999	9999	Black Tentacles	magus4
+	9999	9999	Blade Barrier	cleric_oracle6
+	9999	9999	Blade Barrier	inquisitor6
+	9999	9999	Blasphemy	cleric_oracle7
+	9999	9999	Blasphemy	inquisitor6
+	9999	9999	Bleed	cleric_oracle0
+	9999	9999	Bleed	inquisitor0
+	9999	9999	Bleed	sorcerer_wizard0
+	9999	9999	Bleed	witch0
+	9999	9999	Bless	cleric_oracle1
+	9999	9999	Bless	paladin1
+	9999	9999	Bless	inquisitor1
+	9999	9999	Bless Water	cleric1_oracle1
+	9999	9999	Bless Water	paladin1
+	9999	9999	Bless Water	inquisitor1
+	9999	9999	Bless Weapon	paladin1
+	9999	9999	Blight	druid4
+	9999	9999	Blight	sorcerer_wizard5
+	9999	9999	Blight	witch5
+	9999	9999	Blindness_Deafness	antipaladin2
+	9999	9999	Blindness_Deafness	bard2
+	9999	9999	Blindness_Deafness	cleric_oracle3
+	9999	9999	Blindness_Deafness	sorcerer_wizard2
+	9999	9999	Blindness_Deafness	witch2
+	9999	9999	Blink	bard3
+	9999	9999	Blink	sorcerer_wizard3
+	9999	9999	Blink	magus3
+	9999	9999	Blur	bard2
+	9999	9999	Blur	sorcerer_wizard2
+	9999	9999	Blur	summoner2
+	9999	9999	Blur	alchemist2
+	9999	9999	Blur	magus2
+	9999	9999	Break Enchantment	bard4
+	9999	9999	Break Enchantment	cleric_oracle5
+	9999	9999	Break Enchantment	paladin4
+	9999	9999	Break Enchantment	sorcerer_wizard5
+	9999	9999	Break Enchantment	witch5
+	9999	9999	Break Enchantment	inquisitor5
+	9999	9999	Breath Of Life	cleric_oracle5
+	9999	9999	Bull's Strength	cleric2_oracle2
+	9999	9999	Bull's Strength	druid2
+	9999	9999	Bull's Strength	paladin2
+	9999	9999	Bull's Strength	sorcerer_wizard2
+	9999	9999	Bull's Strength	summoner2
+	9999	9999	Bull's Strength	alchemist2
+	9999	9999	Bull's Strength	antipaladin2
+	9999	9999	Bull's Strength	magus2
+	9999	9999	Bull's Strength, Mass	cleric6_oracle6
+	9999	9999	Bull's Strength, Mass	druid6
+	9999	9999	Bull's Strength, Mass	sorcerer_wizard6
+	9999	9999	Bull's Strength, Mass	summoner4
+	9999	9999	Bull's Strength, Mass	magus6
+	9999	9999	Burning Hands	sorcerer_wizard1
+	9999	9999	Burning Hands	witch1
+	9999	9999	Burning Hands	magus1
+	9999	9999	Call Lightning	druid3
+	9999	9999	Call Lightning Storm	druid5
+	9999	9999	Calm Animals	druid1
+	9999	9999	Calm Animals	ranger1
+	9999	9999	Calm Emotions	bard2
+	9999	9999	Calm Emotions	cleric2_oracle2
+	9999	9999	Calm Emotions	inquisitor2
+	9999	9999	Cat's Grace	bard2
+	9999	9999	Cat's Grace	druid2
+	9999	9999	Cat's Grace	ranger2
+	9999	9999	Cat's Grace	sorcerer_wizard2
+	9999	9999	Cat's Grace	summoner2
+	9999	9999	Cat's Grace	alchemist2
+	9999	9999	Cat's Grace	magus2
+	9999	9999	Cat's Grace, Mass	bard6
+	9999	9999	Cat's Grace, Mass	druid6
+	9999	9999	Cat's Grace, Mass	sorcerer_wizard6
+	9999	9999	Cat's Grace, Mass	summoner4
+	9999	9999	Cat's Grace, Mass	magus6
+	9999	9999	Cause Fear	antipaladin1
+	9999	9999	Cause Fear	bard1
+	9999	9999	Cause Fear	cleric_oracle1
+	9999	9999	Cause Fear	inquisitor1
+	9999	9999	Cause Fear	sorcerer_wizard1
+	9999	9999	Cause Fear	witch1
+	9999	9999	Chain Lightning	sorcerer_wizard6
+	9999	9999	Chain Lightning	witch7
+	9999	9999	Chain Lightning	magus6
+	9999	9999	Changestaff	druid7
+	9999	9999	Chaos Hammer	cleric_oracle4
+	9999	9999	Chaos Hammer	inquisitor4
+	9999	9999	Charm Person	bard1
+	9999	9999	Charm Person	sorcerer_wizard1
+	9999	9999	Charm Person	witch1
+	9999	9999	Charm Animal	druid1
+	9999	9999	Charm Animal	ranger1
+	9999	9999	Charm Monster	bard3
+	9999	9999	Charm Monster	sorcerer_wizard4
+	9999	9999	Charm Monster	witch4
+	9999	9999	Charm Monster	summoner3
+	9999	9999	Charm Monster, Mass	bard6
+	9999	9999	Charm Monster, Mass	sorcerer_wizard8
+	9999	9999	Charm Monster, Mass	witch8
+	9999	9999	Charm Monster, Mass	summoner6
+	9999	9999	Chill Metal	druid2
+	9999	9999	Chill Touch	sorcerer_wizard1
+	9999	9999	Chill Touch	witch1
+	9999	9999	Chill Touch	magus1
+	9999	9999	Circle Of Death	sorcerer_wizard6
+	9999	9999	Circle Of Death	inquisitor6
+	9999	9999	Clairaudience_Clairvoyance	bard3
+	9999	9999	Clairaudience_Clairvoyance	sorcerer_wizard3
+	9999	9999	Clairaudience_Clairvoyance	witch3
+	9999	9999	Clenched Fist	sorcerer_wizard8
+	9999	9999	Cloak of Chaos	cleric8_oracle8
+	9999	9999	Clone	sorcerer_wizard8
+	9999	9999	Clone	witch8
+	9999	9999	Cloudkill	sorcerer_wizard5
+	9999	9999	Cloudkill	witch5
+	9999	9999	Cloudkill	magus5
+	9999	9999	Color Spray	sorcerer_wizard1
+	9999	9999	Color Spray	magus1
+	9999	9999	Command	antipaladin1
+	9999	9999	Command	cleric_oracle1
+	9999	9999	Command	inquisitor1
+	9999	9999	Command	witch1
+	9999	9999	Command, Greater	cleric5_oracle5
+	9999	9999	Command, Greater	inquisitor5
+	9999	9999	Command Plants	druid4
+	9999	9999	Command Plants	ranger3
+	9999	9999	Command Undead	sorcerer_wizard2
+	9999	9999	Commune	cleric5_oracle5
+	9999	9999	Commune	inquisitor5
+	9999	9999	Commune with Nature	druid5
+	9999	9999	Commune with Nature	ranger4
+	9999	9999	Comprehend Languages	bard1
+	9999	9999	Comprehend Languages	cleric1_oracle1
+	9999	9999	Comprehend Languages	sorcerer_wizard1
+	9999	9999	Comprehend Languages	witch1
+	9999	9999	Comprehend Languages	inquisitor1
+	9999	9999	Comprehend Languages	alchemist1
+	9999	9999	Cone of Cold	sorcerer_wizard5
+	9999	9999	Cone of Cold	witch6
+	9999	9999	Cone of Cold	magus5
+	9999	9999	Confusion	bard3
+	9999	9999	Confusion	sorcerer_wizard4
+	9999	9999	Confusion	witch4
+	9999	9999	Confusion, Lesser	bard1
+	9999	9999	Consecrate	cleric_oracle2
+	9999	9999	Consecrate	inquisitor2
+	9999	9999	Contact Other Plane	sorcerer_wizard5
+	9999	9999	Contact Other Plane	witch5
+	9999	9999	Contact Other Plane	summoner4
+	9999	9999	Contact Other Plane	alchemist5
+	9999	9999	Contagion	cleric_oracle3
+	9999	9999	Contagion	druid3
+	9999	9999	Contagion	sorcerer_wizard4
+	9999	9999	Contagion	antipaladin3
+	9999	9999	Contingency	sorcerer_wizard6
+	9999	9999	Continual Flame	cleric3_oracle3
+	9999	9999	Continual Flame	sorcerer_wizard2
+	9999	9999	Continual Flame	inquisitor3
+	9999	9999	Control Plants	druid8
+	9999	9999	Control Undead	sorcerer_wizard7
+	9999	9999	Control Water	cleric4_oracle4
+	9999	9999	Control Water	druid4
+	9999	9999	Control Water	sorcerer_wizard6
+	9999	9999	Control Weather	cleric_oracle7
+	9999	9999	Control Weather	druid7
+	9999	9999	Control Weather	sorcerer_wizard7
+	9999	9999	Control Weather	witch7
+	9999	9999	Control Winds	druid5
+	9999	9999	Create Food and Water	cleric3_oracle3
+	9999	9999	Create Undead	cleric6_oracle6
+	9999	9999	Create Undead	sorcerer_wizard6
+	9999	9999	Create Greater Undead	cleric8_oracle8
+	9999	9999	Create Greater Undead	sorcerer_wizard8
+	9999	9999	Create Water	cleric0_oracle0
+	9999	9999	Create Water	druid0
+	9999	9999	Create Water	paladin1
+	9999	9999	Create Water	inquisitor0
+	9999	9999	Creeping Doom	druid7
+	9999	9999	Creeping Doom	summoner5
+	9999	9999	Crushing Despair	bard3
+	9999	9999	Crushing Despair	sorcerer_wizard4
+	9999	9999	Crushing Despair	witch4
+	9999	9999	Crushing Hand	sorcerer_wizard9
+	9999	9999	Cure Light Wounds	bard1
+	9999	9999	Cure Light Wounds	cleric_oracle1
+	9999	9999	Cure Light Wounds	druid1
+	9999	9999	Cure Light Wounds	paladin1
+	9999	9999	Cure Light Wounds	ranger2
+	9999	9999	Cure Light Wounds	witch1
+	9999	9999	Cure Light Wounds	inquisitor1
+	9999	9999	Cure Light Wounds	alchemist1
+	9999	9999	Cure Critical Wounds	bard4
+	9999	9999	Cure Critical Wounds	cleric_oracle4
+	9999	9999	Cure Critical Wounds	druid5
+	9999	9999	Cure Critical Wounds	witch5
+	9999	9999	Cure Critical Wounds	inquisitor4
+	9999	9999	Cure Critical Wounds	alchemist4
+	9999	9999	Cure Light Wounds, Mass	bard5
+	9999	9999	Cure Light Wounds, Mass	cleric5_oracle5
+	9999	9999	Cure Light Wounds, Mass	druid6
+	9999	9999	Cure Light Wounds, Mass	witch6
+	9999	9999	Cure Light Wounds, Mass	inquisitor5
+	9999	9999	Cure Critical Wounds, Mass	cleric8_oracle8
+	9999	9999	Cure Critical Wounds, Mass	druid9
+	9999	9999	Cure Critical Wounds, Mass	witch9
+	9999	9999	Cure Moderate Wounds	bard2
+	9999	9999	Cure Moderate Wounds	cleric_oracle2
+	9999	9999	Cure Moderate Wounds	druid3
+	9999	9999	Cure Moderate Wounds	paladin3
+	9999	9999	Cure Moderate Wounds	ranger3
+	9999	9999	Cure Moderate Wounds	witch2
+	9999	9999	Cure Moderate Wounds	inquisitor2
+	9999	9999	Cure Moderate Wounds	alchemist2
+	9999	9999	Cure Moderate Wounds, Mass	bard6
+	9999	9999	Cure Moderate Wounds, Mass	cleric6_oracle6
+	9999	9999	Cure Moderate Wounds, Mass	druid7
+	9999	9999	Cure Moderate Wounds, Mass	witch7
+	9999	9999	Cure Moderate Wounds, Mass	inquisitor6
+	9999	9999	Cure Serious Wounds	bard3
+	9999	9999	Cure Serious Wounds	cleric_oracle3
+	9999	9999	Cure Serious Wounds	druid4
+	9999	9999	Cure Serious Wounds	paladin4
+	9999	9999	Cure Serious Wounds	ranger4
+	9999	9999	Cure Serious Wounds	witch4
+	9999	9999	Cure Serious Wounds	inquisitor3
+	9999	9999	Cure Serious Wounds	alchemist3
+	9999	9999	Cure Serious Wounds, Mass	cleric7_oracle7
+	9999	9999	Cure Serious Wounds, Mass	druid8
+	9999	9999	Cure Serious Wounds, Mass	witch8
+	9999	9999	Curse Water	cleric1_oracle1
+	9999	9999	Curse Water	inquisitor1
+	9999	9999	Curse Water	antipaladin1
+	9999	9999	Dancing Lights	bard0
+	9999	9999	Dancing Lights	sorcerer_wizard0
+	9999	9999	Dancing Lights	witch0
+	9999	9999	Dancing Lights	magus0
+	9999	9999	Darkness	bard2
+	9999	9999	Darkness	cleric_oracle2
+	9999	9999	Darkness	sorcerer_wizard2
+	9999	9999	Darkness	inquisitor2
+	9999	9999	Darkness	antipaladin2
+	9999	9999	Darkness	magus2
+	9999	9999	Darkvision	ranger3
+	9999	9999	Darkvision	sorcerer_wizard2
+	9999	9999	Darkvision	alchemist2
+	9999	9999	Darkvision	antipaladin2
+	9999	9999	Daylight	bard3
+	9999	9999	Daylight	cleric_oracle3
+	9999	9999	Daylight	druid3
+	9999	9999	Daylight	paladin3
+	9999	9999	Daylight	sorcerer_wizard3
+	9999	9999	Daylight	inquisitor3
+	9999	9999	Daylight	magus3
+	9999	9999	Daze	bard0
+	9999	9999	Daze	sorcerer_wizard0
+	9999	9999	Daze	witch0
+	9999	9999	Daze	summoner0
+	9999	9999	Daze	inquisitor0
+	9999	9999	Daze	magus0
+	9999	9999	Daze Monster	bard2
+	9999	9999	Daze Monster	sorcerer_wizard2
+	9999	9999	Daze Monster	summoner1
+	9999	9999	Daze Monster	witch2
+	9999	9999	Death Knell	cleric_oracle2
+	9999	9999	Death Knell	inquisitor2
+	9999	9999	Death Knell	witch2
+	9999	9999	Death Knell	antipaladin1
+	9999	9999	Death Ward	cleric4_oracle4
+	9999	9999	Death Ward	druid5
+	9999	9999	Death Ward	paladin4
+	9999	9999	Death Ward	witch4
+	9999	9999	Death Ward	inquisitor4
+	9999	9999	Death Ward	alchemist4
+	9999	9999	Deathwatch	cleric1_oracle1
+	9999	9999	Deeper Darkness	cleric3_oracle3
+	9999	9999	Deep Slumber	bard3
+	9999	9999	Deep Slumber	sorcerer_wizard3
+	9999	9999	Deep Slumber	witch3
+	9999	9999	Delayed Blast Fireball	sorcerer_wizard7
+	9999	9999	Delay Poison	bard2
+	9999	9999	Delay Poison	cleric2_oracle2
+	9999	9999	Delay Poison	druid2
+	9999	9999	Delay Poison	paladin2
+	9999	9999	Delay Poison	ranger1
+	9999	9999	Delay Poison	alchemist2
+	9999	9999	Delay Poison	witch2
+	9999	9999	Delay Poison	inquisitor2
+	9999	9999	Demand	sorcerer_wizard8
+	9999	9999	Demand	witch8
+	9999	9999	Desecrate	cleric_oracle2
+	9999	9999	Desecrate	inquisitor2
+	9999	9999	Desecrate	antipaladin2
+	9999	9999	Destruction	cleric7_oracle7
+	9999	9999	Destruction	witch8
+	9999	9999	Detect Animals or Plants	druid1
+	9999	9999	Detect Animals or Plants	ranger1
+	9999	9999	Detect Chaos	cleric1_oracle1
+	9999	9999	Detect Chaos	inquisitor1
+	9999	9999	Detect Evil	cleric1_oracle1
+	9999	9999	Detect Evil	inquisitor1
+	9999	9999	Detect Good	cleric1_oracle1
+	9999	9999	Detect Good	inquisitor1
+	9999	9999	Detect Law	cleric1_oracle1
+	9999	9999	Detect Law	inquisitor1
+	9999	9999	Detect Magic	bard0
+	9999	9999	Detect Magic	cleric0_oracle0
+	9999	9999	Detect Magic	druid0
+	9999	9999	Detect Magic	sorcerer_wizard0
+	9999	9999	Detect Magic	summoner0
+	9999	9999	Detect Magic	witch0
+	9999	9999	Detect Magic	inquisitor0
+	9999	9999	Detect Magic	magus0
+	9999	9999	Detect Poison	cleric0_oracle0
+	9999	9999	Detect Poison	druid0
+	9999	9999	Detect Poison	paladin1
+	9999	9999	Detect Poison	ranger1
+	9999	9999	Detect Poison	sorcerer_wizard0
+	9999	9999	Detect Scrying	bard4
+	9999	9999	Detect Scrying	sorcerer_wizard4
+	9999	9999	Detect Scrying	witch4
+	9999	9999	Detect Scrying	inquisitor4
+	9999	9999	Detect Secret Doors	alchemist1
+	9999	9999	Detect Secret Doors	bard1
+	9999	9999	Detect Secret Doors	sorcerer_wizard1
+	9999	9999	Detect Secret Doors	witch1
+	9999	9999	Detect Snares and Pits	druid1
+	9999	9999	Detect Snares and Pits	ranger1
+	9999	9999	Detect Thoughts	bard2
+	9999	9999	Detect Thoughts	sorcerer_wizard2
+	9999	9999	Detect Thoughts	alchemist2
+	9999	9999	Detect Thoughts	summoner2
+	9999	9999	Detect Thoughts	witch2
+	9999	9999	Detect Thoughts	inquisitor2
+	9999	9999	Detect Undead	cleric1_oracle1
+	9999	9999	Detect Undead	paladin1
+	9999	9999	Detect Undead	sorcerer_wizard1
+	9999	9999	Detect Undead	alchemist1
+	9999	9999	Detect Undead	inquisitor1
+	9999	9999	Detect Undead	alchemist1
+	9999	9999	Detect Undead	inquisitor1
+	9999	9999	Dictum	cleric_oracle7
+	9999	9999	Dictum	inquisitor6
+	9999	9999	Dimensional Anchor	cleric4_oracle4
+	9999	9999	Dimensional Anchor	sorcerer_wizard4
+	9999	9999	Dimensional Anchor	summoner3
+	9999	9999	Dimensional Anchor	inquisitor3
+	9999	9999	Dimensional Lock	cleric8_oracle8
+	9999	9999	Dimensional Lock	sorcerer_wizard8
+	9999	9999	Dimensional Lock	summoner6
+	9999	9999	Dimension Door	bard4
+	9999	9999	Dimension Door	sorcerer_wizard4
+	9999	9999	Dimension Door	summoner3
+	9999	9999	Dimension Door	witch4
+	9999	9999	Dimension Door	magus4
+	9999	9999	Diminish Plants	druid3
+	9999	9999	Diminish Plants	ranger3
+	9999	9999	Discern Lies	cleric4_oracle4
+	9999	9999	Discern Lies	paladin3
+	9999	9999	Discern Lies	alchemist4
+	9999	9999	Discern Lies	witch4
+	9999	9999	Discern Lies	inquisitor4
+	9999	9999	Discern Lies	alchemist4
+	9999	9999	Discern Lies	witch4
+	9999	9999	Discern Lies	inquisitor4
+	9999	9999	Discern Location	cleric8_oracle8
+	9999	9999	Discern Location	sorcerer_wizard8
+	9999	9999	Discern Location	summoner6
+	9999	9999	Discern Location	witch8
+	9999	9999	Disguise Self	bard1
+	9999	9999	Disguise Self	sorcerer_wizard1
+	9999	9999	Disguise Self	alchemist1
+	9999	9999	Disguise Self	inquisitor1
+	9999	9999	Disguise Self	antipaladin1
+	9999	9999	Disintegrate	sorcerer_wizard6
+	9999	9999	Disintegrate	magus6
+	9999	9999	Dismissal	cleric4_oracle4
+	9999	9999	Dismissal	sorcerer_wizard5
+	9999	9999	Dismissal	summoner4
+	9999	9999	Dismissal	inquisitor4
+	9999	9999	Dispel Chaos	cleric5_oracle5
+	9999	9999	Dispel Chaos	paladin4
+	9999	9999	Dispel Chaos	inquisitor5
+	9999	9999	Dispel Evil	cleric5_oracle5
+	9999	9999	Dispel Evil	paladin4
+	9999	9999	Dispel Evil	inquisitor5
+	9999	9999	Dispel Good	cleric5_oracle5
+	9999	9999	Dispel Good	inquisitor5
+	9999	9999	Dispel Good	antipaladin4
+	9999	9999	Dispel Law	cleric5_oracle5
+	9999	9999	Dispel Law	inquisitor5
+	9999	9999	Dispel Law	antipaladin4
+	9999	9999	Dispel Magic	bard3
+	9999	9999	Dispel Magic	cleric_oracle3
+	9999	9999	Dispel Magic	druid4
+	9999	9999	Dispel Magic	paladin3
+	9999	9999	Dispel Magic	sorcerer_wizard3
+	9999	9999	Dispel Magic	summoner3
+	9999	9999	Dispel Magic	witch3
+	9999	9999	Dispel Magic	inquisitor3
+	9999	9999	Dispel Magic	antipaladin3
+	9999	9999	Dispel Magic	magus3
+	9999	9999	Dispel Magic, Greater	bard5
+	9999	9999	Dispel Magic, Greater	cleric6_oracle6
+	9999	9999	Dispel Magic, Greater	druid6
+	9999	9999	Dispel Magic, Greater	sorcerer_wizard6
+	9999	9999	Dispel Magic, Greater	witch6
+	9999	9999	Dispel Magic, Greater	inquisitor6
+	9999	9999	Dispel Magic, Greater	summoner5
+	9999	9999	Dispel Magic, Greater	magus6
+	9999	9999	Displacement	bard3
+	9999	9999	Displacement	sorcerer_wizard3
+	9999	9999	Displacement	alchemist3
+	9999	9999	Displacement	summoner3
+	9999	9999	Displacement	magus3
+	9999	9999	Disrupting Weapon	cleric5_oracle5
+	9999	9999	Disrupting Weapon	inquisitor5
+	9999	9999	Disrupt Undead	sorcerer_wizard0
+	9999	9999	Disrupt Undead	inquisitor0
+	9999	9999	Disrupt Undead	magus0
+	9999	9999	Divination	cleric4_oracle4
+	9999	9999	Divination	witch4
+	9999	9999	Divination	inquisitor4
+	9999	9999	Divine Favor	cleric_oracle1
+	9999	9999	Divine Favor	paladin1
+	9999	9999	Divine Favor	inquisitor1
+	9999	9999	Divine Power	cleric4_oracle4
+	9999	9999	Divine Power	inquisitor4
+	9999	9999	Dominate Animal	druid3
+	9999	9999	Dominate Monster	sorcerer_wizard9
+	9999	9999	Dominate Monster	summoner6
+	9999	9999	Dominate Monster	witch9
+	9999	9999	Dominate Person	bard4
+	9999	9999	Dominate Person	sorcerer_wizard5
+	9999	9999	Dominate Person	witch5
+	9999	9999	Doom	antipaladin1
+	9999	9999	Doom	cleric_oracle1
+	9999	9999	Doom	inquisitor1
+	9999	9999	Dream	bard5
+	9999	9999	Dream	sorcerer_wizard5
+	9999	9999	Dream	alchemist5
+	9999	9999	Eagle's Splendor	bard2
+	9999	9999	Eagle's Splendor	cleric2_oracle2
+	9999	9999	Eagle's Splendor	paladin2
+	9999	9999	Eagle's Splendor	sorcerer_wizard2
+	9999	9999	Eagle's Splendor	alchemist2
+	9999	9999	Eagle's Splendor	summoner2
+	9999	9999	Eagle's Splendor	antipaladin2
+	9999	9999	Eagle's Splendor, Mass	bard6
+	9999	9999	Eagle's Splendor, Mass	cleric6_oracle6
+	9999	9999	Eagle's Splendor, Mass	sorcerer_wizard6
+	9999	9999	Eagle's Splendor, Mass	summoner4
+	9999	9999	Earthquake	cleric_oracle8
+	9999	9999	Earthquake	druid8
+	9999	9999	Elemental Body I	sorcerer_wizard4
+	9999	9999	Elemental Body I	alchemist4
+	9999	9999	Elemental Body I	magus4
+	9999	9999	Elemental Body II	sorcerer_wizard5
+	9999	9999	Elemental Body II	alchemist5
+	9999	9999	Elemental Body II	magus5
+	9999	9999	Elemental Body III	sorcerer_wizard6
+	9999	9999	Elemental Body III	alchemist6
+	9999	9999	Elemental Body III	magus6
+	9999	9999	Elemental Body IV	sorcerer_wizard7
+	9999	9999	Elemental Swarm	druid9
+	9999	9999	Elemental Swarm	witch9
+	9999	9999	Endure Elements	cleric_oracle1
+	9999	9999	Endure Elements	druid1
+	9999	9999	Endure Elements	paladin1
+	9999	9999	Endure Elements	ranger1
+	9999	9999	Endure Elements	sorcerer_wizard1
+	9999	9999	Endure Elements	alchemist1
+	9999	9999	Endure Elements	summoner1
+	9999	9999	Energy Drain	cleric9_oracle9
+	9999	9999	Energy Drain	sorcerer_wizard9
+	9999	9999	Enervation	sorcerer_wizard4
+	9999	9999	Enervation	witch4
+	9999	9999	Enlarge Person	sorcerer_wizard1
+	9999	9999	Enlarge Person	alchemist1
+	9999	9999	Enlarge Person	summoner1
+	9999	9999	Enlarge Person	witch1
+	9999	9999	Enlarge Person	magus1
+	9999	9999	Enlarge Person, Mass	sorcerer_wizard4
+	9999	9999	Enlarge Person, Mass	summoner3
+	9999	9999	Entangle	druid1
+	9999	9999	Entangle	ranger1
+	9999	9999	Enthrall	bard2
+	9999	9999	Enthrall	cleric2_oracle2
+	9999	9999	Enthrall	witch2
+	9999	9999	Enthrall	inquisitor2
+	9999	9999	Entropic Shield	cleric_oracle1
+	9999	9999	Erase	bard1
+	9999	9999	Erase	sorcerer_wizard1
+	9999	9999	Ethereal Jaunt	cleric7_oracle7
+	9999	9999	Ethereal Jaunt	sorcerer_wizard7
+	9999	9999	Etherealness	cleric9_oracle9
+	9999	9999	Etherealness	sorcerer_wizard9
+	9999	9999	Expeditious Retreat	bard1
+	9999	9999	Expeditious Retreat	sorcerer_wizard1
+	9999	9999	Expeditious Retreat	alchemist1
+	9999	9999	Expeditious Retreat	summoner1
+	9999	9999	Expeditious Retreat	inquisitor1
+	9999	9999	Expeditious Retreat	magus1
+	9999	9999	Explosive Runes	sorcerer_wizard3
+	9999	9999	Eyebite	bard6
+	9999	9999	Eyebite	sorcerer_wizard6
+	9999	9999	Eyebite	alchemist6
+	9999	9999	Eyebite	witch6
+	9999	9999	Fabricate	sorcerer_wizard5
+	9999	9999	Faerie Fire	druid1
+	9999	9999	False Life	sorcerer_wizard2
+	9999	9999	False Life	alchemist2
+	9999	9999	False Life	witch2
+	9999	9999	False Vision	bard5
+	9999	9999	False Vision	sorcerer_wizard5
+	9999	9999	Feather Fall	bard1
+	9999	9999	Feather Fall	sorcerer_wizard1
+	9999	9999	Feather Fall	summoner1
+	9999	9999	Feather Fall	magus1
+	9999	9999	Feeblemind	sorcerer_wizard5
+	9999	9999	Feeblemind	witch5
+	9999	9999	Find the Path	bard6
+	9999	9999	Find the Path	cleric6_oracle6
+	9999	9999	Find the Path	druid6
+	9999	9999	Find the Path	witch6
+	9999	9999	Find the Path	inquisitor6
+	9999	9999	Find Traps	cleric2_oracle2
+	9999	9999	Find Traps	witch2
+	9999	9999	Find Traps	inquisitor2
+	9999	9999	Finger Of Death	druid8
+	9999	9999	Finger Of Death	sorcerer_wizard7
+	9999	9999	Fire Shield	sorcerer_wizard4
+	9999	9999	Fire Shield	alchemist4
+	9999	9999	Fire Shield	summoner3
+	9999	9999	Fire Shield	magus4
+	9999	9999	Fire Seeds	druid6
+	9999	9999	Fire Storm	cleric_oracle8
+	9999	9999	Fire Storm	druid7
+	9999	9999	Fire Trap	druid2
+	9999	9999	Fire Trap	sorcerer_wizard4
+	9999	9999	Fireball	sorcerer_wizard3
+	9999	9999	Fireball	magus3
+	9999	9999	Flame Arrow	sorcerer_wizard3
+	9999	9999	Flame Arrow	magus3
+	9999	9999	Flame Blade	druid2
+	9999	9999	Flame Strike	cleric_oracle5
+	9999	9999	Flame Strike	druid4
+	9999	9999	Flame Strike	inquisitor5
+	9999	9999	Flaming Sphere	druid2
+	9999	9999	Flaming Sphere	sorcerer_wizard2
+	9999	9999	Flaming Sphere	magus2
+	9999	9999	Flare	bard0
+	9999	9999	Flare	druid0
+	9999	9999	Flare	sorcerer_wizard0
+	9999	9999	Flare	magus0
+	9999	9999	Flesh to Stone	sorcerer_wizard6
+	9999	9999	Flesh to Stone	witch6
+	9999	9999	Flesh to Stone	magus6
+	9999	9999	Floating Disk	sorcerer_wizard1
+	9999	9999	Floating Disk	magus1
+	9999	9999	Fly	sorcerer_wizard3
+	9999	9999	Fly	alchemist3
+	9999	9999	Fly	summoner3
+	9999	9999	Fly	witch3
+	9999	9999	Fly	magus3
+	9999	9999	Fog Cloud	druid2
+	9999	9999	Fog Cloud	magus2
+	9999	9999	Fog Cloud	sorcerer_wizard2
+	9999	9999	Fog Cloud	witch2
+	9999	9999	Forbiddance	cleric6_oracle6
+	9999	9999	Forbiddance	inquisitor6
+	9999	9999	Forcecage	sorcerer_wizard7
+	9999	9999	Forceful Hand	sorcerer_wizard6
+	9999	9999	Forceful Hand	magus6
+	9999	9999	Foresight	druid9
+	9999	9999	Foresight	sorcerer_wizard9
+	9999	9999	Foresight	witch9
+	9999	9999	Form of the Dragon I	sorcerer_wizard6
+	9999	9999	Form of the Dragon I	alchemist6
+	9999	9999	Form of the Dragon I	magus6
+	9999	9999	Form of the Dragon II	sorcerer_wizard7
+	9999	9999	Form of the Dragon III	sorcerer_wizard8
+	9999	9999	Fox's Cunning	bard2
+	9999	9999	Fox's Cunning	sorcerer_wizard2
+	9999	9999	Fox's Cunning	alchemist2
+	9999	9999	Fox's Cunning	summoner2
+	9999	9999	Fox's Cunning, Mass	bard6
+	9999	9999	Fox's Cunning, Mass	sorcerer_wizard6
+	9999	9999	Fox's Cunning, Mass	summoner4
+	9999	9999	Freedom	sorcerer_wizard9
+	9999	9999	Freedom of Movement	bard4
+	9999	9999	Freedom of Movement	cleric4_oracle4
+	9999	9999	Freedom of Movement	druid4
+	9999	9999	Freedom of Movement	ranger4
+	9999	9999	Freedom of Movement	alchemist4
+	9999	9999	Freedom of Movement	inquisitor4
+	9999	9999	Freedom of Movement	alchemist4
+	9999	9999	Freedom of Movement	inquisitor4
+	9999	9999	Freezing Sphere	sorcerer_wizard6
+	9999	9999	Freezing Sphere	magus6
+	9999	9999	Gaseous Form	bard3
+	9999	9999	Gaseous Form	sorcerer_wizard3
+	9999	9999	Gaseous Form	alchemist3
+	9999	9999	Gaseous Form	magus3
+	9999	9999	Gate	cleric9_oracle9
+	9999	9999	Gate	sorcerer_wizard9
+	9999	9999	Geas_Quest	bard6
+	9999	9999	Geas_Quest	cleric6_oracle6
+	9999	9999	Geas_Quest	sorcerer_wizard6
+	9999	9999	Geas_Quest	inquisitor5
+	9999	9999	Geas_Quest	witch6
+	9999	9999	Geas, Lesser	bard3
+	9999	9999	Geas, Lesser	sorcerer_wizard4
+	9999	9999	Geas, Lesser	witch4
+	9999	9999	Geas, Lesser	inquisitor4
+	9999	9999	Gentle Repose	cleric2_oracle2
+	9999	9999	Gentle Repose	sorcerer_wizard3
+	9999	9999	Gentle Repose	witch2
+	9999	9999	Ghost Sound	bard0
+	9999	9999	Ghost Sound	sorcerer_wizard0
+	9999	9999	Ghost Sound	magus0
+	9999	9999	Ghoul touch	sorcerer_wizard2
+	9999	9999	Giant Form I	sorcerer_wizard7
+	9999	9999	Giant Form I	alchemist6
+	9999	9999	Giant Form II	sorcerer_wizard8
+	9999	9999	Giant Vermin	cleric4_oracle4
+	9999	9999	Giant Vermin	druid4
+	9999	9999	Glibness	bard3
+	9999	9999	Glitterdust	bard2
+	9999	9999	Glitterdust	sorcerer_wizard2
+	9999	9999	Glitterdust	summoner2
+	9999	9999	Glitterdust	witch2
+	9999	9999	Glitterdust	magus2
+	9999	9999	Globe of Invulnerability, Lesser	sorcerer_wizard4
+	9999	9999	Globe Of Invulnerability	sorcerer_wizard6
+	9999	9999	Glyph Of Warding	cleric_oracle3
+	9999	9999	Glyph of Warding, Greater	cleric6_oracle6
+	9999	9999	Goodberry	druid1
+	9999	9999	Good Hope	bard3
+	9999	9999	Grasping Hand	sorcerer_wizard7
+	9999	9999	Grease	bard1
+	9999	9999	Grease	sorcerer_wizard1
+	9999	9999	Grease	summoner1
+	9999	9999	Grease	magus1
+	9999	9999	Guards and Wards	sorcerer_wizard6
+	9999	9999	Guards and Wards	witch6
+	9999	9999	Guidance	cleric0_oracle0
+	9999	9999	Guidance	druid0
+	9999	9999	Guidance	summoner0
+	9999	9999	Guidance	witch0
+	9999	9999	Guidance	inquisitor0
+	9999	9999	Guidance	summoner0
+	9999	9999	Guidance	witch0
+	9999	9999	Guidance	inquisitor0
+	9999	9999	Gust Of Wind	druid2
+	9999	9999	Gust Of Wind	sorcerer_wizard2
+	9999	9999	Gust Of Wind	magus2
+	9999	9999	Hallow	cleric5_oracle5
+	9999	9999	Hallow	druid5
+	9999	9999	Hallow	inquisitor5
+	9999	9999	Hallucinatory Terrain	bard4
+	9999	9999	Hallucinatory Terrain	sorcerer_wizard4
+	9999	9999	Halt Undead	sorcerer_wizard3
+	9999	9999	Halt Undead	inquisitor3
+	9999	9999	Harm	cleric_oracle6
+	9999	9999	Harm	witch7
+	9999	9999	Harm	inquisitor6
+	9999	9999	Haste	alchemist3
+	9999	9999	Haste	bard3
+	9999	9999	Haste	magus3
+	9999	9999	Haste	sorcerer_wizard3
+	9999	9999	Haste	summoner2
+	9999	9999	Heal	cleric_oracle6
+	9999	9999	Heal	druid7
+	9999	9999	Heal	alchemist6
+	9999	9999	Heal	witch7
+	9999	9999	Heal	inquisitor6
+	9999	9999	Heal, Mass	cleric9_oracle9
+	9999	9999	Heal Mount	paladin3
+	9999	9999	Heat Metal	druid2
+	9999	9999	Helping Hand	cleric3_oracle3
+	9999	9999	Heroes' Feast	bard6
+	9999	9999	Heroes' Feast	cleric_oracle6
+	9999	9999	Heroes' Feast	inquisitor6
+	9999	9999	Heroism	bard2
+	9999	9999	Heroism	sorcerer_wizard3
+	9999	9999	Heroism	alchemist3
+	9999	9999	Heroism	summoner3
+	9999	9999	Heroism	witch3
+	9999	9999	Heroism	inquisitor3
+	9999	9999	Heroism, Greater	bard5
+	9999	9999	Heroism, Greater	sorcerer_wizard6
+	9999	9999	Heroism, Greater	summoner5
+	9999	9999	Heroism, Greater	witch6
+	9999	9999	Hide from Animals	druid1
+	9999	9999	Hide from Animals	ranger1
+	9999	9999	Hide from Undead	cleric1_oracle1
+	9999	9999	Hide from Undead	inquisitor1
+	9999	9999	Hideous Laughter	bard1
+	9999	9999	Hideous Laughter	sorcerer_wizard2
+	9999	9999	Hold Person	bard2
+	9999	9999	Hold Person	cleric2_oracle2
+	9999	9999	Hold Person	sorcerer_wizard3
+	9999	9999	Hold Person	witch2
+	9999	9999	Hold Person	inquisitor2
+	9999	9999	Hold Person	antipaladin2
+	9999	9999	Hold Monster	bard4
+	9999	9999	Hold Monster	sorcerer_wizard5
+	9999	9999	Hold Monster	summoner4
+	9999	9999	Hold Monster	witch5
+	9999	9999	Hold Monster	inquisitor4
+	9999	9999	Hold Monster	summoner4
+	9999	9999	Hold Monster	witch5
+	9999	9999	Hold Monster	inquisitor4
+	9999	9999	Hold Monster, Mass	sorcerer_wizard9
+	9999	9999	Hold Monster, Mass	witch9
+	9999	9999	Hold Person, Mass	sorcerer_wizard7
+	9999	9999	Hold Person, Mass	witch7
+	9999	9999	Hold Portal	sorcerer_wizard1
+	9999	9999	Holy Aura	cleric8_oracle8
+	9999	9999	Holy Smite	cleric_oracle4
+	9999	9999	Holy Smite	inquisitor4
+	9999	9999	Holy Sword	paladin4
+	9999	9999	Holy Word	cleric_oracle7
+	9999	9999	Holy Word	inquisitor6
+	9999	9999	Horrid Wilting	sorcerer_wizard8
+	9999	9999	Horrid Wilting	witch8
+	9999	9999	Hypnotic Pattern	bard2
+	9999	9999	Hypnotic Pattern	sorcerer_wizard2
+	9999	9999	Hypnotism	bard1
+	9999	9999	Hypnotism	sorcerer_wizard1
+	9999	9999	Hypnotism	witch1
+	9999	9999	Ice Storm	druid4
+	9999	9999	Ice Storm	sorcerer_wizard4
+	9999	9999	Ice Storm	witch4
+	9999	9999	Ice Storm	magus4
+	9999	9999	Identify	bard1
+	9999	9999	Identify	sorcerer_wizard1
+	9999	9999	Identify	alchemist1
+	9999	9999	Identify	summoner1
+	9999	9999	Identify	witch1
+	9999	9999	Identify	alchemist1
+	9999	9999	Identify	summoner1
+	9999	9999	Identify	witch1
+	9999	9999	Illusory Script	bard3
+	9999	9999	Illusory Script	sorcerer_wizard3
+	9999	9999	Illusory Wall	sorcerer_wizard4
+	9999	9999	Imbue with Spell Ability	cleric4_oracle4
+	9999	9999	Implosion	cleric9_oracle9
+	9999	9999	Imprisonment	sorcerer_wizard9
+	9999	9999	Incendiary Cloud	sorcerer_wizard8
+	9999	9999	Incendiary Cloud	summoner6
+	9999	9999	Inflict Light Wounds	antipaladin1
+	9999	9999	Inflict Light Wounds	cleric_oracle1
+	9999	9999	Inflict Light Wounds	inquisitor1
+	9999	9999	Inflict Light Wounds	witch1
+	9999	9999	Inflict Critical Wounds	cleric_oracle4
+	9999	9999	Inflict Critical Wounds	witch5
+	9999	9999	Inflict Critical Wounds	inquisitor4
+	9999	9999	Inflict Critical Wounds, Mass	cleric8_oracle8
+	9999	9999	Inflict Critical Wounds, Mass	witch9
+	9999	9999	Inflict Light Wounds, Mass	cleric5_oracle5
+	9999	9999	Inflict Light Wounds, Mass	witch6
+	9999	9999	Inflict Light Wounds, Mass	inquisitor5
+	9999	9999	Inflict Moderate Wounds	antipaladin3
+	9999	9999	Inflict Moderate Wounds	cleric_oracle2
+	9999	9999	Inflict Moderate Wounds	inquisitor2
+	9999	9999	Inflict Moderate Wounds	witch2
+	9999	9999	Inflict Moderate Wounds, Mass	cleric6_oracle6
+	9999	9999	Inflict Moderate Wounds, Mass	witch7
+	9999	9999	Inflict Moderate Wounds, Mass	inquisitor6
+	9999	9999	Inflict Serious Wounds	cleric_oracle3
+	9999	9999	Inflict Serious Wounds	witch4
+	9999	9999	Inflict Serious Wounds	inquisitor3
+	9999	9999	Inflict Serious Wounds	antipaladin4
+	9999	9999	Inflict Serious Wounds, Mass	cleric7_oracle7
+	9999	9999	Inflict Serious Wounds, Mass	witch8
+	9999	9999	Insanity	sorcerer_wizard7
+	9999	9999	Insanity	witch7
+	9999	9999	Interposing Hand	sorcerer_wizard5
+	9999	9999	Interposing Hand	magus5
+	9999	9999	Invisibility	bard2
+	9999	9999	Invisibility	sorcerer_wizard2
+	9999	9999	Invisibility	alchemist2
+	9999	9999	Invisibility	summoner2
+	9999	9999	Invisibility	inquisitor2
+	9999	9999	Invisibility	antipaladin2
+	9999	9999	Invisibility	magus2
+	9999	9999	Invisibility, Greater	bard4
+	9999	9999	Invisibility, Greater	sorcerer_wizard4
+	9999	9999	Invisibility, Greater	alchemist4
+	9999	9999	Invisibility, Greater	summoner3
+	9999	9999	Invisibility, Greater	inquisitor4
+	9999	9999	Invisibility, Greater	antipaladin4
+	9999	9999	Invisibility, Mass	sorcerer_wizard7
+	9999	9999	Invisibility, Mass	summoner5
+	9999	9999	Invisibility Purge	cleric3_oracle3
+	9999	9999	Invisibility Purge	inquisitor3
+	9999	9999	Invisibility Sphere	bard3
+	9999	9999	Invisibility Sphere	sorcerer_wizard3
+	9999	9999	Iron Body	sorcerer_wizard8
+	9999	9999	Ironwood	druid6
+	9999	9999	Irresistible Dance	bard6
+	9999	9999	Irresistible Dance	sorcerer_wizard8
+	9999	9999	Irresistible Dance	witch8
+	9999	9999	Jump	druid1
+	9999	9999	Jump	ranger1
+	9999	9999	Jump	sorcerer_wizard1
+	9999	9999	Jump	alchemist1
+	9999	9999	Jump	summoner1
+	9999	9999	Jump	alchemist1
+	9999	9999	Jump	summoner1
+	9999	9999	Jump	magus1
+	9999	9999	Keen Edge	sorcerer_wizard3
+	9999	9999	Keen Edge	inquisitor3
+	9999	9999	Keen Edge	magus3
+	9999	9999	Knock	sorcerer_wizard2
+	9999	9999	Knock	inquisitor2
+	9999	9999	Know Direction	bard0
+	9999	9999	Know Direction	druid0
+	9999	9999	Legend Lore	bard4
+	9999	9999	Legend Lore	sorcerer_wizard6
+	9999	9999	Legend Lore	witch6
+	9999	9999	Legend Lore	inquisitor6
+	9999	9999	Levitate	sorcerer_wizard2
+	9999	9999	Levitate	alchemist2
+	9999	9999	Levitate	summoner2
+	9999	9999	Levitate	witch2
+	9999	9999	Levitate	magus2
+	9999	9999	Light	bard0
+	9999	9999	Light	cleric_oracle0
+	9999	9999	Light	druid0
+	9999	9999	Light	sorcerer_wizard0
+	9999	9999	Lightning Bolt	sorcerer_wizard3
+	9999	9999	Lightning Bolt	witch3
+	9999	9999	Lightning Bolt	magus3
+	9999	9999	Limited Wish	sorcerer_wizard7
+	9999	9999	Liveoak	druid6
+	9999	9999	Locate Object	bard2
+	9999	9999	Locate Object	cleric3_oracle3
+	9999	9999	Locate Object	sorcerer_wizard2
+	9999	9999	Locate Object	witch3
+	9999	9999	Locate Object	inquisitor3
+	9999	9999	Locate Creature	bard4
+	9999	9999	Locate Creature	sorcerer_wizard4
+	9999	9999	Locate Creature	summoner3
+	9999	9999	Locate Creature	witch4
+	9999	9999	Longstrider	druid1
+	9999	9999	Longstrider	ranger1
+	9999	9999	Lullaby	bard0
+	9999	9999	Mage Armor	sorcerer_wizard1
+	9999	9999	Mage Armor	summoner1
+	9999	9999	Mage Armor	witch1
+	9999	9999	Mage Hand	bard0
+	9999	9999	Mage Hand	sorcerer_wizard0
+	9999	9999	Mage Hand	summoner0
+	9999	9999	Mage Hand	magus0
+	9999	9999	Mage's Disjunction	sorcerer_wizard9
+	9999	9999	Mage's Faithful Hound	sorcerer_wizard5
+	9999	9999	Mage's Faithful Hound	summoner4
+	9999	9999	Mage's Lucubration	wizard6
+	9999	9999	Mage's Magnificent Mansion	sorcerer_wizard7
+	9999	9999	Mage's Private Sanctum	sorcerer_wizard5
+	9999	9999	Mage's Sword	sorcerer_wizard7
+	9999	9999	Magic Aura	bard1
+	9999	9999	Magic Aura	sorcerer_wizard1
+	9999	9999	Magic Circle against Evil	cleric3_oracle3
+	9999	9999	Magic Circle against Evil	paladin3
+	9999	9999	Magic Circle against Evil	sorcerer_wizard3
+	9999	9999	Magic Circle against Evil	summoner3
+	9999	9999	Magic Circle against Evil	inquisitor3
+	9999	9999	Magic Circle against Evil	summoner3
+	9999	9999	Magic Circle against Evil	inquisitor3
+	9999	9999	Magic Circle against Chaos	cleric3_oracle3
+	9999	9999	Magic Circle against Chaos	paladin3
+	9999	9999	Magic Circle against Chaos	sorcerer_wizard3
+	9999	9999	Magic Circle against Chaos	summoner3
+	9999	9999	Magic Circle against Chaos	inquisitor3
+	9999	9999	Magic Circle against Chaos	summoner3
+	9999	9999	Magic Circle against Chaos	inquisitor3
+	9999	9999	Magic Circle against Good	cleric3_oracle3
+	9999	9999	Magic Circle against Good	sorcerer_wizard3
+	9999	9999	Magic Circle against Good	summoner3
+	9999	9999	Magic Circle against Good	inquisitor3
+	9999	9999	Magic Circle against Good	antipaladin3
+	9999	9999	Magic Circle against Law	cleric3_oracle3
+	9999	9999	Magic Circle against Law	sorcerer_wizard3
+	9999	9999	Magic Circle against Law	summoner3
+	9999	9999	Magic Circle against Law	inquisitor3
+	9999	9999	Magic Circle against Law	antipaladin3
+	9999	9999	Magic Fang	druid1
+	9999	9999	Magic Fang	ranger1
+	9999	9999	Magic Fang	summoner1
+	9999	9999	Magic Fang, Greater	druid3
+	9999	9999	Magic Fang, Greater	ranger3
+	9999	9999	Magic Fang, Greater	summoner3
+	9999	9999	Magic Jar	sorcerer_wizard5
+	9999	9999	Magic Jar	alchemist5
+	9999	9999	Magic Jar	summoner4
+	9999	9999	Magic Jar	witch5
+	9999	9999	Magic Missile	sorcerer_wizard1
+	9999	9999	Magic Missile	magus1
+	9999	9999	Magic Mouth	bard1
+	9999	9999	Magic Mouth	sorcerer_wizard2
+	9999	9999	Magic Mouth	summoner1
+	9999	9999	Magic Stone	cleric_oracle1
+	9999	9999	Magic Stone	druid1
+	9999	9999	Magic Vestment	cleric_oracle3
+	9999	9999	Magic Vestment	inquisitor3
+	9999	9999	Magic Weapon	cleric1_oracle1
+	9999	9999	Magic Weapon	paladin1
+	9999	9999	Magic Weapon	sorcerer_wizard1
+	9999	9999	Magic Weapon	inquisitor1
+	9999	9999	Magic Weapon	antipaladin1
+	9999	9999	Magic Weapon	magus1
+	9999	9999	Magic Weapon, Greater	cleric_oracle4
+	9999	9999	Magic Weapon, Greater	paladin3
+	9999	9999	Magic Weapon, Greater	sorcerer_wizard3
+	9999	9999	Magic Weapon, Greater	inquisitor3
+	9999	9999	Magic Weapon, Greater	antipaladin3
+	9999	9999	Magic Weapon, Greater	magus3
+	9999	9999	Minor Creation	sorcerer_wizard4
+	9999	9999	Minor Creation	summoner3
+	9999	9999	Minor Creation	witch4
+	9999	9999	Major Creation	sorcerer_wizard5
+	9999	9999	Major Creation	summoner4
+	9999	9999	Major Creation	witch5
+	9999	9999	Major Image	bard3
+	9999	9999	Major Image	sorcerer_wizard3
+	9999	9999	Major Image	magus3
+	9999	9999	Make Whole	cleric_oracle2
+	9999	9999	Make Whole	sorcerer_wizard2
+	9999	9999	Mark of Justice	cleric5_oracle5
+	9999	9999	Mark of Justice	paladin4
+	9999	9999	Mark of Justice	witch5
+	9999	9999	Mark of Justice	inquisitor5
+	9999	9999	Maze	sorcerer_wizard8
+	9999	9999	Maze	summoner6
+	9999	9999	Maze	witch8
+	9999	9999	Meld into Stone	cleric3_oracle3
+	9999	9999	Meld into Stone	druid3
+	9999	9999	Mending	bard0
+	9999	9999	Mending	cleric0_oracle0
+	9999	9999	Mending	druid0
+	9999	9999	Mending	sorcerer_wizard0
+	9999	9999	Mending	summoner0
+	9999	9999	Mending	witch0
+	9999	9999	Mending	summoner0
+	9999	9999	Mending	witch0
+	9999	9999	Message	bard0
+	9999	9999	Message	sorcerer_wizard0
+	9999	9999	Message	summoner0
+	9999	9999	Message	witch0
+	9999	9999	Meteor Swarm	sorcerer_wizard9
+	9999	9999	Mind Blank	sorcerer_wizard8
+	9999	9999	Mind Blank	witch8
+	9999	9999	Mind Fog	bard5
+	9999	9999	Mind Fog	sorcerer_wizard5
+	9999	9999	Mind Fog	witch5
+	9999	9999	Minor Image	bard2
+	9999	9999	Minor Image	sorcerer_wizard2
+	9999	9999	Minor Image	magus2
+	9999	9999	Miracle	cleric9_oracle9
+	9999	9999	Mirage Arcana	bard5
+	9999	9999	Mirage Arcana	sorcerer_wizard5
+	9999	9999	Mirror Image	bard2
+	9999	9999	Mirror Image	sorcerer_wizard2
+	9999	9999	Mirror Image	magus2
+	9999	9999	Misdirection	bard2
+	9999	9999	Misdirection	sorcerer_wizard2
+	9999	9999	Misdirection	summoner2
+	9999	9999	Mislead	bard5
+	9999	9999	Mislead	sorcerer_wizard6
+	9999	9999	Mislead	alchemist6
+	9999	9999	Mislead	magus6
+	9999	9999	Mnemonic Enhancer	wizard4
+	9999	9999	Modify Memory	bard4
+	9999	9999	Moment of Prescience	sorcerer_wizard8
+	9999	9999	Moment of Prescience	witch8
+	9999	9999	Mount	sorcerer_wizard1
+	9999	9999	Mount	summoner1
+	9999	9999	Mount	witch1
+	9999	9999	Mount	magus1
+	9999	9999	Move Earth	druid6
+	9999	9999	Move Earth	sorcerer_wizard6
+	9999	9999	Neutralize Poison	bard4
+	9999	9999	Neutralize Poison	cleric4_oracle4
+	9999	9999	Neutralize Poison	druid3
+	9999	9999	Neutralize Poison	paladin4
+	9999	9999	Neutralize Poison	ranger3
+	9999	9999	Neutralize Poison	alchemist4
+	9999	9999	Neutralize Poison	witch4
+	9999	9999	Neutralize Poison	inquisitor4
+	9999	9999	Nightmare	bard5
+	9999	9999	Nightmare	sorcerer_wizard5
+	9999	9999	Nightmare	alchemist5
+	9999	9999	Nondetection	ranger4
+	9999	9999	Nondetection	sorcerer_wizard3
+	9999	9999	Nondetection	alchemist3
+	9999	9999	Nondetection	summoner3
+	9999	9999	Nondetection	inquisitor3
+	9999	9999	Nondetection	antipaladin3
+	9999	9999	Obscure Object	bard1
+	9999	9999	Obscure Object	cleric3_oracle3
+	9999	9999	Obscure Object	sorcerer_wizard2
+	9999	9999	Obscure Object	inquisitor3
+	9999	9999	Obscuring Mist	cleric1_oracle1
+	9999	9999	Obscuring Mist	druid1
+	9999	9999	Obscuring Mist	sorcerer_wizard1
+	9999	9999	Obscuring Mist	witch1
+	9999	9999	Obscuring Mist	magus1
+	9999	9999	Open_Close	bard0
+	9999	9999	Open_Close	sorcerer_wizard0
+	9999	9999	Open_Close	summoner0
+	9999	9999	Open_Close	magus0
+	9999	9999	Order's Wrath	cleric_oracle4
+	9999	9999	Order's Wrath	inquisitor4
+	9999	9999	Overland Flight	sorcerer_wizard5
+	9999	9999	Overland Flight	alchemist5
+	9999	9999	Overland Flight	summoner4
+	9999	9999	Overland Flight	witch5
+	9999	9999	Overland Flight	magus5
+	9999	9999	Owl's Wisdom	cleric2_oracle2
+	9999	9999	Owl's Wisdom	druid2
+	9999	9999	Owl's Wisdom	paladin2
+	9999	9999	Owl's Wisdom	ranger2
+	9999	9999	Owl's Wisdom	sorcerer_wizard2
+	9999	9999	Owl's Wisdom	alchemist2
+	9999	9999	Owl's Wisdom	summoner2
+	9999	9999	Owl's Wisdom, Mass	cleric6_oracle6
+	9999	9999	Owl's Wisdom, Mass	druid6
+	9999	9999	Owl's Wisdom, Mass	sorcerer_wizard6
+	9999	9999	Owl's Wisdom, Mass	summoner4
+	9999	9999	Passwall	sorcerer_wizard5
+	9999	9999	Pass without Trace	druid1
+	9999	9999	Pass without Trace	ranger1
+	9999	9999	Permanency	sorcerer_wizard5
+	9999	9999	Permanent Image	bard6
+	9999	9999	Permanent Image	sorcerer_wizard6
+	9999	9999	Persistent Image	bard5
+	9999	9999	Persistent Image	sorcerer_wizard5
+	9999	9999	Phantasmal Killer	sorcerer_wizard4
+	9999	9999	Phantasmal Killer	witch4
+	9999	9999	Phantasmal Killer	magus4
+	9999	9999	Phantom Steed	bard3
+	9999	9999	Phantom Steed	sorcerer_wizard3
+	9999	9999	Phantom Steed	summoner2
+	9999	9999	Phantom Steed	magus3
+	9999	9999	Phantom Trap	sorcerer_wizard2
+	9999	9999	Phase Door	sorcerer_wizard7
+	9999	9999	Phase Door	witch7
+	9999	9999	Planar Ally, Lesser	cleric4_oracle4
+	9999	9999	Planar Ally	cleric6_oracle6
+	9999	9999	Planar Ally, Greater	cleric8_oracle8
+	9999	9999	Planar Binding, Lesser	sorcerer_wizard5
+	9999	9999	Planar Binding, Lesser	summoner4
+	9999	9999	Planar Binding	sorcerer_wizard6
+	9999	9999	Planar Binding	summoner5
+	9999	9999	Planar Binding, Greater	sorcerer_wizard8
+	9999	9999	Planar Binding, Greater	summoner6
+	9999	9999	Plane Shift	cleric_oracle5
+	9999	9999	Plane Shift	sorcerer_wizard7
+	9999	9999	Plane Shift	summoner5
+	9999	9999	Plane Shift	witch7
+	9999	9999	Plant Growth	druid3
+	9999	9999	Plant Growth	ranger3
+	9999	9999	Plant Shape I	sorcerer_wizard5
+	9999	9999	Plant Shape I	alchemist5
+	9999	9999	Plant Shape II	sorcerer_wizard6
+	9999	9999	Plant Shape II	alchemist6
+	9999	9999	Plant Shape III	sorcerer_wizard7
+	9999	9999	Poison	cleric4_oracle4
+	9999	9999	Poison	druid3
+	9999	9999	Poison	witch4
+	9999	9999	Poison	antipaladin4
+	9999	9999	Polar Ray	sorcerer_wizard8
+	9999	9999	Polymorph	sorcerer_wizard5
+	9999	9999	Polymorph	alchemist5
+	9999	9999	Polymorph, Greater	sorcerer_wizard7
+	9999	9999	Polymorph Any Object	sorcerer_wizard8
+	9999	9999	Power Word Blind	sorcerer_wizard7
+	9999	9999	Power Word Blind	witch7
+	9999	9999	Power Word Kill	sorcerer_wizard9
+	9999	9999	Power Word Kill	witch9
+	9999	9999	Power Word Stun	sorcerer_wizard8
+	9999	9999	Power Word Stun	witch8
+	9999	9999	Prayer	cleric_oracle3
+	9999	9999	Prayer	paladin3
+	9999	9999	Prayer	inquisitor3
+	9999	9999	Prestidigitation	bard0
+	9999	9999	Prestidigitation	sorcerer_wizard0
+	9999	9999	Prismatic Sphere	sorcerer_wizard9
+	9999	9999	Prismatic Spray	sorcerer_wizard7
+	9999	9999	Prismatic Wall	sorcerer_wizard8
+	9999	9999	Prying Eyes, Greater	sorcerer_wizard8
+	9999	9999	Prying Eyes, Greater	witch8
+	9999	9999	Produce Flame	druid1
+	9999	9999	Programmed Image	bard6
+	9999	9999	Programmed Image	sorcerer_wizard6
+	9999	9999	Project Image	bard6
+	9999	9999	Project Image	sorcerer_wizard7
+	9999	9999	Protection From Arrows	sorcerer_wizard2
+	9999	9999	Protection From Arrows	alchemist2
+	9999	9999	Protection From Arrows	summoner2
+	9999	9999	Protection From Chaos	cleric_oracle1
+	9999	9999	Protection From Chaos	paladin1
+	9999	9999	Protection From Chaos	sorcerer_wizard1
+	9999	9999	Protection From Chaos	inquisitor1
+	9999	9999	Protection From Chaos	summoner1
+	9999	9999	Protection From Evil	cleric_oracle1
+	9999	9999	Protection From Evil	inquisitor1
+	9999	9999	Protection From Evil	paladin1
+	9999	9999	Protection From Evil	sorcerer_wizard1
+	9999	9999	Protection From Evil	summoner1
+	9999	9999	Protection From Good	cleric_oracle1
+	9999	9999	Protection From Good	sorcerer_wizard1
+	9999	9999	Protection From Good	inquisitor1
+	9999	9999	Protection From Good	summoner1
+	9999	9999	Protection From Good	antipaladin1
+	9999	9999	Protection From Law	cleric_oracle1
+	9999	9999	Protection From Law	sorcerer_wizard1
+	9999	9999	Protection From Law	inquisitor1
+	9999	9999	Protection From Law	summoner1
+	9999	9999	Protection From Law	antipaladin1
+	9999	9999	Protection from Spells	sorcerer_wizard8
+	9999	9999	Protection from Spells	summoner6
+	9999	9999	Purify Food and Drink	cleric0_oracle0
+	9999	9999	Purify Food and Drink	druid0
+	9999	9999	Pyrotechnics	bard2
+	9999	9999	Pyrotechnics	sorcerer_wizard2
+	9999	9999	Pyrotechnics	magus2
+	9999	9999	Quench	druid3
+	9999	9999	Rage	bard2
+	9999	9999	Rage	sorcerer_wizard3
+	9999	9999	Rage	alchemist3
+	9999	9999	Rage	summoner3
+	9999	9999	Rage	witch3
+	9999	9999	Rage	alchemist3
+	9999	9999	Rage	summoner3
+	9999	9999	Rage	witch3
+	9999	9999	Rainbow Pattern	bard4
+	9999	9999	Rainbow Pattern	sorcerer_wizard4
+	9999	9999	Raise Dead	cleric5_oracle5
+	9999	9999	Raise Dead	witch6
+	9999	9999	Ray Of Enfeeblement	sorcerer_wizard1
+	9999	9999	Ray Of Enfeeblement	witch1
+	9999	9999	Ray Of Enfeeblement	magus1
+	9999	9999	Ray of Exhaustion	sorcerer_wizard3
+	9999	9999	Ray of Exhaustion	witch3
+	9999	9999	Ray of Exhaustion	magus3
+	9999	9999	Ray of Frost	sorcerer_wizard0
+	9999	9999	Ray of Frost	magus0
+	9999	9999	Read Magic	bard0
+	9999	9999	Read Magic	cleric0_oracle0
+	9999	9999	Read Magic	druid0
+	9999	9999	Read Magic	paladin1
+	9999	9999	Read Magic	ranger1
+	9999	9999	Read Magic	sorcerer_wizard0
+	9999	9999	Read Magic	summoner0
+	9999	9999	Read Magic	witch0
+	9999	9999	Read Magic	inquisitor0
+	9999	9999	Read Magic	magus0
+	9999	9999	Reduce Person	sorcerer_wizard1
+	9999	9999	Reduce Person	alchemist1
+	9999	9999	Reduce Person	summoner1
+	9999	9999	Reduce Person	witch1
+	9999	9999	Reduce Person	magus1
+	9999	9999	Reduce Animal	druid2
+	9999	9999	Reduce Animal	ranger3
+	9999	9999	Reduce Person, Mass	sorcerer_wizard4
+	9999	9999	Reduce Person, Mass	summoner3
+	9999	9999	Refuge	cleric7_oracle7
+	9999	9999	Refuge	sorcerer_wizard9
+	9999	9999	Refuge	witch9
+	9999	9999	Regenerate	cleric_oracle7
+	9999	9999	Regenerate	druid9
+	9999	9999	Regenerate	witch7
+	9999	9999	Reincarnate	druid4
+	9999	9999	Reincarnate	witch5
+	9999	9999	Remove Blindness_Deafness	cleric3_oracle3
+	9999	9999	Remove Blindness_Deafness	paladin3
+	9999	9999	Remove Blindness_Deafness	alchemist3
+	9999	9999	Remove Blindness_Deafness	witch3
+	9999	9999	Remove Curse	bard3
+	9999	9999	Remove Curse	cleric3_oracle3
+	9999	9999	Remove Curse	paladin3
+	9999	9999	Remove Curse	sorcerer_wizard4
+	9999	9999	Remove Curse	alchemist3
+	9999	9999	Remove Curse	witch3
+	9999	9999	Remove Curse	inquisitor3
+	9999	9999	Remove Disease	cleric3_oracle3
+	9999	9999	Remove Disease	druid3
+	9999	9999	Remove Disease	ranger3
+	9999	9999	Remove Disease	alchemist3
+	9999	9999	Remove Disease	witch3
+	9999	9999	Remove Disease	inquisitor3
+	9999	9999	Remove Disease	alchemist3
+	9999	9999	Remove Disease	witch3
+	9999	9999	Remove Disease	inquisitor3
+	9999	9999	Remove Fear	bard1
+	9999	9999	Remove Fear	cleric1_oracle1
+	9999	9999	Remove Fear	inquisitor1
+	9999	9999	Remove Paralysis	cleric2_oracle2
+	9999	9999	Remove Paralysis	paladin2
+	9999	9999	Remove Paralysis	inquisitor2
+	9999	9999	Repel Metal or Stone	druid8
+	9999	9999	Repel Vermin	bard4
+	9999	9999	Repel Vermin	cleric4_oracle4
+	9999	9999	Repel Vermin	druid4
+	9999	9999	Repel Vermin	ranger3
+	9999	9999	Repel Wood	druid6
+	9999	9999	Repulsion	cleric7_oracle7
+	9999	9999	Repulsion	sorcerer_wizard6
+	9999	9999	Repulsion	summoner5
+	9999	9999	Repulsion	inquisitor6
+	9999	9999	Resilient Sphere	sorcerer_wizard4
+	9999	9999	Resistance	bard0
+	9999	9999	Resistance	cleric0_oracle0
+	9999	9999	Resistance	druid0
+	9999	9999	Resistance	paladin1
+	9999	9999	Resistance	sorcerer_wizard0
+	9999	9999	Resistance	summoner0
+	9999	9999	Resistance	witch0
+	9999	9999	Resistance	inquisitor0
+	9999	9999	Resist Energy	alchemist2
+	9999	9999	Resist Energy	cleric_oracle2
+	9999	9999	Resist Energy	druid2
+	9999	9999	Resist Energy	inquisitor2
+	9999	9999	Resist Energy	paladin2
+	9999	9999	Resist Energy	ranger1
+	9999	9999	Resist Energy	sorcerer_wizard2
+	9999	9999	Resist Energy	summoner2
+	9999	9999	Restoration	cleric_oracle4
+	9999	9999	Restoration	paladin4
+	9999	9999	Restoration, Greater	cleric7_oracle7
+	9999	9999	Restoration, Lesser	cleric2_oracle2
+	9999	9999	Restoration, Lesser	druid2
+	9999	9999	Restoration, Lesser	paladin1
+	9999	9999	Restoration, Lesser	inquisitor2
+	9999	9999	Restoration, Lesser	alchemist2
+	9999	9999	Resurrection	cleric7_oracle7
+	9999	9999	Resurrection	witch8
+	9999	9999	Reverse Gravity	druid8
+	9999	9999	Reverse Gravity	sorcerer_wizard7
+	9999	9999	Righteous Might	cleric5_oracle5
+	9999	9999	Righteous Might	inquisitor5
+	9999	9999	Rope Trick	sorcerer_wizard2
+	9999	9999	Rusting Grasp	druid4
+	9999	9999	Sanctuary	cleric_oracle1
+	9999	9999	Sanctuary	inquisitor1
+	9999	9999	Scare	bard2
+	9999	9999	Scare	sorcerer_wizard2
+	9999	9999	Scare	witch2
+	9999	9999	Scare	antipaladin2
+	9999	9999	Scintillating Pattern	sorcerer_wizard8
+	9999	9999	Scorching Ray	sorcerer_wizard2
+	9999	9999	Scorching Ray	magus2
+	9999	9999	Screen	sorcerer_wizard8
+	9999	9999	Scrying	bard3
+	9999	9999	Scrying	cleric5_oracle5
+	9999	9999	Scrying	druid4
+	9999	9999	Scrying	sorcerer_wizard4
+	9999	9999	Scrying	witch4
+	9999	9999	Scrying, Greater	bard6
+	9999	9999	Scrying, Greater	cleric7_oracle7
+	9999	9999	Scrying, Greater	druid7
+	9999	9999	Scrying, Greater	sorcerer_wizard7
+	9999	9999	Scrying, Greater	witch7
+	9999	9999	Sculpt Sound	bard3
+	9999	9999	Searing Light	cleric_oracle3
+	9999	9999	Searing Light	inquisitor3
+	9999	9999	Secret Chest	sorcerer_wizard5
+	9999	9999	Secret Chest	witch5
+	9999	9999	Secret Page	bard3
+	9999	9999	Secret Page	sorcerer_wizard3
+	9999	9999	Secure Shelter	bard4
+	9999	9999	Secure Shelter	sorcerer_wizard4
+	9999	9999	Secure Shelter	witch4
+	9999	9999	See Invisibility	bard3
+	9999	9999	See Invisibility	sorcerer_wizard2
+	9999	9999	See Invisibility	alchemist2
+	9999	9999	See Invisibility	summoner2
+	9999	9999	See Invisibility	witch2
+	9999	9999	See Invisibility	inquisitor2
+	9999	9999	Seeming	bard5
+	9999	9999	Seeming	sorcerer_wizard5
+	9999	9999	Sending	cleric4_oracle4
+	9999	9999	Sending	sorcerer_wizard5
+	9999	9999	Sending	alchemist5
+	9999	9999	Sending	summoner4
+	9999	9999	Sending	inquisitor4
+	9999	9999	Sepia Snake Sigil	bard3
+	9999	9999	Sepia Snake Sigil	sorcerer_wizard3
+	9999	9999	Sepia Snake Sigil	witch3
+	9999	9999	Sequester	sorcerer_wizard7
+	9999	9999	Sequester	summoner5
+	9999	9999	Shadow Conjuration	bard4
+	9999	9999	Shadow Conjuration	sorcerer_wizard4
+	9999	9999	Shades	sorcerer_wizard9
+	9999	9999	Shadow Conjuration, Greater	sorcerer_wizard7
+	9999	9999	Shadow Evocation	bard5
+	9999	9999	Shadow Evocation	sorcerer_wizard5
+	9999	9999	Shadow Evocation, Greater	sorcerer_wizard8
+	9999	9999	Shadow Walk	bard5
+	9999	9999	Shadow Walk	sorcerer_wizard6
+	9999	9999	Shadow Walk	alchemist6
+	9999	9999	Shambler	druid9
+	9999	9999	Shapechange	druid9
+	9999	9999	Shapechange	sorcerer_wizard9
+	9999	9999	Shatter	bard2
+	9999	9999	Shatter	cleric_oracle2
+	9999	9999	Shatter	sorcerer_wizard2
+	9999	9999	Shatter	magus2
+	9999	9999	Shield	sorcerer_wizard1
+	9999	9999	Shield	alchemist1
+	9999	9999	Shield	summoner1
+	9999	9999	Shield	magus1
+	9999	9999	Shield Of Faith	cleric_oracle1
+	9999	9999	Shield Of Faith	inquisitor1
+	9999	9999	Shield of Law	cleric8_oracle8
+	9999	9999	Shield Other	cleric_oracle2
+	9999	9999	Shield Other	paladin2
+	9999	9999	Shield Other	inquisitor2
+	9999	9999	Shillelagh	druid1
+	9999	9999	Shrink Item	sorcerer_wizard3
+	9999	9999	Shocking Grasp	sorcerer_wizard1
+	9999	9999	Shocking Grasp	magus1
+	9999	9999	Shout	bard4
+	9999	9999	Shout	sorcerer_wizard4
+	9999	9999	Shout	magus4
+	9999	9999	Shout, Greater	bard6
+	9999	9999	Shout, Greater	sorcerer_wizard8
+	9999	9999	Silence	bard2
+	9999	9999	Silence	cleric_oracle2
+	9999	9999	Silence	inquisitor2
+	9999	9999	Silence	antipaladin2
+	9999	9999	Silent Image	bard1
+	9999	9999	Silent Image	sorcerer_wizard1
+	9999	9999	Silent Image	magus1
+	9999	9999	Simulacrum	sorcerer_wizard7
+	9999	9999	Simulacrum	summoner5
+	9999	9999	Slay Living	cleric5_oracle5
+	9999	9999	Slay Living	witch6
+	9999	9999	Slay Living	antipaladin4
+	9999	9999	Sleep	bard1
+	9999	9999	Sleep	sorcerer_wizard1
+	9999	9999	Sleep	witch1
+	9999	9999	Sleet Storm	druid3
+	9999	9999	Sleet Storm	sorcerer_wizard3
+	9999	9999	Sleet Storm	witch3
+	9999	9999	Sleet Storm	magus3
+	9999	9999	Slow	bard3
+	9999	9999	Slow	sorcerer_wizard3
+	9999	9999	Slow	summoner2
+	9999	9999	Slow	magus3
+	9999	9999	Snare	druid3
+	9999	9999	Snare	ranger2
+	9999	9999	Soften Earth and Stone	druid2
+	9999	9999	Solid Fog	sorcerer_wizard4
+	9999	9999	Solid Fog	witch4
+	9999	9999	Solid Fog	magus4
+	9999	9999	Song of Discord	bard5
+	9999	9999	Soul Bind	cleric9_oracle9
+	9999	9999	Soul Bind	sorcerer_wizard9
+	9999	9999	Soul Bind	witch9
+	9999	9999	Sound Burst	bard2
+	9999	9999	Sound Burst	cleric2_oracle2
+	9999	9999	Speak with Animals	bard3
+	9999	9999	Speak with Animals	druid1
+	9999	9999	Speak with Animals	ranger1
+	9999	9999	Speak with Dead	cleric3_oracle3
+	9999	9999	Speak with Dead	witch3
+	9999	9999	Speak with Dead	inquisitor3
+	9999	9999	Speak with Plants	bard4
+	9999	9999	Speak with Plants	druid3
+	9999	9999	Speak with Plants	ranger2
+	9999	9999	Spectral Hand	sorcerer_wizard2
+	9999	9999	Spectral Hand	witch2
+	9999	9999	Spell Immunity	cleric4_oracle4
+	9999	9999	Spell Immunity	alchemist4
+	9999	9999	Spell Immunity	inquisitor4
+	9999	9999	Spell Immunity, Greater	cleric8_oracle8
+	9999	9999	Spell Resistance	cleric5_oracle5
+	9999	9999	Spell Resistance	alchemist5
+	9999	9999	Spell Resistance	inquisitor5
+	9999	9999	Spellstaff	druid6
+	9999	9999	Spell Turning	sorcerer_wizard7
+	9999	9999	Spell Turning	summoner5
+	9999	9999	Spider Climb	druid2
+	9999	9999	Spider Climb	sorcerer_wizard2
+	9999	9999	Spider Climb	alchemist2
+	9999	9999	Spider Climb	summoner2
+	9999	9999	Spider Climb	magus2
+	9999	9999	Spike Growth	druid3
+	9999	9999	Spike Growth	ranger2
+	9999	9999	Spike Stones	druid4
+	9999	9999	Spiritual Weapon	cleric_oracle2
+	9999	9999	Spiritual Weapon	inquisitor2
+	9999	9999	Stabilize	cleric0_oracle0
+	9999	9999	Stabilize	druid0
+	9999	9999	Stabilize	witch0
+	9999	9999	Stabilize	inquisitor0
+	9999	9999	Statue	sorcerer_wizard7
+	9999	9999	Statue	alchemist6
+	9999	9999	Status	cleric2_oracle2
+	9999	9999	Status	witch2
+	9999	9999	Stinking Cloud	magus3
+	9999	9999	Stinking Cloud	sorcerer_wizard3
+	9999	9999	Stinking Cloud	witch3
+	9999	9999	Stone Shape	cleric_oracle3
+	9999	9999	Stone Shape	druid3
+	9999	9999	Stone Shape	sorcerer_wizard4
+	9999	9999	Stoneskin	druid5
+	9999	9999	Stoneskin	sorcerer_wizard4
+	9999	9999	Stoneskin	alchemist4
+	9999	9999	Stoneskin	summoner3
+	9999	9999	Stoneskin	inquisitor4
+	9999	9999	Stoneskin	magus4
+	9999	9999	Stone Tell	druid6
+	9999	9999	Stone to Flesh	sorcerer_wizard6
+	9999	9999	Stone to Flesh	witch6
+	9999	9999	Stone to Flesh	magus6
+	9999	9999	Storm Of Vengeance	cleric_oracle9
+	9999	9999	Storm Of Vengeance	druid9
+	9999	9999	Storm Of Vengeance	witch9
+	9999	9999	Suggestion	bard2
+	9999	9999	Suggestion	sorcerer_wizard3
+	9999	9999	Suggestion	witch3
+	9999	9999	Suggestion, Mass	bard5
+	9999	9999	Suggestion, Mass	sorcerer_wizard6
+	9999	9999	Suggestion, Mass	witch6
+	9999	9999	Summon Instrument	bard0
+	9999	9999	Summon Monster I	bard1
+	9999	9999	Summon Monster I	cleric1_oracle1
+	9999	9999	Summon Monster I	sorcerer_wizard1
+	9999	9999	Summon Monster I	summoner1
+	9999	9999	Summon Monster I	witch1
+	9999	9999	Summon Monster I	antipaladin1
+	9999	9999	Summon Monster II	bard2
+	9999	9999	Summon Monster II	cleric2_oracle2
+	9999	9999	Summon Monster II	sorcerer_wizard2
+	9999	9999	Summon Monster II	summoner2
+	9999	9999	Summon Monster II	witch2
+	9999	9999	Summon Monster II	antipaladin2
+	9999	9999	Summon Monster III	bard3
+	9999	9999	Summon Monster III	cleric3_oracle3
+	9999	9999	Summon Monster III	sorcerer_wizard3
+	9999	9999	Summon Monster III	witch3
+	9999	9999	Summon Monster III	antipaladin3
+	9999	9999	Summon Monster IV	bard4
+	9999	9999	Summon Monster IV	cleric4_oracle4
+	9999	9999	Summon Monster IV	sorcerer_wizard4
+	9999	9999	Summon Monster IV	summoner3
+	9999	9999	Summon Monster IV	witch4
+	9999	9999	Summon Monster IV	antipaladin4
+	9999	9999	Summon Monster V	bard5
+	9999	9999	Summon Monster V	cleric5_oracle5
+	9999	9999	Summon Monster V	sorcerer_wizard5
+	9999	9999	Summon Monster V	summoner4
+	9999	9999	Summon Monster V	witch5
+	9999	9999	Summon Monster VI	bard6
+	9999	9999	Summon Monster VI	cleric6_oracle6
+	9999	9999	Summon Monster VI	sorcerer_wizard6
+	9999	9999	Summon Monster VI	witch6
+	9999	9999	Summon Monster VIII	cleric8_oracle8
+	9999	9999	Summon Monster VIII	sorcerer_wizard8
+	9999	9999	Summon Monster VIII	witch8
+	9999	9999	Summon Monster VIII	summoner6
+	9999	9999	Summon Monster VII	cleric7_oracle7
+	9999	9999	Summon Monster VII	sorcerer_wizard7
+	9999	9999	Summon Monster VII	summoner5
+	9999	9999	Summon Monster VII	witch7
+	9999	9999	Summon Monster IX	cleric9_oracle9
+	9999	9999	Summon Monster IX	sorcerer_wizard9
+	9999	9999	Summon Monster IX	witch9
+	9999	9999	Summon Nature's Ally I	druid1
+	9999	9999	Summon Nature's Ally I	ranger1
+	9999	9999	Summon Nature's Ally II	druid2
+	9999	9999	Summon Nature's Ally II	ranger2
+	9999	9999	Summon Nature's Ally III	druid3
+	9999	9999	Summon Nature's Ally III	ranger3
+	9999	9999	Summon Nature's Ally IV	druid4
+	9999	9999	Summon Nature's Ally IV	ranger4
+	9999	9999	Summon Nature's Ally V	druid5
+	9999	9999	Summon Nature's Ally VI	druid6
+	9999	9999	Summon Nature's Ally VII	druid7
+	9999	9999	Summon Nature's Ally VIII	druid8
+	9999	9999	Summon Nature's Ally IX	druid9
+	9999	9999	Summon Swarm	bard2
+	9999	9999	Summon Swarm	druid2
+	9999	9999	Summon Swarm	sorcerer_wizard2
+	9999	9999	Summon Swarm	summoner2
+	9999	9999	Summon Swarm	witch2
+	9999	9999	Sunbeam	druid7
+	9999	9999	Sunburst	druid8
+	9999	9999	Sunburst	sorcerer_wizard8
+	9999	9999	Symbol of Death	cleric8_oracle8
+	9999	9999	Symbol of Death	sorcerer_wizard8
+	9999	9999	Symbol of Death	witch8
+	9999	9999	Symbol of Fear	cleric6_oracle6
+	9999	9999	Symbol of Fear	sorcerer_wizard6
+	9999	9999	Symbol of Fear	witch6
+	9999	9999	Symbol of Insanity	cleric8_oracle8
+	9999	9999	Symbol of Insanity	sorcerer_wizard8
+	9999	9999	Symbol of Insanity	witch8
+	9999	9999	Symbol of Pain	cleric5_oracle5
+	9999	9999	Symbol of Pain	sorcerer_wizard5
+	9999	9999	Symbol of Pain	witch5
+	9999	9999	Symbol of Persuasion	cleric6_oracle6
+	9999	9999	Symbol of Persuasion	sorcerer_wizard6
+	9999	9999	Symbol of Persuasion	witch6
+	9999	9999	Symbol of Sleep	cleric5_oracle5
+	9999	9999	Symbol of Sleep	sorcerer_wizard5
+	9999	9999	Symbol of Sleep	witch5
+	9999	9999	Symbol of Stunning	cleric7_oracle7
+	9999	9999	Symbol of Stunning	sorcerer_wizard7
+	9999	9999	Symbol of Stunning	witch7
+	9999	9999	Symbol of Weakness	cleric7_oracle7
+	9999	9999	Symbol of Weakness	sorcerer_wizard7
+	9999	9999	Symbol of Weakness	witch7
+	9999	9999	Sympathetic Vibration	bard6
+	9999	9999	Sympathy	druid9
+	9999	9999	Sympathy	sorcerer_wizard8
+	9999	9999	Sympathy	summoner6
+	9999	9999	Sympathy	witch8
+	9999	9999	Telekinesis	sorcerer_wizard5
+	9999	9999	Telekinesis	magus5
+	9999	9999	Telekinetic Sphere	sorcerer_wizard8
+	9999	9999	Telepathic Bond	sorcerer_wizard5
+	9999	9999	Telepathic Bond	witch5
+	9999	9999	Telepathic Bond	inquisitor5
+	9999	9999	Teleport	sorcerer_wizard5
+	9999	9999	Teleport	summoner4
+	9999	9999	Teleport	witch5
+	9999	9999	Teleport	magus5
+	9999	9999	Teleport, Greater	sorcerer_wizard7
+	9999	9999	Teleport, Greater	summoner5
+	9999	9999	Teleport, Greater	witch7
+	9999	9999	Teleport Object	sorcerer_wizard7
+	9999	9999	Teleport Object	witch7
+	9999	9999	Teleportation Circle	sorcerer_wizard9
+	9999	9999	Teleportation Circle	summoner6
+	9999	9999	Teleportation Circle	witch9
+	9999	9999	Temporal Stasis	sorcerer_wizard8
+	9999	9999	Time Stop	sorcerer_wizard9
+	9999	9999	Tiny Hut	bard3
+	9999	9999	Tiny Hut	sorcerer_wizard3
+	9999	9999	Tongues	bard2
+	9999	9999	Tongues	cleric4_oracle4
+	9999	9999	Tongues	sorcerer_wizard3
+	9999	9999	Tongues	alchemist3
+	9999	9999	Tongues	summoner3
+	9999	9999	Tongues	witch3
+	9999	9999	Tongues	inquisitor2
+	9999	9999	Touch of Fatigue	sorcerer_wizard0
+	9999	9999	Touch of Fatigue	witch0
+	9999	9999	Touch of Idiocy	sorcerer_wizard2
+	9999	9999	Touch of Idiocy	witch2
+	9999	9999	Transformation	sorcerer_wizard6
+	9999	9999	Transformation	alchemist6
+	9999	9999	Transformation	witch6
+	9999	9999	Transformation	magus6
+	9999	9999	Transmute Metal to Wood	druid7
+	9999	9999	Transmute Mud to Rock	druid5
+	9999	9999	Transmute Mud to Rock	sorcerer_wizard5
+	9999	9999	Transmute Rock to Mud	druid5
+	9999	9999	Transmute Rock to Mud	sorcerer_wizard5
+	9999	9999	Transport via Plants	druid6
+	9999	9999	Trap the Soul	sorcerer_wizard8
+	9999	9999	Trap the Soul	witch8
+	9999	9999	Tree Shape	druid2
+	9999	9999	Tree Shape	ranger3
+	9999	9999	Tree Stride	druid5
+	9999	9999	Tree Stride	ranger4
+	9999	9999	True Resurrection	cleric9_oracle9
+	9999	9999	True Seeing	cleric5_oracle5
+	9999	9999	True Seeing	druid7
+	9999	9999	True Seeing	sorcerer_wizard6
+	9999	9999	True Seeing	alchemist6
+	9999	9999	True Seeing	summoner5
+	9999	9999	True Seeing	witch6
+	9999	9999	True Seeing	inquisitor5
+	9999	9999	True Seeing	magus6
+	9999	9999	True Strike	sorcerer_wizard1
+	9999	9999	True Strike	alchemist1
+	9999	9999	True Strike	inquisitor1
+	9999	9999	True Strike	magus1
+	9999	9999	Undeath to Death	cleric6_oracle6
+	9999	9999	Undeath to Death	sorcerer_wizard6
+	9999	9999	Undeath to Death	inquisitor6
+	9999	9999	Undetectable Alignment	bard1
+	9999	9999	Undetectable Alignment	cleric2_oracle2
+	9999	9999	Undetectable Alignment	paladin2
+	9999	9999	Undetectable Alignment	alchemist2
+	9999	9999	Undetectable Alignment	inquisitor2
+	9999	9999	Undetectable Alignment	antipaladin2
+	9999	9999	Unhallow	cleric5_oracle5
+	9999	9999	Unhallow	druid5
+	9999	9999	Unhallow	inquisitor5
+	9999	9999	Unholy Aura	cleric8_oracle8
+	9999	9999	Unholy Blight	cleric_oracle4
+	9999	9999	Unholy Blight	inquisitor4
+	9999	9999	Unseen Servant	bard1
+	9999	9999	Unseen Servant	sorcerer_wizard1
+	9999	9999	Unseen Servant	summoner1
+	9999	9999	Unseen Servant	witch1
+	9999	9999	Unseen Servant	magus1
+	9999	9999	Vampiric Touch	sorcerer_wizard3
+	9999	9999	Vampiric Touch	witch3
+	9999	9999	Vampiric Touch	antipaladin3
+	9999	9999	Vampiric Touch	magus3
+	9999	9999	Veil	bard6
+	9999	9999	Veil	sorcerer_wizard6
+	9999	9999	Ventriloquism	bard1
+	9999	9999	Ventriloquism	sorcerer_wizard1
+	9999	9999	Ventriloquism	summoner1
+	9999	9999	Virtue	cleric0_oracle0
+	9999	9999	Virtue	druid0
+	9999	9999	Virtue	paladin1
+	9999	9999	Virtue	inquisitor0
+	9999	9999	Vision	sorcerer_wizard7
+	9999	9999	Vision	witch7
+	9999	9999	Wail of the Banshee	sorcerer_wizard9
+	9999	9999	Wail of the Banshee	witch9
+	9999	9999	Wall Of Fire	druid5
+	9999	9999	Wall Of Fire	sorcerer_wizard4
+	9999	9999	Wall Of Fire	summoner3
+	9999	9999	Wall Of Fire	magus4
+	9999	9999	Wall Of Force	sorcerer_wizard5
+	9999	9999	Wall Of Force	magus5
+	9999	9999	Wall Of Ice	sorcerer_wizard4
+	9999	9999	Wall Of Ice	summoner3
+	9999	9999	Wall Of Ice	magus4
+	9999	9999	Wall of Iron	sorcerer_wizard6
+	9999	9999	Wall of Iron	summoner5
+	9999	9999	Wall of Iron	magus6
+	9999	9999	Wall Of Thorns	druid5
+	9999	9999	Warp Wood	druid2
+	9999	9999	Water Breathing	cleric3_oracle3
+	9999	9999	Water Breathing	druid3
+	9999	9999	Water Breathing	sorcerer_wizard3
+	9999	9999	Water Breathing	alchemist3
+	9999	9999	Water Breathing	summoner3
+	9999	9999	Water Breathing	alchemist3
+	9999	9999	Water Breathing	summoner3
+	9999	9999	Water Breathing	magus3
+	9999	9999	Water Walk	cleric3_oracle3
+	9999	9999	Water Walk	ranger3
+	9999	9999	Water Walk	witch3
+	9999	9999	Waves of Exhaustion	sorcerer_wizard7
+	9999	9999	Waves of Exhaustion	witch7
+	9999	9999	Waves of Fatigue	sorcerer_wizard5
+	9999	9999	Waves of Fatigue	witch5
+	9999	9999	Web	sorcerer_wizard2
+	9999	9999	Web	witch2
+	9999	9999	Web	magus2
+	9999	9999	Weird	sorcerer_wizard9
+	9999	9999	Whirlwind	druid8
+	9999	9999	Whispering Wind	bard2
+	9999	9999	Whispering Wind	sorcerer_wizard2
+	9999	9999	Whispering Wind	inquisitor2
+	9999	9999	Wind Walk	cleric6_oracle6
+	9999	9999	Wind Walk	druid7
+	9999	9999	Wind Walk	alchemist6
+	9999	9999	Wind Wall	cleric3_oracle3
+	9999	9999	Wind Wall	druid3
+	9999	9999	Wind Wall	ranger2
+	9999	9999	Wind Wall	sorcerer_wizard3
+	9999	9999	Wind Wall	summoner2
+	9999	9999	Wind Wall	magus3
+	9999	9999	Wish	sorcerer_wizard9
+	9999	9999	Wood Shape	druid2
+	9999	9999	Word of Recall	cleric6_oracle6
+	9999	9999	Word of Recall	druid8
+	9999	9999	Word Of Chaos	cleric_oracle7
+	9999	9999	Word Of Chaos	inquisitor6
+	9999	9999	Zone of Silence	bard4
+	9999	9999	Zone of Truth	cleric2_oracle2
+	9999	9999	Zone of Truth	paladin2
+	9999	9999	Zone of Truth	witch2
+	9999	9999	Zone of Truth	inquisitor2
+	9999	9999	Wall Of Stone	cleric_oracle5
+	9999	9999	Wall Of Stone	druid6
+	9999	9999	Wall Of Stone	sorcerer_wizard5
+	9999	9999	Wall Of Stone	summoner4
+	9999	9999	Wall Of Stone	magus5
+	9999	9999	Agonize	cleric3_oracle3
+	9999	9999	Agonize	sorcerer_wizard4
+	9999	9999	Hellfire Ray	cleric6_oracle6
+	9999	9999	Hellfire Ray	sorcerer_wizard6
+	9999	9999	Sacrifice	cleric4_oracle4
+	9999	9999	Sacrifice	sorcerer_wizard4
+	9999	9999	Aura of the Unremarkable	bard3
+	9999	9999	Aura of the Unremarkable	sorcerer_wizard4
+	9999	9999	Burning Disarm	cleric_oracle1
+	9999	9999	Burning Disarm	druid1
+	9999	9999	Burning Disarm	sorcerer_wizard1
+	9999	9999	Dirge Of The Victorious Knights	bard6
+	9999	9999	Dweomer Retaliation	sorcerer_wizard3
+	9999	9999	Emergency Force Sphere	sorcerer_wizard4
+	9999	9999	Signifer's Rally	cleric7_oracle7
+	9999	9999	Signifer's Rally	sorcerer_wizard7
+	9999	9999	Twine Double	sorcerer_wizard3
+	9999	9999	Fear	bard3
+	9999	9999	Fear	sorcerer_wizard4
+	9999	9999	Fear	witch4
+	9999	9999	Fear	inquisitor4
+	9999	9999	Fear	antipaladin4
+	9999	9999	Hold Animal	druid2
+	9999	9999	Hold Animal	ranger2
+	9999	9999	Insect Plague	cleric5_oracle5
+	9999	9999	Insect Plague	druid5
+	9999	9999	Insect Plague	summoner4
+	9999	9999	Baleful Polymorph	druid5
+	9999	9999	Baleful Polymorph	sorcerer_wizard5
+	9999	9999	Baleful Polymorph	summoner4
+	9999	9999	Baleful Polymorph	witch5
+	9999	9999	Baleful Polymorph	magus5
+	9999	9999	Prying Eyes	sorcerer_wizard5
+	9999	9999	Prying Eyes	witch5
+	9999	9999	Instant Summons	sorcerer_wizard7
+	9999	9999	Instant Summons	witch7
+	9999	9999	Spellcasting Contract, Lesser	cleric5_oracle5
+	9999	9999	Spellcasting Contract	cleric7_oracle7
+	9999	9999	Spellcasting Contract, Greater	cleric9_oracle9
+	9999	9999	Ancestral Communion	bard2
+	9999	9999	Ancestral Communion	cleric2_oracle2
+	9999	9999	Ancestral Gift	bard4
+	9999	9999	Ancestral Gift	cleric4_oracle4
+	9999	9999	Summon Ancestral Guardian	bard3
+	9999	9999	Summon Ancestral Guardian	cleric3_oracle3
+	9999	9999	See Through Stone	druid4
+	9999	9999	See Through Stone	ranger3
+	9999	9999	Rune of Durability	sorcerer_wizard3
+	9999	9999	Rune of Warding	sorcerer_wizard3
+	9999	9999	Detect Charm	bard1
+	9999	9999	Detect Charm	cleric1_oracle1
+	9999	9999	Detect Charm	paladin1
+	9999	9999	Detect Charm	sorcerer_wizard1
+	9999	9999	Liberating Comand	bard1
+	9999	9999	Liberating Comand	cleric1_oracle1
+	9999	9999	Liberating Comand	druid1
+	9999	9999	Liberating Comand	paladin1
+	9999	9999	Liberating Comand	ranger1
+	9999	9999	Liberating Comand	sorcerer_wizard1
+	9999	9999	Suppres Charms and Compulsions	bard2
+	9999	9999	Suppres Charms and Compulsions	cleric2_oracle2
+	9999	9999	Suppres Charms and Compulsions	paladin2
+	9999	9999	Suppres Charms and Compulsions	sorcerer_wizard2
+	9999	9999	Summon Flight of Eagles	druid6
+	9999	9999	Summon Flight of Eagles	ranger4
+	9999	9999	Summon Flight of Eagles	sorcerer_wizard6
+	9999	9999	Genius Avaricious	cleric6_oracle6
+	9999	9999	Genius Avaricious	sorcerer_wizard6
+	9999	9999	Protection from Energy	cleric3_oracle3
+	9999	9999	Protection from Energy	druid3
+	9999	9999	Protection from Energy	ranger2
+	9999	9999	Protection from Energy	sorcerer_wizard3
+	9999	9999	Protection from Energy	alchemist3
+	9999	9999	Protection from Energy	summoner3
+	9999	9999	Protection from Energy	inquisitor3
+	9999	9999	Tracking Mark	druid1
+	9999	9999	Tracking Mark	cleric1_oracle1
+	9999	9999	Tracking Mark	paladin1
+	9999	9999	Tracking Mark	ranger1
+	9999	9999	Retrieve Item	bard2
+	9999	9999	Retrieve Item	sorcerer_wizard2
+	9999	9999	Spherescry	sorcerer_wizard3
+	9999	9999	Illusory Poison	sorcerer_wizard3
+	9999	9999	Arcane Reinforcement	sorcerer_wizard3
+	9999	9999	Canopic Conversion	cleric9_oracle9
+	9999	9999	Canopic Conversion	sorcerer_wizard9
+	9999	9999	Chastise	bard1
+	9999	9999	Chastise	sorcerer_wizard1
+	9999	9999	Summon Elemental Steed	druid9
+	9999	9999	Hibernate	druid1
+	9999	9999	Mark of Blood	Red Mantis Assassin2
+	9999	9999	Mark of Blood	sorcerer_wizard2
+	9999	9999	Sotto Voce	bard1
+	9999	9999	Sotto Voce	cleric0_oracle0
+	9999	9999	Sotto Voce	sorcerer_wizard0
+	9999	9999	Tomb Legion	cleric8_oracle8
+	9999	9999	Tomb Legion	sorcerer_wizard8
+	9999	9999	Tripvine	bard1
+	9999	9999	Tripvine	druid1
+	9999	9999	Tripvine	sorcerer_wizard1
+	9999	9999	Ape Walk	druid3
+	9999	9999	Ape Walk	ranger2
+	9999	9999	Ape Walk	sorcerer_wizard3
+	9999	9999	Defoliate	druid2
+	9999	9999	Defoliate	ranger1
+	9999	9999	Defoliate	sorcerer_wizard2
+	9999	9999	Heatstroke	druid3
+	9999	9999	Heatstroke	sorcerer_wizard3
+	9999	9999	Swallow Your Fear	bard1
+	9999	9999	Swallow Your Fear	cleric1_oracle1
+	9999	9999	Blood Rage	adept3
+	9999	9999	Blood Rage	bard2
+	9999	9999	Blood Rage	cleric3_oracle3
+	9999	9999	Blood Rage	sorcerer_wizard3
+	9999	9999	Shield the Banner	adept1
+	9999	9999	Shield the Banner	cleric1_oracle1
+	9999	9999	Vigor	adept0
+	9999	9999	Vigor	cleric0_oracle0
+	9999	9999	Absorbing Touch	alchemist3
+	9999	9999	Accelerate Poison	druid2
+	9999	9999	Accelerate Poison	ranger2
+	9999	9999	Accelerate Poison	sorcerer_wizard2
+	9999	9999	Acid Pit	sorcerer_wizard4
+	9999	9999	Acid Pit	summoner4
+	9999	9999	Alchemical Allocation	alchemist2
+	9999	9999	Allfood	ranger2
+	9999	9999	Alter Winds	druid1
+	9999	9999	Alter Winds	sorcerer_wizard1
+	9999	9999	Amplify Elixir	alchemist3
+	9999	9999	Ant Haul	alchemist1
+	9999	9999	Ant Haul	cleric1_oracle1
+	9999	9999	Ant Haul	druid1
+	9999	9999	Ant Haul	ranger1
+	9999	9999	Ant Haul	sorcerer_wizard1
+	9999	9999	Ant Haul	summoner1
+	9999	9999	Aqueous Orb	druid3
+	9999	9999	Aqueous Orb	sorcerer_wizard3
+	9999	9999	Aqueous Orb	summoner3
+	9999	9999	Aqueous Orb	magus3
+	9999	9999	Arcane Concordance	bard3
+	9999	9999	Arrow Eruption	ranger2
+	9999	9999	Arrow Eruption	sorcerer_wizard2
+	9999	9999	Aspect of the Bear	druid2
+	9999	9999	Aspect of the Bear	ranger2
+	9999	9999	Aspect of the Falcon	druid1
+	9999	9999	Aspect of the Falcon	ranger1
+	9999	9999	Aspect of the Stag	druid4
+	9999	9999	Aspect of the Stag	ranger3
+	9999	9999	Aspect of the Wolf	druid5
+	9999	9999	Aspect of the Wolf	ranger4
+	9999	9999	Aura of Greater Courage	paladin2
+	9999	9999	Ball Lightning	druid4
+	9999	9999	Ball Lightning	sorcerer_wizard4
+	9999	9999	Ball Lightning	magus4
+	9999	9999	Banish Seeming	inquisitor3
+	9999	9999	Banish Seeming	witch5
+	9999	9999	Bard's Escape	bard5
+	9999	9999	Beguiling Gift	bard1
+	9999	9999	Beguiling Gift	witch1
+	9999	9999	Bestow Grace	paladin2
+	9999	9999	Blaze of Glory	paladin4
+	9999	9999	Blessing Of Fervor	cleric_oracle4
+	9999	9999	Blessing of the Salamander	druid5
+	9999	9999	Blessing of the Salamander	ranger4
+	9999	9999	Blood Biography	bard2
+	9999	9999	Blood Biography	cleric3_oracle3
+	9999	9999	Blood Biography	inquisitor3
+	9999	9999	Blood Biography	sorcerer_wizard3
+	9999	9999	Bloodhound	alchemist3
+	9999	9999	Bloodhound	inquisitor2
+	9999	9999	Bloodhound	ranger2
+	9999	9999	Bloody Claws	druid4
+	9999	9999	Bloody Claws	ranger3
+	9999	9999	Bomber's Eye	alchemist1
+	9999	9999	Borrow Fortune	oracle3
+	9999	9999	Borrow Skill	bard1
+	9999	9999	Bow Spirit	ranger4
+	9999	9999	Brand	inquisitor0
+	9999	9999	Brand, Greater	inquisitor4
+	9999	9999	Break	sorcerer_wizard1
+	9999	9999	Brilliant Inspiration	bard6
+	9999	9999	Bristle	druid1
+	9999	9999	Burning Gaze	druid2
+	9999	9999	Burning Gaze	sorcerer_wizard2
+	9999	9999	Burning Gaze	witch2
+	9999	9999	Burning Gaze	magus2
+	9999	9999	Burst Bonds	inquisitor1
+	9999	9999	Cacophonous Call	bard2
+	9999	9999	Cacophonous Call, Mass	bard5
+	9999	9999	Calcific Touch	sorcerer_wizard4
+	9999	9999	Call Animal	druid1
+	9999	9999	Call Animal	ranger1
+	9999	9999	Campfire Wall	bard3
+	9999	9999	Campfire Wall	druid2
+	9999	9999	Campfire Wall	ranger2
+	9999	9999	Campfire Wall	sorcerer_wizard3
+	9999	9999	Cast Out	inquisitor3
+	9999	9999	Castigate	inquisitor2
+	9999	9999	Castigate, Mass	inquisitor5
+	9999	9999	Challenge Evil	paladin1
+	9999	9999	Chameleon Stride	ranger2
+	9999	9999	Clashing Rocks	druid9
+	9999	9999	Clashing Rocks	sorcerer_wizard9
+	9999	9999	Cleanse	cleric5_oracle5
+	9999	9999	Cleanse	inquisitor6
+	9999	9999	Cloak of Dreams	bard5
+	9999	9999	Cloak of Dreams	sorcerer_wizard6
+	9999	9999	Cloak of Dreams	witch6
+	9999	9999	Cloak of Shade	druid1
+	9999	9999	Cloak of Shade	ranger1
+	9999	9999	Cloak of Winds	druid3
+	9999	9999	Cloak of Winds	ranger3
+	9999	9999	Cloak of Winds	sorcerer_wizard3
+	9999	9999	Cloak of Winds	magus3
+	9999	9999	Confess	inquisitor2
+	9999	9999	Contagious Flame	sorcerer_wizard6
+	9999	9999	Contagious Flame	magus6
+	9999	9999	Coordinated Effort	bard3
+	9999	9999	Coordinated Effort	inquisitor3
+	9999	9999	Corruption Resistance	antipaladin2
+	9999	9999	Corruption Resistance	inquisitor2
+	9999	9999	Corruption Resistance	paladin2
+	9999	9999	Coward's Lament	inquisitor4
+	9999	9999	Crafter's Curse	sorcerer_wizard1
+	9999	9999	Crafter's Fortune	alchemist1
+	9999	9999	Crafter's Fortune	sorcerer_wizard1
+	9999	9999	Create Pit	sorcerer_wizard2
+	9999	9999	Create Pit	summoner2
+	9999	9999	Create Treasure Map	bard2
+	9999	9999	Create Treasure Map	druid3
+	9999	9999	Create Treasure Map	ranger2
+	9999	9999	Create Treasure Map	sorcerer_wizard2
+	9999	9999	Cup Of Dust	druid3
+	9999	9999	Cup Of Dust	witch3
+	9999	9999	Dancing Lantern	bard1
+	9999	9999	Dancing Lantern	cleric1_oracle1
+	9999	9999	Dancing Lantern	ranger1
+	9999	9999	Dancing Lantern	sorcerer_wizard1
+	9999	9999	Dancing Lantern	witch1
+	9999	9999	Deadly Finale	bard6
+	9999	9999	Deafening Song Bolt	bard5
+	9999	9999	Defile Armor	inquisitor4
+	9999	9999	Defile Armor	antipaladin3
+	9999	9999	Deflection	sorcerer_wizard7
+	9999	9999	Delayed Consumption	alchemist5
+	9999	9999	Denounce	bard4
+	9999	9999	Denounce	inquisitor4
+	9999	9999	Detect Aberration	druid1
+	9999	9999	Detect Aberration	ranger1
+	9999	9999	Detonate	alchemist4
+	9999	9999	Detonate	sorcerer_wizard4
+	9999	9999	Detonate	magus4
+	9999	9999	Devolution	sorcerer_wizard3
+	9999	9999	Devolution	summoner3
+	9999	9999	Discordant Blast	bard4
+	9999	9999	Divine Transfer	paladin3
+	9999	9999	Divine Vessel	oracle8
+	9999	9999	Draconic Reservoir	alchemist3
+	9999	9999	Draconic Reservoir	sorcerer_wizard3
+	9999	9999	Dragon's Breath	alchemist4
+	9999	9999	Dragon's Breath	sorcerer_wizard4
+	9999	9999	Dust Of Twilight	bard2
+	9999	9999	Dust Of Twilight	sorcerer_wizard2
+	9999	9999	Eagle Eye	druid2
+	9999	9999	Eagle Eye	ranger2
+	9999	9999	Elemental Aura	alchemist3
+	9999	9999	Elemental Aura	sorcerer_wizard3
+	9999	9999	Elemental Aura	magus3
+	9999	9999	Elemental Speech	bard3
+	9999	9999	Elemental Speech	cleric3_oracle3
+	9999	9999	Elemental Speech	druid2
+	9999	9999	Elemental Speech	sorcerer_wizard2
+	9999	9999	Elemental Touch	alchemist2
+	9999	9999	Elemental Touch	sorcerer_wizard2
+	9999	9999	Elemental Touch	magus2
+	9999	9999	Elude Time	alchemist5
+	9999	9999	Enemy Hammer	sorcerer_wizard6
+	9999	9999	Enter Image	bard2
+	9999	9999	Enter Image	cleric3_oracle3
+	9999	9999	Enter Image	sorcerer_wizard3
+	9999	9999	Euphoric Tranquility	bard6
+	9999	9999	Euphoric Tranquility	cleric8_oracle8
+	9999	9999	Euphoric Tranquility	druid8
+	9999	9999	Euphoric Tranquility	sorcerer_wizard8
+	9999	9999	Evolution Surge, Lesser	summoner2
+	9999	9999	Evolution Surge	summoner3
+	9999	9999	Evolution Surge, Greater	summoner4
+	9999	9999	Expeditious Excavation	druid1
+	9999	9999	Expeditious Excavation	sorcerer_wizard1
+	9999	9999	Expend	sorcerer_wizard7
+	9999	9999	Feast Of Ashes	druid2
+	9999	9999	Feast Of Ashes	witch2
+	9999	9999	Feather Step	bard1
+	9999	9999	Feather Step	druid1
+	9999	9999	Feather Step	ranger1
+	9999	9999	Feather Step, Mass	bard3
+	9999	9999	Feather Step, Mass	druid3
+	9999	9999	Feather Step, Mass	ranger3
+	9999	9999	Fester	inquisitor3
+	9999	9999	Fester	witch2
+	9999	9999	Fester, Mass	inquisitor6
+	9999	9999	Fester, Mass	witch6
+	9999	9999	Fiery Body	sorcerer_wizard9
+	9999	9999	Fire Breath	alchemist2
+	9999	9999	Fire Breath	sorcerer_wizard2
+	9999	9999	Fire Breath	magus2
+	9999	9999	Fire of Entanglement	paladin2
+	9999	9999	Fire of Judgment	paladin3
+	9999	9999	Fire of Vengeance	paladin4
+	9999	9999	Fire Snake	druid5
+	9999	9999	Fire Snake	sorcerer_wizard5
+	9999	9999	Fire Snake	magus5
+	9999	9999	Firebrand	sorcerer_wizard7
+	9999	9999	Firefall	sorcerer_wizard4
+	9999	9999	Firefall	magus4
+	9999	9999	Flames Of The Faithful	inquisitor2
+	9999	9999	Flare Burst	bard1
+	9999	9999	Flare Burst	druid1
+	9999	9999	Flare Burst	sorcerer_wizard1
+	9999	9999	Flare Burst	magus1
+	9999	9999	Fluid Form	alchemist4
+	9999	9999	Fluid Form	sorcerer_wizard6
+	9999	9999	Fly, Mass	sorcerer_wizard7
+	9999	9999	Foe to Friend	bard5
+	9999	9999	Follow Aura	inquisitor2
+	9999	9999	Fool's Forbiddance	bard6
+	9999	9999	Forced Repentance	inquisitor4
+	9999	9999	Forced Repentance	paladin4
+	9999	9999	Frozen Note	bard5
+	9999	9999	Gallant Inspiration	bard2
+	9999	9999	Getaway	bard6
+	9999	9999	Getaway	sorcerer_wizard6
+	9999	9999	Geyser	druid4
+	9999	9999	Geyser	sorcerer_wizard5
+	9999	9999	Geyser	magus5
+	9999	9999	Ghostbane Dirge	bard2
+	9999	9999	Ghostbane Dirge	cleric2_oracle2
+	9999	9999	Ghostbane Dirge	inquisitor2
+	9999	9999	Ghostbane Dirge	paladin1
+	9999	9999	Ghostbane Dirge, Mass	bard4
+	9999	9999	Ghostbane Dirge, Mass	cleric5_oracle5
+	9999	9999	Ghostbane Dirge, Mass	inquisitor5
+	9999	9999	Ghostbane Dirge, Mass	paladin3
+	9999	9999	Glide	druid2
+	9999	9999	Glide	ranger1
+	9999	9999	Glide	sorcerer_wizard2
+	9999	9999	Glide	summoner2
+	9999	9999	Glide	witch2
+	9999	9999	Grace	cleric2_oracle2
+	9999	9999	Grace	paladin1
+	9999	9999	Gravity Bow	ranger1
+	9999	9999	Gravity Bow	sorcerer_wizard1
+	9999	9999	Grove of Respite	druid4
+	9999	9999	Grove of Respite	ranger4
+	9999	9999	Guiding Star	cleric3_oracle3
+	9999	9999	Guiding Star	ranger2
+	9999	9999	Guiding Star	witch3
+	9999	9999	Heroic Finale	bard4
+	9999	9999	Hero's Defiance	paladin1
+	9999	9999	Hidden Speech	bard2
+	9999	9999	Hidden Speech	inquisitor3
+	9999	9999	Hidden Speech	witch2
+	9999	9999	Hide Campsite	druid3
+	9999	9999	Hide Campsite	ranger2
+	9999	9999	Holy Whisper	paladin3
+	9999	9999	Honeyed Tongue	bard2
+	9999	9999	Honeyed Tongue	inquisitor2
+	9999	9999	Honeyed Tongue	paladin1
+	9999	9999	Hungry Pit	sorcerer_wizard5
+	9999	9999	Hungry Pit	summoner5
+	9999	9999	Hydraulic Push	druid1
+	9999	9999	Hydraulic Push	sorcerer_wizard1
+	9999	9999	Hydraulic Push	magus1
+	9999	9999	Hydraulic Torrent	druid3
+	9999	9999	Hydraulic Torrent	sorcerer_wizard3
+	9999	9999	Hydraulic Torrent	magus3
+	9999	9999	Ill Omen	witch1
+	9999	9999	Innocence	bard1
+	9999	9999	Instant Armor	cleric2_oracle2
+	9999	9999	Instant Armor	paladin2
+	9999	9999	Instant Enemy	ranger3
+	9999	9999	Invigorate	bard1
+	9999	9999	Invigorate, Mass	bard3
+	9999	9999	Jester's Jaunt	bard3
+	9999	9999	Keen Senses	alchemist1
+	9999	9999	Keen Senses	druid1
+	9999	9999	Keen Senses	ranger1
+	9999	9999	King's Castle	paladin4
+	9999	9999	Knight's Calling	paladin1
+	9999	9999	Lead Blades	ranger1
+	9999	9999	Life Bubble	cleric5_oracle5
+	9999	9999	Life Bubble	druid4
+	9999	9999	Life Bubble	ranger3
+	9999	9999	Life Bubble	sorcerer_wizard5
+	9999	9999	Light Lance	paladin2
+	9999	9999	Lily Pad Stride	druid3
+	9999	9999	Lockjaw	druid2
+	9999	9999	Lockjaw	ranger2
+	9999	9999	Marks Of Forbiddance	paladin3
+	9999	9999	Mask Dweomer	witch1
+	9999	9999	Memory Lapse	bard1
+	9999	9999	Memory Lapse	sorcerer_wizard1
+	9999	9999	Moonstruck	druid4
+	9999	9999	Moonstruck	sorcerer_wizard4
+	9999	9999	Moonstruck	witch4
+	9999	9999	Nap Stack	cleric3_oracle3
+	9999	9999	Natural Rhythm	druid2
+	9999	9999	Nature's Exile	druid3
+	9999	9999	Nature's Exile	witch3
+	9999	9999	Negate Aroma	alchemist1
+	9999	9999	Negate Aroma	druid1
+	9999	9999	Negate Aroma	ranger1
+	9999	9999	Oath Of Peace	paladin4
+	9999	9999	Oracle's Burden	oracle2
+	9999	9999	Pain Strike	sorcerer_wizard3
+	9999	9999	Pain Strike	witch3
+	9999	9999	Pain Strike, Mass	sorcerer_wizard5
+	9999	9999	Pain Strike, Mass	witch5
+	9999	9999	Paladin's Sacrifice	paladin2
+	9999	9999	Phantasmal Revenge	sorcerer_wizard7
+	9999	9999	Phantasmal Web	bard5
+	9999	9999	Phantasmal Web	sorcerer_wizard5
+	9999	9999	Pied Piping	bard6
+	9999	9999	Pillar Of Life	cleric_oracle5
+	9999	9999	Planar Adaptation	alchemist5
+	9999	9999	Planar Adaptation	cleric4_oracle4
+	9999	9999	Planar Adaptation	sorcerer_wizard5
+	9999	9999	Planar Adaptation	summoner5
+	9999	9999	Planar Adaptation, Mass	cleric6_oracle6
+	9999	9999	Planar Adaptation, Mass	sorcerer_wizard7
+	9999	9999	Planar Adaptation, Mass	summoner6
+	9999	9999	Pox Pustules	druid2
+	9999	9999	Pox Pustules	witch2
+	9999	9999	Protective Spirit	ranger2
+	9999	9999	Purging Finale	bard3
+	9999	9999	Purified Calling	summoner4
+	9999	9999	Putrefy Food and Drink	witch0
+	9999	9999	Rally Point	paladin1
+	9999	9999	Rebuke	inquisitor4
+	9999	9999	Rampart	druid7
+	9999	9999	Rampart	sorcerer_wizard7
+	9999	9999	Rejuvenate Eidolon, Lesser	summoner1
+	9999	9999	Rejuvenate Eidolon	summoner3
+	9999	9999	Rejuvenate Eidolon, Greater	summoner5
+	9999	9999	Resounding Blow	antipaladin4
+	9999	9999	Resounding Blow	inquisitor5
+	9999	9999	Resounding Blow	paladin4
+	9999	9999	Rest Eternal	cleric4_oracle4
+	9999	9999	Rest Eternal	druid5
+	9999	9999	Rest Eternal	witch5
+	9999	9999	Restful Sleep	bard1
+	9999	9999	Resurgent Transformation	alchemist5
+	9999	9999	Retribution	inquisitor3
+	9999	9999	Reviving Finale	bard3
+	9999	9999	Righteous Vigor	inquisitor3
+	9999	9999	Righteous Vigor	paladin2
+	9999	9999	River of Wind	druid4
+	9999	9999	River of Wind	sorcerer_wizard4
+	9999	9999	River of Wind	magus4
+	9999	9999	Sacred Bond	cleric_oracle3
+	9999	9999	Sacred Bond	inquisitor2
+	9999	9999	Sacred Bond	paladin2
+	9999	9999	Sacrificial Oath	paladin4
+	9999	9999	Saddle Surge	paladin2
+	9999	9999	Sanctify Armor	inquisitor4
+	9999	9999	Sanctify Armor	paladin3
+	9999	9999	Saving Finale	bard1
+	9999	9999	Scent Trail	druid2
+	9999	9999	Screech	witch3
+	9999	9999	Sculpt Corpse	sorcerer_wizard1
+	9999	9999	Seamantle	druid8
+	9999	9999	Seamantle	sorcerer_wizard8
+	9999	9999	Seek Thoughts	alchemist3
+	9999	9999	Seek Thoughts	bard3
+	9999	9999	Seek Thoughts	inquisitor3
+	9999	9999	Seek Thoughts	sorcerer_wizard3
+	9999	9999	Seek Thoughts	summoner3
+	9999	9999	Seek Thoughts	witch3
+	9999	9999	Share Language	bard1
+	9999	9999	Share Language	cleric2_oracle2
+	9999	9999	Share Language	druid2
+	9999	9999	Share Language	sorcerer_wizard2
+	9999	9999	Shadow Projection	sorcerer_wizard4
+	9999	9999	Share Senses	sorcerer_wizard4
+	9999	9999	Share Senses	witch3
+	9999	9999	Shifting Sand	druid3
+	9999	9999	Shifting Sand	sorcerer_wizard3
+	9999	9999	Shared Wrath	inquisitor4
+	9999	9999	Sift	bard0
+	9999	9999	Sift	inquisitor0
+	9999	9999	Sirocco	druid6
+	9999	9999	Sirocco	sorcerer_wizard6
+	9999	9999	Sirocco	magus6
+	9999	9999	Sleepwalk	inquisitor4
+	9999	9999	Sleepwalk	witch4
+	9999	9999	Slipstream	druid2
+	9999	9999	Slipstream	ranger2
+	9999	9999	Slipstream	sorcerer_wizard2
+	9999	9999	Snake Staff	cleric_oracle5
+	9999	9999	Snake Staff	druid5
+	9999	9999	Solid Note	bard1
+	9999	9999	Spark	bard0
+	9999	9999	Spark	cleric0_oracle0
+	9999	9999	Spark	druid0
+	9999	9999	Spark	sorcerer_wizard0
+	9999	9999	Spark	witch0
+	9999	9999	Spark	magus0
+	9999	9999	Spiked Pit	sorcerer_wizard3
+	9999	9999	Spiked Pit	summoner3
+	9999	9999	Spiritual Ally	cleric4_oracle4
+	9999	9999	Spite	witch4
+	9999	9999	Stay the Hand	paladin4
+	9999	9999	Stone Call	druid2
+	9999	9999	Stone Call	ranger2
+	9999	9999	Stone Call	sorcerer_wizard2
+	9999	9999	Stone Call	magus2
+	9999	9999	Stone Fist	alchemist1
+	9999	9999	Stone Fist	druid1
+	9999	9999	Stone Fist	sorcerer_wizard1
+	9999	9999	Stone Fist	magus1
+	9999	9999	Stormbolts	cleric8_oracle8
+	9999	9999	Stormbolts	druid8
+	9999	9999	Stormbolts	sorcerer_wizard8
+	9999	9999	Stormbolts	witch8
+	9999	9999	Strong Jaw	druid4
+	9999	9999	Strong Jaw	ranger3
+	9999	9999	Stumble Gap	sorcerer_wizard1
+	9999	9999	Stunning Finale	bard5
+	9999	9999	Suffocation	sorcerer_wizard5
+	9999	9999	Suffocation	witch5
+	9999	9999	Suffocation, Mass	sorcerer_wizard9
+	9999	9999	Suffocation, Mass	witch9
+	9999	9999	Summon Eidolon	summoner2
+	9999	9999	Swarm Skin	druid6
+	9999	9999	Swarm Skin	witch6
+	9999	9999	Thorn Body	alchemist3
+	9999	9999	Thorn Body	druid4
+	9999	9999	Threefold Aspect	druid5
+	9999	9999	Threefold Aspect	witch4
+	9999	9999	Thundering Drums	bard3
+	9999	9999	Timely Inspiration	bard1
+	9999	9999	Tireless Pursuit	inquisitor1
+	9999	9999	Tireless Pursuit	ranger1
+	9999	9999	Tireless Pursuers	inquisitor4
+	9999	9999	Tireless Pursuers	ranger3
+	9999	9999	Touch of Gracelessness	bard1
+	9999	9999	Touch of Gracelessness	sorcerer_wizard1
+	9999	9999	Touch of the Sea	alchemist1
+	9999	9999	Touch of the Sea	druid1
+	9999	9999	Touch of the Sea	sorcerer_wizard1
+	9999	9999	Transmogrify	summoner4
+	9999	9999	Transmute Potion to Poison	alchemist2
+	9999	9999	Treasure Stitching	bard4
+	9999	9999	Treasure Stitching	cleric5_oracle5
+	9999	9999	Treasure Stitching	sorcerer_wizard5
+	9999	9999	True Form	druid4
+	9999	9999	True Form	sorcerer_wizard4
+	9999	9999	Tsunami	druid9
+	9999	9999	Tsunami	sorcerer_wizard9
+	9999	9999	Twilight Knife	sorcerer_wizard3
+	9999	9999	Twilight Knife	witch3
+	9999	9999	Twin Form	alchemist6
+	9999	9999	Unfetter	summoner1
+	9999	9999	Universal Formula	alchemist4
+	9999	9999	Unwilling Shield	bard5
+	9999	9999	Unwilling Shield	inquisitor5
+	9999	9999	Unwilling Shield	sorcerer_wizard6
+	9999	9999	Unwilling Shield	witch6
+	9999	9999	Unwitting Ally	bard0
+	9999	9999	Vanish	bard1
+	9999	9999	Vanish	sorcerer_wizard1
+	9999	9999	Vanish	magus1
+	9999	9999	Veil of Positive Energy	paladin1
+	9999	9999	Venomous Bolt	ranger3
+	9999	9999	Versatile Weapon	bard2
+	9999	9999	Versatile Weapon	ranger2
+	9999	9999	Versatile Weapon	sorcerer_wizard3
+	9999	9999	Versatile Weapon	magus3
+	9999	9999	Vomit Swarm	alchemist2
+	9999	9999	Vomit Swarm	witch2
+	9999	9999	Vortex	druid7
+	9999	9999	Vortex	sorcerer_wizard7
+	9999	9999	Wake of Light	paladin2
+	9999	9999	Wall of Lava	druid8
+	9999	9999	Wall of Lava	sorcerer_wizard8
+	9999	9999	Wall of Suppression	sorcerer_wizard9
+	9999	9999	Wandering Star Motes	bard4
+	9999	9999	Wandering Star Motes	sorcerer_wizard4
+	9999	9999	Wandering Star Motes	witch4
+	9999	9999	Ward the Faithful	inquisitor3
+	9999	9999	Weapon of Awe	cleric2_oracle2
+	9999	9999	Weapon of Awe	inquisitor2
+	9999	9999	Weapon of Awe	paladin2
+	9999	9999	Winds of Vengeance	cleric9_oracle9
+	9999	9999	Winds of Vengeance	druid9
+	9999	9999	Winds of Vengeance	sorcerer_wizard9
+	9999	9999	World Wave	druid9
+	9999	9999	World Wave	sorcerer_wizard9
+	9999	9999	Wrath	inquisitor1
+	9999	9999	Wrathful Mantle	cleric3_oracle3
+	9999	9999	Wrathful Mantle	paladin3
+	9999	9999	Ice Armor	cleric1_oracle1
+	9999	9999	Ice Armor	druid1
+	9999	9999	Hunter's Eye	inquisitor3
+	9999	9999	Hunter's Eye	ranger2
+	9999	9999	Hunter's Howl	ranger1
+	9999	9999	Perceive Cues	alchemist2
+	9999	9999	Perceive Cues	inquisitor2
+	9999	9999	Perceive Cues	ranger2
+	9999	9999	Perceive Cues	witch2
+	9999	9999	Residual Tracking	ranger1
+	9999	9999	Blessing of Courage and Life	cleric2_oracle2
+	9999	9999	Blessing of Courage and Life	paladin2
+	9999	9999	Rift of Ruin	cleric8_oracle8
+	9999	9999	Rift of Ruin	sorcerer_wizard8
+	9999	9999	Fractions of Heal and Harm	bard3
+	9999	9999	Fractions of Heal and Harm	cleric3_oracle3
+	9999	9999	Fractions of Heal and Harm	sorcerer_wizard3
+	9999	9999	Constricting Coils	cleric5_oracle5
+	9999	9999	Constricting Coils	sorcerer_wizard5
+	9999	9999	Ancestral Memory	alchemist5
+	9999	9999	Ancestral Memory	cleric_oracle5
+	9999	9999	Ancestral Memory	druid4
+	9999	9999	Gorum's Armor	cleric_oracle1
+	9999	9999	Gorum's Armor	inquisitor1
+	9999	9999	Gorum's Armor	magus1
+	9999	9999	Harrowing	bard3
+	9999	9999	Harrowing	sorcerer_wizard3
+	9999	9999	Harrowing	witch3
+	9999	9999	Infernal Healing	cleric1_oracle1
+	9999	9999	Infernal Healing	magus1
+	9999	9999	Infernal Healing	sorcerer_wizard1
+	9999	9999	Infernal Healing	summoner1
+	9999	9999	Infernal Healing	witch1
+	9999	9999	Infernal Healing, Greater	cleric4_oracle4
+	9999	9999	Infernal Healing, Greater	magus4
+	9999	9999	Infernal Healing, Greater	sorcerer_wizard4
+	9999	9999	Infernal Healing, Greater	summoner4
+	9999	9999	Infernal Healing, Greater	witch4
+	9999	9999	Lover's Vengeance	bard3
+	9999	9999	Lover's Vengeance	cleric_oracle3
+	9999	9999	Lover's Vengeance	sorcerer_wizard3
+	9999	9999	Lover's Vengeance	witch3
+	9999	9999	Shield Of The Dawnflower	bard4
+	9999	9999	Shield Of The Dawnflower	cleric_oracle4
+	9999	9999	Shield Of The Dawnflower	magus4
+	9999	9999	Shield Of The Dawnflower	paladin4
+	9999	9999	Shield Of The Dawnflower	ranger4
+	9999	9999	Teleport Trap	sorcerer_wizard7
+	9999	9999	Unbreakable Heart	bard1
+	9999	9999	Unbreakable Heart	cleric_oracle1
+	9999	9999	Unbreakable Heart	paladin1
+	9999	9999	Unbreakable Heart	ranger1
+	9999	9999	Unbreakable Heart	witch1
+	9999	9999	Vision of Lamashtu	cleric_oracle7
+	9999	9999	Vision of Lamashtu	inquisitor6
+	9999	9999	Vision of Lamashtu	witch7
+	9999	9999	Waters Of Lamashtu	alchemist2
+	9999	9999	Waters Of Lamashtu	cleric_oracle3
+	9999	9999	Waters Of Lamashtu	druid3
+	9999	9999	Waters Of Lamashtu	witch3
+	9999	9999	Smite Abomination	cleric5_oracle5
+	9999	9999	Enhance Water	bard1
+	9999	9999	Enhance Water	cleric1_oracle1
+	9999	9999	Enhance Water	paladin1
+	9999	9999	Hairline Fractures	cleric1_oracle1
+	9999	9999	Hairline Fractures	druid1
+	9999	9999	Haze of Dreams	bard1
+	9999	9999	Haze of Dreams	cleric1_oracle1
+	9999	9999	Haze of Dreams	inquisitor1
+	9999	9999	Haze of Dreams	paladin1
+	9999	9999	Tap Inner Beauty	bard1
+	9999	9999	Tap Inner Beauty	cleric1_oracle1
+	9999	9999	Trail of the Rose	bard2
+	9999	9999	Trail of the Rose	cleric2_oracle2
+	9999	9999	Weapons Against Evil	cleric1_oracle1
+	9999	9999	Weapons Against Evil	inquisitor1
+	9999	9999	Weapons Against Evil	paladin1
+	9999	9999	Acidic Spray	magus5
+	9999	9999	Acidic Spray	sorcerer_wizard5
+	9999	9999	Acute Senses	alchemist2
+	9999	9999	Acute Senses	bard2
+	9999	9999	Acute Senses	inquisitor2
+	9999	9999	Acute Senses	ranger2
+	9999	9999	Age Resistance, Lesser	alchemist3
+	9999	9999	Age Resistance, Lesser	druid4
+	9999	9999	Age Resistance, Lesser	sorcerer_wizard4
+	9999	9999	Age Resistance, Lesser	witch4
+	9999	9999	Age Resistance, Greater	alchemist5
+	9999	9999	Age Resistance, Greater	druid7
+	9999	9999	Age Resistance, Greater	sorcerer_wizard7
+	9999	9999	Age Resistance, Greater	witch7
+	9999	9999	Age Resistance	alchemist4
+	9999	9999	Age Resistance	druid6
+	9999	9999	Age Resistance	sorcerer_wizard6
+	9999	9999	Age Resistance	witch6
+	9999	9999	Allegro	bard2
+	9999	9999	Animate Dead, Lesser	cleric2_oracle2
+	9999	9999	Animate Dead, Lesser	sorcerer_wizard3
+	9999	9999	Anthropomorphic Animal	druid3
+	9999	9999	Anthropomorphic Animal	sorcerer_wizard3
+	9999	9999	Anthropomorphic Animal	witch3
+	9999	9999	Anticipate Peril	alchemist1
+	9999	9999	Anticipate Peril	bard1
+	9999	9999	Anticipate Peril	ranger1
+	9999	9999	Anticipate Peril	sorcerer_wizard1
+	9999	9999	Arboreal Hammer	druid4
+	9999	9999	Arcana Theft	magus4
+	9999	9999	Archon's Aura	cleric3_oracle3
+	9999	9999	Archon's Aura	paladin3
+	9999	9999	Arrow of Law	cleric2_oracle2
+	9999	9999	Arrow of Law	paladin2
+	9999	9999	Ash Storm	druid3
+	9999	9999	Ash Storm	sorcerer_wizard3
+	9999	9999	Ash Storm	witch3
+	9999	9999	Astral Projection, Lesser	cleric5_oracle5
+	9999	9999	Astral Projection, Lesser	sorcerer_wizard5
+	9999	9999	Atavism	druid4
+	9999	9999	Atavism, Mass	druid8
+	9999	9999	Aura of Doom	cleric4_oracle4
+	9999	9999	Badger's Ferocity	cleric3_oracle3
+	9999	9999	Badger's Ferocity	druid3
+	9999	9999	Badger's Ferocity	ranger2
+	9999	9999	Badger's Ferocity	sorcerer_wizard2
+	9999	9999	Battlemind Link	inquisitor4
+	9999	9999	Battlemind Link	sorcerer_wizard6
+	9999	9999	Bestow Grace of the Champion	cleric7_oracle7
+	9999	9999	Bestow Grace of the Champion	paladin4
+	9999	9999	Blade of Bright Victory	paladin3
+	9999	9999	Blade of Dark Triumph	antipaladin3
+	9999	9999	Blessing of the Mole	cleric3_oracle3
+	9999	9999	Blessing of the Mole	inquisitor3
+	9999	9999	Blessing of the Mole	paladin3
+	9999	9999	Blessing of the Mole	ranger3
+	9999	9999	Blood Crow Strike	cleric_oracle4
+	9999	9999	Blood Mist	druid8
+	9999	9999	Blood Transcription	alchemist2
+	9999	9999	Blood Transcription	magus2
+	9999	9999	Blood Transcription	wizard2
+	9999	9999	Blood Transcription	witch2
+	9999	9999	Boiling Blood	bard2
+	9999	9999	Boiling Blood	cleric_oracle2
+	9999	9999	Boiling Blood	sorcerer_wizard2
+	9999	9999	Boiling Blood	witch2
+	9999	9999	Bungle	sorcerer_wizard1
+	9999	9999	Bungle	witch1
+	9999	9999	Burrow	alchemist3
+	9999	9999	Burrow	druid3
+	9999	9999	Burrow	ranger3
+	9999	9999	Burrow	sorcerer_wizard3
+	9999	9999	Burst of Nettles	druid3
+	9999	9999	Cackling Skull	witch3
+	9999	9999	Call Construct	cleric8_oracle8
+	9999	9999	Call Construct	sorcerer_wizard8
+	9999	9999	Cape Of Wasps	druid4
+	9999	9999	Cape Of Wasps	witch4
+	9999	9999	Caustic Eruption	sorcerer_wizard7
+	9999	9999	Chord Of Shards	bard1
+	9999	9999	Circle Of Clarity	cleric_oracle7
+	9999	9999	Circle Of Clarity	sorcerer_wizard7
+	9999	9999	Cold Ice Strike	cleric_oracle6
+	9999	9999	Cold Ice Strike	sorcerer_wizard6
+	9999	9999	Compassionate Ally	bard2
+	9999	9999	Compassionate Ally	cleric2_oracle2
+	9999	9999	Compassionate Ally	sorcerer_wizard2
+	9999	9999	Conjure Black Pudding	sorcerer_wizard6
+	9999	9999	Conjure Black Pudding	summoner5
+	9999	9999	Contagion, Greater	cleric5_oracle5
+	9999	9999	Contagion, Greater	druid5
+	9999	9999	Contagion, Greater	sorcerer_wizard6
+	9999	9999	Contagion, Greater	witch5
+	9999	9999	Control Construct	sorcerer_wizard7
+	9999	9999	Control Summoned Creature	bard3
+	9999	9999	Control Summoned Creature	cleric4_oracle4
+	9999	9999	Control Summoned Creature	sorcerer_wizard4
+	9999	9999	Control Summoned Creature	summoner3
+	9999	9999	Corrosive Consumption	magus5
+	9999	9999	Corrosive Consumption	sorcerer_wizard5
+	9999	9999	Corrosive Touch	magus1
+	9999	9999	Corrosive Touch	sorcerer_wizard1
+	9999	9999	Corrosive Touch	summoner1
+	9999	9999	Countless Eyes	alchemist3
+	9999	9999	Countless Eyes	inquisitor3
+	9999	9999	Countless Eyes	sorcerer_wizard3
+	9999	9999	Countless Eyes	witch3
+	9999	9999	Create Demiplane	cleric8_oracle8
+	9999	9999	Create Demiplane	sorcerer_wizard8
+	9999	9999	Create Demiplane	summoner6
+	9999	9999	Create Demiplane	witch8
+	9999	9999	Create Demiplane, Lesser	cleric7_oracle7
+	9999	9999	Create Demiplane, Lesser	sorcerer_wizard7
+	9999	9999	Create Demiplane, Lesser	summoner5
+	9999	9999	Create Demiplane, Lesser	witch7
+	9999	9999	Create Demiplane, Greater	cleric9_oracle9
+	9999	9999	Create Demiplane, Greater	sorcerer_wizard9
+	9999	9999	Create Demiplane, Greater	witch9
+	9999	9999	Curse, Major	cleric5_oracle5
+	9999	9999	Curse, Major	sorcerer_wizard6
+	9999	9999	Curse, Major	witch5
+	9999	9999	Curse Of Disgust	bard3
+	9999	9999	Curse Of Disgust	sorcerer_wizard5
+	9999	9999	Curse Of Disgust	witch5
+	9999	9999	Curse of Magic Negation	cleric5_oracle5
+	9999	9999	Curse of Magic Negation	inquisitor4
+	9999	9999	Curse of Magic Negation	sorcerer_wizard4
+	9999	9999	Curse of Magic Negation	witch4
+	9999	9999	Cursed Earth	cleric9_oracle9
+	9999	9999	Cursed Earth	sorcerer_wizard9
+	9999	9999	Cursed Earth	witch9
+	9999	9999	Cushioning Bands	sorcerer_wizard2
+	9999	9999	Cushioning Bands	summoner2
+	9999	9999	Dance of a Hundred Cuts	bard4
+	9999	9999	Dance of a Thousand Cuts	bard6
+	9999	9999	Darkvision, Greater	alchemist4
+	9999	9999	Darkvision, Greater	antipaladin4
+	9999	9999	Darkvision, Greater	ranger4
+	9999	9999	Darkvision, Greater	sorcerer_wizard4
+	9999	9999	Daze, Mass	bard4
+	9999	9999	Daze, Mass	inquisitor4
+	9999	9999	Daze, Mass	sorcerer_wizard4
+	9999	9999	Daze, Mass	summoner4
+	9999	9999	Daze, Mass	witch4
+	9999	9999	Decompose Corpse	cleric1_oracle1
+	9999	9999	Decompose Corpse	druid1
+	9999	9999	Decompose Corpse	sorcerer_wizard1
+	9999	9999	Decompose Corpse	witch1
+	9999	9999	Defensive Shock	alchemist2
+	9999	9999	Defensive Shock	magus2
+	9999	9999	Defensive Shock	sorcerer_wizard2
+	9999	9999	Delay Pain	bard2
+	9999	9999	Delay Pain	cleric2_oracle2
+	9999	9999	Delay Pain	inquisitor2
+	9999	9999	Delay Pain	sorcerer_wizard2
+	9999	9999	Delay Pain	witch2
+	9999	9999	Delusional Pride	bard1
+	9999	9999	Delusional Pride	sorcerer_wizard1
+	9999	9999	Delusional Pride	witch1
+	9999	9999	Diagnose Disease	cleric1_oracle1
+	9999	9999	Diagnose Disease	druid1
+	9999	9999	Diagnose Disease	paladin1
+	9999	9999	Diagnose Disease	ranger1
+	9999	9999	Diagnose Disease	witch1
+	9999	9999	Disfiguring Touch	cleric_oracle2
+	9999	9999	Disfiguring Touch	sorcerer_wizard2
+	9999	9999	Disfiguring Touch	witch2
+	9999	9999	Disguise Other	bard2
+	9999	9999	Disguise Other	inquisitor2
+	9999	9999	Disguise Other	sorcerer_wizard2
+	9999	9999	Distracting Cacophony	bard2
+	9999	9999	Distracting Cacophony	sorcerer_wizard3
+	9999	9999	Distressing Tone	bard2
+	9999	9999	Distressing Tone	inquisitor2
+	9999	9999	Divine Pursuit	inquisitor5
+	9999	9999	Dread Bolt	cleric_oracle2
+	9999	9999	Eagle Aerie	druid6
+	9999	9999	Eagle Aerie	summoner6
+	9999	9999	Ear-Piercing Scream	bard1
+	9999	9999	Ear-Piercing Scream	inquisitor1
+	9999	9999	Ear-Piercing Scream	sorcerer_wizard1
+	9999	9999	Ear-Piercing Scream	witch1
+	9999	9999	Echolocation	alchemist4
+	9999	9999	Echolocation	bard4
+	9999	9999	Echolocation	druid4
+	9999	9999	Echolocation	sorcerer_wizard5
+	9999	9999	Eldritch Fever	inquisitor3
+	9999	9999	Eldritch Fever	sorcerer_wizard3
+	9999	9999	Eldritch Fever	witch3
+	9999	9999	Envious Urge	bard4
+	9999	9999	Envious Urge	sorcerer_wizard6
+	9999	9999	Epidemic	cleric6_oracle6
+	9999	9999	Epidemic	druid6
+	9999	9999	Epidemic	sorcerer_wizard7
+	9999	9999	Epidemic	witch6
+	9999	9999	Eruptive Pustules	alchemist3
+	9999	9999	Eruptive Pustules	sorcerer_wizard3
+	9999	9999	Eruptive Pustules	witch3
+	9999	9999	Excruciating Deformation	sorcerer_wizard3
+	9999	9999	Excruciating Deformation	witch3
+	9999	9999	Exquisite Accompaniment	bard3
+	9999	9999	False Life, Greater	alchemist4
+	9999	9999	False Life, Greater	sorcerer_wizard4
+	9999	9999	False Life, Greater	witch4
+	9999	9999	Familiar Melding	sorcerer_wizard4
+	9999	9999	Familiar Melding	witch4
+	9999	9999	Fickle Winds	cleric5_oracle5
+	9999	9999	Fickle Winds	druid5
+	9999	9999	Fickle Winds	ranger3
+	9999	9999	Fickle Winds	sorcerer_wizard5
+	9999	9999	Fleshworm Infestation	cleric4_oracle4
+	9999	9999	Fleshworm Infestation	inquisitor4
+	9999	9999	Fleshworm Infestation	sorcerer_wizard4
+	9999	9999	Fleshworm Infestation	witch4
+	9999	9999	Forbid Action	cleric1_oracle1
+	9999	9999	Forbid Action	inquisitor1
+	9999	9999	Forbid Action, Greater	cleric5_oracle5
+	9999	9999	Forbid Action, Greater	inquisitor5
+	9999	9999	Force Hook Charge	magus3
+	9999	9999	Force Punch	magus3
+	9999	9999	Force Punch	sorcerer_wizard3
+	9999	9999	Forced Quiet	bard1
+	9999	9999	Forced Quiet	inquisitor1
+	9999	9999	Forced Quiet	sorcerer_wizard1
+	9999	9999	Forced Quiet	witch1
+	9999	9999	Frigid Touch	druid2
+	9999	9999	Frigid Touch	magus2
+	9999	9999	Frigid Touch	sorcerer_wizard2
+	9999	9999	Frostbite	druid1
+	9999	9999	Frostbite	magus1
+	9999	9999	Frostbite	witch1
+	9999	9999	Fumbletongue	bard1
+	9999	9999	Fumbletongue	witch1
+	9999	9999	Fungal Infestation	druid3
+	9999	9999	Ghostly Disguise	alchemist2
+	9999	9999	Ghostly Disguise	bard2
+	9999	9999	Ghostly Disguise	inquisitor2
+	9999	9999	Ghostly Disguise	sorcerer_wizard2
+	9999	9999	Ghostly Disguise	witch2
+	9999	9999	Haunting Choir	bard3
+	9999	9999	Haunting Mists	bard2
+	9999	9999	Haunting Mists	sorcerer_wizard2
+	9999	9999	Haunting Mists	witch2
+	9999	9999	Hex Ward	inquisitor1
+	9999	9999	Hex Ward	witch1
+	9999	9999	Holy Ice	cleric5_oracle5
+	9999	9999	Holy Shield	paladin2
+	9999	9999	Horn of Pursuit	bard1
+	9999	9999	Horn of Pursuit	inquisitor1
+	9999	9999	Horn of Pursuit	paladin1
+	9999	9999	Horn of Pursuit	ranger1
+	9999	9999	Howling Agony	inquisitor2
+	9999	9999	Howling Agony	sorcerer_wizard3
+	9999	9999	Howling Agony	witch3
+	9999	9999	Ice Body	sorcerer_wizard7
+	9999	9999	Ice Body	witch7
+	9999	9999	Ice Crystal Teleport	sorcerer_wizard6
+	9999	9999	Ice Crystal Teleport	summoner5
+	9999	9999	Ice Crystal Teleport	witch6
+	9999	9999	Icicle Dagger	sorcerer_wizard1
+	9999	9999	Icicle Dagger	summoner1
+	9999	9999	Icicle Dagger	witch1
+	9999	9999	Icy Prison	sorcerer_wizard5
+	9999	9999	Icy Prison, Mass	sorcerer_wizard9
+	9999	9999	Imbue with Aura	cleric2_oracle2
+	9999	9999	Interplanetary Teleport	cleric9_oracle9
+	9999	9999	Interplanetary Teleport	sorcerer_wizard9
+	9999	9999	Interrogation	inquisitor1
+	9999	9999	Interrogation	sorcerer_wizard1
+	9999	9999	Interrogation	witch1
+	9999	9999	Interrogation, Greater	inquisitor4
+	9999	9999	Joyful Rapture	bard5
+	9999	9999	Joyful Rapture	cleric6_oracle6
+	9999	9999	Joyful Rapture	sorcerer_wizard7
+	9999	9999	Ki Arrow	bard1
+	9999	9999	Ki Arrow	sorcerer_wizard1
+	9999	9999	Ki Arrow	witch1
+	9999	9999	Ki Leech	cleric3_oracle3
+	9999	9999	Ki Leech	sorcerer_wizard3
+	9999	9999	Ki Leech	witch3
+	9999	9999	Ki Shout	bard5
+	9999	9999	Ki Shout	sorcerer_wizard7
+	9999	9999	Know The Enemy	cleric_oracle1
+	9999	9999	Know The Enemy	inquisitor1
+	9999	9999	Know The Enemy	paladin1
+	9999	9999	Know The Enemy	ranger1
+	9999	9999	Leashed Shackles	inquisitor4
+	9999	9999	Leashed Shackles	sorcerer_wizard6
+	9999	9999	Lend Judgment	inquisitor1
+	9999	9999	Lend Judgment, Greater	inquisitor5
+	9999	9999	Lightning Arc	sorcerer_wizard5
+	9999	9999	Loathsome Veil	sorcerer_wizard3
+	9999	9999	Loathsome Veil	witch3
+	9999	9999	Lunar Veil	cleric7_oracle7
+	9999	9999	Lunar Veil	sorcerer_wizard7
+	9999	9999	Lunar Veil	witch7
+	9999	9999	Mad Hallucination	bard2
+	9999	9999	Mad Hallucination	sorcerer_wizard2
+	9999	9999	Mad Hallucination	witch2
+	9999	9999	Mad Monkeys	bard3
+	9999	9999	Mad Monkeys	druid3
+	9999	9999	Mad Monkeys	sorcerer_wizard3
+	9999	9999	Mad Monkeys	summoner3
+	9999	9999	Malfunction	sorcerer_wizard4
+	9999	9999	Malicious Spite	bard3
+	9999	9999	Malicious Spite	sorcerer_wizard4
+	9999	9999	Marionette Possession	alchemist3
+	9999	9999	Marionette Possession	sorcerer_wizard3
+	9999	9999	Marionette Possession	summoner3
+	9999	9999	Marionette Possession	witch3
+	9999	9999	Masterwork Transformation	bard2
+	9999	9999	Masterwork Transformation	cleric2_oracle2
+	9999	9999	Masterwork Transformation	druid2
+	9999	9999	Masterwork Transformation	sorcerer_wizard2
+	9999	9999	Masterwork Transformation	witch2
+	9999	9999	Miserable Pity	bard2
+	9999	9999	Miserable Pity	sorcerer_wizard2
+	9999	9999	Miserable Pity	witch2
+	9999	9999	Monstrous Physique I	alchemist3
+	9999	9999	Monstrous Physique I	magus3
+	9999	9999	Monstrous Physique I	sorcerer_wizard3
+	9999	9999	Monstrous Physique II	alchemist4
+	9999	9999	Monstrous Physique II	magus4
+	9999	9999	Monstrous Physique II	sorcerer_wizard4
+	9999	9999	Monstrous Physique III	alchemist5
+	9999	9999	Monstrous Physique III	magus5
+	9999	9999	Monstrous Physique III	sorcerer_wizard5
+	9999	9999	Monstrous Physique IV	alchemist6
+	9999	9999	Monstrous Physique IV	magus6
+	9999	9999	Monstrous Physique IV	sorcerer_wizard6
+	9999	9999	Murderous Command	antipaladin1
+	9999	9999	Murderous Command	cleric_oracle1
+	9999	9999	Oppressive Boredom	bard2
+	9999	9999	Oppressive Boredom	sorcerer_wizard2
+	9999	9999	Oracle's Vessel	oracle4
+	9999	9999	Orb Of The Void	cleric_oracle8
+	9999	9999	Orb Of The Void	sorcerer_wizard8
+	9999	9999	Overwhelming Grief	bard3
+	9999	9999	Overwhelming Grief	sorcerer_wizard4
+	9999	9999	Overwhelming Presence	bard6
+	9999	9999	Overwhelming Presence	cleric9_oracle9
+	9999	9999	Overwhelming Presence	inquisitor6
+	9999	9999	Overwhelming Presence	sorcerer_wizard9
+	9999	9999	Pernicious Poison	antipaladin2
+	9999	9999	Pernicious Poison	druid2
+	9999	9999	Pernicious Poison	sorcerer_wizard2
+	9999	9999	Pernicious Poison	witch2
+	9999	9999	Persuasive Goad	inquisitor1
+	9999	9999	Piercing Shriek	bard2
+	9999	9999	Plague Carrier	cleric4_oracle4
+	9999	9999	Plague Carrier	druid4
+	9999	9999	Plague Carrier	sorcerer_wizard5
+	9999	9999	Plague Carrier	witch5
+	9999	9999	Plague Storm	cleric6_oracle6
+	9999	9999	Plague Storm	druid6
+	9999	9999	Plague Storm	sorcerer_wizard7
+	9999	9999	Plague Storm	witch6
+	9999	9999	Play Instrument	bard1
+	9999	9999	Polar Midnight	cleric9_oracle9
+	9999	9999	Polar Midnight	druid9
+	9999	9999	Polar Midnight	witch9
+	9999	9999	Polypurpose Panacea	alchemist1
+	9999	9999	Polypurpose Panacea	sorcerer_wizard1
+	9999	9999	Possess Object	sorcerer_wizard5
+	9999	9999	Possess Object	witch5
+	9999	9999	Prediction of Failure	sorcerer_wizard8
+	9999	9999	Prediction of Failure	witch8
+	9999	9999	Primal Scream	bard4
+	9999	9999	Protective Penumbra	cleric2_oracle2
+	9999	9999	Protective Penumbra	sorcerer_wizard2
+	9999	9999	Protective Penumbra	witch2
+	9999	9999	Rain of Frogs	bard3
+	9999	9999	Rain of Frogs	druid3
+	9999	9999	Rain of Frogs	sorcerer_wizard3
+	9999	9999	Rain of Frogs	summoner3
+	9999	9999	Rain of Frogs	witch3
+	9999	9999	Raise Animal Companion	druid5
+	9999	9999	Raise Animal Companion	paladin4
+	9999	9999	Raise Animal Companion	ranger4
+	9999	9999	Rapid Repair	cleric5_oracle5
+	9999	9999	Rapid Repair	sorcerer_wizard5
+	9999	9999	Ray of Sickening	cleric1_oracle1
+	9999	9999	Ray of Sickening	druid1
+	9999	9999	Ray of Sickening	sorcerer_wizard1
+	9999	9999	Ray of Sickening	summoner1
+	9999	9999	Ray of Sickening	witch1
+	9999	9999	Reckless Infatuation	bard2
+	9999	9999	Reckless Infatuation	sorcerer_wizard3
+	9999	9999	Reckless Infatuation	witch3
+	9999	9999	Remove Sickness	cleric1_oracle1
+	9999	9999	Remove Sickness	druid1
+	9999	9999	Remove Sickness	witch1
+	9999	9999	Reprobation	cleric5_oracle5
+	9999	9999	Reprobation	druid5
+	9999	9999	Reprobation	inquisitor4
+	9999	9999	Reprobation	paladin4
+	9999	9999	Resonating Word	bard5
+	9999	9999	Resonating Word	sorcerer_wizard7
+	9999	9999	Restore Corpse	cleric1_oracle1
+	9999	9999	Restore Corpse	druid1
+	9999	9999	Restore Corpse	sorcerer_wizard1
+	9999	9999	Restore Corpse	witch1
+	9999	9999	Restore Eidolon	summoner3
+	9999	9999	Restore Eidolon, Lesser	summoner2
+	9999	9999	Ride the Lightning	sorcerer_wizard9
+	9999	9999	Ride The Waves	cleric4_oracle4
+	9999	9999	Ride The Waves	druid4
+	9999	9999	Ride The Waves	sorcerer_wizard4
+	9999	9999	Ride The Waves	witch4
+	9999	9999	Sanctify Corpse	cleric1_oracle1
+	9999	9999	Sanctify Corpse	inquisitor1
+	9999	9999	Sanctify Corpse	paladin1
+	9999	9999	Sanctify Corpse	witch1
+	9999	9999	Sands of Time	cleric3_oracle3
+	9999	9999	Sands of Time	sorcerer_wizard3
+	9999	9999	Sands of Time	witch3
+	9999	9999	Scouring Winds	druid7
+	9999	9999	Scouring Winds	sorcerer_wizard7
+	9999	9999	Scouring Winds	witch7
+	9999	9999	Sculpt Simulacrum	sorcerer_wizard2
+	9999	9999	Serenity	bard4
+	9999	9999	Serenity	cleric5_oracle5
+	9999	9999	Serenity	sorcerer_wizard6
+	9999	9999	Shadowbard	bard5
+	9999	9999	Shadow Step	bard4
+	9999	9999	Shadow Step	sorcerer_wizard4
+	9999	9999	Shadow Step	witch4
+	9999	9999	Shadow Weapon	sorcerer_wizard1
+	9999	9999	Shadow Weapon	witch1
+	9999	9999	Shard of Chaos	cleric2_oracle2
+	9999	9999	Share Memory	bard2
+	9999	9999	Share Memory	sorcerer_wizard2
+	9999	9999	Share Memory	witch2
+	9999	9999	Simulacrum, Lesser	sorcerer_wizard4
+	9999	9999	Skinsend	alchemist2
+	9999	9999	Skinsend	sorcerer_wizard2
+	9999	9999	Skinsend	witch2
+	9999	9999	Smug Narcissism	bard3
+	9999	9999	Smug Narcissism	sorcerer_wizard5
+	9999	9999	Smug Narcissism	witch5
+	9999	9999	Snapdragon Fireworks	bard2
+	9999	9999	Snapdragon Fireworks	sorcerer_wizard1
+	9999	9999	Sonic Thrust	bard4
+	9999	9999	Sonic Thrust	sorcerer_wizard5
+	9999	9999	Soothe Construct	cleric4_oracle4
+	9999	9999	Soothe Construct	sorcerer_wizard5
+	9999	9999	Spear Of Purity	cleric_oracle2
+	9999	9999	Spit Venom	cleric4_oracle4
+	9999	9999	Spit Venom	druid3
+	9999	9999	Spit Venom	witch3
+	9999	9999	Steal Voice	bard2
+	9999	9999	Steal Voice	sorcerer_wizard2
+	9999	9999	Steal Voice	witch2
+	9999	9999	Strangling Hair	sorcerer_wizard3
+	9999	9999	Strangling Hair	witch3
+	9999	9999	Summon Elder Worm	druid9
+	9999	9999	Summon Froghemoth	druid9
+	9999	9999	Summon Minor Ally	druid1
+	9999	9999	Summon Minor Ally	ranger1
+	9999	9999	Summon Minor Monster	antipaladin1
+	9999	9999	Summon Minor Monster	bard1
+	9999	9999	Summon Minor Monster	cleric1_oracle1
+	9999	9999	Summon Minor Monster	sorcerer_wizard1
+	9999	9999	Summon Minor Monster	summoner1
+	9999	9999	Summon Minor Monster	witch1
+	9999	9999	Surmount Affliction	cleric_oracle2
+	9999	9999	Surmount Affliction	inquisitor2
+	9999	9999	Symbol of Healing	cleric3_oracle3
+	9999	9999	Symbol of Healing	paladin4
+	9999	9999	Symbol of Healing	witch4
+	9999	9999	Symbol of Mirroring	sorcerer_wizard2
+	9999	9999	Symbol of Mirroring	witch2
+	9999	9999	Symbol of Revelation	cleric4_oracle4
+	9999	9999	Symbol of Revelation	sorcerer_wizard4
+	9999	9999	Symbol of Revelation	witch4
+	9999	9999	Symbol of Scrying	cleric5_oracle5
+	9999	9999	Symbol of Scrying	sorcerer_wizard5
+	9999	9999	Symbol of Scrying	witch5
+	9999	9999	Symbol of Sealing	cleric6_oracle6
+	9999	9999	Symbol of Sealing	sorcerer_wizard6
+	9999	9999	Symbol of Sealing	witch6
+	9999	9999	Symbol of Slowing	cleric4_oracle4
+	9999	9999	Symbol of Slowing	sorcerer_wizard4
+	9999	9999	Symbol of Slowing	witch4
+	9999	9999	Symbol of Strife	cleric9_oracle9
+	9999	9999	Symbol of Strife	sorcerer_wizard9
+	9999	9999	Symbol of Strife	witch9
+	9999	9999	Symbol of Vulnerability	cleric9_oracle9
+	9999	9999	Symbol of Vulnerability	sorcerer_wizard9
+	9999	9999	Symbol of Vulnerability	witch9
+	9999	9999	Tar Ball	druid2
+	9999	9999	Temporary Resurrection	sorcerer_wizard7
+	9999	9999	Temporary Resurrection	witch7
+	9999	9999	Terrible Remorse	bard3
+	9999	9999	Terrible Remorse	cleric_oracle4
+	9999	9999	Terrible Remorse	inquisitor3
+	9999	9999	Terrible Remorse	sorcerer_wizard4
+	9999	9999	Touch of Slime	alchemist4
+	9999	9999	Touch of Slime	druid4
+	9999	9999	Touch of Slime	sorcerer_wizard4
+	9999	9999	Touch of Slime	witch4
+	9999	9999	Toxic Gift	antipaladin2
+	9999	9999	Toxic Gift	sorcerer_wizard3
+	9999	9999	Transmute Blood To Acid	sorcerer_wizard9
+	9999	9999	Unadulterated Loathing	antipaladin2
+	9999	9999	Unadulterated Loathing	bard2
+	9999	9999	Unadulterated Loathing	sorcerer_wizard3
+	9999	9999	Unadulterated Loathing	witch3
+	9999	9999	Unbreakable Construct	sorcerer_wizard5
+	9999	9999	Undead Anatomy I	alchemist3
+	9999	9999	Undead Anatomy I	magus3
+	9999	9999	Undead Anatomy I	sorcerer_wizard3
+	9999	9999	Undead Anatomy II	alchemist5
+	9999	9999	Undead Anatomy II	magus5
+	9999	9999	Undead Anatomy II	sorcerer_wizard5
+	9999	9999	Undead Anatomy III	alchemist6
+	9999	9999	Undead Anatomy III	magus6
+	9999	9999	Undead Anatomy III	sorcerer_wizard6
+	9999	9999	Undead Anatomy IV	sorcerer_wizard8
+	9999	9999	Unholy Ice	cleric5_oracle5
+	9999	9999	Unholy Sword	antipaladin4
+	9999	9999	Unnatural Lust	bard1
+	9999	9999	Unnatural Lust	sorcerer_wizard2
+	9999	9999	Unnatural Lust	witch2
+	9999	9999	Unprepared Combatant	bard1
+	9999	9999	Unprepared Combatant	sorcerer_wizard1
+	9999	9999	Unprepared Combatant	witch1
+	9999	9999	Unshakable Chill	druid2
+	9999	9999	Unshakable Chill	sorcerer_wizard2
+	9999	9999	Unshakable Chill	witch2
+	9999	9999	Utter Contempt	antipaladin3
+	9999	9999	Utter Contempt	bard4
+	9999	9999	Utter Contempt	sorcerer_wizard6
+	9999	9999	Vengeful Outrage	bard5
+	9999	9999	Vengeful Outrage	sorcerer_wizard6
+	9999	9999	Vengeful Outrage	witch6
+	9999	9999	Vermin Shape I	alchemist4
+	9999	9999	Vermin Shape I	druid3
+	9999	9999	Vermin Shape I	magus4
+	9999	9999	Vermin Shape I	sorcerer_wizard4
+	9999	9999	Vermin Shape I	witch3
+	9999	9999	Vermin Shape II	alchemist5
+	9999	9999	Vermin Shape II	druid4
+	9999	9999	Vermin Shape II	magus5
+	9999	9999	Vermin Shape II	sorcerer_wizard5
+	9999	9999	Vermin Shape II	witch4
+	9999	9999	Vestment of the Champion	antipaladin2
+	9999	9999	Vestment of the Champion	paladin2
+	9999	9999	Virtuoso Performance	bard4
+	9999	9999	Vision of Hell	bard3
+	9999	9999	Vision of Hell	cleric3_oracle3
+	9999	9999	Vision of Hell	sorcerer_wizard3
+	9999	9999	Vision of Hell	witch3
+	9999	9999	Vitriolic Mist	alchemist4
+	9999	9999	Vitriolic Mist	sorcerer_wizard4
+	9999	9999	Vitriolic Mist	summoner4
+	9999	9999	Vocal Alteration	alchemist1
+	9999	9999	Vocal Alteration	bard1
+	9999	9999	Vocal Alteration	inquisitor1
+	9999	9999	Vocal Alteration	sorcerer_wizard1
+	9999	9999	Vocal Alteration	witch1
+	9999	9999	Volcanic Storm	druid4
+	9999	9999	Volcanic Storm	sorcerer_wizard4
+	9999	9999	Volcanic Storm	witch4
+	9999	9999	Wall of Sound	bard4
+	9999	9999	Wall of Sound	magus4
+	9999	9999	Wall of Sound	sorcerer_wizard5
+	9999	9999	Wartrain Mount	antipaladin1
+	9999	9999	Wartrain Mount	bard2
+	9999	9999	Wartrain Mount	druid2
+	9999	9999	Wartrain Mount	inquisitor1
+	9999	9999	Wartrain Mount	paladin1
+	9999	9999	Wartrain Mount	ranger1
+	9999	9999	Waves of Ecstasy	bard6
+	9999	9999	Waves of Ecstasy	cleric7_oracle7
+	9999	9999	Waves of Ecstasy	sorcerer_wizard7
+	9999	9999	Waves of Ecstasy	witch7
+	9999	9999	Web Shelter	cleric2_oracle2
+	9999	9999	Web Shelter	druid2
+	9999	9999	Web Shelter	ranger2
+	9999	9999	Web Shelter	sorcerer_wizard2
+	9999	9999	Web Shelter	summoner2
+	9999	9999	Web Shelter	witch2
+	9999	9999	Witness	bard3
+	9999	9999	Witness	inquisitor3
+	9999	9999	Witness	witch3
+	9999	9999	Wooden Phalanx	cleric9_oracle9
+	9999	9999	Wooden Phalanx	sorcerer_wizard9
+	9999	9999	Word of Resolve	paladin1
+	9999	9999	Youthful Appearance	alchemist1
+	9999	9999	Youthful Appearance	bard1
+	9999	9999	Youthful Appearance	sorcerer_wizard1
+	9999	9999	Youthful Appearance	witch1
+	9999	9999	Staggering Fall	cleric2_oracle2
+	9999	9999	Staggering Fall	sorcerer_wizard2
+	9999	9999	Staggering Fall	witch2
+	9999	9999	Greensight	druid2
+	9999	9999	Greensight	ranger2
+	9999	9999	Greensight	sorcerer_wizard2
+	9999	9999	Sheet Lightning	druid3
+	9999	9999	Sheet Lightning	sorcerer_wizard3
+	9999	9999	Breeze	sorcerer_wizard0
+	9999	9999	Drench	sorcerer_wizard0
+	9999	9999	Jolt	sorcerer_wizard0
+	9999	9999	Penumbra	sorcerer_wizard0
+	9999	9999	Root	sorcerer_wizard0
+	9999	9999	Scoop	sorcerer_wizard0
+	9999	9999	Dazzling Blade	bard1
+	9999	9999	Dazzling Blade	sorcerer_wizard1
+	9999	9999	Dazzling Blade, Mass	sorcerer_wizard3
+	9999	9999	Summon Accuser	bard4
+	9999	9999	Summon Accuser	cleric4_oracle4
+	9999	9999	Summon Accuser	sorcerer_wizard4
+	9999	9999	Summon Accuser	summoner4
+	9999	9999	Summon Accuser	witch4
+	9999	9999	Summon Infernal Host	bard5
+	9999	9999	Summon Infernal Host	cleric5_oracle5
+	9999	9999	Summon Infernal Host	sorcerer_wizard5
+	9999	9999	Summon Infernal Host	summoner5
+	9999	9999	Summon Infernal Host	witch5
+	9999	9999	Echean's Excellent Enclosure	sorcerer_wizard9
+	9999	9999	Ablative Sphere	sorcerer_wizard3
+	9999	9999	Burning Arc	sorcerer_wizard2
+	9999	9999	Cultural Adaptation	bard1
+	9999	9999	Cultural Adaptation	cleric1_oracle1
+	9999	9999	Cultural Adaptation	sorcerer_wizard1
+	9999	9999	Snow Shape	cleric2_oracle2
+	9999	9999	Snow Shape	druid1
+	9999	9999	Snow Shape	sorcerer_wizard2
+	9999	9999	Summon Totem Creature	cleric3_oracle3
+	9999	9999	Summon Totem Creature	druid3
+	9999	9999	Summon Totem Creature	ranger3
+	9999	9999	Summon Totem Creature	sorcerer_wizard3
+	9999	9999	Summon Totem Creature	summoner3
+	9999	9999	Battering Blast	sorcerer_wizard3
+	9999	9999	Undeath Ward	cleric5_oracle5
+	9999	9999	Undeath Ward	inquisitor4
+	9999	9999	Undeath Ward	sorcerer_wizard6
+	9999	9999	Undeath Ward	witch6
+	9999	9999	Fairness	cleric_oracle1
+	9999	9999	Fairness	inquisitor2
+	9999	9999	Fairness	paladin2
+	9999	9999	Seducer's Eyes	bard2
+	9999	9999	Seducer's Eyes	sorcerer_wizard2
+	9999	9999	Lighten Object	bard1
+	9999	9999	Lighten Object	cleric1_oracle1
+	9999	9999	Lighten Object	sorcerer_wizard1
+	9999	9999	Lighten Object	summoner1
+	9999	9999	Lighten Object, Mass	cleric5_oracle5
+	9999	9999	Lighten Object, Mass	sorcerer_wizard5
+	9999	9999	Lighten Object, Mass	summoner5
+	9999	9999	Read Weather	bard1
+	9999	9999	Read Weather	cleric1_oracle1
+	9999	9999	Read Weather	druid1
+	9999	9999	Read Weather	ranger1
+	9999	9999	Sky Swim	cleric3_oracle3
+	9999	9999	Sky Swim	druid3
+	9999	9999	Abstemiousness	bard1
+	9999	9999	Abstemiousness	cleric1_oracle1
+	9999	9999	Abstemiousness	druid1
+	9999	9999	Spell Gauge	bard2
+	9999	9999	Spell Gauge	cleric2_oracle2
+	9999	9999	Spell Gauge	inquisitor2
+	9999	9999	Spell Gauge	sorcerer_wizard2
+	9999	9999	Early Judgment	cleric2_oracle2
+	9999	9999	Early Judgment	inquisitor2
+	9999	9999	Silk To Steel	bard2
+	9999	9999	Silk To Steel	sorcerer_wizard2
+	9999	9999	Silk To Steel	witch2
+	9999	9999	Aram Zey's Focus	alchemist2
+	9999	9999	Aram Zey's Focus	bard2
+	9999	9999	Aram Zey's Focus	sorcerer_wizard2
+	9999	9999	Aram Zey's Trap Ward	sorcerer_wizard4
+	9999	9999	Bite the Hand	druid3
+	9999	9999	Bite the Hand	inquisitor3
+	9999	9999	Bite the Hand	sorcerer_wizard4
+	9999	9999	Bite the Hand	summoner3
+	9999	9999	Bite the Hand	witch4
+	9999	9999	Bite the Hand, Mass	druid6
+	9999	9999	Bite the Hand, Mass	inquisitor6
+	9999	9999	Bite the Hand, Mass	sorcerer_wizard7
+	9999	9999	Bite the Hand, Mass	summoner6
+	9999	9999	Bite the Hand, Mass	witch7
+	9999	9999	Corpse Lanterns	sorcerer_wizard2
+	9999	9999	Corpse Lanterns	witch2
+	9999	9999	Gilded Whispers	cleric4_oracle4
+	9999	9999	Gilded Whispers	sorcerer_wizard3
+	9999	9999	Lipstitch	sorcerer_wizard2
+	9999	9999	Lipstitch	witch2
+	9999	9999	Petulengro's Validation	alchemist1
+	9999	9999	Petulengro's Validation	inquisitor1
+	9999	9999	Petulengro's Validation	sorcerer_wizard1
+	9999	9999	Sequester Thoughts	bard3
+	9999	9999	Sequester Thoughts	sorcerer_wizard5
+	9999	9999	Sharesister	cleric3_oracle3
+	9999	9999	Sharesister	witch3
+	9999	9999	Stalwart Resolve	alchemist2
+	9999	9999	Stalwart Resolve	cleric2_oracle2
+	9999	9999	Stalwart Resolve	inquisitor1
+	9999	9999	Stalwart Resolve	paladin1
+	9999	9999	Stalwart Resolve	witch2
+	9999	9999	Stolen Light	bard3
+	9999	9999	Stolen Light	sorcerer_wizard3
+	9999	9999	Twisted Innards	alchemist2
+	9999	9999	Twisted Innards	magus3
+	9999	9999	Twisted Innards	sorcerer_wizard3
+	9999	9999	Twisted Innards	witch3
+	9999	9999	Blot	bard3
+	9999	9999	Blot	cleric3_oracle3
+	9999	9999	Blot	sorcerer_wizard3
+	9999	9999	Fire Sneeze	alchemist2
+	9999	9999	Fire Sneeze	druid2
+	9999	9999	Fire Sneeze	sorcerer_wizard2
+	9999	9999	Limp Lash	sorcerer_wizard2
+	9999	9999	Limp Lash	witch2
+	9999	9999	Aroden's Spellbane	sorcerer_wizard9
+	9999	9999	Bladed Dash	bard2
+	9999	9999	Bladed Dash	magus2
+	9999	9999	Bladed Dash, Greater	bard5
+	9999	9999	Bladed Dash, Greater	magus5
+	9999	9999	Blast Barrier	druid4
+	9999	9999	Blast Barrier	ranger3
+	9999	9999	Blast Barrier	sorcerer_wizard3
+	9999	9999	Blast Barrier	witch4
+	9999	9999	Call Weapon	bard1
+	9999	9999	Call Weapon	magus1
+	9999	9999	Call Weapon	ranger1
+	9999	9999	Crusader's Edge	cleric_oracle4
+	9999	9999	Crusader's Edge	inquisitor4
+	9999	9999	Crusader's Edge	paladin4
+	9999	9999	Eaglesoul	cleric6_oracle6
+	9999	9999	Eaglesoul	paladin4
+	9999	9999	Eaglesoul	summoner5
+	9999	9999	Eldritch Conduit	sorcerer_wizard2
+	9999	9999	Eldritch Conduit	witch2
+	9999	9999	Eldritch Conduit, Greater	sorcerer_wizard6
+	9999	9999	Eldritch Conduit, Greater	witch6
+	9999	9999	Fleshcurdle	sorcerer_wizard2
+	9999	9999	Forceful Strike	cleric4_oracle4
+	9999	9999	Forceful Strike	inquisitor4
+	9999	9999	Forceful Strike	magus4
+	9999	9999	Forceful Strike	paladin4
+	9999	9999	Geb's Hammer	sorcerer_wizard4
+	9999	9999	Geb's Hammer	witch4
+	9999	9999	Geniekind	cleric5_oracle5
+	9999	9999	Geniekind	druid5
+	9999	9999	Geniekind	sorcerer_wizard5
+	9999	9999	Geniekind	summoner5
+	9999	9999	Hungry Darkness	sorcerer_wizard7
+	9999	9999	Hunter's Lore	inquisitor2
+	9999	9999	Hunter's Lore	ranger2
+	9999	9999	Impart Mind	cleric6_oracle6
+	9999	9999	Impart Mind	magus5
+	9999	9999	Impart Mind	sorcerer_wizard6
+	9999	9999	Khain's Army	cleric5_oracle5
+	9999	9999	Khain's Army	sorcerer_wizard5
+	9999	9999	Khain's Army	witch5
+	9999	9999	Kiss of the First World	bard4
+	9999	9999	Kiss of the First World	druid4
+	9999	9999	Light of Iomedae	cleric3_oracle3
+	9999	9999	Light of Iomedae	inquisitor3
+	9999	9999	Light of Iomedae	paladin2
+	9999	9999	Martial Marionette	bard3
+	9999	9999	Martyr's Bargain	cleric2_oracle2
+	9999	9999	Martyr's Bargain	paladin2
+	9999	9999	Music of the Spheres	bard5
+	9999	9999	Music of the Spheres	cleric6_oracle6
+	9999	9999	Orchid's Drop	alchemist3
+	9999	9999	Pugwampi's Grace	bard2
+	9999	9999	Pugwampi's Grace	sorcerer_wizard3
+	9999	9999	Pugwampi's Grace	witch3
+	9999	9999	Shadow Barbs	cleric4_oracle4
+	9999	9999	Shadow Barbs	inquisitor4
+	9999	9999	Shadow Barbs	sorcerer_wizard4
+	9999	9999	Shining Cord	magus3
+	9999	9999	Siphon Magic	cleric5_oracle5
+	9999	9999	Siphon Magic	sorcerer_wizard5
+	9999	9999	Siphon Magic	witch5
+	9999	9999	Song of Kyonin	bard4
+	9999	9999	Spell Absorption	sorcerer_wizard5
+	9999	9999	Spell Absorption, Greater	sorcerer_wizard8
+	9999	9999	Spellscar	cleric8_oracle8
+	9999	9999	Spellscar	sorcerer_wizard8
+	9999	9999	Suppress Primal Magic	cleric4_oracle4
+	9999	9999	Suppress Primal Magic	sorcerer_wizard4
+	9999	9999	Tattoo Potion	alchemist2
+	9999	9999	Tattoo Potion	bard2
+	9999	9999	Tattoo Potion	sorcerer_wizard2
+	9999	9999	Tattoo Potion	witch2
+	9999	9999	Transfer Tattoo	bard1
+	9999	9999	Transfer Tattoo	sorcerer_wizard1
+	9999	9999	Transfer Tattoo	witch1
+	9999	9999	Vengeful Comets	druid3
+	9999	9999	Vengeful Comets	sorcerer_wizard3
+	9999	9999	Vex Giant	ranger3
+	9999	9999	Weaponwand	bard1
+	9999	9999	Weaponwand	cleric1_oracle1
+	9999	9999	Weaponwand	inquisitor1
+	9999	9999	Weaponwand	magus1
+	9999	9999	Zone of Foul Flames	druid4
+	9999	9999	Ablative Barrier	alchemist2
+	9999	9999	Ablative Barrier	magus2
+	9999	9999	Ablative Barrier	sorcerer_wizard3
+	9999	9999	Ablative Barrier	summoner2
+	9999	9999	Absorb Toxicity	alchemist3
+	9999	9999	Absorb Toxicity	druid4
+	9999	9999	Absorb Toxicity	sorcerer_wizard5
+	9999	9999	Absorb Toxicity	witch4
+	9999	9999	Abundant Ammunition	bard1
+	9999	9999	Abundant Ammunition	cleric1_oracle1
+	9999	9999	Abundant Ammunition	ranger1
+	9999	9999	Abundant Ammunition	sorcerer_wizard1
+	9999	9999	Adjuring Step	alchemist1
+	9999	9999	Adjuring Step	bard1
+	9999	9999	Adjuring Step	magus1
+	9999	9999	Adjuring Step	sorcerer_wizard1
+	9999	9999	Adoration	bard1
+	9999	9999	Adoration	sorcerer_wizard2
+	9999	9999	Adoration	witch2
+	9999	9999	Air Bubble	cleric1_oracle1
+	9999	9999	Air Bubble	druid1
+	9999	9999	Air Bubble	ranger1
+	9999	9999	Air Bubble	sorcerer_wizard1
+	9999	9999	Air Bubble	witch1
+	9999	9999	Air Walk, Communal	alchemist4
+	9999	9999	Air Walk, Communal	cleric5_oracle5
+	9999	9999	Air Walk, Communal	druid5
+	9999	9999	Animal Aspect	alchemist2
+	9999	9999	Animal Aspect	magus2
+	9999	9999	Animal Aspect	druid2
+	9999	9999	Animal Aspect	ranger2
+	9999	9999	Animal Aspect	sorcerer_wizard2
+	9999	9999	Animal Aspect, Greater	alchemist3
+	9999	9999	Animal Aspect, Greater	magus3
+	9999	9999	Animal Aspect, Greater	druid3
+	9999	9999	Animal Aspect, Greater	ranger3
+	9999	9999	Animal Aspect, Greater	sorcerer_wizard4
+	9999	9999	Ant Haul, Communal	alchemist2
+	9999	9999	Ant Haul, Communal	cleric2_oracle2
+	9999	9999	Ant Haul, Communal	druid2
+	9999	9999	Ant Haul, Communal	ranger2
+	9999	9999	Ant Haul, Communal	sorcerer_wizard2
+	9999	9999	Ant Haul, Communal	summoner2
+	9999	9999	Arcane Cannon	sorcerer_wizard7
+	9999	9999	Bestow Weapon Proficiency	alchemist2
+	9999	9999	Bestow Weapon Proficiency	antipaladin2
+	9999	9999	Bestow Weapon Proficiency	cleric2_oracle2
+	9999	9999	Bestow Weapon Proficiency	magus2
+	9999	9999	Bestow Weapon Proficiency	inquisitor2
+	9999	9999	Bestow Weapon Proficiency	paladin2
+	9999	9999	Bestow Weapon Proficiency	sorcerer_wizard2
+	9999	9999	Bestow Weapon Proficiency	witch2
+	9999	9999	Blistering Invective	alchemist2
+	9999	9999	Blistering Invective	bard2
+	9999	9999	Blistering Invective	inquisitor2
+	9999	9999	Bowstaff	inquisitor1
+	9999	9999	Bowstaff	paladin1
+	9999	9999	Bowstaff	ranger1
+	9999	9999	Brow Gasher	inquisitor2
+	9999	9999	Brow Gasher	magus2
+	9999	9999	Brow Gasher	ranger2
+	9999	9999	Brow Gasher	sorcerer_wizard2
+	9999	9999	Bullet Shield	alchemist2
+	9999	9999	Bullet Shield	sorcerer_wizard2
+	9999	9999	Burst of Speed	alchemist3
+	9999	9999	Burst of Speed	antipaladin3
+	9999	9999	Burst of Speed	magus3
+	9999	9999	Burst of Speed	inquisitor3
+	9999	9999	Burst of Speed	paladin3
+	9999	9999	Burst of Speed	ranger3
+	9999	9999	Caging Bomb Admixture	alchemist6
+	9999	9999	Certain Grip	alchemist2
+	9999	9999	Certain Grip	druid2
+	9999	9999	Certain Grip	sorcerer_wizard2
+	9999	9999	Chain of Perdition	cleric3_oracle3
+	9999	9999	Chain of Perdition	sorcerer_wizard3
+	9999	9999	Companion Mind Link	druid3
+	9999	9999	Companion Mind Link	ranger3
+	9999	9999	Compel Hostility	bard1
+	9999	9999	Compel Hostility	cleric1_oracle1
+	9999	9999	Compel Hostility	inquisitor1
+	9999	9999	Compel Hostility	paladin1
+	9999	9999	Compel Hostility	ranger1
+	9999	9999	Compel Hostility	summoner1
+	9999	9999	Compel Hostility	witch1
+	9999	9999	Damp Powder	druid1
+	9999	9999	Damp Powder	sorcerer_wizard1
+	9999	9999	Damp Powder	witch1
+	9999	9999	Darkvision, Communal	alchemist3
+	9999	9999	Darkvision, Communal	antipaladin3
+	9999	9999	Darkvision, Communal	ranger4
+	9999	9999	Darkvision, Communal	sorcerer_wizard3
+	9999	9999	Daybreak Arrow	cleric_oracle3
+	9999	9999	Daybreak Arrow	inquisitor3
+	9999	9999	Daybreak Arrow	paladin3
+	9999	9999	Deadly Juggernaut	antipaladin3
+	9999	9999	Deadly Juggernaut	cleric3_oracle3
+	9999	9999	Deadly Juggernaut	inquisitor3
+	9999	9999	Deadly Juggernaut	paladin3
+	9999	9999	Deadeye's Lore	bard1
+	9999	9999	Deadeye's Lore	cleric1_oracle1
+	9999	9999	Deadeye's Lore	druid1
+	9999	9999	Deadeye's Lore	inquisitor1
+	9999	9999	Deadeye's Lore	ranger1
+	9999	9999	Debilitating Portent	cleric4_oracle4
+	9999	9999	Debilitating Portent	witch4
+	9999	9999	Delay Poison, Communal	alchemist3
+	9999	9999	Delay Poison, Communal	bard3
+	9999	9999	Delay Poison, Communal	cleric3_oracle3
+	9999	9999	Delay Poison, Communal	druid3
+	9999	9999	Delay Poison, Communal	inquisitor3
+	9999	9999	Delay Poison, Communal	paladin3
+	9999	9999	Delay Poison, Communal	ranger3
+	9999	9999	Delay Poison, Communal	witch3
+	9999	9999	Destabilize Powder	sorcerer_wizard2
+	9999	9999	Destabilize Powder	witch2
+	9999	9999	Discovery Torch	bard2
+	9999	9999	Discovery Torch	cleric3_oracle3
+	9999	9999	Discovery Torch	inquisitor2
+	9999	9999	Divine Arrow	paladin2
+	9999	9999	Dust Form	alchemist5
+	9999	9999	Dust Form	cleric6_oracle6
+	9999	9999	Dust Form	druid6
+	9999	9999	Dust Form	witch6
+	9999	9999	Effortless Armor	cleric2_oracle2
+	9999	9999	Effortless Armor	inquisitor2
+	9999	9999	Effortless Armor	magus2
+	9999	9999	Effortless Armor	paladin2
+	9999	9999	Effortless Armor	ranger2
+	9999	9999	Endure Elements, Communal	alchemist3
+	9999	9999	Endure Elements, Communal	cleric2_oracle2
+	9999	9999	Endure Elements, Communal	druid2
+	9999	9999	Endure Elements, Communal	paladin2
+	9999	9999	Endure Elements, Communal	ranger2
+	9999	9999	Endure Elements, Communal	sorcerer_wizard2
+	9999	9999	Energy Siege Shot	sorcerer_wizard5
+	9999	9999	Energy Siege Shot	summoner5
+	9999	9999	Energy Siege Shot, Greater	sorcerer_wizard6
+	9999	9999	Energy Siege Shot, Greater	summoner6
+	9999	9999	Fabricate Bullets	sorcerer_wizard1
+	9999	9999	Fiery Shuriken	sorcerer_wizard2
+	9999	9999	Find Quarry	inquisitor4
+	9999	9999	Find Quarry	ranger4
+	9999	9999	Flash Fire	sorcerer_wizard3
+	9999	9999	Flash Fire	witch3
+	9999	9999	Forest Friend	druid2
+	9999	9999	Forest Friend	ranger2
+	9999	9999	Frightful Aspect	cleric8_oracle8
+	9999	9999	Frightful Aspect	druid8
+	9999	9999	Frightful Aspect	sorcerer_wizard8
+	9999	9999	Frightful Aspect	witch8
+	9999	9999	Frost Fall	druid2
+	9999	9999	Frost Fall	sorcerer_wizard2
+	9999	9999	Frost Fall	witch2
+	9999	9999	Haunted Fey Aspect	bard0
+	9999	9999	Haunted Fey Aspect	sorcerer_wizard0
+	9999	9999	Healing Thief	sorcerer_wizard3
+	9999	9999	Healing Thief	witch3
+	9999	9999	Heroic Invocation	sorcerer_wizard9
+	9999	9999	Heroic Invocation	witch9
+	9999	9999	Hostile Juxtaposition	sorcerer_wizard5
+	9999	9999	Hostile Juxtaposition	summoner4
+	9999	9999	Hostile Juxtaposition	witch5
+	9999	9999	Hostile Juxtaposition, Greater	sorcerer_wizard7
+	9999	9999	Hostile Juxtaposition, Greater	summoner6
+	9999	9999	Hostile Juxtaposition, Greater	witch7
+	9999	9999	Hostile Levitation	sorcerer_wizard3
+	9999	9999	Hostile Levitation	witch3
+	9999	9999	Illusion of Calm	alchemist1
+	9999	9999	Illusion of Calm	magus1
+	9999	9999	Illusion of Calm	sorcerer_wizard1
+	9999	9999	Instrument of Agony	cleric2_oracle2
+	9999	9999	Instrument of Agony	inquisitor2
+	9999	9999	Jolting Portent	cleric7_oracle7
+	9999	9999	Judgment Light	inquisitor4
+	9999	9999	Jury-Rig	bard1
+	9999	9999	Jury-Rig	magus1
+	9999	9999	Jury-Rig	sorcerer_wizard1
+	9999	9999	Jury-Rig	summoner1
+	9999	9999	Jury-Rig	witch1
+	9999	9999	Kinetic Reverberation	alchemist2
+	9999	9999	Kinetic Reverberation	sorcerer_wizard2
+	9999	9999	Languid Bomb Admixture	alchemist5
+	9999	9999	Liberating Command	bard1
+	9999	9999	Liberating Command	cleric1_oracle1
+	9999	9999	Liberating Command	druid1
+	9999	9999	Liberating Command	paladin1
+	9999	9999	Liberating Command	ranger1
+	9999	9999	Liberating Command	sorcerer_wizard1
+	9999	9999	Life Conduit	summoner1
+	9999	9999	Life Conduit, Greater	summoner5
+	9999	9999	Life Conduit, Improved	summoner3
+	9999	9999	Lightning Lash Bomb Admixture	alchemist3
+	9999	9999	Litany of Defense	antipaladin2
+	9999	9999	Litany of Defense	inquisitor2
+	9999	9999	Litany of Defense	paladin2
+	9999	9999	Litany of Eloquence	antipaladin2
+	9999	9999	Litany of Eloquence	inquisitor3
+	9999	9999	Litany of Eloquence	paladin2
+	9999	9999	Litany of Entanglement	antipaladin2
+	9999	9999	Litany of Entanglement	inquisitor3
+	9999	9999	Litany of Entanglement	paladin2
+	9999	9999	Litany of Escape	antipaladin3
+	9999	9999	Litany of Escape	inquisitor4
+	9999	9999	Litany of Escape	paladin3
+	9999	9999	Litany of Madness	antipaladin4
+	9999	9999	Litany of Madness	inquisitor6
+	9999	9999	Litany of Righteousness	inquisitor3
+	9999	9999	Litany of Righteousness	paladin2
+	9999	9999	Litany of Sight	antipaladin3
+	9999	9999	Litany of Sight	inquisitor4
+	9999	9999	Litany of Sight	paladin3
+	9999	9999	Litany of Sloth	antipaladin1
+	9999	9999	Litany of Sloth	inquisitor1
+	9999	9999	Litany of Sloth	paladin1
+	9999	9999	Litany of Thunder	antipaladin4
+	9999	9999	Litany of Thunder	inquisitor5
+	9999	9999	Litany of Thunder	paladin4
+	9999	9999	Litany of Vengeance	antipaladin4
+	9999	9999	Litany of Vengeance	inquisitor5
+	9999	9999	Litany of Vengeance	paladin4
+	9999	9999	Litany of Warding	antipaladin2
+	9999	9999	Litany of Warding	inquisitor3
+	9999	9999	Litany of Warding	paladin2
+	9999	9999	Litany of Weakness	antipaladin1
+	9999	9999	Litany of Weakness	inquisitor1
+	9999	9999	Locate Weakness	inquisitor3
+	9999	9999	Locate Weakness	magus3
+	9999	9999	Locate Weakness	ranger2
+	9999	9999	Locate Weakness	sorcerer_wizard3
+	9999	9999	Locate Weakness	witch3
+	9999	9999	Lock Gaze	bard1
+	9999	9999	Lock Gaze	inquisitor1
+	9999	9999	Lock Gaze	magus1
+	9999	9999	Lock Gaze	sorcerer_wizard1
+	9999	9999	Lock Gaze	witch1
+	9999	9999	Longshot	alchemist1
+	9999	9999	Longshot	antipaladin1
+	9999	9999	Longshot	inquisitor1
+	9999	9999	Longshot	magus1
+	9999	9999	Longshot	paladin1
+	9999	9999	Longshot	ranger1
+	9999	9999	Longshot	sorcerer_wizard1
+	9999	9999	Magic Siege Engine	antipaladin2
+	9999	9999	Magic Siege Engine	cleric2_oracle2
+	9999	9999	Magic Siege Engine	inquisitor2
+	9999	9999	Magic Siege Engine	paladin2
+	9999	9999	Magic Siege Engine	sorcerer_wizard2
+	9999	9999	Magic Siege Engine, Greater	antipaladin4
+	9999	9999	Magic Siege Engine, Greater	cleric5_oracle5
+	9999	9999	Magic Siege Engine, Greater	inquisitor4
+	9999	9999	Magic Siege Engine, Greater	paladin4
+	9999	9999	Magic Siege Engine, Greater	sorcerer_wizard4
+	9999	9999	Mask Dweomer, Communal	witch2
+	9999	9999	Mind Blank, Communal	sorcerer_wizard9
+	9999	9999	Mind Blank, Communal	witch9
+	9999	9999	Mirror Strike	magus1
+	9999	9999	Mirror Strike	sorcerer_wizard1
+	9999	9999	Moment of Greatness	bard1
+	9999	9999	Moment of Greatness	cleric1_oracle1
+	9999	9999	Moment of Greatness	sorcerer_wizard1
+	9999	9999	Mount, Communal	magus2
+	9999	9999	Mount, Communal	sorcerer_wizard2
+	9999	9999	Mount, Communal	summoner2
+	9999	9999	Mount, Communal	witch2
+	9999	9999	Mutagenic Touch	alchemist4
+	9999	9999	Named Bullet	inquisitor4
+	9999	9999	Named Bullet	ranger3
+	9999	9999	Named Bullet	sorcerer_wizard4
+	9999	9999	Named Bullet	witch4
+	9999	9999	Named Bullet, Greater	inquisitor6
+	9999	9999	Named Bullet, Greater	ranger4
+	9999	9999	Named Bullet, Greater	sorcerer_wizard6
+	9999	9999	Named Bullet, Greater	witch6
+	9999	9999	Negative Reaction	bard1
+	9999	9999	Negative Reaction	magus1
+	9999	9999	Negative Reaction	sorcerer_wizard1
+	9999	9999	Negative Reaction	witch1
+	9999	9999	Nondetection, Communal	antipaladin4
+	9999	9999	Nondetection, Communal	sorcerer_wizard4
+	9999	9999	Obsidian Flow	druid4
+	9999	9999	Obsidian Flow	sorcerer_wizard4
+	9999	9999	Obsidian Flow	summoner3
+	9999	9999	Peacebond	inquisitor1
+	9999	9999	Peacebond	sorcerer_wizard1
+	9999	9999	Peacebond	witch1
+	9999	9999	Pellet Blast	magus4
+	9999	9999	Pellet Blast	sorcerer_wizard3
+	9999	9999	Pellet Blast	summoner3
+	9999	9999	Phantom Chariot	sorcerer_wizard4
+	9999	9999	Phantom Chariot	summoner3
+	9999	9999	Phantom Driver	bard3
+	9999	9999	Phantom Driver	sorcerer_wizard3
+	9999	9999	Phantom Steed, Communal	bard4
+	9999	9999	Phantom Steed, Communal	sorcerer_wizard4
+	9999	9999	Phantom Steed, Communal	summoner3
+	9999	9999	Pilfering Hand	bard2
+	9999	9999	Pilfering Hand	cleric2_oracle2
+	9999	9999	Pilfering Hand	magus2
+	9999	9999	Pilfering Hand	sorcerer_wizard2
+	9999	9999	Protection from Arrows, Communal	alchemist3
+	9999	9999	Protection from Arrows, Communal	sorcerer_wizard3
+	9999	9999	Protection from Arrows, Communal	summoner3
+	9999	9999	Protection from Chaos, Communal	cleric2_oracle2
+	9999	9999	Protection from Chaos, Communal	inquisitor2
+	9999	9999	Protection from Chaos, Communal	paladin2
+	9999	9999	Protection from Chaos, Communal	sorcerer_wizard2
+	9999	9999	Protection from Chaos, Communal	summoner2
+	9999	9999	Protection from Energy, Communal	cleric4_oracle4
+	9999	9999	Protection from Energy, Communal	druid4
+	9999	9999	Protection from Energy, Communal	inquisitor4
+	9999	9999	Protection from Energy, Communal	ranger3
+	9999	9999	Protection from Energy, Communal	sorcerer_wizard4
+	9999	9999	Protection from Energy, Communal	summoner4
+	9999	9999	Protection from Evil, Communal	cleric2_oracle2
+	9999	9999	Protection from Evil, Communal	inquisitor2
+	9999	9999	Protection from Evil, Communal	paladin2
+	9999	9999	Protection from Evil, Communal	sorcerer_wizard2
+	9999	9999	Protection from Evil, Communal	summoner2
+	9999	9999	Protection from Good, Communal	antipaladin2
+	9999	9999	Protection from Good, Communal	cleric2_oracle2
+	9999	9999	Protection from Good, Communal	inquisitor2
+	9999	9999	Protection from Good, Communal	paladin2
+	9999	9999	Protection from Good, Communal	sorcerer_wizard2
+	9999	9999	Protection from Good, Communal	summoner2
+	9999	9999	Protection from Law, Communal	antipaladin2
+	9999	9999	Protection from Law, Communal	cleric2_oracle2
+	9999	9999	Protection from Law, Communal	inquisitor2
+	9999	9999	Protection from Law, Communal	paladin2
+	9999	9999	Protection from Law, Communal	sorcerer_wizard2
+	9999	9999	Protection from Law, Communal	summoner2
+	9999	9999	Pup Shape	druid3
+	9999	9999	Pup Shape	sorcerer_wizard3
+	9999	9999	Pup Shape	witch3
+	9999	9999	Qualm	bard2
+	9999	9999	Qualm	inquisitor2
+	9999	9999	Qualm	sorcerer_wizard2
+	9999	9999	Qualm	witch2
+	9999	9999	Recoil Fire	sorcerer_wizard2
+	9999	9999	Recoil Fire	witch2
+	9999	9999	Reinforce Armaments	cleric1_oracle1
+	9999	9999	Reinforce Armaments	magus1
+	9999	9999	Reinforce Armaments	sorcerer_wizard1
+	9999	9999	Reinforce Armaments	witch1
+	9999	9999	Reinforce Armaments, Communal	cleric2_oracle2
+	9999	9999	Reinforce Armaments, Communal	magus2
+	9999	9999	Reinforce Armaments, Communal	sorcerer_wizard2
+	9999	9999	Reinforce Armaments, Communal	witch2
+	9999	9999	Reloading Hands	magus2
+	9999	9999	Reloading Hands	ranger2
+	9999	9999	Reloading Hands	sorcerer_wizard2
+	9999	9999	Resinous Skin	alchemist3
+	9999	9999	Resinous Skin	druid3
+	9999	9999	Resinous Skin	sorcerer_wizard3
+	9999	9999	Resist Energy, Communal	alchemist3
+	9999	9999	Resist Energy, Communal	cleric3_oracle3
+	9999	9999	Resist Energy, Communal	druid3
+	9999	9999	Resist Energy, Communal	inquisitor3
+	9999	9999	Resist Energy, Communal	paladin3
+	9999	9999	Resist Energy, Communal	ranger3
+	9999	9999	Resist Energy, Communal	sorcerer_wizard3
+	9999	9999	Resist Energy, Communal	summoner3
+	9999	9999	Returning Weapon	bard2
+	9999	9999	Returning Weapon	cleric2_oracle2
+	9999	9999	Returning Weapon	inquisitor1
+	9999	9999	Returning Weapon	magus1
+	9999	9999	Returning Weapon	ranger1
+	9999	9999	Returning Weapon	sorcerer_wizard2
+	9999	9999	Returning Weapon	witch2
+	9999	9999	Returning Weapon, Communal	bard3
+	9999	9999	Returning Weapon, Communal	cleric3_oracle3
+	9999	9999	Returning Weapon, Communal	inquisitor2
+	9999	9999	Returning Weapon, Communal	magus2
+	9999	9999	Returning Weapon, Communal	ranger2
+	9999	9999	Returning Weapon, Communal	sorcerer_wizard3
+	9999	9999	Returning Weapon, Communal	witch3
+	9999	9999	Ricochet Shot	ranger2
+	9999	9999	Ricochet Shot	sorcerer_wizard2
+	9999	9999	See Alignment	alchemist1
+	9999	9999	See Alignment	bard1
+	9999	9999	See Alignment	sorcerer_wizard1
+	9999	9999	Shadow Bomb Admixture	alchemist2
+	9999	9999	Share Language, Communal	bard2
+	9999	9999	Share Language, Communal	cleric3_oracle3
+	9999	9999	Share Language, Communal	druid3
+	9999	9999	Share Language, Communal	sorcerer_wizard3
+	9999	9999	Shock Shield	alchemist1
+	9999	9999	Shock Shield	magus1
+	9999	9999	Shock Shield	sorcerer_wizard1
+	9999	9999	Shocking Image	bard4
+	9999	9999	Shocking Image	sorcerer_wizard4
+	9999	9999	Siege of Trees	druid7
+	9999	9999	Siege of Trees, Greater	druid9
+	9999	9999	Spell Immunity, Communal	cleric5_oracle5
+	9999	9999	Spell Immunity, Communal	inquisitor5
+	9999	9999	Spell Immunity, Greater Communal	cleric9_oracle9
+	9999	9999	Spider Climb, Communal	alchemist3
+	9999	9999	Spider Climb, Communal	druid3
+	9999	9999	Spider Climb, Communal	sorcerer_wizard3
+	9999	9999	Spider Climb, Communal	summoner3
+	9999	9999	Spontaneous Immolation	sorcerer_wizard2
+	9999	9999	Stabilize Powder	sorcerer_wizard2
+	9999	9999	Stabilize Powder	witch2
+	9999	9999	Stoneskin, Communal	alchemist5
+	9999	9999	Stoneskin, Communal	druid6
+	9999	9999	Stoneskin, Communal	inquisitor5
+	9999	9999	Stoneskin, Communal	sorcerer_wizard5
+	9999	9999	Stoneskin, Communal	summoner4
+	9999	9999	Summoner Conduit	cleric4_oracle4
+	9999	9999	Summoner Conduit	sorcerer_wizard5
+	9999	9999	Summoner Conduit	summoner4
+	9999	9999	Summoner Conduit	witch5
+	9999	9999	Sun Metal	cleric_oracle1
+	9999	9999	Sun Metal	paladin1
+	9999	9999	Sun Metal	ranger1
+	9999	9999	Symbol of Striking	cleric5_oracle5
+	9999	9999	Symbol of Striking	magus5
+	9999	9999	Symbol of Striking	sorcerer_wizard5
+	9999	9999	Symbol of Striking	witch5
+	9999	9999	Tactical Acumen	bard2
+	9999	9999	Tactical Acumen	inquisitor2
+	9999	9999	Tactical Acumen	magus2
+	9999	9999	Tactical Acumen	paladin1
+	9999	9999	Tactical Acumen	sorcerer_wizard2
+	9999	9999	Tar Pool	druid6
+	9999	9999	Tar Pool	sorcerer_wizard6
+	9999	9999	Tar Pool	summoner5
+	9999	9999	Targeted Bomb Admixture	alchemist1
+	9999	9999	Telekinetic Assembly	magus2
+	9999	9999	Telekinetic Assembly	sorcerer_wizard2
+	9999	9999	Telekinetic Charge	sorcerer_wizard4
+	9999	9999	Terrain Bond	ranger4
+	9999	9999	Thunder Fire	bard2
+	9999	9999	Thunder Fire	sorcerer_wizard2
+	9999	9999	Thunder Fire	witch2
+	9999	9999	Tongues, Communal	alchemist4
+	9999	9999	Tongues, Communal	bard3
+	9999	9999	Tongues, Communal	cleric5_oracle5
+	9999	9999	Tongues, Communal	sorcerer_wizard4
+	9999	9999	Tongues, Communal	summoner4
+	9999	9999	Tongues, Communal	witch4
+	9999	9999	Touch Injection	alchemist2
+	9999	9999	Touch Injection	sorcerer_wizard3
+	9999	9999	Twisted Space	magus2
+	9999	9999	Twisted Space	sorcerer_wizard2
+	9999	9999	Twisted Space	summoner2
+	9999	9999	Unerring Weapon	inquisitor1
+	9999	9999	Unerring Weapon	magus1
+	9999	9999	Unerring Weapon	sorcerer_wizard1
+	9999	9999	Unerring Weapon	witch1
+	9999	9999	Viper Bomb Admixture	alchemist4
+	9999	9999	Walk Through Space	alchemist6
+	9999	9999	Walk Through Space	magus6
+	9999	9999	Walk Through Space	sorcerer_wizard7
+	9999	9999	Walk Through Space	summoner6
+	9999	9999	Walk Through Space	witch7
+	9999	9999	Warding Weapon	magus1
+	9999	9999	Warding Weapon	sorcerer_wizard2
+	9999	9999	Warding Weapon	summoner2
+	9999	9999	Water Walk, Communal	cleric4_oracle4
+	9999	9999	Water Walk, Communal	ranger4
+	9999	9999	Weaken Powder	druid1
+	9999	9999	Weaken Powder	sorcerer_wizard1
+	9999	9999	Weaken Powder	witch1
+	9999	9999	Wilderness Soldiers	druid2
+	9999	9999	Wilderness Soldiers	ranger2
+	9999	9999	Wreath of Blades	magus4
+	9999	9999	Wreath of Blades	sorcerer_wizard5
+	9999	9999	Wreath of Blades	summoner5
+	9999	9999	Wreath of Blades	witch5
+	9999	9999	Aspect of the Nightingale	bard1
+	9999	9999	Aspect of the Nightingale	cleric1_oracle1
+	9999	9999	Aspect of the Nightingale	druid1
+	9999	9999	Aspect of the Nightingale	paladin1
+	9999	9999	Aspect of the Nightingale	ranger1
+	9999	9999	Shared Sacrifice	antipaladin3
+	9999	9999	Shared Sacrifice	cleric2_oracle2
+	9999	9999	Shared Sacrifice	summoner3
+	9999	9999	Shared Sacrifice	witch2
+	9999	9999	Monstrous Extremities	cleric3_oracle3
+	9999	9999	Monstrous Extremities	sorcerer_wizard3
+	9999	9999	Monstrous Extremities	witch4
+	9999	9999	Lose the Trail	antipaladin2
+	9999	9999	Lose the Trail	ranger1
+	9999	9999	Lose the Trail	sorcerer_wizard1
+	9999	9999	Night of Blades	antipaladin4
+	9999	9999	Night of Blades	inquisitor3
+	9999	9999	Night of Blades	ranger4
+	9999	9999	Night of Blades	sorcerer_wizard3
+	9999	9999	Brittle Portal	antipaladin2
+	9999	9999	Brittle Portal	cleric2_oracle2
+	9999	9999	Brittle Portal	druid2
+	9999	9999	Brittle Portal	inquisitor2
+	9999	9999	Brittle Portal	sorcerer_wizard2
+	9999	9999	Vampiric Hunger	antipaladin3
+	9999	9999	Vampiric Hunger	cleric3_oracle3
+	9999	9999	Vampiric Hunger	druid3
+	9999	9999	Vampiric Hunger	sorcerer_wizard3
+	9999	9999	Vampiric Hunger	witch3
+	9999	9999	Touch of Bloodletting	antipaladin2
+	9999	9999	Touch of Bloodletting	cleric1_oracle1
+	9999	9999	Touch of Bloodletting	druid1
+	9999	9999	Touch of Bloodletting	sorcerer_wizard2
+	9999	9999	Touch of Bloodletting	witch2
+	9999	9999	Awaken the Devoured	cleric5_oracle5
+	9999	9999	Awaken the Devoured	inquisitor4
+	9999	9999	Awaken the Devoured	sorcerer_wizard5
+	9999	9999	Awaken the Devoured	witch5
+	9999	9999	Charon's Dispensation	cleric4_oracle4
+	9999	9999	Charon's Dispensation	inquisitor4
+	9999	9999	Charon's Dispensation	sorcerer_wizard4
+	9999	9999	Charon's Dispensation	witch4
+	9999	9999	Create Soul Gem	cleric3_oracle3
+	9999	9999	Create Soul Gem	sorcerer_wizard3
+	9999	9999	Create Soul Gem	witch3
+	9999	9999	Daemon Ward	cleric4_oracle4
+	9999	9999	Daemon Ward	druid5
+	9999	9999	Daemon Ward	paladin4
+	9999	9999	Daemon Ward	sorcerer_wizard4
+	9999	9999	Daemon Ward	witch4
+	9999	9999	Death Knell Aura	cleric4_oracle4
+	9999	9999	Death Knell Aura	inquisitor4
+	9999	9999	Death Knell Aura	sorcerer_wizard4
+	9999	9999	Death Knell Aura	witch4
+	9999	9999	Death Knell Aura, Greater	cleric6_oracle6
+	9999	9999	Death Knell Aura, Greater	inquisitor6
+	9999	9999	Death Knell Aura, Greater	sorcerer_wizard6
+	9999	9999	Death Knell Aura, Greater	witch6
+	9999	9999	Lash of the Astradaemon	cleric6_oracle6
+	9999	9999	Lash of the Astradaemon	magus5
+	9999	9999	Lash of the Astradaemon	sorcerer_wizard6
+	9999	9999	Lash of the Astradaemon	witch6
+	9999	9999	Parasitic Soul	cleric9_oracle9
+	9999	9999	Parasitic Soul	sorcerer_wizard9
+	9999	9999	Parasitic Soul	witch9
+	9999	9999	Scourge of the Horsemen	cleric9_oracle9
+	9999	9999	Scourge of the Horsemen	sorcerer_wizard9
+	9999	9999	Soul Transfer	cleric7_oracle7
+	9999	9999	Soul Transfer	sorcerer_wizard7
+	9999	9999	Soul Transfer	witch7
+	9999	9999	Summon Cacodaemon	cleric2_oracle2
+	9999	9999	Summon Cacodaemon	sorcerer_wizard2
+	9999	9999	Summon Cacodaemon	summoner2
+	9999	9999	Summon Cacodaemon	witch2
+	9999	9999	Summon Cacodaemon, Greater	cleric4_oracle4
+	9999	9999	Summon Cacodaemon, Greater	sorcerer_wizard4
+	9999	9999	Summon Cacodaemon, Greater	summoner3
+	9999	9999	Summon Cacodaemon, Greater	witch4
+	9999	9999	Summon Ceustodaemon	cleric5_oracle5
+	9999	9999	Summon Ceustodaemon	sorcerer_wizard5
+	9999	9999	Summon Ceustodaemon	summoner4
+	9999	9999	Summon Ceustodaemon	witch5
+	9999	9999	Summon Derghodaemon	cleric9_oracle9
+	9999	9999	Summon Derghodaemon	sorcerer_wizard9
+	9999	9999	Summon Derghodaemon	witch9
+	9999	9999	Summon Erodaemon	cleric8_oracle8
+	9999	9999	Summon Erodaemon	sorcerer_wizard8
+	9999	9999	Summon Erodaemon	summoner6
+	9999	9999	Summon Erodaemon	witch8
+	9999	9999	Summon Meladaemon	cleric8_oracle8
+	9999	9999	Summon Meladaemon	sorcerer_wizard8
+	9999	9999	Summon Meladaemon	summoner6
+	9999	9999	Summon Meladaemon	witch8
+	9999	9999	Summon Thanadaemon	cleric9_oracle9
+	9999	9999	Summon Thanadaemon	sorcerer_wizard9
+	9999	9999	Summon Thanadaemon	witch9
+	9999	9999	Replenish Ki	cleric4_oracle4
+	9999	9999	Call the Void	sorcerer_wizard3
+	9999	9999	Call the Void	witch3
+	9999	9999	Black Spot	cleric4_oracle4
+	9999	9999	Black Spot	sorcerer_wizard5
+	9999	9999	Black Spot	witch4
+	9999	9999	Buoyancy	bard2
+	9999	9999	Buoyancy	sorcerer_wizard2
+	9999	9999	Salvage	cleric9_oracle9
+	9999	9999	Salvage	sorcerer_wizard9
+	9999	9999	Skeleton Crew	cleric3_oracle3
+	9999	9999	Skeleton Crew	sorcerer_wizard4
+	9999	9999	Skeleton Crew	summoner4
+	9999	9999	Skeleton Crew	witch4
+	9999	9999	Track Ship	bard2
+	9999	9999	Track Ship	cleric2_oracle2
+	9999	9999	Track Ship	sorcerer_wizard2
+	9999	9999	Unseen Crew	bard4
+	9999	9999	Unseen Crew	sorcerer_wizard5
+	9999	9999	Unseen Crew	summoner5
+	9999	9999	Unseen Crew	witch5
+	9999	9999	Planetary Adaptation	alchemist5
+	9999	9999	Planetary Adaptation	cleric4_oracle4
+	9999	9999	Planetary Adaptation	sorcerer_wizard5
+	9999	9999	Planetary Adaptation	summoner5
+	9999	9999	Planetary Adaptation, Mass	cleric6_oracle6
+	9999	9999	Planetary Adaptation, Mass	sorcerer_wizard7
+	9999	9999	Planetary Adaptation, Mass	summoner6
+	9999	9999	Advanced Scurvy	cleric1_oracle1
+	9999	9999	Advanced Scurvy	druid1
+	9999	9999	Cloud Of Seasickness	cleric2_oracle2
+	9999	9999	Cloud Of Seasickness	druid2
+	9999	9999	Cloud Of Seasickness	sorcerer_wizard2
+	9999	9999	Submerge Ship	cleric7_oracle7
+	9999	9999	Submerge Ship	sorcerer_wizard7
+	9999	9999	Heroic Fortune	alchemist2
+	9999	9999	Heroic Fortune	bard2
+	9999	9999	Heroic Fortune	cleric2_oracle2
+	9999	9999	Heroic Fortune	paladin3
+	9999	9999	Heroic Fortune, Mass	bard4
+	9999	9999	Heroic Fortune, Mass	cleric5_oracle5
+	9999	9999	Malediction	sorcerer_wizard3
+	9999	9999	Malediction	witch3
+	9999	9999	Severed Fate	cleric3_oracle3
+	9999	9999	Severed Fate	witch2
+	9999	9999	Unravel Destiny	cleric3_oracle3
+	9999	9999	Unravel Destiny	sorcerer_wizard3
+	9999	9999	Unravel Destiny	witch3
+	9999	9999	Embrace Destiny	oracle1
+	9999	9999	Embrace Destiny	sorcerer_wizard2
+	9999	9999	Embrace Destiny	witch2
+	9999	9999	Groundswell	cleric2_oracle2
+	9999	9999	Groundswell	druid2
+	9999	9999	Groundswell	magus2
+	9999	9999	Groundswell	ranger2
+	9999	9999	Ironbeard	antipaladin1
+	9999	9999	Ironbeard	cleric1_oracle1
+	9999	9999	Ironbeard	magus1
+	9999	9999	Ironbeard	paladin1
+	9999	9999	Ironbeard	ranger1
+	9999	9999	Toilsome Chant	bard1
+	9999	9999	Blend	alchemist1
+	9999	9999	Blend	druid1
+	9999	9999	Blend	magus1
+	9999	9999	Blend	ranger1
+	9999	9999	Blend	sorcerer_wizard1
+	9999	9999	Blend	witch1
+	9999	9999	Ward Of The Season	cleric4_oracle4
+	9999	9999	Ward Of The Season	druid3
+	9999	9999	Ward Of The Season	ranger3
+	9999	9999	Ward Of The Season	witch3
+	9999	9999	Whispering Lore	cleric2_oracle2
+	9999	9999	Whispering Lore	druid1
+	9999	9999	Whispering Lore	ranger1
+	9999	9999	Whispering Lore	witch1
+	9999	9999	Death From Below	bard3
+	9999	9999	Death From Below	sorcerer_wizard2
+	9999	9999	Jitterbugs	bard1
+	9999	9999	Jitterbugs	sorcerer_wizard2
+	9999	9999	Major Phantom Object	sorcerer_wizard5
+	9999	9999	Minor Dream	alchemist2
+	9999	9999	Minor Dream	bard3
+	9999	9999	Minor Dream	sorcerer_wizard3
+	9999	9999	Minor Dream	witch2
+	9999	9999	Minor Phantom Object	sorcerer_wizard4
+	9999	9999	Recharge Innate Magic	alchemist1
+	9999	9999	Recharge Innate Magic	bard1
+	9999	9999	Recharge Innate Magic	cleric1_oracle1
+	9999	9999	Recharge Innate Magic	druid1
+	9999	9999	Recharge Innate Magic	inquisitor1
+	9999	9999	Recharge Innate Magic	magus1
+	9999	9999	Recharge Innate Magic	sorcerer_wizard1
+	9999	9999	Recharge Innate Magic	witch1
+	9999	9999	Forgetful Slumber	bard4
+	9999	9999	Forgetful Slumber	sorcerer_wizard4
+	9999	9999	Forgetful Slumber	witch4
+	9999	9999	Paragon Surge	alchemist3
+	9999	9999	Paragon Surge	cleric3_oracle3
+	9999	9999	Paragon Surge	magus4
+	9999	9999	Paragon Surge	paladin4
+	9999	9999	Paragon Surge	sorcerer_wizard3
+	9999	9999	Paragon Surge	witch3
+	9999	9999	Resilient Reservoir	magus3
+	9999	9999	Resilient Reservoir	paladin3
+	9999	9999	Resilient Reservoir	sorcerer_wizard4
+	9999	9999	Resilient Reservoir	witch4
+	9999	9999	Urban Grace	alchemist1
+	9999	9999	Urban Grace	bard1
+	9999	9999	Urban Grace	ranger1
+	9999	9999	Urban Grace	sorcerer_wizard1
+	9999	9999	Urban Grace	witch1
+	9999	9999	Battle Trance	alchemist3
+	9999	9999	Battle Trance	antipaladin3
+	9999	9999	Battle Trance	cleric_oracle4
+	9999	9999	Battle Trance	inquisitor3
+	9999	9999	Battle Trance	ranger3
+	9999	9999	Battle Trance	witch4
+	9999	9999	Ghost Wolf	sorcerer_wizard4
+	9999	9999	Ghost Wolf	summoner2
+	9999	9999	Half-blood Extraction	alchemist5
+	9999	9999	Half-blood Extraction	cleric5_oracle5
+	9999	9999	Half-blood Extraction	druid5
+	9999	9999	Half-blood Extraction	sorcerer_wizard5
+	9999	9999	Half-blood Extraction	witch5
+	9999	9999	Linebreaker	alchemist1
+	9999	9999	Linebreaker	antipaladin1
+	9999	9999	Linebreaker	inquisitor1
+	9999	9999	Linebreaker	magus1
+	9999	9999	Linebreaker	paladin1
+	9999	9999	Linebreaker	ranger1
+	9999	9999	Savage Maw	antipaladin1
+	9999	9999	Savage Maw	cleric2_oracle2
+	9999	9999	Savage Maw	druid2
+	9999	9999	Savage Maw	inquisitor2
+	9999	9999	Savage Maw	magus2
+	9999	9999	Savage Maw	ranger1
+	9999	9999	Blessing Of Luck And Resolve	cleric2_oracle2
+	9999	9999	Blessing Of Luck And Resolve	inquisitor2
+	9999	9999	Blessing Of Luck And Resolve	paladin2
+	9999	9999	Blessing Of Luck And Resolve, Mass	cleric6_oracle6
+	9999	9999	Blessing Of Luck And Resolve, Mass	inquisitor6
+	9999	9999	Blessing Of Luck And Resolve, Mass	paladin4
+	9999	9999	Escaping Ward	bard2
+	9999	9999	Escaping Ward	inquisitor2
+	9999	9999	Escaping Ward	magus2
+	9999	9999	Escaping Ward	ranger2
+	9999	9999	Escaping Ward	sorcerer_wizard2
+	9999	9999	Fearsome Duplicate	bard3
+	9999	9999	Fearsome Duplicate	inquisitor3
+	9999	9999	Fearsome Duplicate	sorcerer_wizard3
+	9999	9999	Fearsome Duplicate	witch3
+	9999	9999	Village Veil	bard5
+	9999	9999	Village Veil	cleric5_oracle5
+	9999	9999	Village Veil	sorcerer_wizard5
+	9999	9999	Village Veil	witch5
+	9999	9999	Bestow Insight	bard2
+	9999	9999	Bestow Insight	cleric3_oracle3
+	9999	9999	Bestow Insight	inquisitor2
+	9999	9999	Bestow Insight	sorcerer_wizard2
+	9999	9999	Bestow Insight	witch2
+	9999	9999	Black Mark	druid7
+	9999	9999	Black Mark	witch7
+	9999	9999	Old Salt's Curse	druid5
+	9999	9999	Old Salt's Curse	witch5
+	9999	9999	Sacred Space	cleric2_oracle2
+	9999	9999	Sacred Space	paladin2
+	9999	9999	Truespeak	bard4
+	9999	9999	Truespeak	cleric6_oracle6
+	9999	9999	Truespeak	sorcerer_wizard5
+	9999	9999	Truespeak	witch5
+	9999	9999	Veil Of Heaven	paladin1
+	9999	9999	Nine Lives	cleric8_oracle8
+	9999	9999	Nine Lives	witch8
+	9999	9999	Steal Breath	bard2
+	9999	9999	Steal Breath	druid2
+	9999	9999	Steal Breath	sorcerer_wizard2
+	9999	9999	Steal Breath	witch2
+	9999	9999	Blinding Ray	cleric_oracle2
+	9999	9999	Blinding Ray	inquisitor3
+	9999	9999	Blinding Ray	paladin2
+	9999	9999	Life Channel	cleric2_oracle2
+	9999	9999	Spawn Ward	cleric5_oracle5
+	9999	9999	Spawn Ward	inquisitor5
+	9999	9999	Ancestral Regression	alchemist2
+	9999	9999	Ancestral Regression	antipaladin3
+	9999	9999	Ancestral Regression	cleric2_oracle2
+	9999	9999	Ancestral Regression	sorcerer_wizard3
+	9999	9999	Ancestral Regression	witch2
+	9999	9999	Web Bolt	magus1
+	9999	9999	Web Bolt	sorcerer_wizard1
+	9999	9999	Web Bolt	witch1
+	9999	9999	Web Cloud	sorcerer_wizard4
+	9999	9999	Web Cloud	witch4
+	9999	9999	Gloomblind Bolts	magus3
+	9999	9999	Gloomblind Bolts	sorcerer_wizard3
+	9999	9999	Gloomblind Bolts	witch3
+	9999	9999	Shadowy Haven	sorcerer_wizard4
+	9999	9999	Fire Trail	alchemist3
+	9999	9999	Fire Trail	magus3
+	9999	9999	Fire Trail	sorcerer_wizard3
+	9999	9999	Mudball	druid1
+	9999	9999	Mudball	magus1
+	9999	9999	Mudball	sorcerer_wizard1
+	9999	9999	Mudball	witch1
+	9999	9999	Vomit Twin	alchemist3
+	9999	9999	Vomit Twin	magus3
+	9999	9999	Vomit Twin	sorcerer_wizard4
+	9999	9999	Vomit Twin	summoner3
+	9999	9999	Agonizing Rebuke	antipaladin2
+	9999	9999	Agonizing Rebuke	cleric3_oracle3
+	9999	9999	Agonizing Rebuke	inquisitor3
+	9999	9999	Agonizing Rebuke	witch3
+	9999	9999	Chains Of Fire	magus6
+	9999	9999	Chains Of Fire	sorcerer_wizard6
+	9999	9999	Death Candle	antipaladin1
+	9999	9999	Death Candle	cleric2_oracle2
+	9999	9999	Death Candle	inquisitor2
+	9999	9999	Death Candle	witch2
+	9999	9999	Firestream	magus3
+	9999	9999	Firestream	sorcerer_wizard3
+	9999	9999	Fury Of The Sun	druid2
+	9999	9999	Fury Of The Sun	witch2
+	9999	9999	Healing Warmth	alchemist4
+	9999	9999	Healing Warmth	cleric4_oracle4
+	9999	9999	Healing Warmth	druid4
+	9999	9999	Healing Warmth	inquisitor4
+	9999	9999	Scorching Ash Form	alchemist4
+	9999	9999	Scorching Ash Form	sorcerer_wizard4
+	9999	9999	Touch Of Combustion	druid1
+	9999	9999	Touch Of Combustion	inquisitor1
+	9999	9999	Touch Of Combustion	magus1
+	9999	9999	Touch Of Combustion	sorcerer_wizard1
+	9999	9999	Touch Of Combustion	witch1
+	9999	9999	Improve Trap	antipaladin2
+	9999	9999	Improve Trap	druid3
+	9999	9999	Improve Trap	inquisitor3
+	9999	9999	Improve Trap	ranger2
+	9999	9999	Improve Trap	sorcerer_wizard3
+	9999	9999	Improve Trap	witch3
+	9999	9999	Blood Blaze	alchemist2
+	9999	9999	Blood Blaze	antipaladin1
+	9999	9999	Blood Blaze	cleric2_oracle2
+	9999	9999	Blood Blaze	magus2
+	9999	9999	Blood Blaze	sorcerer_wizard2
+	9999	9999	Blood Blaze	witch2
+	9999	9999	Blood Scent	alchemist3
+	9999	9999	Blood Scent	antipaladin2
+	9999	9999	Blood Scent	cleric3_oracle3
+	9999	9999	Blood Scent	druid3
+	9999	9999	Blood Scent	inquisitor3
+	9999	9999	Blood Scent	ranger2
+	9999	9999	Blood Scent	sorcerer_wizard3
+	9999	9999	Blood Scent	witch3
+	9999	9999	Enemy's Heart	adept2
+	9999	9999	Enemy's Heart	antipaladin2
+	9999	9999	Enemy's Heart	cleric2_oracle2
+	9999	9999	Enemy's Heart	witch2
+	9999	9999	Sentry Skull	antipaladin1
+	9999	9999	Sentry Skull	cleric2_oracle2
+	9999	9999	Sentry Skull	sorcerer_wizard2
+	9999	9999	Sentry Skull	witch2
+	9999	9999	Binding Earth	druid2
+	9999	9999	Binding Earth	witch2
+	9999	9999	Binding Earth, Mass	druid6
+	9999	9999	Binding Earth, Mass	witch6
+	9999	9999	Mighty Fist Of The Earth	cleric_oracle1
+	9999	9999	Mighty Fist Of The Earth	druid1
+	9999	9999	Raging Rubble	bard3
+	9999	9999	Raging Rubble	cleric3_oracle3
+	9999	9999	Raging Rubble	druid3
+	9999	9999	Raging Rubble	sorcerer_wizard3
+	9999	9999	Raging Rubble	witch3
+	9999	9999	Stone Shield	cleric1_oracle1
+	9999	9999	Stone Shield	druid1
+	9999	9999	Stone Shield	magus2
+	9999	9999	Stone Shield	sorcerer_wizard1
+	9999	9999	Stone Shield	summoner1
+	9999	9999	Alchemical Tinkering	cleric2_oracle2
+	9999	9999	Alchemical Tinkering	sorcerer_wizard1
+	9999	9999	Alchemical Tinkering	witch1
+	9999	9999	Delay Disease	alchemist2
+	9999	9999	Delay Disease	cleric2_oracle2
+	9999	9999	Delay Disease	druid2
+	9999	9999	Delay Disease	inquisitor2
+	9999	9999	Delay Disease	paladin2
+	9999	9999	Delay Disease	ranger2
+	9999	9999	Delay Disease	witch1
+	9999	9999	Sickening Strikes	alchemist2
+	9999	9999	Sickening Strikes	antipaladin2
+	9999	9999	Sickening Strikes	druid2
+	9999	9999	Sickening Strikes	magus3
+	9999	9999	Sickening Strikes	ranger4
+	9999	9999	Sickening Strikes	witch2
+	9999	9999	Absorbing Inhalation	alchemist4
+	9999	9999	Absorbing Inhalation	druid4
+	9999	9999	Absorbing Inhalation	sorcerer_wizard4
+	9999	9999	Cloud Shape	druid4
+	9999	9999	Cloud Shape	ranger4
+	9999	9999	Cloud Shape	sorcerer_wizard4
+	9999	9999	Gusting Sphere	druid2
+	9999	9999	Gusting Sphere	magus2
+	9999	9999	Gusting Sphere	sorcerer_wizard2
+	9999	9999	Miasmatic Form	alchemist4
+	9999	9999	Miasmatic Form	sorcerer_wizard4
+	9999	9999	Path Of The Winds	druid6
+	9999	9999	Path Of The Winds	sorcerer_wizard6
+	9999	9999	Wind Blades	druid5
+	9999	9999	Wind Blades	magus5
+	9999	9999	Wind Blades	sorcerer_wizard5
+	9999	9999	Wind Blades	witch5
+	9999	9999	Windy Escape	bard1
+	9999	9999	Windy Escape	druid1
+	9999	9999	Windy Escape	magus1
+	9999	9999	Windy Escape	sorcerer_wizard1
+	9999	9999	Commune With Birds	bard2
+	9999	9999	Commune With Birds	druid1
+	9999	9999	Commune With Birds	ranger1
+	9999	9999	Commune With Birds	sorcerer_wizard2
+	9999	9999	Commune With Birds	witch2
+	9999	9999	Theft Ward	cleric_oracle1
+	9999	9999	Theft Ward	inquisitor1
+	9999	9999	Theft Ward	sorcerer_wizard1
+	9999	9999	Theft Ward	witch1
+	9999	9999	Winter Feathers	cleric1_oracle1
+	9999	9999	Winter Feathers	druid1
+	9999	9999	Winter Feathers	inquisitor1
+	9999	9999	Winter Feathers	ranger1
+	9999	9999	Winter Feathers	sorcerer_wizard1
+	9999	9999	Damnation Stride	sorcerer_wizard5
+	9999	9999	Damnation Stride	summoner4
+	9999	9999	Damnation Stride	witch5
+	9999	9999	Hellmouth Lash	sorcerer_wizard4
+	9999	9999	Hellmouth Lash	witch4
+	9999	9999	Marid's Mastery	cleric1_oracle1
+	9999	9999	Marid's Mastery	druid1
+	9999	9999	Marid's Mastery	ranger1
+	9999	9999	Marid's Mastery	sorcerer_wizard1
+	9999	9999	Marid's Mastery	witch1
+	9999	9999	Nereid's Grace	druid1
+	9999	9999	Nereid's Grace	witch1
+	9999	9999	Nixie's Lure	bard4
+	9999	9999	Nixie's Lure	druid3
+	9999	9999	Nixie's Lure	sorcerer_wizard3
+	9999	9999	Nixie's Lure	summoner4
+	9999	9999	Nixie's Lure	witch3
+	9999	9999	Undine's Curse	sorcerer_wizard1
+	9999	9999	Undine's Curse	witch1
+	9999	9999	Sow Thought	bard1
+	9999	9999	Sow Thought	sorcerer_wizard1
+	9999	9999	Sow Thought	witch1
+	9999	9999	Aboleth's Lung	cleric2_oracle2
+	9999	9999	Aboleth's Lung	druid2
+	9999	9999	Aboleth's Lung	sorcerer_wizard2
+	9999	9999	Aboleth's Lung	witch2
+	9999	9999	Fins To Feet	druid3
+	9999	9999	Fins To Feet	sorcerer_wizard3
+	9999	9999	Fins To Feet	witch3
+	9999	9999	Karmic Blessing	cleric1_oracle1
+	9999	9999	Karmic Blessing	witch1
+	9999	9999	Strong Wings	druid1
+	9999	9999	Strong Wings	ranger1
+	9999	9999	Strong Wings	sorcerer_wizard1
+	9999	9999	Strong Wings	witch1
+	9999	9999	Imbue With Elemental Might	cleric2_oracle2
+	9999	9999	Imbue With Elemental Might	magus2
+	9999	9999	Imbue With Elemental Might	sorcerer_wizard2
+	9999	9999	Earth Glide	alchemist4
+	9999	9999	Earth Glide	druid4
+	9999	9999	Earth Glide	sorcerer_wizard4
+	9999	9999	Prehensile Pilfer	alchemist3
+	9999	9999	Prehensile Pilfer	bard3
+	9999	9999	Prehensile Pilfer	magus3
+	9999	9999	Prehensile Pilfer	sorcerer_wizard3
+	9999	9999	Squeeze	alchemist2
+	9999	9999	Squeeze	sorcerer_wizard2
+	9999	9999	Squeeze	witch2
+	9999	9999	Shadow Anchor	bard2
+	9999	9999	Shadow Anchor	sorcerer_wizard2
+	9999	9999	Shadow Anchor	witch2
+	9999	9999	False Alibi	bard3
+	9999	9999	False Alibi	cleric3_oracle3
+	9999	9999	False Alibi	inquisitor3
+	9999	9999	Blood Money	magus1
+	9999	9999	Blood Money	sorcerer_wizard1
+	9999	9999	Blood Money	witch1
+	9999	9999	Covetous Aura	bard5
+	9999	9999	Covetous Aura	sorcerer_wizard5
+	9999	9999	Deathwine	alchemist2
+	9999	9999	Deathwine	cleric2_oracle2
+	9999	9999	Deathwine	sorcerer_wizard3
+	9999	9999	Deathwine	witch3
+	9999	9999	Sign Of Wrath	cleric6_oracle6
+	9999	9999	Sign Of Wrath	sorcerer_wizard6
+	9999	9999	Swipe	bard2
+	9999	9999	Swipe	sorcerer_wizard3
+	9999	9999	Unconscious Agenda	bard6
+	9999	9999	Unconscious Agenda	inquisitor6
+	9999	9999	Unconscious Agenda	sorcerer_wizard6
+	9999	9999	Unconscious Agenda	witch6
+	9999	9999	Firebelly	cleric1_oracle1
+	9999	9999	Firebelly	druid1
+	9999	9999	Firebelly	paladin1
+	9999	9999	Ironbloom Sprouts	cleric1_oracle1
+	9999	9999	Ironbloom Sprouts	druid1
+	9999	9999	Bed Of Iron	inquisitor1
+	9999	9999	Bed Of Iron	magus1
+	9999	9999	Bed Of Iron	paladin1
+	9999	9999	Bed Of Iron	sorcerer_wizard1
+	9999	9999	Carry Companion	druid2
+	9999	9999	Carry Companion	paladin2
+	9999	9999	Carry Companion	ranger2
+	9999	9999	Carry Companion	sorcerer_wizard2
+	9999	9999	Carry Companion	witch2
+	9999	9999	Clarion Call	bard1
+	9999	9999	Clarion Call	cleric1_oracle1
+	9999	9999	Clarion Call	magus1
+	9999	9999	Clarion Call	sorcerer_wizard1
+	9999	9999	Emblazon Crest	magus1
+	9999	9999	Emblazon Crest	paladin1
+	9999	9999	Emblazon Crest	sorcerer_wizard1
+	9999	9999	Keep Watch	inquisitor1
+	9999	9999	Keep Watch	magus1
+	9999	9999	Keep Watch	paladin1
+	9999	9999	Keep Watch	ranger1
+	9999	9999	Keep Watch	sorcerer_wizard1
+	9999	9999	Serren's Armor Lock	magus2
+	9999	9999	Serren's Armor Lock	sorcerer_wizard3
+	9999	9999	Serren's Armor Lock	witch3
+	9999	9999	Serren's Swift Girding	magus1
+	9999	9999	Serren's Swift Girding	paladin1
+	9999	9999	Serren's Swift Girding	sorcerer_wizard1
+	9999	9999	Ward Shield	cleric4_oracle4
+	9999	9999	Ward Shield	inquisitor4
+	9999	9999	Ward Shield	magus4
+	9999	9999	Ward Shield	sorcerer_wizard4
+	9999	9999	Curse Item	cleric2_oracle2
+	9999	9999	Lissalan Snake Sigil	cleric3_oracle3
+	9999	9999	Lissalan Snake Sigil	sorcerer_wizard3
+	9999	9999	Display Aversion	bard2
+	9999	9999	Display Aversion	cleric2_oracle2
+	9999	9999	Display Aversion	inquisitor2
+	9999	9999	Display Aversion	sorcerer_wizard3
+	9999	9999	Display Aversion	witch2
+	9999	9999	Domination Link	bard3
+	9999	9999	Domination Link	inquisitor3
+	9999	9999	Domination Link	sorcerer_wizard3
+	9999	9999	Domination Link	witch3
+	9999	9999	Project Weakness	cleric3_oracle3
+	9999	9999	Project Weakness	sorcerer_wizard4
+	9999	9999	Project Weakness	witch3
+	9999	9999	Steal Years	cleric3_oracle3
+	9999	9999	Steal Years	druid3
+	9999	9999	Steal Years	sorcerer_wizard3
+	9999	9999	Steal Years	witch3
+	9999	9999	Steal Years, Greater	cleric5_oracle5
+	9999	9999	Steal Years, Greater	druid5
+	9999	9999	Steal Years, Greater	sorcerer_wizard5
+	9999	9999	Steal Years, Greater	witch5
+	9999	9999	Transmute Wine To Blood	cleric2_oracle2
+	9999	9999	Transmute Wine To Blood	sorcerer_wizard2
+	9999	9999	Transmute Wine To Blood	witch2
+	9999	9999	Frost Mammoth	cleric7_oracle7
+	9999	9999	Frost Mammoth	druid7
+	9999	9999	Frost Mammoth	sorcerer_wizard7
+	9999	9999	Frost Mammoth	summoner6
+	9999	9999	Winter's Grasp	druid2
+	9999	9999	Winter's Grasp	witch2
+	9999	9999	Irriseni Mirror Sight	sorcerer_wizard3
+	9999	9999	Irriseni Mirror Sight	witch3
+	9999	9999	Bleed For Your Master	antipaladin2
+	9999	9999	Bleed For Your Master	druid3
+	9999	9999	Bleed For Your Master	ranger3
+	9999	9999	Bleed For Your Master	sorcerer_wizard3
+	9999	9999	Bleed For Your Master	witch3
+	9999	9999	Die For Your Master	antipaladin4
+	9999	9999	Die For Your Master	druid5
+	9999	9999	Die For Your Master	sorcerer_wizard5
+	9999	9999	Die For Your Master	witch5
+	9999	9999	Familiar Figment	sorcerer_wizard2
+	9999	9999	Familiar Figment	witch2
+	9999	9999	Hunter's Friend	druid3
+	9999	9999	Hunter's Friend	ranger2
+	9999	9999	Scamper	druid2
+	9999	9999	Scamper	ranger2
+	9999	9999	Sea Steed	druid2
+	9999	9999	Sea Steed	paladin2
+	9999	9999	Sea Steed	ranger2
+	9999	9999	Sea Stallion	druid4
+	9999	9999	Sea Stallion	paladin4
+	9999	9999	Sea Stallion	ranger4
+	9999	9999	Share Shape	ranger3
+	9999	9999	Share Shape	sorcerer_wizard4
+	9999	9999	Share Shape	witch4
+	9999	9999	Shield Companion	antipaladin1
+	9999	9999	Shield Companion	druid1
+	9999	9999	Shield Companion	paladin1
+	9999	9999	Shield Companion	ranger1
+	9999	9999	Shield Companion	sorcerer_wizard1
+	9999	9999	Shield Companion	witch1
+	9999	9999	Sky Steed	paladin3
+	9999	9999	Flurry Of Snowballs	druid2
+	9999	9999	Flurry Of Snowballs	magus2
+	9999	9999	Flurry Of Snowballs	sorcerer_wizard2
+	9999	9999	Flurry Of Snowballs	witch2
+	9999	9999	Snowball	druid1
+	9999	9999	Snowball	magus1
+	9999	9999	Snowball	sorcerer_wizard1
+	9999	9999	Snowball	summoner1
+	9999	9999	Snowball	witch1
+	9999	9999	Ice Spears	druid3
+	9999	9999	Ice Spears	sorcerer_wizard3
+	9999	9999	Ice Spears	witch3
+	9999	9999	Martyr's Last Blessing	cleric3_oracle3
+	9999	9999	Martyr's Last Blessing	ranger3
+	9999	9999	Peasant Armaments	cleric1_oracle1
+	9999	9999	Peasant Armaments	inquisitor1
+	9999	9999	Peasant Armaments	ranger1
+	9999	9999	Peasant Armaments	sorcerer_wizard1
+	9999	9999	Conjure Deadfall	magus5
+	9999	9999	Conjure Deadfall	sorcerer_wizard4
+	9999	9999	Create Holds	druid4
+	9999	9999	Create Holds	ranger3
+	9999	9999	Create Holds	sorcerer_wizard4
+	9999	9999	Determine Depth	bard2
+	9999	9999	Determine Depth	druid2
+	9999	9999	Determine Depth	sorcerer_wizard2
+	9999	9999	Discern Value	bard3
+	9999	9999	Discern Value	sorcerer_wizard3
+	9999	9999	Nature's Ravages	cleric4_oracle4
+	9999	9999	Nature's Ravages	witch3
+	9999	9999	Nature's Ravages, Greater	cleric8_oracle8
+	9999	9999	Nature's Ravages, Greater	witch7
+	9999	9999	Corpse Hammer	sorcerer_wizard4
+	9999	9999	Corpse Hammer	witch4
+	9999	9999	Oath Of Justice	cleric_oracle3
+	9999	9999	Oath Of Justice	paladin2
+	9999	9999	Tactical Formation	cleric_oracle3
+	9999	9999	Tactical Formation	paladin3
+	9999	9999	Tactical Formation	ranger4
+	9999	9999	Soothing Word	cleric_oracle2
+	9999	9999	Soothing Word	druid2
+	9999	9999	Soothing Word	inquisitor2
+	9999	9999	Soothing Word	paladin2
+	9999	9999	Soothing Word	ranger3
+	9999	9999	Soothing Word	witch2
+	9999	9999	Frosthammer	antipaladin3
+	9999	9999	Frosthammer	cleric3
+	9999	9999	Frosthammer	inquisitor3
+	9999	9999	Frosthammer	ranger3
+	9999	9999	Accept Affliction	bard3
+	9999	9999	Accept Affliction	cleric_oracle3
+	9999	9999	Accept Affliction	druid3
+	9999	9999	Accept Affliction	paladin3
+	9999	9999	Accept Affliction	witch3
+	9999	9999	Angelic Aspect, Lesser	cleric_oracle2
+	9999	9999	Angelic Aspect, Lesser	paladin2
+	9999	9999	Angelic Aspect, Lesser	sorcerer_wizard2
+	9999	9999	Angelic Aspect, Greater	cleric_oracle8
+	9999	9999	Angelic Aspect, Greater	paladin4
+	9999	9999	Angelic Aspect, Greater	sorcerer_wizard8
+	9999	9999	Angelic Aspect	cleric_oracle5
+	9999	9999	Angelic Aspect	paladin3
+	9999	9999	Angelic Aspect	sorcerer_wizard5
+	9999	9999	Archon's Trumpet	bard5
+	9999	9999	Archon's Trumpet	cleric_oracle7
+	9999	9999	Archon's Trumpet	paladin4
+	9999	9999	Archon's Trumpet	sorcerer_wizard7
+	9999	9999	Burst Of Radiance	cleric_oracle2
+	9999	9999	Burst Of Radiance	druid2
+	9999	9999	Burst Of Radiance	sorcerer_wizard2
+	9999	9999	Chains Of Light	cleric_oracle6
+	9999	9999	Chains Of Light	inquisitor5
+	9999	9999	Chains Of Light	paladin4
+	9999	9999	Chains Of Light	sorcerer_wizard6
+	9999	9999	Touch Of Mercy	bard2
+	9999	9999	Touch Of Mercy	cleric_oracle2
+	9999	9999	Touch Of Mercy	sorcerer_wizard2
+	9999	9999	Hymn Of Mercy	bard5
+	9999	9999	Hymn Of Mercy	cleric_oracle5
+	9999	9999	Hymn Of Peace	bard6
+	9999	9999	Hymn Of Peace	cleric_oracle7
+	9999	9999	Blood Of The Martyr	cleric_oracle2
+	9999	9999	Blood Of The Martyr	inquisitor3
+	9999	9999	Charitable Impulse	bard2
+	9999	9999	Charitable Impulse	cleric_oracle3
+	9999	9999	Charitable Impulse	sorcerer_wizard3
+	9999	9999	Charitable Impulse	witch3
+	9999	9999	Elemental Assessor	cleric_oracle6
+	9999	9999	Elemental Assessor	sorcerer_wizard6
+	9999	9999	Sanctify Weapons	cleric_oracle5
+	9999	9999	Sanctify Weapons	paladin3
+	9999	9999	Summon Stampede	cleric_oracle6
+	9999	9999	Summon Stampede	druid6
+	9999	9999	Summon Stampede	summoner4
+	9999	9999	Vinetrap	cleric_oracle8
+	9999	9999	Vinetrap	druid8
+	9999	9999	Black Sword Of War	antipaladin3
+	9999	9999	Black Sword Of War	cleric_oracle3
+	9999	9999	Black Sword Of War	ranger3
+	9999	9999	Black Sword Of War	sorcerer_wizard3
+	9999	9999	Bloody Tears And Jagged Smile	cleric_oracle2
+	9999	9999	Bloody Tears And Jagged Smile	sorcerer_wizard2
+	9999	9999	Blightburn Weapon	alchemist4
+	9999	9999	Blightburn Weapon	inquisitor4
+	9999	9999	Blightburn Weapon	magus4
+	9999	9999	Blightburn Weapon	sorcerer_wizard5
+	9999	9999	Blightburn Weapon	witch5
+	9999	9999	Chameleon Scales	alchemist1
+	9999	9999	Chameleon Scales	druid0
+	9999	9999	Chameleon Scales	ranger1
+	9999	9999	Chameleon Scales	sorcerer_wizard0
+	9999	9999	Dark-Light	cleric_oracle3
+	9999	9999	Dark-Light	druid3
+	9999	9999	Dark-Light	sorcerer_wizard3
+	9999	9999	Enlarge Tail	alchemist1
+	9999	9999	Enlarge Tail	antipaladin1
+	9999	9999	Enlarge Tail	druid1
+	9999	9999	Enlarge Tail	magus1
+	9999	9999	Enlarge Tail	sorcerer_wizard1
+	9999	9999	Enlarge Tail	summoner1
+	9999	9999	Enlarge Tail	witch1
+	9999	9999	Lead Plating	alchemist3
+	9999	9999	Lead Plating	cleric_oracle2
+	9999	9999	Lead Plating	druid2
+	9999	9999	Lead Plating	ranger2
+	9999	9999	Lead Plating	sorcerer_wizard2
+	9999	9999	Lead Plating	witch2
+	9999	9999	Shadow Dragon Aspect	bard4
+	9999	9999	Shadow Dragon Aspect	sorcerer_wizard4
+	9999	9999	Strip Scales	druid4
+	9999	9999	Strip Scales	sorcerer_wizard5
+	9999	9999	Strip Scales	witch5
+	9999	9999	Unseen Engineers	sorcerer_wizard3
+	9999	9999	Unseen Engineers	summoner2
+	9999	9999	Unseen Engineers	witch3
+	9999	9999	Detect Relations	bard2
+	9999	9999	Detect Relations	cleric_oracle2
+	9999	9999	Detect Relations	inquisitor2
+	9999	9999	Detect Relations	witch2
+	9999	9999	Business Booms	bard3
+	9999	9999	Business Booms	sorcerer_wizard3
+	9999	9999	Prosperous Room	bard3
+	9999	9999	Prosperous Room	sorcerer_wizard3
+	9999	9999	Renovation	bard5
+	9999	9999	Renovation	sorcerer_wizard4
+	9999	9999	Teleport Structure	sorcerer_wizard6
+	9999	9999	Bless Army	cleric_oracle6
+	9999	9999	Imbue Army Special Ability	cleric_oracle9
+	9999	9999	Tactical Insight	bard6
+	9999	9999	Tactical Insight	inquisitor6
+	9999	9999	Ceremony	cleric_oracle1
+	9999	9999	Dragon Turtle Shell	alchemist3
+	9999	9999	Dragon Turtle Shell	cleric_oracle3
+	9999	9999	Dragon Turtle Shell	druid2
+	9999	9999	Dragon Turtle Shell	sorcerer_wizard3
+	9999	9999	Draconic Suppression	sorcerer_wizard5
+	9999	9999	Draconic Suppression	witch5
+	9999	9999	Dragonvoice	alchemist2
+	9999	9999	Dragonvoice	bard2
+	9999	9999	Dragonvoice	sorcerer_wizard2
+	9999	9999	Dragonvoice	witch2
+	9999	9999	Dungeonsight	bard4
+	9999	9999	Dungeonsight	cleric_oracle5
+	9999	9999	Dungeonsight	inquisitor4
+	9999	9999	Dungeonsight	sorcerer_wizard5
+	9999	9999	Erode Defenses	magus2
+	9999	9999	Erode Defenses	sorcerer_wizard3
+	9999	9999	Erode Defenses	witch3
+	9999	9999	Gravity Well	druid6
+	9999	9999	Gravity Well	sorcerer_wizard5
+	9999	9999	Heart Of The Mammoth	cleric_oracle8
+	9999	9999	Heart Of The Mammoth	druid8
+	9999	9999	Heart Of The Mammoth	sorcerer_wizard8
+	9999	9999	Heart Of The Mammoth	witch8
+	9999	9999	Illusory Hoard	bard4
+	9999	9999	Illusory Hoard	sorcerer_wizard5
+	9999	9999	Kreighton's Perusal	bard1
+	9999	9999	Kreighton's Perusal	cleric_oracle1
+	9999	9999	Kreighton's Perusal	magus1
+	9999	9999	Kreighton's Perusal	sorcerer_wizard1
+	9999	9999	Page-Bound Epiphany	bard2
+	9999	9999	Page-Bound Epiphany	cleric_oracle2
+	9999	9999	Page-Bound Epiphany	magus2
+	9999	9999	Page-Bound Epiphany	sorcerer_wizard2
+	9999	9999	Collaborative Thaumaturgy	bard3
+	9999	9999	Collaborative Thaumaturgy	cleric_oracle3
+	9999	9999	Collaborative Thaumaturgy	druid3
+	9999	9999	Collaborative Thaumaturgy	magus3
+	9999	9999	Collaborative Thaumaturgy	summoner3
+	9999	9999	Collaborative Thaumaturgy	sorcerer_wizard3
+	9999	9999	Collaborative Thaumaturgy	witch3
+	9999	9999	Sure Casting	bard1
+	9999	9999	Sure Casting	cleric_oracle1
+	9999	9999	Sure Casting	inquisitor1
+	9999	9999	Sure Casting	sorcerer_wizard1
+	9999	9999	Sure Casting	witch1
+	9999	9999	Cauterizing Weapon	bard2
+	9999	9999	Cauterizing Weapon	magus2
+	9999	9999	Cauterizing Weapon	ranger2
+	9999	9999	Cauterizing Weapon	sorcerer_wizard3
+	9999	9999	Tactical Miscalculation	bard2
+	9999	9999	Tactical Miscalculation	inquisitor2
+	9999	9999	Tactical Miscalculation	ranger2
+	9999	9999	Wall Of Light	druid5
+	9999	9999	Wall Of Light	sorcerer_wizard5
+	9999	9999	Blood Song	bard4
+	9999	9999	Hallucinogenic Smoke	cleric_oracle4
+	9999	9999	Hallucinogenic Smoke	witch4
+	9999	9999	Jungle Mind	druid5
+	9999	9999	Jungle Mind	oracle5
+	9999	9999	Jungle Mind	ranger4
+	9999	9999	Lay Of The Land	cleric_oracle2
+	9999	9999	Lay Of The Land	bard2
+	9999	9999	Lay Of The Land	druid2
+	9999	9999	Lay Of The Land	ranger2
+	9999	9999	Lay Of The Land	witch2
+	9999	9999	Source Severance	cleric_oracle6
+	9999	9999	Source Severance	druid6
+	9999	9999	Source Severance	witch6
+	9999	9999	Tectonic Communion	druid7
+	9999	9999	Anti-Summoning Shield	bard2
+	9999	9999	Anti-Summoning Shield	inquisitor3
+	9999	9999	Anti-Summoning Shield	sorcerer_wizard2
+	9999	9999	Anti-Summoning Shield	summoner2
+	9999	9999	Burst With Light	cleric_oracle4
+	9999	9999	Burst With Light	paladin4
+	9999	9999	Detect Demon	cleric_oracle1
+	9999	9999	Detect Demon	inquisitor1
+	9999	9999	Detect Demon	paladin1
+	9999	9999	Protection From Outsiders	cleric_oracle2
+	9999	9999	Protection From Outsiders	inquisitor2
+	9999	9999	Protection From Outsiders	paladin2
+	9999	9999	Righteous Blood	inquisitor2
+	9999	9999	Righteous Blood	paladin2
+	9999	9999	Telepathic Censure	bard2
+	9999	9999	Telepathic Censure	inquisitor2
+	9999	9999	Contact Nalfeshnee	cleric_oracle6
+	9999	9999	Contact Nalfeshnee	sorcerer_wizard6
+	9999	9999	Contact Nalfeshnee	witch6
+	9999	9999	Ascension	cleric_oracle9
+	9999	9999	Ascension	druid9
+	9999	9999	Ascension	sorcerer_wizard9
+	9999	9999	Ascension	witch9
+	9999	9999	Bleed Glory	cleric_oracle3
+	9999	9999	Bleed Glory	sorcerer_wizard3
+	9999	9999	Bleed Glory	witch3
+	9999	9999	Deathless	alchemist4
+	9999	9999	Deathless	cleric_oracle4
+	9999	9999	Deathless	inquisitor4
+	9999	9999	Deathless	sorcerer_wizard4
+	9999	9999	Deathless	witch4
+	9999	9999	Lend Path	bard4
+	9999	9999	Lend Path	cleric_oracle5
+	9999	9999	Lend Path	druid5
+	9999	9999	Lend Path	magus4
+	9999	9999	Lend Path	sorcerer_wizard5
+	9999	9999	Lend Path	summoner4
+	9999	9999	Lend Path	witch5
+	9999	9999	Mythic Severance	cleric_oracle4
+	9999	9999	Mythic Severance	inquisitor3
+	9999	9999	Mythic Severance	sorcerer_wizard4
+	9999	9999	Mythic Severance	witch4
+	9999	9999	Restore Mythic Power	bard3
+	9999	9999	Restore Mythic Power	cleric_oracle3
+	9999	9999	Restore Mythic Power	sorcerer_wizard3
+	9999	9999	Restore Mythic Power	witch3
+	9999	9999	Share Glory	bard2
+	9999	9999	Share Glory	cleric_oracle3
+	9999	9999	Share Glory	druid3
+	9999	9999	Share Glory	sorcerer_wizard3
+	9999	9999	Share Glory	summoner2
+	9999	9999	Share Glory	witch3
+	9999	9999	Steal Power	cleric_oracle5
+	9999	9999	Steal Power	sorcerer_wizard5
+	9999	9999	Steal Power	witch5
+	9999	9999	Terraform	cleric_oracle7
+	9999	9999	Terraform	druid6
+	9999	9999	Terraform	sorcerer_wizard7
+	9999	9999	Terraform	witch7
+	9999	9999	Apparent Treachery	bard3
+	9999	9999	Apparent Treachery	inquisitor3
+	9999	9999	Apparent Treachery	sorcerer_wizard4
+	9999	9999	Film Of Filth	cleric_oracle4
+	9999	9999	Film Of Filth	druid4
+	9999	9999	Film Of Filth	ranger3
+	9999	9999	Film Of Filth	sorcerer_wizard4
+	9999	9999	Lightning Lash	cleric_oracle3
+	9999	9999	Lightning Lash	inquisitor3
+	9999	9999	Lightning Lash	ranger2
+	9999	9999	Lightning Lash	witch3
+	9999	9999	Maw Of Chaos	cleric_oracle8
+	9999	9999	Maw Of Chaos	sorcerer_wizard8
+	9999	9999	Summon Greater Demon	cleric_oracle9
+	9999	9999	Summon Greater Demon	sorcerer_wizard9
+	9999	9999	Summon Greater Demon	witch9
+	9999	9999	Summon Lesser Demon	cleric_oracle5
+	9999	9999	Summon Lesser Demon	sorcerer_wizard5
+	9999	9999	Summon Lesser Demon	summoner4
+	9999	9999	Summon Lesser Demon	witch5
+	9999	9999	Unleash Pandemonium	cleric_oracle5
+	9999	9999	Unleash Pandemonium	summoner5
+	9999	9999	Unleash Pandemonium	witch5
+	9999	9999	Vermicious Assumption	cleric_oracle6
+	9999	9999	Vermicious Assumption	summoner6
+	9999	9999	Borrowed Time	alchemist6
+	9999	9999	Borrowed Time	bard6
+	9999	9999	Borrowed Time	magus6
+	9999	9999	Borrowed Time	sorcerer_wizard6
+	9999	9999	Elemental Bombardment	druid7
+	9999	9999	Elemental Bombardment	sorcerer_wizard7
+	9999	9999	Imbue With Flight	sorcerer_wizard4
+	9999	9999	Soulreaver	cleric_oracle8
+	9999	9999	Soulreaver	sorcerer_wizard8
+	9999	9999	Soulreaver	witch8
+	9999	9999	Sustaining Legend	bard5
+	9999	9999	Sustaining Legend	cleric_oracle6
+	9999	9999	Accursed Glare	antipaladin3
+	9999	9999	Accursed Glare	sorcerer_wizard3
+	9999	9999	Accursed Glare	witch3
+	9999	9999	Share Skin	druid6
+	9999	9999	Share Skin	witch6
+	9999	9999	Share Skin, Greater	witch8

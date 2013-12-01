@@ -19,3 +19,19 @@ project.properties
 # Eclipse project files
 .classpath
 .project
+
+# C++ Files
+*.obj
+*.tlog
+*.lastbuildstate
+*.pch
+*.pdb
+*.idb
+*.rc
+*.manifest
+*.res
+*.log
+*.suo
+*.sdf
+*.ipch
+*.exe
