@@ -1,0 +1,16 @@
+	dlow	dhigh	itemType	valueAdjust
+	1	5	Dry Load	1500
+	6	16	Bane	2000
+	17	17	Conductive	2000
+	18	28	Corrosive	2000
+	29	29	Cruel	2000
+	30	30	Cunning	2000
+	31	43	Flaming	2000
+	44	56	Frost	2000
+	57	64	Ghost Touch	2000
+	65	65	Limning	2000
+	66	67	Merciful	2000
+	68	68	Planar	2000
+	69	73	Seeking	2000
+	74	86	Shock	2000
+	87	100	Thundering	2000
