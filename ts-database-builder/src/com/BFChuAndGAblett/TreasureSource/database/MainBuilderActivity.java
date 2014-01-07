@@ -24,7 +24,6 @@ import android.widget.Toast;
 public class MainBuilderActivity extends Activity {
 	
     private LootDB db;
-    private Context context;
     private AssetManager manager;
     
     
@@ -59,7 +58,25 @@ public class MainBuilderActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		//BUILD THE DATABASE
+		try {
+            db = new LootDB(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        db.open();
+        manager = this.getAssets();
+        try {
+            db.populateTables(manager);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        Toast.makeText(this, "Database finished loading!", Toast.LENGTH_LONG)
+                .show();
+		
+		
 		setContentView(R.layout.activity_main_builder);
 
 		final View controlsView = findViewById(R.id.fullscreen_content_controls);
@@ -129,23 +146,7 @@ public class MainBuilderActivity extends Activity {
 				mDelayHideTouchListener);
 		
 		
-		//BUILD THE DATABASE
-		try {
-            db = new LootDB(this);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        db.open();
-        manager = context.getAssets();
-        try {
-            db.populateTables(manager);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        Toast.makeText(this, "Database finished loading!", Toast.LENGTH_LONG)
-                .show();
-		
 	}
 
 	@Override

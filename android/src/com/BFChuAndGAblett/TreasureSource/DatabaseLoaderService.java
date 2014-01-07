@@ -19,7 +19,6 @@ import android.widget.Toast;
 public class DatabaseLoaderService extends Service {
 
     private LootDB db;
-    private Context context;
     private AssetManager manager;
 
     /*
@@ -35,7 +34,6 @@ public class DatabaseLoaderService extends Service {
 
     @Override
     public void onCreate() {
-        context = this;
         // code to execute when the service is first created
     }
 
@@ -49,7 +47,7 @@ public class DatabaseLoaderService extends Service {
             e.printStackTrace();
         }
         db.open();
-        manager = context.getAssets();
+        manager = this.getAssets();
         try {
             db.populateTables(manager);
         } catch (IOException e) {
