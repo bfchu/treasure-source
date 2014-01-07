@@ -35,7 +35,6 @@ public class LootDB {
     public LootDB(Context context) throws IOException {
         this.context = context;
         dbHelper = new LootDatabaseOpenHelper(context);
-
     }
 
     public void open() throws SQLiteException {
@@ -71,13 +70,6 @@ public class LootDB {
             displayRoll = 1;
         }
         if (id == null) {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "Creating a new entry: d%: " + item.getNumRolled()
-                // + ", quantity: " + item.getQuantity() + ", item Name: "
-                // + item.getName() + ", Value: " + item.getgValue());
-            }
-            // create
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -94,13 +86,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating am entry: d%: " + item.getNumRolled()
-                // + ", quantity: " + item.getQuantity() + ", item Name: "
-                // + item.getName() + ", Value: " + item.getgValue());
-            }
-            // update
-
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
             newItem.put("dRoll", item.getNumRolled());
@@ -124,13 +109,6 @@ public class LootDB {
             int quantity, String itemName, Double gValue) {
         boolean successfull = false;
         if (id == null) {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating a new entry: d%: " + dRoll
-                // + ", quantity: " + quantity + ", item Name: "
-                // + itemName + ", Value: " + gValue);
-            }
-            // create
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -144,13 +122,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating a new entry: d%: " + dRoll
-                // + ", quantity: " + quantity + ", item Name: "
-                // + itemName + ", Value: " + gValue);
-            }
-            // update
-
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
             newItem.put("dRoll", dRoll);
@@ -182,12 +153,6 @@ public class LootDB {
         }
 
         if (id == null) {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating a new entry: d%: " + dRoll
-                // + ", quantity: " + quantity + ", item Name: "
-                // + itemName + ", Value: " + gValue);
-            }
-            // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -204,12 +169,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating a new entry: d%: " + dRoll
-                // + ", quantity: " + quantity + ", item Name: "
-                // + itemName + ", Value: " + gValue);
-            }
-            // update
 
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -243,14 +202,6 @@ public class LootDB {
             displayRoll = 1;
         }
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: d%: " + dRoll
-            // + ", quantity: " + quantity + ", item Name: "
-            // + itemName + ", Value: " + gValue);
-            // }
-
-            // create
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -267,14 +218,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: d%: " + dRoll
-            // + ", quantity: " + quantity + ", item Name: "
-            // + itemName + ", Value: " + gValue);
-            // }
-
-            // update
-
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
             newItem.put("dRoll", dRoll);
@@ -298,14 +241,6 @@ public class LootDB {
             int APL, double slowGold, double mediumGold, double fastGold) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: APL: " + APL +
-            // ", slowGold: "
-            // + slowGold + ", mediumGold: " + mediumGold
-            // + ", fastGold: " + fastGold);
-            // }
-
-            // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -320,14 +255,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: APL: " + APL +
-            // ", slowGold: "
-            // + slowGold + ", mediumGold: " + mediumGold
-            // + ", fastGold: " + fastGold);
-            // }
-
-            // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -413,16 +340,6 @@ public class LootDB {
             Integer numAbilities, Integer abilityLevel, Integer isSpecific) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", enhancement: " + enhancement
-            // + ", numAbilities: " + numAbilities
-            // + ", abilityLevel: " + abilityLevel + ", isSpecific: "
-            // + isSpecific);
-            // }
-
-            // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -439,16 +356,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", enhancement: " + enhancement
-            // + ", numAbilities: " + numAbilities
-            // + ", abilityLevel: " + abilityLevel + ", isSpecific: "
-            // + isSpecific);
-            // }
-
-            // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -470,12 +377,6 @@ public class LootDB {
             Integer dLow, Integer dHigh, String ability, Double priceAdjust) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", ability: " + ability + ", priceAdjust: "
-            // + priceAdjust);
-            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -490,12 +391,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", ability: " + ability + ", priceAdjust: "
-            // + priceAdjust);
-            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -519,13 +414,6 @@ public class LootDB {
             Integer dLow, Integer dHigh, String itemName, Double price) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", itemName: " + itemName + ", price: "
-            // + price);
-            // }
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -539,12 +427,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", itemName: " + itemName + ", price: "
-            // + price);
-            // }
 
             // Create a new row:
             ContentValues newItem = new ContentValues();

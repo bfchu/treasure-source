@@ -2,13 +2,11 @@ package com.BFChuAndGAblett.TreasureSource.database;
 
 import java.io.IOException;
 
-import com.BFChuAndGAblett.TreasureSource.database.DatabaseLoaderService;
 import com.BFChuAndGAblett.TreasureSource.database.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,6 +26,8 @@ public class MainBuilderActivity extends Activity {
     private LootDB db;
     private Context context;
     private AssetManager manager;
+    
+    
 	/**
 	 * Whether or not the system UI should be auto-hidden after
 	 * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -127,17 +127,12 @@ public class MainBuilderActivity extends Activity {
 		// while interacting with the UI.
 		findViewById(R.id.dummy_button).setOnTouchListener(
 				mDelayHideTouchListener);
-	}
-
-	@Override
-	protected void onPostCreate(Bundle savedInstanceState) {
-		super.onPostCreate(savedInstanceState);
-
-		//TODO: build database here
+		
+		
+		//BUILD THE DATABASE
 		try {
             db = new LootDB(this);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         db.open();
@@ -145,12 +140,18 @@ public class MainBuilderActivity extends Activity {
         try {
             db.populateTables(manager);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
         Toast.makeText(this, "Database finished loading!", Toast.LENGTH_LONG)
                 .show();
+		
+	}
+
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+		super.onPostCreate(savedInstanceState);
+
 		
 		// Trigger the initial hide() shortly after the activity has been
 		// created, to briefly hint to the user that UI controls
