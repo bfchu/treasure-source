@@ -3,7 +3,11 @@
  */
 package com.BFChuAndGAblett.TreasureSource;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -27,6 +31,7 @@ public class LootDB {
     private static final String DATABASE_NAME = "TreasureSource.db";
     /** version of the database */
     private static final int DATABASE_VERSION = 1;
+    private static String DATABASE_PATH = "";
 
     private SQLiteDatabase db;
     private Context context;
@@ -40,9 +45,15 @@ public class LootDB {
 
     public void open() throws SQLiteException {
         try {
+			dbHelper.copyDataBase();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        
+        try {
             db = dbHelper.getWritableDatabase();
         } catch (SQLiteException e) {
-            // if opening for writing fails, try to open for reading only
+            Log.d(TAG, "In LootDB.open(): failed to get writable Databade, getting readable Database instead.");
             db = dbHelper.getReadableDatabase();
         }
     }
@@ -55,6 +66,8 @@ public class LootDB {
         db.delete(tableName, null, null);
     }
 
+   
+    
     /**
      * DATABASE ENTRY SAVERS
      * 
@@ -71,12 +84,6 @@ public class LootDB {
             displayRoll = 1;
         }
         if (id == null) {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "Creating a new entry: d%: " + item.getNumRolled()
-                // + ", quantity: " + item.getQuantity() + ", item Name: "
-                // + item.getName() + ", Value: " + item.getgValue());
-            }
-            // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -94,12 +101,7 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating am entry: d%: " + item.getNumRolled()
-                // + ", quantity: " + item.getQuantity() + ", item Name: "
-                // + item.getName() + ", Value: " + item.getgValue());
-            }
-            // update
+
 
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -124,12 +126,7 @@ public class LootDB {
             int quantity, String itemName, Double gValue) {
         boolean successfull = false;
         if (id == null) {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating a new entry: d%: " + dRoll
-                // + ", quantity: " + quantity + ", item Name: "
-                // + itemName + ", Value: " + gValue);
-            }
-            // create
+
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -144,13 +141,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating a new entry: d%: " + dRoll
-                // + ", quantity: " + quantity + ", item Name: "
-                // + itemName + ", Value: " + gValue);
-            }
-            // update
-
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
             newItem.put("dRoll", dRoll);
@@ -182,12 +172,6 @@ public class LootDB {
         }
 
         if (id == null) {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating a new entry: d%: " + dRoll
-                // + ", quantity: " + quantity + ", item Name: "
-                // + itemName + ", Value: " + gValue);
-            }
-            // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -204,13 +188,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            if (BuildConfig.DEBUG) {
-                // Log.d(TAG, "updating a new entry: d%: " + dRoll
-                // + ", quantity: " + quantity + ", item Name: "
-                // + itemName + ", Value: " + gValue);
-            }
-            // update
-
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
             newItem.put("dRoll", dRoll);
@@ -243,13 +220,6 @@ public class LootDB {
             displayRoll = 1;
         }
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: d%: " + dRoll
-            // + ", quantity: " + quantity + ", item Name: "
-            // + itemName + ", Value: " + gValue);
-            // }
-
-            // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -267,13 +237,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: d%: " + dRoll
-            // + ", quantity: " + quantity + ", item Name: "
-            // + itemName + ", Value: " + gValue);
-            // }
-
-            // update
 
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -298,14 +261,6 @@ public class LootDB {
             int APL, double slowGold, double mediumGold, double fastGold) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: APL: " + APL +
-            // ", slowGold: "
-            // + slowGold + ", mediumGold: " + mediumGold
-            // + ", fastGold: " + fastGold);
-            // }
-
-            // create
 
             // Create a new row:
             ContentValues newItem = new ContentValues();
@@ -320,15 +275,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: APL: " + APL +
-            // ", slowGold: "
-            // + slowGold + ", mediumGold: " + mediumGold
-            // + ", fastGold: " + fastGold);
-            // }
-
-            // create
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -413,17 +359,6 @@ public class LootDB {
             Integer numAbilities, Integer abilityLevel, Integer isSpecific) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", enhancement: " + enhancement
-            // + ", numAbilities: " + numAbilities
-            // + ", abilityLevel: " + abilityLevel + ", isSpecific: "
-            // + isSpecific);
-            // }
-
-            // create
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -439,17 +374,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", enhancement: " + enhancement
-            // + ", numAbilities: " + numAbilities
-            // + ", abilityLevel: " + abilityLevel + ", isSpecific: "
-            // + isSpecific);
-            // }
-
-            // create
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -470,13 +394,6 @@ public class LootDB {
             Integer dLow, Integer dHigh, String ability, Double priceAdjust) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", ability: " + ability + ", priceAdjust: "
-            // + priceAdjust);
-            // }
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -490,13 +407,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", ability: " + ability + ", priceAdjust: "
-            // + priceAdjust);
-            // }
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -519,13 +429,6 @@ public class LootDB {
             Integer dLow, Integer dHigh, String itemName, Double price) {
         boolean successfull = false;
         if (id == null) {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "Creating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", itemName: " + itemName + ", price: "
-            // + price);
-            // }
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -539,13 +442,6 @@ public class LootDB {
                 successfull = true;
             }
         } else {
-            // if (BuildConfig.DEBUG) {
-            // Log.d(TAG, "updating a new entry: dLow: " + dLow +
-            // ", dHigh: "
-            // + dHigh + ", itemName: " + itemName + ", price: "
-            // + price);
-            // }
-
             // Create a new row:
             ContentValues newItem = new ContentValues();
             // Assign values for each column.
@@ -1108,594 +1004,6 @@ public class LootDB {
         return cursor;
     }
 
-    /**
-     * DATABASE TABLE POPULATION
-     * */
-    public void populateTables(AssetManager manager) throws IOException {
-        /*
-         * TODO: this method will handle all of the population of tables that
-         * are created in initTables().
-         */
-
-        popEncounterValsTable(manager);
-        popMagicValsTable(manager, "Weapons");
-        popMagicValsTable(manager, "Armor");
-
-        // TODO: popTable methods for coins, goods, items by APL;
-        popAPLCoins(manager);
-        popAPLGoods(manager);
-        popAPLItems(manager);
-
-        // Item Types
-        popMundaneTypeTable(manager);
-        popItemTypeTable("Armor", manager);
-        popItemTypeTable("Shield", manager);
-        popItemTypeTable("Weapon", manager);
-        popItemTypeTable("RangedWeapon", manager);
-        popItemTypeTable("Ammo", manager);
-        popItemTypeTable("WondrousItem", manager);
-
-        // Armor Enhancement and Abilities numbers by rarity
-        popEnhancementTable("Armor", manager);
-        popEnhancementTable("Weapons", manager);
-
-        // Special Abilities for Armor, Shield, Weapons:
-        popAbilitiesTable("Armor", manager);
-        popAbilitiesTable("Shields", manager);
-        popAbilitiesTable("Weapons", manager);
-        popAbilitiesTable("Ranged_Weapons", manager);
-        popAbilitiesTable("Ammunition", manager);
-
-        // Specific items
-        popMundaneItemTable("Alchemical_item", manager);
-        popMundaneItemTable("Armor", manager);
-        popMundaneItemTable("Tools_and_gear", manager);
-
-        popSpecificItemTable("Armor", manager);
-        popSpecificItemTable("Shields", manager);
-        popSpecificItemTable("Weapons", manager);
-        popSpecificItemTable("Potions", manager);
-        popSpecificItemTable("Rings", manager);
-        popRodsAndStavesItemTable(manager);
-
-        popSpecificItemTable("Wondrous_Belt", manager);
-        popSpecificItemTable("Wondrous_Body", manager);
-        popSpecificItemTable("Wondrous_Chest", manager);
-        popSpecificItemTable("Wondrous_Eyes", manager);
-        popSpecificItemTable("Wondrous_Feet", manager);
-        popSpecificItemTable("Wondrous_Hands", manager);
-        popSpecificItemTable("Wondrous_Head", manager);
-        popSpecificItemTable("Wondrous_Headband", manager);
-        popSpecificItemTable("Wondrous_Neck", manager);
-        popSpecificItemTable("Wondrous_Shoulders", manager);
-        popSpecificItemTable("Wondrous_Wrists", manager);
-        popSpecificItemTable("Wondrous_Slotless", manager);
-
-    }
-
-    public void popEncounterValsTable(AssetManager manager) throws IOException {
-        String tableName = "Encounter_Values";
-        String fileName = (tableName + ".dat");
-
-        LootIO tableFiles = new LootIO(manager.open(fileName));
-        Log.d(TAG, "Begin Populating Table " + tableName);
-
-        Integer APL = 1;
-        Double slowGold = 1.0;
-        Double mediumGold = 1.0;
-        Double fastGold = 1.0;
-
-        tableFiles.getIn().readLine();// cut off the header line of the file
-        while (tableFiles.getIn().ready()) {
-            String[] data = getLine(tableFiles);
-
-            if (data.length >= 4) {
-                APL = Integer.parseInt(data[1]);
-                slowGold = Double.valueOf(data[2]);
-                mediumGold = Double.valueOf(data[3]);
-                fastGold = Double.valueOf(data[4]);
-
-                saveEntryEncounterVals(tableName, null, APL, slowGold,
-                        mediumGold, fastGold);
-            }
-        }
-
-        Log.d(TAG, "Done Populating Table " + tableName);
-        tableFiles.close();
-    }
-
-    public void popMagicValsTable(AssetManager manager, String itemType)
-            throws IOException {
-        String tableName = "magicAdjustValues_" + itemType;
-        String fileName = (tableName + ".dat");
-
-        LootIO tableFiles = new LootIO(manager.open(fileName));
-        Log.d(TAG, "Begin Populating Table " + tableName);
-
-        Integer magicLevel = 1;
-        Double valueAdjust = 1.0;
-
-        tableFiles.getIn().readLine();// cut off the header line of the file
-        while (tableFiles.getIn().ready()) {
-            String[] data = getLine(tableFiles);
-
-            if (data.length >= 2) {
-                magicLevel = Integer.parseInt(data[1]);
-                valueAdjust = Double.valueOf(data[2]);
-
-                saveEntryMagicVals(tableName, null, magicLevel, valueAdjust);
-            }
-        }
-
-        Log.d(TAG, "Done Populating Table " + tableName);
-        tableFiles.close();
-    }
-
-    public void popAPLCoins(AssetManager manager) throws IOException {
-        for (int ii = 0; ii < 20; ii++) {
-            String tableName = "APL" + (ii + 1) + "_Coins";
-            String fileName = (tableName + ".dat");
-
-            LootIO tableFiles = new LootIO(manager.open(fileName));
-            Log.d(TAG, "Begin Populating Table " + tableName);
-
-            Integer dLow = 1;
-            Integer dHigh = 100;
-            Integer numDice = 1;
-            Integer dieSize = 6;
-            Integer quantity = 1;
-            Integer coinType = 3;
-
-            tableFiles.getIn().readLine();// cut off the header line of the file
-            while (tableFiles.getIn().ready()) {
-                String[] data = getLine(tableFiles);
-
-                if (data.length >= 6) {
-                    dLow = Integer.parseInt(data[1]);
-                    dHigh = Integer.parseInt(data[2]);
-                    numDice = Integer.parseInt(data[3]);
-                    dieSize = Integer.parseInt(data[4]);
-                    quantity = Integer.parseInt(data[5]);
-                    coinType = Integer.parseInt(data[6]);
-
-                    saveEntryAPLcoins(tableName, null, dLow, dHigh, numDice,
-                            dieSize, quantity, coinType);
-                }
-            }
-
-            Log.d(TAG, "Done Populating Table " + tableName);
-            tableFiles.close();
-        }
-    }
-
-    public void popAPLGoods(AssetManager manager) throws IOException {
-        for (int ii = 0; ii < 20; ii++) {
-            String tableName = "APL" + (ii + 1) + "_Goods";
-            String fileName = (tableName + ".dat");
-
-            LootIO tableFiles = new LootIO(manager.open(fileName));
-            Log.d(TAG, "Begin Populating Table " + tableName);
-
-            Integer dLow = 1;
-            Integer dHigh = 100;
-            Integer numDice = 1;
-            Integer dieSize = 6;
-            Integer goodsType = 1;
-
-            tableFiles.getIn().readLine();// cut off the header line of the file
-            while (tableFiles.getIn().ready()) {
-                String[] data = getLine(tableFiles);
-
-                if (data.length >= 4) {
-                    dLow = Integer.parseInt(data[1]);
-                    dHigh = Integer.parseInt(data[2]);
-                    numDice = Integer.parseInt(data[3]);
-                    dieSize = Integer.parseInt(data[4]);
-                    goodsType = Integer.parseInt(data[5]);
-
-                    saveEntryAPLGoods(tableName, null, dLow, dHigh, numDice,
-                            dieSize, goodsType);
-                }
-            }
-
-            Log.d(TAG, "Done Populating Table " + tableName);
-            tableFiles.close();
-        }
-    }
-
-    public void popAPLItems(AssetManager manager) throws IOException {
-        for (int ii = 0; ii < 20; ii++) {
-            String tableName = "APL" + (ii + 1) + "_Items";
-            String fileName = (tableName + ".dat");
-
-            LootIO tableFiles = new LootIO(manager.open(fileName));
-            Log.d(TAG, "Begin Populating Table " + tableName);
-
-            Integer dLow = 1;
-            Integer dHigh = 100;
-            Integer numDice = 1;
-            Integer dieSize = 6;
-            Integer itemRarityGroup = 1;
-
-            tableFiles.getIn().readLine();// cut off the header line of the file
-            while (tableFiles.getIn().ready()) {
-                String[] data = getLine(tableFiles);
-
-                if (data.length >= 4) {
-                    dLow = Integer.parseInt(data[1]);
-                    dHigh = Integer.parseInt(data[2]);
-                    numDice = Integer.parseInt(data[3]);
-                    dieSize = Integer.parseInt(data[4]);
-                    itemRarityGroup = Integer.parseInt(data[5]);
-
-                    saveEntryAPLItems(tableName, null, dLow, dHigh, numDice,
-                            dieSize, itemRarityGroup);
-                }
-            }
-
-            Log.d(TAG, "Done Populating Table " + tableName);
-            tableFiles.close();
-
-        }
-    }
-
-    public void popMundaneTypeTable(AssetManager manager) throws IOException {
-        String tableName = "MundaneTypes";
-        String fileName = (tableName + ".dat");
-
-        LootIO tableFiles = new LootIO(manager.open(fileName));
-        Log.d(TAG, "Begin Populating Table " + tableName);
-
-        Integer dLow = 1;
-        Integer dHigh = 100;
-        String itemType = null;
-        Double valueAdjust = 1.0;
-
-        tableFiles.getIn().readLine();// cut off the header line of the file
-        while (tableFiles.getIn().ready()) {
-            String[] data = getLine(tableFiles);
-
-            if (data.length >= 4) {
-                dLow = Integer.parseInt(data[1]);
-                dHigh = Integer.parseInt(data[2]);
-                itemType = data[3];
-                valueAdjust = Double.valueOf(data[4]);
-
-                saveEntryItemTypes(tableName, null, dLow, dHigh, itemType,
-                        valueAdjust);
-            }
-        }
-
-        Log.d(TAG, "Done Populating Table " + tableName);
-        tableFiles.close();
-
-    }
-
-    public void popItemTypeTable(String tableType, AssetManager manager)
-            throws IOException {
-        String tableName = (tableType + "Types");
-        String fileName = (tableName + ".dat");
-
-        LootIO tableFiles = new LootIO(manager.open(fileName));
-        Log.d(TAG, "Begin Populating Table " + tableName);
-
-        Integer dLow = 1;
-        Integer dHigh = 100;
-        String itemType = "";
-        Double valueAdjust = 1.0;
-
-        tableFiles.getIn().readLine();// cut off the header line of the file
-        while (tableFiles.getIn().ready()) {
-            String[] data = getLine(tableFiles);
-
-            if (data.length >= 4) {
-                dLow = Integer.parseInt(data[1]);
-                dHigh = Integer.parseInt(data[2]);
-                itemType = data[3];
-                valueAdjust = Double.valueOf(data[4]);
-
-                saveEntryItemTypes(tableName, null, dLow, dHigh, itemType,
-                        valueAdjust);
-            }
-        }
-
-        Log.d(TAG, "Done Populating Table " + tableName);
-        tableFiles.close();
-
-    }
-
-    public void popEnhancementTable(String tableType, AssetManager manager)
-            throws IOException {
-        String tableName = null;
-        for (int ii = 0; ii < 3; ii++) {
-            for (int jj = 0; jj < 2; jj++) {
-                String lesserOrGreater = null;
-                switch (jj) {
-                case 0:
-                    lesserOrGreater = "Lesser";
-                    break;
-                case 1:
-                    lesserOrGreater = "Greater";
-                }
-                String rarityLevel = null;
-                switch (ii) {
-                case 0:
-                    rarityLevel = "Minor";
-                    break;
-                case 1:
-                    rarityLevel = "Medium";
-                    break;
-                case 2:
-                    rarityLevel = "Major";
-                }
-                tableName = (tableType + "_" + lesserOrGreater + "_" + rarityLevel);
-                Log.d(TAG, "Begin Populating Table " + tableName);
-
-                String fileName = (tableName + ".dat");
-                LootIO tableFiles = new LootIO(manager.open(fileName));
-
-                Integer dLow = 1;
-                Integer dHigh = 100;
-                Integer enhancement = 1;
-                Integer numAbilities = 0;
-                Integer abilityLevel = 0;
-                Integer isSpecific = 0;
-
-                tableFiles.getIn().readLine();// cut off the header line of the
-                                              // file
-                while (tableFiles.getIn().ready()) {
-                    String[] data = getLine(tableFiles);
-
-                    if (data.length >= 6) {
-                        dLow = Integer.valueOf(data[1]);
-                        dHigh = Integer.valueOf(data[2]);
-                        enhancement = Integer.valueOf(data[3]);
-                        numAbilities = Integer.valueOf(data[4]);
-                        abilityLevel = Integer.valueOf(data[5]);
-                        isSpecific = Integer.valueOf(data[6]);
-
-                        saveEntryEnhancement(tableName, null, dLow, dHigh,
-                                enhancement, numAbilities, abilityLevel,
-                                isSpecific);
-                    }
-                }
-                Log.d(TAG, "Done Populating Table " + tableName);
-                tableFiles.close();
-            }
-        }
-
-    }
-
-    public void popAbilitiesTable(String tableType, AssetManager manager)
-            throws IOException {
-        String tableName = null;
-        for (int ii = 0; ii < 5; ii++) {
-            tableName = "Abilities_" + tableType + "_plus" + (ii + 1);
-            Log.d(TAG, "Begin Populating Table " + tableName);
-
-            String fileName = (tableName + ".dat");
-            LootIO tableFiles = new LootIO(manager.open(fileName));
-
-            Integer dLow = 1;
-            Integer dHigh = 100;
-            String ability = null;
-            Double priceAdjust = 1.0;
-
-            tableFiles.getIn().readLine();// cut off the header line of the file
-            while (tableFiles.getIn().ready()) {
-                String[] data = getLine(tableFiles);
-
-                if (data.length >= 4) {
-                    dLow = Integer.valueOf(data[1]);
-                    dHigh = Integer.valueOf(data[2]);
-                    ability = data[3];
-                    priceAdjust = Double.valueOf(data[4]);
-
-                    saveEntryAbilities(tableName, null, dLow, dHigh, ability,
-                            priceAdjust);
-                }
-            }
-            Log.d(TAG, "Done Populating Table " + tableName);
-            tableFiles.close();
-        }
-
-    }
-
-    public void popMundaneItemTable(String tableType, AssetManager manager)
-            throws IOException {
-        String tableName = null;
-
-        tableName = ("Mundane_" + tableType);
-        Log.d(TAG, "Begin Populating Table " + tableName);
-
-        String fileName = (tableName + ".dat");
-        LootIO tableFiles = new LootIO(manager.open(fileName));
-
-        Integer dLow = 1;
-        Integer dHigh = 100;
-        String itemName = null;
-        Double price = 1.0;
-
-        tableFiles.getIn().readLine();// cut off the header line of the
-                                      // file
-        while (tableFiles.getIn().ready()) {
-            String[] data = getLine(tableFiles);
-
-            if (data.length >= 4) {
-                dLow = Integer.valueOf(data[1]);
-                dHigh = Integer.valueOf(data[2]);
-                itemName = data[3];
-                price = Double.valueOf(data[4]);
-
-                saveEntrySpecificItems(tableName, null, dLow, dHigh, itemName,
-                        price);
-            }
-        }
-        Log.d(TAG, "Done Populating Table " + tableName);
-        tableFiles.close();
-
-    }
-
-    public void popSpecificItemTable(String tableType, AssetManager manager)
-            throws IOException {
-        String tableName = null;
-        for (int ii = 0; ii < 3; ii++) {
-            for (int jj = 0; jj < 2; jj++) {
-                String lesserOrGreater = null;
-                switch (jj) {
-                case 0:
-                    lesserOrGreater = "Lesser";
-                    break;
-                case 1:
-                    lesserOrGreater = "Greater";
-                }
-                String rarityLevel = null;
-                switch (ii) {
-                case 0:
-                    rarityLevel = "Minor";
-                    break;
-                case 1:
-                    rarityLevel = "Medium";
-                    break;
-                case 2:
-                    rarityLevel = "Major";
-                }
-                tableName = ("Specific_" + tableType + "_" + lesserOrGreater
-                        + "_" + rarityLevel);
-                Log.d(TAG, "Begin Populating Table " + tableName);
-
-                String fileName = (tableName + ".dat");
-                LootIO tableFiles = new LootIO(manager.open(fileName));
-
-                Integer dLow = 1;
-                Integer dHigh = 100;
-                String itemName = null;
-                Double price = 1.0;
-
-                tableFiles.getIn().readLine();// cut off the header line of the
-                                              // file
-                while (tableFiles.getIn().ready()) {
-                    String[] data = getLine(tableFiles);
-
-                    if (data.length >= 4) {
-                        dLow = Integer.valueOf(data[1]);
-                        dHigh = Integer.valueOf(data[2]);
-                        itemName = data[3];
-                        price = Double.valueOf(data[4]);
-
-                        saveEntrySpecificItems(tableName, null, dLow, dHigh,
-                                itemName, price);
-                    }
-                }
-                Log.d(TAG, "Done Populating Table " + tableName);
-                tableFiles.close();
-
-            }
-        }
-    }
-
-    public void popRodsAndStavesItemTable(AssetManager manager)
-            throws IOException {
-        String tableName = null;
-        for (int ii = 0; ii < 2; ii++) {
-            for (int jj = 0; jj < 2; jj++) {
-                String lesserOrGreater = null;
-                switch (jj) {
-                case 0:
-                    lesserOrGreater = "Lesser";
-                    break;
-                case 1:
-                    lesserOrGreater = "Greater";
-                }
-                String rarityLevel = null;
-                switch (ii) {
-                case 0:
-                    rarityLevel = "Medium";
-                    break;
-                case 1:
-                    rarityLevel = "Major";
-                }
-                tableName = ("Specific_Rods_" + lesserOrGreater + "_" + rarityLevel);
-                Log.d(TAG, "Begin Populating Table " + tableName);
-
-                String fileName = (tableName + ".dat");
-                LootIO tableFiles = new LootIO(manager.open(fileName));
-
-                Integer dLow = 1;
-                Integer dHigh = 100;
-                String itemName = null;
-                Double price = 1.0;
-
-                tableFiles.getIn().readLine();// cut off the header line of the
-                                              // file
-                while (tableFiles.getIn().ready()) {
-                    String[] data = getLine(tableFiles);
-
-                    if (data.length >= 4) {
-                        dLow = Integer.valueOf(data[1]);
-                        dHigh = Integer.valueOf(data[2]);
-                        itemName = data[3];
-                        price = Double.valueOf(data[4]);
-
-                        saveEntrySpecificItems(tableName, null, dLow, dHigh,
-                                itemName, price);
-                    }
-                }
-                Log.d(TAG, "Done Populating Table " + tableName);
-                tableFiles.close();
-
-            }
-        }
-        for (int ii = 0; ii < 2; ii++) {
-            for (int jj = 0; jj < 2; jj++) {
-                String lesserOrGreater = null;
-                switch (jj) {
-                case 0:
-                    lesserOrGreater = "Lesser";
-                    break;
-                case 1:
-                    lesserOrGreater = "Greater";
-                }
-                String rarityLevel = null;
-                switch (ii) {
-                case 0:
-                    rarityLevel = "Medium";
-                    break;
-                case 1:
-                    rarityLevel = "Major";
-                }
-                tableName = ("Specific_Staves_" + lesserOrGreater + "_" + rarityLevel);
-                Log.d(TAG, "Begin Populating Table " + tableName);
-
-                String fileName = (tableName + ".dat");
-                LootIO tableFiles = new LootIO(manager.open(fileName));
-
-                Integer dLow = 1;
-                Integer dHigh = 100;
-                String itemName = null;
-                Double price = 1.0;
-
-                tableFiles.getIn().readLine();// cut off the header line of the
-                                              // file
-                while (tableFiles.getIn().ready()) {
-                    String[] data = getLine(tableFiles);
-
-                    if (data.length >= 4) {
-                        dLow = Integer.valueOf(data[1]);
-                        dHigh = Integer.valueOf(data[2]);
-                        itemName = data[3];
-                        price = Double.valueOf(data[4]);
-
-                        saveEntrySpecificItems(tableName, null, dLow, dHigh,
-                                itemName, price);
-                    }
-                }
-                Log.d(TAG, "Done Populating Table " + tableName);
-                tableFiles.close();
-
-            }
-        }
-    }
 
     // TODO: remaining popTable forms;
 
@@ -1728,15 +1036,27 @@ public class LootDB {
                 + "value varchar(50), "
                 + "dispGold int, " + "dispRoll int)";
         private static final String DROP_TABLE = "DROP TABLE IF EXISTS lootOut";
+        private Context mContext;
 
         public LootDatabaseOpenHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
+            if(android.os.Build.VERSION.SDK_INT >= 17){
+                DATABASE_PATH = context.getApplicationInfo().dataDir + "/databases/";         
+            }	else {
+                DATABASE_PATH = "/data/data/" + context.getPackageName() + "/databases/";
+            }
+            this.mContext = context;
         }
 
         public LootDatabaseOpenHelper(Context context, String name,
                 CursorFactory factory, int version) {
             super(context, name, factory, version);
-
+            if(android.os.Build.VERSION.SDK_INT >= 17){
+                DATABASE_PATH = context.getApplicationInfo().dataDir + "/databases/";         
+            }	else {
+                DATABASE_PATH = "/data/data/" + context.getPackageName() + "/databases/";
+            }
+            this.mContext = context;
         }
 
         private void clearLootOutTable(SQLiteDatabase db) {
@@ -1744,235 +1064,32 @@ public class LootDB {
             db.execSQL(CREATE_TABLE_LootOut);
         }
 
-        public void initTables(SQLiteDatabase db) {
-            // Primary output table
-            db.execSQL(CREATE_TABLE_LootOut);
-
-            // Gold value of encounters:
-            initEncounterValsTable(db);
-
-            // value adjust of magic items:
-            initMagicValsTable(db, "Weapons");
-            initMagicValsTable(db, "Armor");
-
-            // Coins, goods, and items by APL
-            initAPLcoinsTable(db);
-            initAPLgoodsTable(db);
-            initAPLitemsTable(db);
-
-            // Item Types
-            initItemTypeTable(db, "Mundane");
-            initItemTypeTable(db, "Armor");
-            initItemTypeTable(db, "Shield");
-            initItemTypeTable(db, "Weapon");
-            initItemTypeTable(db, "RangedWeapon");
-            initItemTypeTable(db, "Ammo");
-            initItemTypeTable(db, "WondrousItem");
-
-            // Armor Enhancement and Abilities numbers by rarity
-            initEnhancementTable(db, "Armor");
-            initEnhancementTable(db, "Weapons");
-
-            // Special Abilities for Armor, Shield, Weapons:
-            initAbilitiesTable(db, "Armor");
-            initAbilitiesTable(db, "Shields");
-            initAbilitiesTable(db, "Weapons");
-            initAbilitiesTable(db, "Ranged_Weapons");
-            initAbilitiesTable(db, "Ammunition");
-
-            // Specific items
-            initMundaneItemTable(db, "Alchemical_item");
-            initMundaneItemTable(db, "Armor");
-            initMundaneItemTable(db, "Tools_and_gear");
-
-            initSpecificItemTable(db, "Armor");
-            initSpecificItemTable(db, "Shields");
-            initSpecificItemTable(db, "Weapons");
-            initSpecificItemTable(db, "Potions");
-            initSpecificItemTable(db, "Rings");
-            initSpecificItemTable(db, "Rods");
-            initSpecificItemTable(db, "Staves");
-
-            initSpecificItemTable(db, "Wondrous_Belt");
-            initSpecificItemTable(db, "Wondrous_Body");
-            initSpecificItemTable(db, "Wondrous_Chest");
-            initSpecificItemTable(db, "Wondrous_Eyes");
-            initSpecificItemTable(db, "Wondrous_Feet");
-            initSpecificItemTable(db, "Wondrous_Hands");
-            initSpecificItemTable(db, "Wondrous_Head");
-            initSpecificItemTable(db, "Wondrous_Headband");
-            initSpecificItemTable(db, "Wondrous_Neck");
-            initSpecificItemTable(db, "Wondrous_Shoulders");
-            initSpecificItemTable(db, "Wondrous_Wrists");
-            initSpecificItemTable(db, "Wondrous_Slotless");
-
-        }
-
-        public void initEncounterValsTable(SQLiteDatabase db) {
-            String tableName = "Encounter_Values";
-            String sqlcmd = "CREATE TABLE " + tableName
-                    + "(id INTEGER PRIMARY KEY AUTOINCREMENT, " + "APL int, "
-                    + "slowGold double, " + "mediumGold double, "
-                    + "fastGold double)";
-
-            db.execSQL(sqlcmd);
-            Log.d(TAG, "Creating Table " + tableName);
-        }
-
-        public void initMagicValsTable(SQLiteDatabase db, String itemType) {
-            String tableName = "magicAdjustValues_" + itemType;
-            String sqlcmd = "CREATE TABLE " + tableName
-                    + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + "magicLevel int, " + "valueAdjust double)";
-
-            db.execSQL(sqlcmd);
-            Log.d(TAG, "Creating Table " + tableName);
-        }
-
-        public void initAPLcoinsTable(SQLiteDatabase db) {
-            for (int ii = 0; ii < 20; ii++) {
-                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Coins "
-                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int, " + "quantity int, " + "coinType int)";
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Coins");
+        //Copy the database from assets
+        private void copyDataBase() throws IOException
+        {
+            InputStream mInput = mContext.getAssets().open(DATABASE_NAME);
+            String outFileName = DATABASE_PATH + DATABASE_NAME;
+            Log.d(TAG, "In copyDataBase(): outFileName: " + outFileName);
+            OutputStream mOutput = new FileOutputStream(outFileName);
+            byte[] mBuffer = new byte[1024];
+            int mLength;
+            while ((mLength = mInput.read(mBuffer))>0) {
+                mOutput.write(mBuffer, 0, mLength);
             }
+            mOutput.flush();
+            mOutput.close();
+            mInput.close();
         }
 
-        public void initAPLgoodsTable(SQLiteDatabase db) {
-            for (int ii = 0; ii < 20; ii++) {
-                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Goods "
-                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int, " + "goodsType int)";
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Goods");
-            }
+        private boolean checkDataBase()
+        {
+            File dbFile = new File(DATABASE_PATH + DATABASE_NAME);
+            return dbFile.exists();
         }
-
-        public void initAPLitemsTable(SQLiteDatabase db) {
-            for (int ii = 0; ii < 20; ii++) {
-                String sqlcmd = "CREATE TABLE APL" + (ii + 1) + "_Items "
-                        + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, " + "numDice int, "
-                        + "dieSize int, " + "itemRarityGroup int)";
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table APL" + (ii + 1) + "_Items");
-            }
-        }
-
-        public void initItemTypeTable(SQLiteDatabase db, String itemType) {
-            String sqlcmd = "CREATE TABLE " + itemType + "Types "
-                    + "(id INTEGER PRIMARY KEY AUTOINCREMENT, " + "dLow int, "
-                    + "dHigh int, " + "itemType varchar(50), "
-                    + "valueAdjust double)";
-
-            db.execSQL(sqlcmd);
-            Log.d(TAG, "Creating Table " + itemType + "Types ");
-        }
-
-        public void initEnhancementTable(SQLiteDatabase db, String itemType) {
-            for (int ii = 0; ii < 3; ii++) {
-                for (int jj = 0; jj < 2; jj++) {
-                    String lesserOrGreater = null;
-                    switch (jj) {
-                    case 0:
-                        lesserOrGreater = "Lesser";
-                        break;
-                    case 1:
-                        lesserOrGreater = "Greater";
-                    }
-                    String rarityLevel = null;
-                    switch (ii) {
-                    case 0:
-                        rarityLevel = "Minor";
-                        break;
-                    case 1:
-                        rarityLevel = "Medium";
-                        break;
-                    case 2:
-                        rarityLevel = "Major";
-                    }
-                    String sqlcmd = "CREATE TABLE " + itemType + "_"
-                            + lesserOrGreater + "_" + rarityLevel
-                            + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                            + "dLow int, " + "dHigh int, "
-                            + "enhancement int, " + "numAbilities int, "
-                            + "abilityLevel int, " + "isSpecific int)";
-
-                    db.execSQL(sqlcmd);
-                    Log.d(TAG, "Creating " + itemType + "_" + lesserOrGreater
-                            + "_" + rarityLevel);
-                }
-            }
-        }
-
-        public void initAbilitiesTable(SQLiteDatabase db, String itemType) {
-            for (int ii = 0; ii < 5; ii++) {
-                String tableName = "Abilities_" + itemType + "_plus" + (ii + 1);
-                String sqlcmd = "CREATE TABLE " + tableName
-                        + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + "dLow int, " + "dHigh int, "
-                        + "ability varchar(50), " + "priceAdjust int)";
-
-                db.execSQL(sqlcmd);
-                Log.d(TAG, "Creating Table " + tableName);
-
-            }
-        }
-
-        public void initMundaneItemTable(SQLiteDatabase db, String itemType) {
-            String tableName = "Mundane_" + itemType;
-            String sqlcmd = "CREATE TABLE " + tableName
-                    + " (id INTEGER PRIMARY KEY AUTOINCREMENT, " + "dLow int, "
-                    + "dHigh int, " + "itemName varchar(50), " + "price int)";
-
-            db.execSQL(sqlcmd);
-            Log.d(TAG, "Creating Table " + tableName);
-
-        }
-
-        public void initSpecificItemTable(SQLiteDatabase db, String itemType) {
-            for (int ii = 0; ii < 3; ii++) {
-                for (int jj = 0; jj < 2; jj++) {
-                    String lesserOrGreater = null;
-                    switch (jj) {
-                    case 0:
-                        lesserOrGreater = "Lesser";
-                        break;
-                    case 1:
-                        lesserOrGreater = "Greater";
-                    }
-                    String rarityLevel = null;
-                    switch (ii) {
-                    case 0:
-                        rarityLevel = "Minor";
-                        break;
-                    case 1:
-                        rarityLevel = "Medium";
-                        break;
-                    case 2:
-                        rarityLevel = "Major";
-                    }
-                    String sqlcmd = "CREATE TABLE Specific_" + itemType + "_"
-                            + lesserOrGreater + "_" + rarityLevel
-                            + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                            + "dLow int, " + "dHigh int, "
-                            + "itemName varchar(50), " + "price int)";
-
-                    db.execSQL(sqlcmd);
-                    Log.d(TAG, "Creating Table Specific_" + itemType + "_"
-                            + lesserOrGreater + "_" + rarityLevel);
-                }
-            }
-        }
-
+        
         @Override
         public void onCreate(SQLiteDatabase db) {
-            Log.d(TAG, "creating new database");
-            initTables(db);
-
+            Log.d(TAG, "copying database assets.");
         }
 
         @Override

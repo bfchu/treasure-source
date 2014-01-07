@@ -43,17 +43,10 @@ public class DatabaseLoaderService extends Service {
         try {
             db = new LootDB(this);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         db.open();
         manager = this.getAssets();
-        try {
-            db.populateTables(manager);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
 
         Toast.makeText(this, "Database finished loading!", Toast.LENGTH_LONG)
                 .show();
